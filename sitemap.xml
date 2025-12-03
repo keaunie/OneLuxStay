@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap-image/1.1">
+    <url>
+        <loc>https://oneluxstay.com/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://oneluxstay.com/about</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://oneluxstay.com/contactus</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://oneluxstay.com/destination</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://oneluxstay.com/360</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://oneluxstay.com/cancellation</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://oneluxstay.com/privacypolicy</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://oneluxstay.com/termsandcond</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://oneluxstay.com/USCAPP</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Extra destination pages -->
+  <url>
+    <loc>https://oneluxstay.com/antwerp</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://oneluxstay.com/dubai</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://oneluxstay.com/miami</loc>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>

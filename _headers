@@ -1,0 +1,5 @@
+// /* _headers file at root of your project */
+// /*
+//   /index.html
+//   Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://apis.google.com; style-src 'self' 'unsafe-inline';
+// */

@@ -1,0 +1,1193 @@
+<!-- =========================
+     ONE LUX STAY — RESERVATIONS SECTION
+========================= -->
+<section class="ols-reservations">
+    <div class="olsr-bg-glow">
+        <div class="olsr-glow olsr-glow-1"></div>
+        <div class="olsr-glow olsr-glow-2"></div>
+    </div>
+
+    <!-- HERO + SEARCH -->
+    <section class="olsr-hero">
+        <div class="olsr-container">
+            <div class="olsr-hero-inner">
+                <!-- Left: Copy -->
+                <div>
+                    <div class="olsr-hero-pill">
+                        <span class="olsr-hero-pill-dot"></span>
+                        Direct booking • Best rate guaranteed
+                    </div>
+                    <h1 class="olsr-hero-heading">
+                        Reserve <span>One Lux Stay</span> suites in the world’s finest cityscapes.
+                    </h1>
+                    <p class="olsr-hero-subtitle">
+                        From Antwerp’s historic charm to Miami’s bayline skyline, book design-led
+                        suites with hotel-style service in only a few steps.
+                    </p>
+
+                    <div class="olsr-chips-row" id="olsr-cityChips">
+                        <button class="olsr-chip olsr-chip-active" data-city="Antwerp">Antwerp</button>
+                        <button class="olsr-chip" data-city="Miami">Miami</button>
+                        <button class="olsr-chip" data-city="Dubai">Dubai</button>
+                        <button class="olsr-chip" data-city="Los Angeles">Los Angeles</button>
+                        <button class="olsr-chip" data-city="Redondo Beach">Redondo Beach</button>
+                    </div>
+
+                    <div class="olsr-hero-badges">
+                        <span class="olsr-badge">Instant confirmation</span>
+                        <span class="olsr-badge">Secure payments</span>
+                        <span class="olsr-badge">Professionally managed stays</span>
+                    </div>
+                </div>
+
+                <!-- Right: Search card -->
+                <div>
+                    <div class="olsr-card">
+                        <div class="olsr-card-inner">
+                            <div class="olsr-card-header">
+                                <div>
+                                    <div class="olsr-card-label">Plan your stay</div>
+                                    <div class="olsr-card-sub">
+                                        Live availability connected to your One Lux Stay calendar.
+                                    </div>
+                                </div>
+                                <div class="olsr-card-pill">Guesty Open API</div>
+                            </div>
+
+                            <div class="olsr-form-grid">
+                                <div class="olsr-field">
+                                    <label for="olsr-destinationInput">Destination</label>
+                                    <input id="olsr-destinationInput" type="text" placeholder="Antwerp, Miami, Dubai..."
+                                        value="Antwerp" />
+                                </div>
+                                <div class="olsr-field">
+                                    <label for="olsr-guestsInput">Guests</label>
+                                    <select id="olsr-guestsInput">
+                                        <option value="1">1 guest</option>
+                                        <option value="2" selected>2 guests</option>
+                                        <option value="3">3 guests</option>
+                                        <option value="4">4 guests</option>
+                                        <option value="5">5 guests</option>
+                                        <option value="6">6 guests</option>
+                                    </select>
+                                </div>
+                                <div class="olsr-field">
+                                    <label for="olsr-checkInInput">Check-in</label>
+                                    <input id="olsr-checkInInput" type="date" />
+                                </div>
+                                <div class="olsr-field">
+                                    <label for="olsr-checkOutInput">Check-out</label>
+                                    <input id="olsr-checkOutInput" type="date" />
+                                </div>
+                            </div>
+
+                            <div class="olsr-search-actions">
+                                <button id="olsr-searchBtn" class="olsr-btn olsr-btn-primary">
+                                    Search availability
+                                </button>
+                                <p class="olsr-search-note">
+                                    No booking fees on direct reservations with One Lux Stay.
+                                </p>
+                            </div>
+
+                            <div id="olsr-searchError" class="olsr-error-text" style="display: none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="olsr-results-section">
+        <div class="olsr-container">
+            <div class="olsr-results-header">
+                <div>
+                    <div class="olsr-results-title">Available stays</div>
+                    <div id="olsr-resultsSub" class="olsr-results-sub">
+                        Run a search to see city suites for your dates.
+                    </div>
+                </div>
+                <div class="olsr-results-tagline">
+                    <div class="olsr-results-tagline-line"></div>
+                    <span>Live, real-time inventory</span>
+                </div>
+            </div>
+
+            <div id="olsr-resultsGrid" class="olsr-results-grid">
+                <div class="olsr-empty-state" id="olsr-emptyState">
+                    Once you search, available homes across
+                    <span>Antwerp, Miami, Dubai, Los Angeles, Redondo Beach</span> will appear
+                    here with live pricing.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING PANEL -->
+    <div id="olsr-bookingBackdrop" class="olsr-booking-backdrop">
+        <div id="olsr-bookingBackdropClick" class="olsr-booking-backdrop-click"></div>
+
+        <aside id="olsr-bookingPanel" class="olsr-booking-panel">
+            <div class="olsr-booking-header">
+                <div>
+                    <div class="olsr-booking-title-label">Confirm your stay</div>
+                    <div id="olsr-bookingTitle" class="olsr-booking-title-main">Suite</div>
+                    <div id="olsr-bookingSubtitle" class="olsr-booking-title-sub">City, Country</div>
+                </div>
+                <button id="olsr-bookingCloseBtn" class="olsr-booking-close-btn">Close</button>
+            </div>
+
+            <div class="olsr-booking-body">
+                <div class="olsr-booking-summary">
+                    <div class="olsr-booking-summary-line">
+                        <span id="olsr-bookingDates">— → —</span>
+                        <span id="olsr-bookingGuests">1 night • 2 guests</span>
+                    </div>
+                    <div class="olsr-booking-summary-price">
+                        <span>Nightly rate</span>
+                        <span id="olsr-bookingNightly">$0</span>
+                    </div>
+                    <div class="olsr-booking-summary-price">
+                        <span>Estimated total</span>
+                        <span id="olsr-bookingTotal">$0</span>
+                    </div>
+                    <div class="olsr-booking-notice">
+                        Final amount may adjust slightly based on taxes, fees, and applied
+                        promotions.
+                    </div>
+                </div>
+
+                <div class="olsr-booking-fields">
+                    <div class="olsr-field">
+                        <label for="olsr-guestFirstName">First name</label>
+                        <input id="olsr-guestFirstName" type="text" placeholder="First name" />
+                    </div>
+                    <div class="olsr-field">
+                        <label for="olsr-guestLastName">Last name</label>
+                        <input id="olsr-guestLastName" type="text" placeholder="Last name" />
+                    </div>
+                    <div class="olsr-field">
+                        <label for="olsr-guestEmail">Email</label>
+                        <input id="olsr-guestEmail" type="email" placeholder="you@example.com" />
+                    </div>
+                    <div class="olsr-field">
+                        <label for="olsr-guestPhone">Phone (with country code)</label>
+                        <input id="olsr-guestPhone" type="tel" placeholder="+32..." />
+                    </div>
+                </div>
+
+                <div id="olsr-bookingMessage" class="olsr-error-text" style="display: none"></div>
+                <div id="olsr-bookingSuccess" class="olsr-success-text" style="display: none"></div>
+
+                <div class="olsr-booking-notice" style="margin-top: 10px">
+                    By confirming, you agree to One Lux Stay house rules, cancellation policy, and
+                    terms of stay. Payment details will be collected via our secure payment
+                    gateway once your reservation is created.
+                </div>
+            </div>
+
+            <div class="olsr-booking-footer">
+                <button id="olsr-bookingConfirmBtn" class="olsr-btn olsr-btn-primary">
+                    Confirm reservation
+                </button>
+            </div>
+        </aside>
+    </div>
+</section>
+
+<!-- =========================
+     STYLES (SCOPED TO .ols-reservations)
+========================= -->
+<style>
+    .ols-reservations {
+        position: relative;
+        padding: 40px 0 32px;
+        background: radial-gradient(circle at top, #15151f 0, #050506 60%);
+        color: #f9fafb;
+        overflow: hidden;
+    }
+
+    .olsr-bg-glow {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .olsr-glow {
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(48px);
+        opacity: 0.8;
+    }
+
+    .olsr-glow-1 {
+        top: -40px;
+        left: -40px;
+        width: 260px;
+        height: 260px;
+        background: rgba(193, 168, 139, 0.18);
+    }
+
+    .olsr-glow-2 {
+        right: -60px;
+        bottom: -40px;
+        width: 320px;
+        height: 320px;
+        background: rgba(193, 168, 139, 0.18);
+    }
+
+    .olsr-container {
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 16px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .olsr-hero {
+        padding-bottom: 8px;
+    }
+
+    .olsr-hero-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+        gap: 32px;
+        align-items: center;
+    }
+
+    @media (max-width: 880px) {
+        .olsr-hero-inner {
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+
+    .olsr-hero-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        border: 1px solid rgba(193, 168, 139, 0.3);
+        background: linear-gradient(90deg,
+                rgba(193, 168, 139, 0.12),
+                rgba(193, 168, 139, 0.02));
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: #c1a88b;
+        margin-bottom: 16px;
+    }
+
+    .olsr-hero-pill-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 999px;
+        background: #c1a88b;
+        box-shadow: 0 0 12px rgba(193, 168, 139, 0.9);
+    }
+
+    .olsr-hero-heading {
+        font-size: clamp(2rem, 3.4vw, 3rem);
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+        margin: 0 0 10px;
+        font-weight: 300;
+    }
+
+    .olsr-hero-heading span {
+        color: #c1a88b;
+        font-weight: 600;
+    }
+
+    .olsr-hero-subtitle {
+        margin: 0;
+        font-size: 0.96rem;
+        color: #9ca3af;
+        max-width: 460px;
+    }
+
+    .olsr-hero-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+    }
+
+    .olsr-badge {
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(55, 65, 81, 0.8);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #9ca3af;
+        background: linear-gradient(135deg,
+                rgba(17, 24, 39, 0.85),
+                rgba(15, 23, 42, 0.95));
+    }
+
+    .olsr-chips-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 16px;
+    }
+
+    .olsr-chip {
+        padding: 6px 11px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(0, 0, 0, 0.5);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: #e5e7eb;
+        cursor: pointer;
+        transition: border-color 0.12s ease, color 0.12s ease, background 0.12s ease;
+    }
+
+    .olsr-chip-active {
+        border-color: #c1a88b;
+        background: rgba(193, 168, 139, 0.1);
+        color: #c1a88b;
+    }
+
+    .olsr-card {
+        position: relative;
+        border-radius: 18px;
+        border: 1px solid #27272f;
+        background: radial-gradient(circle at top left, #1a1a24 0, #050506 60%);
+        padding: 18px 18px 16px;
+        box-shadow: 0 22px 45px rgba(0, 0, 0, 0.7);
+        overflow: hidden;
+    }
+
+    .olsr-card::before {
+        content: "";
+        position: absolute;
+        inset: -40%;
+        background: radial-gradient(circle at top right,
+                rgba(193, 168, 139, 0.16),
+                transparent 55%);
+        opacity: 0.8;
+        pointer-events: none;
+    }
+
+    .olsr-card-inner {
+        position: relative;
+        z-index: 1;
+    }
+
+    .olsr-card-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .olsr-card-label {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: #9ca3af;
+    }
+
+    .olsr-card-sub {
+        font-size: 0.86rem;
+        color: #9ca3af;
+    }
+
+    .olsr-card-pill {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        padding: 5px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(193, 168, 139, 0.4);
+        background: rgba(0, 0, 0, 0.5);
+        color: #c1a88b;
+        white-space: nowrap;
+    }
+
+    .olsr-form-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr 0.7fr 0.6fr;
+        gap: 10px;
+    }
+
+    @media (max-width: 720px) {
+        .olsr-form-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: 520px) {
+        .olsr-form-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .olsr-field {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        font-size: 0.76rem;
+    }
+
+    .olsr-field label {
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: #9ca3af;
+    }
+
+    .olsr-field input,
+    .olsr-field select {
+        padding: 9px 10px;
+        border-radius: 10px;
+        border: 1px solid rgba(75, 85, 99, 0.9);
+        background: rgba(0, 0, 0, 0.4);
+        color: #f9fafb;
+        font-size: 0.88rem;
+        outline: none;
+        transition: border-color 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+    }
+
+    .olsr-field input:focus,
+    .olsr-field select:focus {
+        border-color: #c1a88b;
+        box-shadow: 0 0 0 1px rgba(193, 168, 139, 0.45);
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .olsr-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        border: none;
+        cursor: pointer;
+        padding: 10px 18px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease,
+            opacity 0.1s ease, border-color 0.12s ease;
+    }
+
+    .olsr-btn-primary {
+        background: linear-gradient(135deg,
+                #c1a88b 0%,
+                #f1d7a3 30%,
+                #b08b63 100%);
+        color: #050507;
+        box-shadow: 0 14px 32px rgba(0, 0, 0, 0.75);
+    }
+
+    .olsr-btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+    }
+
+    .olsr-btn-primary:active {
+        transform: translateY(0);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
+        opacity: 0.9;
+    }
+
+    .olsr-btn-primary:disabled {
+        opacity: 0.7;
+        cursor: default;
+    }
+
+    .olsr-search-actions {
+        margin-top: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .olsr-search-note {
+        font-size: 0.7rem;
+        color: #9ca3af;
+        max-width: 11rem;
+        text-align: right;
+    }
+
+    .olsr-error-text {
+        margin-top: 8px;
+        font-size: 0.78rem;
+        color: #f97373;
+    }
+
+    .olsr-success-text {
+        margin-top: 8px;
+        font-size: 0.78rem;
+        color: #4ade80;
+    }
+
+    .olsr-results-section {
+        padding: 8px 0 0;
+    }
+
+    .olsr-results-header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+    .olsr-results-title {
+        font-size: 0.76rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: #9ca3af;
+    }
+
+    .olsr-results-sub {
+        font-size: 0.86rem;
+        color: #9ca3af;
+    }
+
+    .olsr-results-tagline {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.74rem;
+        color: #9ca3af;
+    }
+
+    .olsr-results-tagline-line {
+        width: 40px;
+        height: 1px;
+        background: rgba(156, 163, 175, 0.8);
+    }
+
+    .olsr-results-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
+    }
+
+    .olsr-empty-state {
+        grid-column: 1 / -1;
+        border-radius: 20px;
+        border: 1px dashed rgba(255, 255, 255, 0.14);
+        background: rgba(0, 0, 0, 0.5);
+        padding: 16px;
+        font-size: 0.86rem;
+        color: #9ca3af;
+    }
+
+    .olsr-empty-state span {
+        color: #c1a88b;
+        font-weight: 500;
+    }
+
+    .olsr-listing-card {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 26px 60px rgba(0, 0, 0, 0.9);
+    }
+
+    .olsr-listing-media {
+        position: relative;
+        padding-top: 66%;
+        overflow: hidden;
+    }
+
+    .olsr-listing-media img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .olsr-listing-card:hover .olsr-listing-media img {
+        transform: scale(1.03);
+    }
+
+    .olsr-listing-media-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top,
+                rgba(0, 0, 0, 0.9),
+                rgba(0, 0, 0, 0.2),
+                transparent);
+        opacity: 0.9;
+        pointer-events: none;
+    }
+
+    .olsr-listing-brand-pill {
+        position: absolute;
+        left: 12px;
+        bottom: 10px;
+        padding: 5px 12px;
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.7);
+        color: #f9fafb;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+    }
+
+    .olsr-listing-body {
+        padding: 10px 12px 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .olsr-listing-title {
+        font-size: 0.96rem;
+        font-weight: 500;
+    }
+
+    .olsr-listing-location {
+        font-size: 0.82rem;
+        color: #9ca3af;
+    }
+
+    .olsr-listing-meta {
+        font-size: 0.8rem;
+        color: #9ca3af;
+    }
+
+    .olsr-listing-footer {
+        margin-top: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .olsr-price-tag {
+        font-size: 0.92rem;
+    }
+
+    .olsr-price-tag span {
+        font-size: 0.78rem;
+        color: #9ca3af;
+    }
+
+    .olsr-btn-book {
+        background: linear-gradient(135deg,
+                #c1a88b 0%,
+                #f1d7a3 36%,
+                #b08b63 100%);
+        border-radius: 999px;
+        border: none;
+        padding: 8px 16px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        color: #050507;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.85);
+        cursor: pointer;
+        transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+
+    .olsr-btn-book:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 18px 38px rgba(0, 0, 0, 0.95);
+    }
+
+    .olsr-btn-book:active {
+        transform: translateY(0);
+        box-shadow: 0 12px 26px rgba(0, 0, 0, 0.9);
+    }
+
+    .olsr-booking-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.65);
+        display: none;
+        z-index: 40;
+    }
+
+    .olsr-booking-backdrop-active {
+        display: flex;
+    }
+
+    .olsr-booking-backdrop-click {
+        flex: 1;
+    }
+
+    .olsr-booking-panel {
+        width: 100%;
+        max-width: 380px;
+        background: rgba(0, 0, 0, 0.98);
+        box-shadow: -8px 0 40px rgba(0, 0, 0, 0.9);
+        display: flex;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: transform 0.25s ease-out;
+    }
+
+    .olsr-booking-panel-active {
+        transform: translateX(0%);
+    }
+
+    .olsr-booking-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .olsr-booking-title-label {
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: #9ca3af;
+    }
+
+    .olsr-booking-title-main {
+        font-size: 0.96rem;
+        font-weight: 500;
+    }
+
+    .olsr-booking-title-sub {
+        font-size: 0.8rem;
+        color: #9ca3af;
+    }
+
+    .olsr-booking-close-btn {
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: rgba(0, 0, 0, 0.6);
+        color: #9ca3af;
+        padding: 4px 8px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: border-color 0.12s ease, color 0.12s ease;
+    }
+
+    .olsr-booking-close-btn:hover {
+        border-color: #c1a88b;
+        color: #c1a88b;
+    }
+
+    .olsr-booking-body {
+        flex: 1;
+        overflow-y: auto;
+        padding: 12px 16px 16px;
+        font-size: 0.86rem;
+    }
+
+    .olsr-booking-summary {
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.04);
+        padding: 10px 12px;
+        margin-bottom: 12px;
+    }
+
+    .olsr-booking-summary-line {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
+        color: #9ca3af;
+    }
+
+    .olsr-booking-summary-line span:last-child {
+        color: #e5e7eb;
+    }
+
+    .olsr-booking-summary-price {
+        margin-top: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
+    }
+
+    .olsr-booking-summary-price span:first-child {
+        color: #9ca3af;
+    }
+
+    .olsr-booking-summary-price span:last-child {
+        color: #c1a88b;
+        font-weight: 600;
+    }
+
+    .olsr-booking-notice {
+        margin-top: 6px;
+        font-size: 0.7rem;
+        color: #9ca3af;
+    }
+
+    .olsr-booking-fields {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .olsr-booking-footer {
+        padding: 10px 16px 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+</style>
+
+<!-- =========================
+     SCRIPT (SCOPED IDs)
+========================= -->
+<script>
+    const OLSR_API_BASE = "http://localhost:4000"; // change to your backend
+
+    let olsrState = {
+        destination: "Antwerp",
+        checkIn: null,
+        checkOut: null,
+        guests: 2,
+        listings: [],
+        selectedListing: null,
+    };
+
+    function olsrToIsoDate(d) {
+        return d.toISOString().slice(0, 10);
+    }
+
+    function olsrInitDates() {
+        const today = new Date();
+        const ci = new Date(today);
+        ci.setDate(today.getDate() + 1);
+        const co = new Date(today);
+        co.setDate(today.getDate() + 3);
+        olsrState.checkIn = olsrToIsoDate(ci);
+        olsrState.checkOut = olsrToIsoDate(co);
+        document.getElementById("olsr-checkInInput").value = olsrState.checkIn;
+        document.getElementById("olsr-checkOutInput").value = olsrState.checkOut;
+    }
+
+    function olsrNights(ci, co) {
+        if (!ci || !co) return 1;
+        const start = new Date(ci);
+        const end = new Date(co);
+        const diff = (end - start) / (1000 * 60 * 60 * 24);
+        return Math.max(1, Math.round(diff));
+    }
+
+    function olsrMoney(num) {
+        if (!num || isNaN(num)) return "$0";
+        return "$" + Number(num).toLocaleString(undefined, { maximumFractionDigits: 0 });
+    }
+
+    function olsrRenderChips() {
+        const chips = document.querySelectorAll("#olsr-cityChips .olsr-chip");
+        chips.forEach((chip) => {
+            const city = chip.getAttribute("data-city");
+            if (city === olsrState.destination) chip.classList.add("olsr-chip-active");
+            else chip.classList.remove("olsr-chip-active");
+        });
+    }
+
+    function olsrRenderResults() {
+        const grid = document.getElementById("olsr-resultsGrid");
+        const emptyState = document.getElementById("olsr-emptyState");
+        const sub = document.getElementById("olsr-resultsSub");
+
+        grid.innerHTML = "";
+
+        if (!olsrState.listings || olsrState.listings.length === 0) {
+            emptyState.style.display = "block";
+            grid.appendChild(emptyState);
+            sub.textContent = "Run a search or adjust your filters to see available suites.";
+            return;
+        }
+
+        emptyState.style.display = "none";
+        sub.textContent =
+            olsrState.listings.length +
+            " stay" +
+            (olsrState.listings.length === 1 ? "" : "s") +
+            " found for your dates.";
+
+        olsrState.listings.forEach((listing) => {
+            const title = listing.nickname || listing.title || "One Lux Stay City Suite";
+            const city = listing.address?.city || listing.address?.full || "";
+            const country = listing.address?.country || "";
+            const accommodates = listing.accommodates || 2;
+            const bedrooms =
+                typeof listing.bedrooms === "number" ? listing.bedrooms : 1;
+            const bathrooms =
+                typeof listing.bathrooms === "number" ? listing.bathrooms : 1;
+            const price = listing.price || 0;
+            const img =
+                (listing.pictures &&
+                    listing.pictures[0] &&
+                    (listing.pictures[0].regular || listing.pictures[0].thumbnail)) ||
+                "https://via.placeholder.com/800x600?text=One+Lux+Stay";
+
+            const card = document.createElement("article");
+            card.className = "olsr-listing-card";
+            card.innerHTML = `
+        <div class="olsr-listing-media">
+          <img src="${img}" alt="${title}" loading="lazy" />
+          <div class="olsr-listing-media-overlay"></div>
+          <div class="olsr-listing-brand-pill">One Lux Stay</div>
+        </div>
+        <div class="olsr-listing-body">
+          <div class="olsr-listing-title">${title}</div>
+          <div class="olsr-listing-location">${city}${country ? ", " + country : ""
+                }</div>
+          <div class="olsr-listing-meta">
+            Sleeps ${accommodates} • ${bedrooms} bd • ${bathrooms} ba
+          </div>
+          <div class="olsr-listing-footer">
+            <div class="olsr-price-tag">
+              ${price
+                    ? `${olsrMoney(price)} <span>/ night</span>`
+                    : `<span>Price on request</span>`
+                }
+            </div>
+            <button class="olsr-btn-book">Book now</button>
+          </div>
+        </div>
+      `;
+
+            card.querySelector(".olsr-btn-book").addEventListener("click", () => {
+                olsrOpenBooking(listing);
+            });
+
+            grid.appendChild(card);
+        });
+    }
+
+    async function olsrSearch() {
+        const errEl = document.getElementById("olsr-searchError");
+        const btn = document.getElementById("olsr-searchBtn");
+        errEl.style.display = "none";
+        errEl.textContent = "";
+
+        if (!olsrState.checkIn || !olsrState.checkOut) {
+            errEl.textContent = "Please choose check-in and check-out dates.";
+            errEl.style.display = "block";
+            return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = "Searching…";
+
+        try {
+            const params = new URLSearchParams({
+                checkIn: olsrState.checkIn,
+                checkOut: olsrState.checkOut,
+                guests: String(olsrState.guests || 1),
+            });
+            if (olsrState.destination) params.append("city", olsrState.destination);
+
+            const res = await fetch(`${OLSR_API_BASE}/api/availability?${params.toString()}`);
+            if (!res.ok) throw new Error("Availability search failed");
+
+            const data = await res.json();
+            olsrState.listings = (data && data.results) || [];
+            olsrRenderResults();
+        } catch (e) {
+            console.error(e);
+            errEl.textContent =
+                "We couldn’t load availability. Please adjust your dates or try again.";
+            errEl.style.display = "block";
+            olsrState.listings = [];
+            olsrRenderResults();
+        } finally {
+            btn.disabled = false;
+            btn.textContent = "Search availability";
+        }
+    }
+
+    async function olsrConfirmBooking() {
+        const msgEl = document.getElementById("olsr-bookingMessage");
+        const successEl = document.getElementById("olsr-bookingSuccess");
+        const btn = document.getElementById("olsr-bookingConfirmBtn");
+
+        msgEl.style.display = "none";
+        successEl.style.display = "none";
+        msgEl.textContent = "";
+        successEl.textContent = "";
+
+        if (!olsrState.selectedListing) return;
+
+        const first = document.getElementById("olsr-guestFirstName").value.trim();
+        const last = document.getElementById("olsr-guestLastName").value.trim();
+        const email = document.getElementById("olsr-guestEmail").value.trim();
+        const phone = document.getElementById("olsr-guestPhone").value.trim();
+
+        if (!first || !email) {
+            msgEl.textContent =
+                "Please provide at least your first name and email address.";
+            msgEl.style.display = "block";
+            return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = "Confirming…";
+
+        const nights = olsrNights(olsrState.checkIn, olsrState.checkOut);
+        const price = olsrState.selectedListing.price || 0;
+        const total = price && nights ? price * nights : price || 0;
+
+        try {
+            const payload = {
+                listingId: olsrState.selectedListing._id,
+                checkIn: olsrState.checkIn,
+                checkOut: olsrState.checkOut,
+                guests: Number(olsrState.guests || 1),
+                guest: {
+                    firstName: first,
+                    lastName: last,
+                    email,
+                    phone,
+                },
+                currency: "USD",
+                totalNights: nights || 1,
+                totalAmount: total || 0,
+            };
+
+            const res = await fetch(`${OLSR_API_BASE}/api/reservations`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
+            const data = await res.json();
+            if (!res.ok) {
+                console.error(data);
+                throw new Error(
+                    data.error ||
+                    "We couldn’t complete your booking. Please double-check your details or try again."
+                );
+            }
+
+            successEl.textContent =
+                "Reservation created successfully. A confirmation will be sent to your email shortly.";
+            successEl.style.display = "block";
+        } catch (e) {
+            msgEl.textContent = e.message || "Booking failed. Please try again.";
+            msgEl.style.display = "block";
+        } finally {
+            btn.disabled = false;
+            btn.textContent = "Confirm reservation";
+        }
+    }
+
+    function olsrOpenBooking(listing) {
+        olsrState.selectedListing = listing;
+
+        const title = listing.nickname || listing.title || "One Lux Stay Suite";
+        const city = listing.address?.city || listing.address?.full || "";
+        const country = listing.address?.country || "";
+        const price = listing.price || 0;
+        const nights = olsrNights(olsrState.checkIn, olsrState.checkOut);
+        const total = price && nights ? price * nights : price || 0;
+
+        document.getElementById("olsr-bookingTitle").textContent = title;
+        document.getElementById("olsr-bookingSubtitle").textContent =
+            city + (country ? ", " + country : "");
+        document.getElementById("olsr-bookingDates").textContent =
+            (olsrState.checkIn || "—") + " → " + (olsrState.checkOut || "—");
+        document.getElementById("olsr-bookingGuests").textContent =
+            nights +
+            " night" +
+            (nights === 1 ? "" : "s") +
+            " • " +
+            olsrState.guests +
+            " guest" +
+            (olsrState.guests === 1 ? "" : "s");
+        document.getElementById("olsr-bookingNightly").textContent = price
+            ? olsrMoney(price)
+            : "On request";
+        document.getElementById("olsr-bookingTotal").textContent = total
+            ? olsrMoney(total)
+            : "Calculated at confirmation";
+
+        document.getElementById("olsr-guestFirstName").value = "";
+        document.getElementById("olsr-guestLastName").value = "";
+        document.getElementById("olsr-guestEmail").value = "";
+        document.getElementById("olsr-guestPhone").value = "";
+        document.getElementById("olsr-bookingMessage").style.display = "none";
+        document.getElementById("olsr-bookingSuccess").style.display = "none";
+
+        const backdrop = document.getElementById("olsr-bookingBackdrop");
+        const panel = document.getElementById("olsr-bookingPanel");
+        backdrop.classList.add("olsr-booking-backdrop-active");
+        requestAnimationFrame(() => {
+            panel.classList.add("olsr-booking-panel-active");
+        });
+    }
+
+    function olsrCloseBooking() {
+        const backdrop = document.getElementById("olsr-bookingBackdrop");
+        const panel = document.getElementById("olsr-bookingPanel");
+        panel.classList.remove("olsr-booking-panel-active");
+        setTimeout(() => {
+            backdrop.classList.remove("olsr-booking-backdrop-active");
+        }, 250);
+        olsrState.selectedListing = null;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        olsrInitDates();
+
+        const destInput = document.getElementById("olsr-destinationInput");
+        const guestsInput = document.getElementById("olsr-guestsInput");
+        const ciInput = document.getElementById("olsr-checkInInput");
+        const coInput = document.getElementById("olsr-checkOutInput");
+        const searchBtn = document.getElementById("olsr-searchBtn");
+
+        document
+            .getElementById("olsr-cityChips")
+            .addEventListener("click", (e) => {
+                const btn = e.target.closest(".olsr-chip");
+                if (!btn) return;
+                const city = btn.getAttribute("data-city") || "";
+                olsrState.destination = city;
+                destInput.value = city;
+                olsrRenderChips();
+            });
+
+        destInput.addEventListener("input", (e) => {
+            olsrState.destination = e.target.value.trim();
+            olsrRenderChips();
+        });
+        guestsInput.addEventListener("change", (e) => {
+            olsrState.guests = Number(e.target.value) || 1;
+        });
+        ciInput.addEventListener("change", (e) => {
+            olsrState.checkIn = e.target.value;
+        });
+        coInput.addEventListener("change", (e) => {
+            olsrState.checkOut = e.target.value;
+        });
+        searchBtn.addEventListener("click", olsrSearch);
+
+        document
+            .getElementById("olsr-bookingCloseBtn")
+            .addEventListener("click", olsrCloseBooking);
+        document
+            .getElementById("olsr-bookingBackdropClick")
+            .addEventListener("click", olsrCloseBooking);
+        document
+            .getElementById("olsr-bookingConfirmBtn")
+            .addEventListener("click", olsrConfirmBooking);
+
+        olsrSearch();
+    });
+</script>

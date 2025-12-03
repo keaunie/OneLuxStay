@@ -1,0 +1,120 @@
+{
+    "properties": [
+        {
+            "id": "dubai-downtown-1",
+            "title": "OneLuxStay Dubai Grande Signature Residences",
+            "address": "Downtown Dubai, UAE",
+            "location": {
+                "city": "Dubai",
+                "neighborhood": "Downtown Dubai Central",
+                "area": "Near Burj Khalifa"
+            },
+            "badge": "Exceptional location",
+            "rating": 9.7,
+            "reviews": 103,
+            "url": "dubaiProp",
+            "summary": "With a prestigious spot alongside Dubai Opera, Grande Signature Residences only a 4-minute walk to The Dubai Mall, 3-minute walk to the Burj Khalifa and a 2-minute stroll to Dubai Opera. What's more, you can reach DIFC and all the major highways of Dubai within just 5 minutes.",
+            "price": {
+                "from": 400,
+                "currency": "AED"
+            },
+            "images": [
+                "https://assets.guesty.com/image/upload/v1734471111/production/666b3af27fc6d5653142b0af/r7gvjbchkqhijshvsnwe.jpg",
+                "https://assets.guesty.com/image/upload/v1734471100/production/666b3af27fc6d5653142b0af/unrhbjadnigkjth8gmpf.jpg",
+                "https://assets.guesty.com/image/upload/v1734471025/production/666b3af27fc6d5653142b0af/epz5tdiyjezrjw1zka6a.jpg",
+                "https://assets.guesty.com/image/upload/v1732915599/production/666b3af27fc6d5653142b0af/d6gssokthezsgkhxselp.jpg",
+                "https://assets.guesty.com/image/upload/v1732915239/production/666b3af27fc6d5653142b0af/nwtrcv06j3nr9qtaocmv.jpg",
+                "https://assets.guesty.com/image/upload/v1732915289/production/666b3af27fc6d5653142b0af/spt9cwertdhzn4vgacd7.jpg",
+                "https://assets.guesty.com/image/upload/v1732915044/production/666b3af27fc6d5653142b0af/yiah9dh6ja7b9cddxjx9.jpg",
+                "https://assets.guesty.com/image/upload/v1732915024/production/666b3af27fc6d5653142b0af/ksjhk00lcinsin9dcdk9.jpg",
+                "https://assets.guesty.com/image/upload/v1732915268/production/666b3af27fc6d5653142b0af/oxwjo1dpctjjgkrwxpoe.jpg",
+                "https://assets.guesty.com/image/upload/v1732915502/production/666b3af27fc6d5653142b0af/r4h0yzxzbjsirfh77ygb.jpg",
+                "https://assets.guesty.com/image/upload/v1732915462/production/666b3af27fc6d5653142b0af/kwjmlxf7n8qb8nuynglp.jpg",
+                "https://assets.guesty.com/image/upload/v1732915472/production/666b3af27fc6d5653142b0af/i0noah2imatn84rflgtz.jpg",
+                "https://assets.guesty.com/image/upload/v1734471377/production/666b3af27fc6d5653142b0af/amkhbpjzsyxlfh3mduck.jpg",
+                "https://assets.guesty.com/image/upload/v1734471382/production/666b3af27fc6d5653142b0af/blnsbotichjiacqgcmwy.jpg",
+                "https://assets.guesty.com/image/upload/v1735568485/production/666b3af27fc6d5653142b0af/dgysehy3vgyt5zebdy6l.jpg",
+                "https://assets.guesty.com/image/upload/v1735568477/production/666b3af27fc6d5653142b0af/yagv8dryqulqkahgdeia.jpg",
+                "https://assets.guesty.com/image/upload/v1735568495/production/666b3af27fc6d5653142b0af/jjb1pmh8t1oefdhvkmgz.jpg",
+                "https://assets.guesty.com/image/upload/v1735568494/production/666b3af27fc6d5653142b0af/u3gyfgs0ibllg82u9esf.jpg",
+                "https://assets.guesty.com/image/upload/v1735568489/production/666b3af27fc6d5653142b0af/himn0bxspoxtfeeq2kps.jpg",
+                "https://assets.guesty.com/image/upload/v1735568477/production/666b3af27fc6d5653142b0af/w8ekcz05hxilnle2ycca.jpg",
+                "https://assets.guesty.com/image/upload/v1734471419/production/666b3af27fc6d5653142b0af/kcs3r0edupo1hzddai6t.jpg",
+                "https://assets.guesty.com/image/upload/v1735568487/production/666b3af27fc6d5653142b0af/h5xzcbcnlvglxpsqi0mw.jpg",
+                "https://assets.guesty.com/image/upload/v1734471443/production/666b3af27fc6d5653142b0af/ryaobaa6atm0kewiwaxm.jpg"
+            ],
+            "rooms": [
+                {
+                    "type": "Luxury 4BR 3BA One Lux Stay Grande Signature Residences",
+                    "guests": 7,
+                    "guestyid": "67250a7e6cafcb0013e9cb18",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "2 Queen beds"
+                        },
+                        {
+                            "bedroom": 3,
+                            "beds": "2 Single beds"
+                        },
+                        {
+                            "bedroom": 4,
+                            "beds": "Maids Room 1 Single bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 3650,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1734471111/production/666b3af27fc6d5653142b0af/r7gvjbchkqhijshvsnwe.jpg",
+                        "https://assets.guesty.com/image/upload/v1734471100/production/666b3af27fc6d5653142b0af/unrhbjadnigkjth8gmpf.jpg",
+                        "https://assets.guesty.com/image/upload/v1734471025/production/666b3af27fc6d5653142b0af/epz5tdiyjezrjw1zka6a.jpg",
+                        "https://assets.guesty.com/image/upload/v1732915599/production/666b3af27fc6d5653142b0af/d6gssokthezsgkhxselp.jpg",
+                        "https://assets.guesty.com/image/upload/v1732915239/production/666b3af27fc6d5653142b0af/nwtrcv06j3nr9qtaocmv.jpg",
+                        "https://assets.guesty.com/image/upload/v1732915289/production/666b3af27fc6d5653142b0af/spt9cwertdhzn4vgacd7.jpg",
+                        "https://assets.guesty.com/image/upload/v1732915044/production/666b3af27fc6d5653142b0af/yiah9dh6ja7b9cddxjx9.jpg",
+                        "https://assets.guesty.com/image/upload/v1732915024/production/666b3af27fc6d5653142b0af/ksjhk00lcinsin9dcdk9.jpg",
+                        "https://assets.guesty.com/image/upload/v1732915268/production/666b3af27fc6d5653142b0af/oxwjo1dpctjjgkrwxpoe.jpg",
+                        "https://assets.guesty.com/image/upload/v1732915502/production/666b3af27fc6d5653142b0af/r4h0yzxzbjsirfh77ygb.jpg",
+                        "https://assets.guesty.com/image/upload/v1732915462/production/666b3af27fc6d5653142b0af/kwjmlxf7n8qb8nuynglp.jpg",
+                        "https://assets.guesty.com/image/upload/v1732915472/production/666b3af27fc6d5653142b0af/i0noah2imatn84rflgtz.jpg"
+                    ]
+                },
+                {
+                    "type": "Luxury 2BR 2BA One Lux Stay Grande Signature Residences",
+                    "guests": 5,
+                    "guestyid": "67460cc0416b6d0013781721",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "2 Queen beds"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 1469,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1734471377/production/666b3af27fc6d5653142b0af/amkhbpjzsyxlfh3mduck.jpg",
+                        "https://assets.guesty.com/image/upload/v1734471382/production/666b3af27fc6d5653142b0af/blnsbotichjiacqgcmwy.jpg",
+                        "https://assets.guesty.com/image/upload/v1735568485/production/666b3af27fc6d5653142b0af/dgysehy3vgyt5zebdy6l.jpg",
+                        "https://assets.guesty.com/image/upload/v1735568477/production/666b3af27fc6d5653142b0af/yagv8dryqulqkahgdeia.jpg",
+                        "https://assets.guesty.com/image/upload/v1735568495/production/666b3af27fc6d5653142b0af/jjb1pmh8t1oefdhvkmgz.jpg",
+                        "https://assets.guesty.com/image/upload/v1735568494/production/666b3af27fc6d5653142b0af/u3gyfgs0ibllg82u9esf.jpg",
+                        "https://assets.guesty.com/image/upload/v1735568489/production/666b3af27fc6d5653142b0af/himn0bxspoxtfeeq2kps.jpg",
+                        "https://assets.guesty.com/image/upload/v1735568477/production/666b3af27fc6d5653142b0af/w8ekcz05hxilnle2ycca.jpg",
+                        "https://assets.guesty.com/image/upload/v1734471419/production/666b3af27fc6d5653142b0af/kcs3r0edupo1hzddai6t.jpg",
+                        "https://assets.guesty.com/image/upload/v1735568487/production/666b3af27fc6d5653142b0af/h5xzcbcnlvglxpsqi0mw.jpg",
+                        "https://assets.guesty.com/image/upload/v1734471443/production/666b3af27fc6d5653142b0af/ryaobaa6atm0kewiwaxm.jpg"
+                    ]
+                }
+            ]
+        }
+    ]
+    
+}

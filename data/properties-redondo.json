@@ -1,0 +1,160 @@
+{
+  "properties": [
+    {
+      "id": "redondo-beach-1",
+      "title": "One Lux Stay Redondo Beach Unit 1",
+      "address": "Barbara St, Redondo Beach, California, USA",
+      "location": {
+        "city": "Redondo Beach",
+        "neighborhood": "South Bay",
+        "area": "Near Redondo Beach Pier & King Harbor"
+      },
+      "badge": "Coastal luxury",
+      "rating": 10,
+      "reviews": 1,
+      "url": "redondoProp",
+      "summary": "Located along tranquil Barbara Street in Redondo Beach, these One Lux Stay residences place you minutes from the sand, Redondo Beach Pier, and King Harbor Marina. Enjoy bright coastal interiors, open-plan living, and easy access to the best of the South Bay.",
+      "price": {
+        "from": 499,
+        "currency": "USD"
+      },
+      "images": [
+        "https://assets.guesty.com/image/upload/v1760726897/production/666b3af27fc6d5653142b0af/elwhrktem9rtcebtezlp.jpg",
+        "https://assets.guesty.com/image/upload/v1760726898/production/666b3af27fc6d5653142b0af/anjv8iafdjmf6knycd8n.jpg",
+        "https://assets.guesty.com/image/upload/v1760726900/production/666b3af27fc6d5653142b0af/jphtp88pwn1jvdyhhhuc.jpg",
+        "https://assets.guesty.com/image/upload/v1760726900/production/666b3af27fc6d5653142b0af/mlwskfi5qpxf6vo1dbqp.jpg",
+        "https://assets.guesty.com/image/upload/v1760726899/production/666b3af27fc6d5653142b0af/nolbis2binxqdeynsczv.jpg",
+        "https://assets.guesty.com/image/upload/v1760726898/production/666b3af27fc6d5653142b0af/dxto1epwhcwfoi0jkw3d.jpg",
+        "https://assets.guesty.com/image/upload/v1760726898/production/666b3af27fc6d5653142b0af/w5ntxc6pu8lxq1gb2tjm.jpg",
+        "https://assets.guesty.com/image/upload/v1760726900/production/666b3af27fc6d5653142b0af/nwkha2aontzbqjmzwxgw.jpg",
+        "https://assets.guesty.com/image/upload/v1760726896/production/666b3af27fc6d5653142b0af/m5bq7039si3tugjlys6m.jpg",
+        "https://assets.guesty.com/image/upload/v1760726895/production/666b3af27fc6d5653142b0af/suldsisn9ltgcjr03tc4.jpg",
+        "https://assets.guesty.com/image/upload/v1760726896/production/666b3af27fc6d5653142b0af/wizigt0em8z18ztzifau.jpg",
+        "https://assets.guesty.com/image/upload/v1760726900/production/666b3af27fc6d5653142b0af/oy2haiweo8ysrignvks5.jpg",
+        "https://assets.guesty.com/image/upload/v1760726901/production/666b3af27fc6d5653142b0af/x6siq6mihfi61lslrhjh.jpg",
+        "https://assets.guesty.com/image/upload/v1760726901/production/666b3af27fc6d5653142b0af/xci9dtfy4kbbl99ptduc.jpg",
+        "https://assets.guesty.com/image/upload/v1760479794/production/666b3af27fc6d5653142b0af/s93ztzj9lvvcd13y6ds9.jpg",
+        "https://assets.guesty.com/image/upload/v1760726895/production/666b3af27fc6d5653142b0af/wrkubauzq7l0cpqkoovv.jpg"
+      ],
+      "rooms": [
+        {
+          "type": "Luxury 3BR 2BA One Lux Stay Redondo Beach Residence",
+          "guests": 6,
+          "guestyid": "68e6d143a5e35f00237b6930",
+          "bedrooms": [
+            {
+              "bedroom": 1,
+              "beds": "1 Queen bed"
+            },
+            {
+              "bedroom": 2,
+              "beds": "1 Queen bed"
+            },
+            {
+              "bedroom": 3,
+              "beds": "1 Queen bed"
+            }
+          ],
+          "availability": "Available",
+          "price_per_night": 499,
+          "images": [
+            "https://assets.guesty.com/image/upload/v1760726897/production/666b3af27fc6d5653142b0af/elwhrktem9rtcebtezlp.jpg",
+            "https://assets.guesty.com/image/upload/v1760726898/production/666b3af27fc6d5653142b0af/anjv8iafdjmf6knycd8n.jpg",
+            "https://assets.guesty.com/image/upload/v1760726900/production/666b3af27fc6d5653142b0af/jphtp88pwn1jvdyhhhuc.jpg",
+            "https://assets.guesty.com/image/upload/v1760726900/production/666b3af27fc6d5653142b0af/mlwskfi5qpxf6vo1dbqp.jpg",
+            "https://assets.guesty.com/image/upload/v1760726899/production/666b3af27fc6d5653142b0af/nolbis2binxqdeynsczv.jpg",
+            "https://assets.guesty.com/image/upload/v1760726898/production/666b3af27fc6d5653142b0af/dxto1epwhcwfoi0jkw3d.jpg",
+            "https://assets.guesty.com/image/upload/v1760726898/production/666b3af27fc6d5653142b0af/w5ntxc6pu8lxq1gb2tjm.jpg",
+            "https://assets.guesty.com/image/upload/v1760726900/production/666b3af27fc6d5653142b0af/nwkha2aontzbqjmzwxgw.jpg",
+            "https://assets.guesty.com/image/upload/v1760726896/production/666b3af27fc6d5653142b0af/m5bq7039si3tugjlys6m.jpg",
+            "https://assets.guesty.com/image/upload/v1760726895/production/666b3af27fc6d5653142b0af/suldsisn9ltgcjr03tc4.jpg",
+            "https://assets.guesty.com/image/upload/v1760726896/production/666b3af27fc6d5653142b0af/wizigt0em8z18ztzifau.jpg",
+            "https://assets.guesty.com/image/upload/v1760726900/production/666b3af27fc6d5653142b0af/oy2haiweo8ysrignvks5.jpg",
+            "https://assets.guesty.com/image/upload/v1760726901/production/666b3af27fc6d5653142b0af/x6siq6mihfi61lslrhjh.jpg",
+            "https://assets.guesty.com/image/upload/v1760726901/production/666b3af27fc6d5653142b0af/xci9dtfy4kbbl99ptduc.jpg",
+            "https://assets.guesty.com/image/upload/v1760479794/production/666b3af27fc6d5653142b0af/s93ztzj9lvvcd13y6ds9.jpg",
+            "https://assets.guesty.com/image/upload/v1760726895/production/666b3af27fc6d5653142b0af/wrkubauzq7l0cpqkoovv.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "redondo-beach-5",
+      "title": "One Lux Stay Redondo Beach Unit 5",
+      "address": "Barbara St, Redondo Beach, California, USA",
+      "location": {
+        "city": "Redondo Beach",
+        "neighborhood": "South Bay",
+        "area": "Near Redondo Beach Pier & King Harbor"
+      },
+      "badge": "Coastal luxury",
+      "rating": 10,
+      "reviews": 1,
+      "url": "redondoProp",
+      "summary": "Located along tranquil Barbara Street in Redondo Beach, these One Lux Stay residences place you minutes from the sand, Redondo Beach Pier, and King Harbor Marina. Enjoy bright coastal interiors, open-plan living, and easy access to the best of the South Bay.",
+      "price": {
+        "from": 399,
+        "currency": "USD"
+      },
+      "images": [
+        "https://assets.guesty.com/image/upload/v1760725504/production/666b3af27fc6d5653142b0af/tc31cpsx4knt7wfo46gc.jpg",
+        "https://assets.guesty.com/image/upload/v1760725505/production/666b3af27fc6d5653142b0af/s8bvjlzh2wyccos5cfpf.jpg",
+        "https://assets.guesty.com/image/upload/v1760725505/production/666b3af27fc6d5653142b0af/dyd31y7kh6tlyldsgdsx.jpg",
+        "https://assets.guesty.com/image/upload/v1760725508/production/666b3af27fc6d5653142b0af/hnnt9ypie52jfn8bsfhz.jpg",
+        "https://assets.guesty.com/image/upload/v1760725508/production/666b3af27fc6d5653142b0af/wclavrqoiea7u86fa1kb.jpg",
+        "https://assets.guesty.com/image/upload/v1760725510/production/666b3af27fc6d5653142b0af/j49efq94rxxv2x03nvw0.jpg",
+        "https://assets.guesty.com/image/upload/v1760725508/production/666b3af27fc6d5653142b0af/r5zuhzdpxtvnlpivpaaa.jpg",
+        "https://assets.guesty.com/image/upload/v1760725505/production/666b3af27fc6d5653142b0af/sicszpi31chkhcrpaikj.jpg",
+        "https://assets.guesty.com/image/upload/v1760725509/production/666b3af27fc6d5653142b0af/r2ox6hm9jthfvdf0zgxq.jpg",
+        "https://assets.guesty.com/image/upload/v1760725510/production/666b3af27fc6d5653142b0af/chr4ozsvfyyjp1qguejn.jpg",
+        "https://assets.guesty.com/image/upload/v1760725509/production/666b3af27fc6d5653142b0af/cejiichdte6bxbermjwm.jpg",
+        "https://assets.guesty.com/image/upload/v1760725504/production/666b3af27fc6d5653142b0af/mgcta2d75jcvuwdebx91.jpg",
+        "https://assets.guesty.com/image/upload/v1760725504/production/666b3af27fc6d5653142b0af/nz7nmpcgto6polegim65.jpg",
+        "https://assets.guesty.com/image/upload/v1760535610/production/666b3af27fc6d5653142b0af/svqxrf3n7m5qf1g9xse0.jpg",
+        "https://assets.guesty.com/image/upload/v1760725507/production/666b3af27fc6d5653142b0af/ale6yeald451u9opvm5l.jpg",
+        "https://assets.guesty.com/image/upload/v1760725504/production/666b3af27fc6d5653142b0af/wnkrfqdt6qyi4ba6022n.jpg"
+      ],
+      "rooms": [
+        {
+          "type": "Luxury 2BR 2BA One Lux Stay Redondo Beach Residence",
+          "guests": 4,
+          "guestyid": "68c6f3c58247f20013bae867",
+          "bedrooms": [
+            {
+              "bedroom": 1,
+              "beds": "1 Queen bed"
+            },
+            {
+              "bedroom": 2,
+              "beds": "1 Queen bed"
+            },
+            {
+              "bedroom": 3,
+              "beds": "1 Queen bed"
+            }
+          ],
+          "availability": "Available",
+          "price_per_night": 399,
+          "images": [
+            "https://assets.guesty.com/image/upload/v1760725504/production/666b3af27fc6d5653142b0af/tc31cpsx4knt7wfo46gc.jpg",
+            "https://assets.guesty.com/image/upload/v1760725505/production/666b3af27fc6d5653142b0af/s8bvjlzh2wyccos5cfpf.jpg",
+            "https://assets.guesty.com/image/upload/v1760725505/production/666b3af27fc6d5653142b0af/dyd31y7kh6tlyldsgdsx.jpg",
+            "https://assets.guesty.com/image/upload/v1760725508/production/666b3af27fc6d5653142b0af/hnnt9ypie52jfn8bsfhz.jpg",
+            "https://assets.guesty.com/image/upload/v1760725508/production/666b3af27fc6d5653142b0af/wclavrqoiea7u86fa1kb.jpg",
+            "https://assets.guesty.com/image/upload/v1760725510/production/666b3af27fc6d5653142b0af/j49efq94rxxv2x03nvw0.jpg",
+            "https://assets.guesty.com/image/upload/v1760725508/production/666b3af27fc6d5653142b0af/r5zuhzdpxtvnlpivpaaa.jpg",
+            "https://assets.guesty.com/image/upload/v1760725505/production/666b3af27fc6d5653142b0af/sicszpi31chkhcrpaikj.jpg",
+            "https://assets.guesty.com/image/upload/v1760725509/production/666b3af27fc6d5653142b0af/r2ox6hm9jthfvdf0zgxq.jpg",
+            "https://assets.guesty.com/image/upload/v1760725510/production/666b3af27fc6d5653142b0af/chr4ozsvfyyjp1qguejn.jpg",
+            "https://assets.guesty.com/image/upload/v1760725509/production/666b3af27fc6d5653142b0af/cejiichdte6bxbermjwm.jpg",
+            "https://assets.guesty.com/image/upload/v1760725504/production/666b3af27fc6d5653142b0af/mgcta2d75jcvuwdebx91.jpg",
+            "https://assets.guesty.com/image/upload/v1760725504/production/666b3af27fc6d5653142b0af/nz7nmpcgto6polegim65.jpg",
+            "https://assets.guesty.com/image/upload/v1760535610/production/666b3af27fc6d5653142b0af/svqxrf3n7m5qf1g9xse0.jpg",
+            "https://assets.guesty.com/image/upload/v1760725507/production/666b3af27fc6d5653142b0af/ale6yeald451u9opvm5l.jpg",
+            "https://assets.guesty.com/image/upload/v1760725504/production/666b3af27fc6d5653142b0af/wnkrfqdt6qyi4ba6022n.jpg"
+          ]
+        }
+      ]
+    }
+  ]
+}

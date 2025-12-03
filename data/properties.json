@@ -1,0 +1,1587 @@
+{
+    "properties": [
+        {
+            "id": "redondo-beach-1",
+            "title": "One Lux Stay Redondo Beach Barbara St Residences",
+            "address": "Barbara St, Redondo Beach, California, USA",
+            "location": {
+                "city": "Redondo Beach",
+                "neighborhood": "South Bay",
+                "area": "Near Redondo Beach Pier & King Harbor"
+            },
+            "badge": "Coastal luxury",
+            "rating": 9.5,
+            "reviews": 850,
+            "url": "redondoProp",
+            "summary": "Located along tranquil Barbara Street in Redondo Beach, these One Lux Stay residences place you minutes from the sand, Redondo Beach Pier, and King Harbor Marina. Enjoy bright coastal interiors, open-plan living, and easy access to the best of the South Bay.",
+            "price": {
+                "from": 260,
+                "currency": "USD"
+            },
+            "images": [
+                "https://assets.guesty.com/image/upload/v1760726897/production/666b3af27fc6d5653142b0af/elwhrktem9rtcebtezlp.jpg",
+                "https://assets.guesty.com/image/upload/v1760726898/production/666b3af27fc6d5653142b0af/anjv8iafdjmf6knycd8n.jpg",
+                "https://assets.guesty.com/image/upload/v1760726900/production/666b3af27fc6d5653142b0af/jphtp88pwn1jvdyhhhuc.jpg",
+                "https://assets.guesty.com/image/upload/v1760726900/production/666b3af27fc6d5653142b0af/mlwskfi5qpxf6vo1dbqp.jpg",
+                "https://assets.guesty.com/image/upload/v1760726899/production/666b3af27fc6d5653142b0af/nolbis2binxqdeynsczv.jpg",
+                "https://assets.guesty.com/image/upload/v1760726898/production/666b3af27fc6d5653142b0af/dxto1epwhcwfoi0jkw3d.jpg",
+                "https://assets.guesty.com/image/upload/v1760726898/production/666b3af27fc6d5653142b0af/w5ntxc6pu8lxq1gb2tjm.jpg",
+                "https://assets.guesty.com/image/upload/v1760726900/production/666b3af27fc6d5653142b0af/nwkha2aontzbqjmzwxgw.jpg",
+                "https://assets.guesty.com/image/upload/v1760726896/production/666b3af27fc6d5653142b0af/m5bq7039si3tugjlys6m.jpg",
+                "https://assets.guesty.com/image/upload/v1760726895/production/666b3af27fc6d5653142b0af/suldsisn9ltgcjr03tc4.jpg",
+                "https://assets.guesty.com/image/upload/v1760726896/production/666b3af27fc6d5653142b0af/wizigt0em8z18ztzifau.jpg",
+                "https://assets.guesty.com/image/upload/v1760726900/production/666b3af27fc6d5653142b0af/oy2haiweo8ysrignvks5.jpg",
+                "https://assets.guesty.com/image/upload/v1760726901/production/666b3af27fc6d5653142b0af/x6siq6mihfi61lslrhjh.jpg",
+                "https://assets.guesty.com/image/upload/v1760726901/production/666b3af27fc6d5653142b0af/xci9dtfy4kbbl99ptduc.jpg",
+                "https://assets.guesty.com/image/upload/v1760479794/production/666b3af27fc6d5653142b0af/s93ztzj9lvvcd13y6ds9.jpg",
+                "https://assets.guesty.com/image/upload/v1760726895/production/666b3af27fc6d5653142b0af/wrkubauzq7l0cpqkoovv.jpg"
+            ],
+            "rooms": [
+                {
+                    "type": "Luxury 3BR 2BA One Lux Stay Redondo Beach Residence",
+                    "guests": 6,
+                    "guestyid": "68e6d143a5e35f00237b6930",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "1 Queen bed"
+                        },
+                        {
+                            "bedroom": 3,
+                            "beds": "2 Single beds"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 320,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1760726897/production/666b3af27fc6d5653142b0af/elwhrktem9rtcebtezlp.jpg",
+                        "https://assets.guesty.com/image/upload/v1760726898/production/666b3af27fc6d5653142b0af/anjv8iafdjmf6knycd8n.jpg",
+                        "https://assets.guesty.com/image/upload/v1760726900/production/666b3af27fc6d5653142b0af/jphtp88pwn1jvdyhhhuc.jpg",
+                        "https://assets.guesty.com/image/upload/v1760726900/production/666b3af27fc6d5653142b0af/mlwskfi5qpxf6vo1dbqp.jpg",
+                        "https://assets.guesty.com/image/upload/v1760726899/production/666b3af27fc6d5653142b0af/nolbis2binxqdeynsczv.jpg",
+                        "https://assets.guesty.com/image/upload/v1760726898/production/666b3af27fc6d5653142b0af/dxto1epwhcwfoi0jkw3d.jpg",
+                        "https://assets.guesty.com/image/upload/v1760726898/production/666b3af27fc6d5653142b0af/w5ntxc6pu8lxq1gb2tjm.jpg",
+                        "https://assets.guesty.com/image/upload/v1760726900/production/666b3af27fc6d5653142b0af/nwkha2aontzbqjmzwxgw.jpg",
+                        "https://assets.guesty.com/image/upload/v1760726896/production/666b3af27fc6d5653142b0af/m5bq7039si3tugjlys6m.jpg",
+                        "https://assets.guesty.com/image/upload/v1760726895/production/666b3af27fc6d5653142b0af/suldsisn9ltgcjr03tc4.jpg",
+                        "https://assets.guesty.com/image/upload/v1760726896/production/666b3af27fc6d5653142b0af/wizigt0em8z18ztzifau.jpg",
+                        "https://assets.guesty.com/image/upload/v1760726900/production/666b3af27fc6d5653142b0af/oy2haiweo8ysrignvks5.jpg",
+                        "https://assets.guesty.com/image/upload/v1760726901/production/666b3af27fc6d5653142b0af/x6siq6mihfi61lslrhjh.jpg",
+                        "https://assets.guesty.com/image/upload/v1760726901/production/666b3af27fc6d5653142b0af/xci9dtfy4kbbl99ptduc.jpg",
+                        "https://assets.guesty.com/image/upload/v1760479794/production/666b3af27fc6d5653142b0af/s93ztzj9lvvcd13y6ds9.jpg",
+                        "https://assets.guesty.com/image/upload/v1760726895/production/666b3af27fc6d5653142b0af/wrkubauzq7l0cpqkoovv.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "redondo-beach-5",
+            "title": "One Lux Stay Redondo Beach Barbara St Residences",
+            "address": "Barbara St, Redondo Beach, California, USA",
+            "location": {
+                "city": "Redondo Beach",
+                "neighborhood": "South Bay",
+                "area": "Near Redondo Beach Pier & King Harbor"
+            },
+            "badge": "Coastal luxury",
+            "rating": 9.5,
+            "reviews": 850,
+            "url": "redondoProp",
+            "summary": "Located along tranquil Barbara Street in Redondo Beach, these One Lux Stay residences place you minutes from the sand, Redondo Beach Pier, and King Harbor Marina. Enjoy bright coastal interiors, open-plan living, and easy access to the best of the South Bay.",
+            "price": {
+                "from": 260,
+                "currency": "USD"
+            },
+            "images": [
+                "https://assets.guesty.com/image/upload/v1760725504/production/666b3af27fc6d5653142b0af/tc31cpsx4knt7wfo46gc.jpg",
+                "https://assets.guesty.com/image/upload/v1760725505/production/666b3af27fc6d5653142b0af/s8bvjlzh2wyccos5cfpf.jpg",
+                "https://assets.guesty.com/image/upload/v1760725505/production/666b3af27fc6d5653142b0af/dyd31y7kh6tlyldsgdsx.jpg",
+                "https://assets.guesty.com/image/upload/v1760725508/production/666b3af27fc6d5653142b0af/hnnt9ypie52jfn8bsfhz.jpg",
+                "https://assets.guesty.com/image/upload/v1760725508/production/666b3af27fc6d5653142b0af/wclavrqoiea7u86fa1kb.jpg",
+                "https://assets.guesty.com/image/upload/v1760725510/production/666b3af27fc6d5653142b0af/j49efq94rxxv2x03nvw0.jpg",
+                "https://assets.guesty.com/image/upload/v1760725508/production/666b3af27fc6d5653142b0af/r5zuhzdpxtvnlpivpaaa.jpg",
+                "https://assets.guesty.com/image/upload/v1760725505/production/666b3af27fc6d5653142b0af/sicszpi31chkhcrpaikj.jpg",
+                "https://assets.guesty.com/image/upload/v1760725509/production/666b3af27fc6d5653142b0af/r2ox6hm9jthfvdf0zgxq.jpg",
+                "https://assets.guesty.com/image/upload/v1760725510/production/666b3af27fc6d5653142b0af/chr4ozsvfyyjp1qguejn.jpg",
+                "https://assets.guesty.com/image/upload/v1760725509/production/666b3af27fc6d5653142b0af/cejiichdte6bxbermjwm.jpg",
+                "https://assets.guesty.com/image/upload/v1760725504/production/666b3af27fc6d5653142b0af/mgcta2d75jcvuwdebx91.jpg",
+                "https://assets.guesty.com/image/upload/v1760725504/production/666b3af27fc6d5653142b0af/nz7nmpcgto6polegim65.jpg",
+                "https://assets.guesty.com/image/upload/v1760535610/production/666b3af27fc6d5653142b0af/svqxrf3n7m5qf1g9xse0.jpg",
+                "https://assets.guesty.com/image/upload/v1760725507/production/666b3af27fc6d5653142b0af/ale6yeald451u9opvm5l.jpg",
+                "https://assets.guesty.com/image/upload/v1760725504/production/666b3af27fc6d5653142b0af/wnkrfqdt6qyi4ba6022n.jpg"
+            ],
+            "rooms": [
+                {
+                    "type": "Luxury 2BR 2BA One Lux Stay Redondo Beach Residence",
+                    "guests": 4,
+                    "guestyid": "68c6f3c58247f20013bae867",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "1 Queen bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 280,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1760725504/production/666b3af27fc6d5653142b0af/tc31cpsx4knt7wfo46gc.jpg",
+                        "https://assets.guesty.com/image/upload/v1760725505/production/666b3af27fc6d5653142b0af/s8bvjlzh2wyccos5cfpf.jpg",
+                        "https://assets.guesty.com/image/upload/v1760725505/production/666b3af27fc6d5653142b0af/dyd31y7kh6tlyldsgdsx.jpg",
+                        "https://assets.guesty.com/image/upload/v1760725508/production/666b3af27fc6d5653142b0af/hnnt9ypie52jfn8bsfhz.jpg",
+                        "https://assets.guesty.com/image/upload/v1760725508/production/666b3af27fc6d5653142b0af/wclavrqoiea7u86fa1kb.jpg",
+                        "https://assets.guesty.com/image/upload/v1760725510/production/666b3af27fc6d5653142b0af/j49efq94rxxv2x03nvw0.jpg",
+                        "https://assets.guesty.com/image/upload/v1760725508/production/666b3af27fc6d5653142b0af/r5zuhzdpxtvnlpivpaaa.jpg",
+                        "https://assets.guesty.com/image/upload/v1760725505/production/666b3af27fc6d5653142b0af/sicszpi31chkhcrpaikj.jpg",
+                        "https://assets.guesty.com/image/upload/v1760725509/production/666b3af27fc6d5653142b0af/r2ox6hm9jthfvdf0zgxq.jpg",
+                        "https://assets.guesty.com/image/upload/v1760725510/production/666b3af27fc6d5653142b0af/chr4ozsvfyyjp1qguejn.jpg",
+                        "https://assets.guesty.com/image/upload/v1760725509/production/666b3af27fc6d5653142b0af/cejiichdte6bxbermjwm.jpg",
+                        "https://assets.guesty.com/image/upload/v1760725504/production/666b3af27fc6d5653142b0af/mgcta2d75jcvuwdebx91.jpg",
+                        "https://assets.guesty.com/image/upload/v1760725504/production/666b3af27fc6d5653142b0af/nz7nmpcgto6polegim65.jpg",
+                        "https://assets.guesty.com/image/upload/v1760535610/production/666b3af27fc6d5653142b0af/svqxrf3n7m5qf1g9xse0.jpg",
+                        "https://assets.guesty.com/image/upload/v1760725507/production/666b3af27fc6d5653142b0af/ale6yeald451u9opvm5l.jpg",
+                        "https://assets.guesty.com/image/upload/v1760725504/production/666b3af27fc6d5653142b0af/wnkrfqdt6qyi4ba6022n.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "brickell-bay-club",
+            "title": "OneLuxStay — Brickell Bay Club Residences",
+            "address": "2333 Brickell Bay Drive, Brickell, Miami, FL 33129, USA",
+            "location": {
+                "city": "Miami",
+                "neighborhood": "Brickell",
+                "area": "Brickell Bay Waterfront"
+            },
+            "badge": "Skyline & Waterfront Views",
+            "rating": 9.6,
+            "reviews": 220,
+            "url": "miamiProp",
+            "summary": "Experience luxury living at Brickell Bay Club — one of Miami’s most iconic waterfront residences. Enjoy sweeping bay and city skyline views, resort-style amenities, and unbeatable access to Brickell City Centre, restaurants, and nightlife.",
+            "price": {
+                "from": 300,
+                "currency": "USD"
+            },
+            "images": [
+                "https://assets.guesty.com/image/upload/v1729089138/production/666b3af27fc6d5653142b0af/rbd6ledyy3p3ktrrlxnr.jpg",
+                "https://assets.guesty.com/image/upload/v1729089154/production/666b3af27fc6d5653142b0af/me0osevkx28wb09ngkle.jpg",
+                "https://assets.guesty.com/image/upload/v1729089183/production/666b3af27fc6d5653142b0af/xjitduixgsbrru0mfjt2.jpg",
+                "https://assets.guesty.com/image/upload/v1729089126/production/666b3af27fc6d5653142b0af/njycg2dbyykyxmsac0ty.jpg",
+                "https://assets.guesty.com/image/upload/v1729089126/production/666b3af27fc6d5653142b0af/ayrincblpbtscqxgejab.jpg",
+                "https://assets.guesty.com/image/upload/v1729089133/production/666b3af27fc6d5653142b0af/pbca7myyhhji9fjyfnjn.jpg",
+                "https://assets.guesty.com/image/upload/v1729089132/production/666b3af27fc6d5653142b0af/tonq7sb4iicrbeqgt2oy.jpg",
+                "https://assets.guesty.com/image/upload/v1729089052/production/666b3af27fc6d5653142b0af/ggh1yxwxn5h7mtu6n2jm.jpg",
+                "https://assets.guesty.com/image/upload/v1729089073/production/666b3af27fc6d5653142b0af/w8nzwkdnpocovb43o8hq.jpg",
+                "https://assets.guesty.com/image/upload/v1729089049/production/666b3af27fc6d5653142b0af/t867i7vrfbptbjtxo3sb.jpg",
+                "https://assets.guesty.com/image/upload/v1729089137/production/666b3af27fc6d5653142b0af/q4ipr5cap876vuwvs9lx.jpg",
+                "https://assets.guesty.com/image/upload/v1729089199/production/666b3af27fc6d5653142b0af/jkdqow5rbzqohzqlzj7a.jpg",
+                "https://assets.guesty.com/image/upload/v1729179707/production/666b3af27fc6d5653142b0af/f0avbpd9ycf7bfvb3hnl.jpg",
+                "https://assets.guesty.com/image/upload/v1729179705/production/666b3af27fc6d5653142b0af/owdkirofeqnplxf3p35h.jpg",
+                "https://assets.guesty.com/image/upload/v1729179730/production/666b3af27fc6d5653142b0af/kdnqyghmxoyoca9gvwav.jpg",
+                "https://assets.guesty.com/image/upload/v1729179730/production/666b3af27fc6d5653142b0af/vk5ohcyq4decgfopqcoi.jpg",
+                "https://assets.guesty.com/image/upload/v1729179744/production/666b3af27fc6d5653142b0af/bxs7izsotnrcj7qmg6uw.jpg",
+                "https://assets.guesty.com/image/upload/v1729179789/production/666b3af27fc6d5653142b0af/bzhnom2gvbuizmzparqg.jpg",
+                "https://assets.guesty.com/image/upload/v1729179727/production/666b3af27fc6d5653142b0af/ndlnvi78rufkbgux55zk.jpg",
+                "https://assets.guesty.com/image/upload/v1729179722/production/666b3af27fc6d5653142b0af/jnovxvjcbtmrvraw25sr.jpg",
+                "https://assets.guesty.com/image/upload/v1729179709/production/666b3af27fc6d5653142b0af/elye8ei8r9ghlgbgiixu.jpg",
+                "https://assets.guesty.com/image/upload/v1729179699/production/666b3af27fc6d5653142b0af/m0z4zgwqd6askjbvzkz1.jpg",
+                "https://assets.guesty.com/image/upload/v1729179732/production/666b3af27fc6d5653142b0af/dycc1j1ipwthaarllocp.jpg",
+                "https://assets.guesty.com/image/upload/v1729179735/production/666b3af27fc6d5653142b0af/imhe6o11qp0vl6fuoil6.jpg"
+            ],
+            "rooms": [
+                {
+                    "type": "Stylish 1BR – Brickell Bay Club",
+                    "guests": 4,
+                    "guestyid": "66e876b98cb1f00010ea8ad5",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 Queen bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "Living Room Sofa bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 150,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1729089138/production/666b3af27fc6d5653142b0af/rbd6ledyy3p3ktrrlxnr.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089154/production/666b3af27fc6d5653142b0af/me0osevkx28wb09ngkle.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089183/production/666b3af27fc6d5653142b0af/xjitduixgsbrru0mfjt2.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089126/production/666b3af27fc6d5653142b0af/njycg2dbyykyxmsac0ty.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089126/production/666b3af27fc6d5653142b0af/ayrincblpbtscqxgejab.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089133/production/666b3af27fc6d5653142b0af/pbca7myyhhji9fjyfnjn.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089132/production/666b3af27fc6d5653142b0af/tonq7sb4iicrbeqgt2oy.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089052/production/666b3af27fc6d5653142b0af/ggh1yxwxn5h7mtu6n2jm.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089073/production/666b3af27fc6d5653142b0af/w8nzwkdnpocovb43o8hq.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089049/production/666b3af27fc6d5653142b0af/t867i7vrfbptbjtxo3sb.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089137/production/666b3af27fc6d5653142b0af/q4ipr5cap876vuwvs9lx.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089199/production/666b3af27fc6d5653142b0af/jkdqow5rbzqohzqlzj7a.jpg"
+                    ]
+                },
+                {
+                    "type": "Modern 1BR – Brickell Bay Club",
+                    "guests": 4,
+                    "guestyid": "66e87b1317f98200115bfb55",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "2 Air Matress bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 150,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1729179707/production/666b3af27fc6d5653142b0af/f0avbpd9ycf7bfvb3hnl.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179705/production/666b3af27fc6d5653142b0af/owdkirofeqnplxf3p35h.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179730/production/666b3af27fc6d5653142b0af/kdnqyghmxoyoca9gvwav.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179730/production/666b3af27fc6d5653142b0af/vk5ohcyq4decgfopqcoi.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179744/production/666b3af27fc6d5653142b0af/bxs7izsotnrcj7qmg6uw.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179789/production/666b3af27fc6d5653142b0af/bzhnom2gvbuizmzparqg.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179727/production/666b3af27fc6d5653142b0af/ndlnvi78rufkbgux55zk.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179722/production/666b3af27fc6d5653142b0af/jnovxvjcbtmrvraw25sr.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179709/production/666b3af27fc6d5653142b0af/elye8ei8r9ghlgbgiixu.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179699/production/666b3af27fc6d5653142b0af/m0z4zgwqd6askjbvzkz1.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179732/production/666b3af27fc6d5653142b0af/dycc1j1ipwthaarllocp.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179735/production/666b3af27fc6d5653142b0af/imhe6o11qp0vl6fuoil6.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "dodgers-1",
+            "title": "OneLuxStay near Dodgers Stadium",
+            "address": "Placeholder Address, Los Angeles, CA",
+            "location": {
+                "city": "Los Angeles",
+                "neighborhood": "Dodgers Stadium Area",
+                "area": "Echo Park"
+            },
+            "badge": "Prime LA Location",
+            "rating": 9.5,
+            "reviews": 1200,
+            "url": "losangelesProp",
+            "summary": "Placeholder summary for Dodgers Stadium listing. You can update this section later with real property descriptions.",
+            "price": {
+                "from": 320,
+                "currency": "USD"
+            },
+            "images": [
+                "https://assets.guesty.com/image/upload/v1733508972/production/666b3af27fc6d5653142b0af/zoq1hz9uccvvonxkdfzh.jpg",
+                "https://assets.guesty.com/image/upload/v1733508971/production/666b3af27fc6d5653142b0af/zlcsyviddwlcd9lkebs8.jpg",
+                "https://assets.guesty.com/image/upload/v1733508971/production/666b3af27fc6d5653142b0af/vjtrrnibdknyzkexl7nu.jpg",
+                "https://assets.guesty.com/image/upload/v1733508963/production/666b3af27fc6d5653142b0af/karfsy5urw0mzk2ewvcl.jpg",
+                "https://assets.guesty.com/image/upload/v1733508968/production/666b3af27fc6d5653142b0af/ndhdv6ugofef18wqqwm0.jpg",
+                "https://assets.guesty.com/image/upload/v1733508969/production/666b3af27fc6d5653142b0af/oglccqclg7nsxioumf6i.jpg",
+                "https://assets.guesty.com/image/upload/v1733508963/production/666b3af27fc6d5653142b0af/dg2sdlyfk3zptywlbove.jpg",
+                "https://assets.guesty.com/image/upload/v1733508963/production/666b3af27fc6d5653142b0af/u3lpzdbzuumrhbjaja4n.jpg",
+                "https://assets.guesty.com/image/upload/v1733508984/production/666b3af27fc6d5653142b0af/pvfmfclcf8e6z60xozge.jpg",
+                "https://assets.guesty.com/image/upload/v1733508976/production/666b3af27fc6d5653142b0af/ow6dpuedn4atpadgiewm.jpg",
+                "https://assets.guesty.com/image/upload/v1733508967/production/666b3af27fc6d5653142b0af/qbqxd53j0h62qfzctcca.jpg",
+                "https://assets.guesty.com/image/upload/v1733508984/production/666b3af27fc6d5653142b0af/auug47edbmeqfix4m74c.jpg",
+                "https://assets.guesty.com/image/upload/v1733508985/production/666b3af27fc6d5653142b0af/kd6quasj2f4ksputrlg4.jpg"
+            ],
+            "rooms": [
+                {
+                    "type": "Stylish 2BR Near Dodger Stadium by OneLuxStay",
+                    "guests": 4,
+                    "guestyid": "66e40927a0e79b00110e1661",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King Bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "1 Queen Bed"
+                        },
+                        {
+                            "bedroom": 3,
+                            "beds": "Living Room Sofa Bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 350,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1733508972/production/666b3af27fc6d5653142b0af/zoq1hz9uccvvonxkdfzh.jpg",
+                        "https://assets.guesty.com/image/upload/v1733508971/production/666b3af27fc6d5653142b0af/zlcsyviddwlcd9lkebs8.jpg",
+                        "https://assets.guesty.com/image/upload/v1733508971/production/666b3af27fc6d5653142b0af/vjtrrnibdknyzkexl7nu.jpg",
+                        "https://assets.guesty.com/image/upload/v1733508963/production/666b3af27fc6d5653142b0af/karfsy5urw0mzk2ewvcl.jpg",
+                        "https://assets.guesty.com/image/upload/v1733508968/production/666b3af27fc6d5653142b0af/ndhdv6ugofef18wqqwm0.jpg",
+                        "https://assets.guesty.com/image/upload/v1733508969/production/666b3af27fc6d5653142b0af/oglccqclg7nsxioumf6i.jpg",
+                        "https://assets.guesty.com/image/upload/v1733508963/production/666b3af27fc6d5653142b0af/dg2sdlyfk3zptywlbove.jpg",
+                        "https://assets.guesty.com/image/upload/v1733508963/production/666b3af27fc6d5653142b0af/u3lpzdbzuumrhbjaja4n.jpg",
+                        "https://assets.guesty.com/image/upload/v1733508984/production/666b3af27fc6d5653142b0af/pvfmfclcf8e6z60xozge.jpg",
+                        "https://assets.guesty.com/image/upload/v1733508976/production/666b3af27fc6d5653142b0af/ow6dpuedn4atpadgiewm.jpg",
+                        "https://assets.guesty.com/image/upload/v1733508967/production/666b3af27fc6d5653142b0af/qbqxd53j0h62qfzctcca.jpg",
+                        "https://assets.guesty.com/image/upload/v1733508984/production/666b3af27fc6d5653142b0af/auug47edbmeqfix4m74c.jpg",
+                        "https://assets.guesty.com/image/upload/v1733508985/production/666b3af27fc6d5653142b0af/kd6quasj2f4ksputrlg4.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "hwh-suites-4",
+            "title": "OneLuxStay Downtown LA Suites",
+            "address": "Placeholder Address, Downtown LA, CA",
+            "location": {
+                "city": "Los Angeles",
+                "neighborhood": "Downtown Los Angeles",
+                "area": "Chinatown"
+            },
+            "badge": "Downtown Los Angeles",
+            "rating": 9.4,
+            "reviews": 980,
+            "url": "losangelesProp",
+            "summary": "A fully renovated historic building in DTLA, will provide an experience like no other. The Rooftop lounge area features a sundeck with outdoor showers and BBQ area for the day, and a saltwater pool with jacuzzis, fire pits, and telescopes for stargazing the LA sky grace the roof for the evening.",
+            "price": {
+                "from": 290,
+                "currency": "USD"
+            },
+            "images": [
+                "https://assets.guesty.com/image/upload/v1729880292/production/666b3af27fc6d5653142b0af/blcezruagaqhzxm1w3lw.jpg",
+                "https://assets.guesty.com/image/upload/v1729880306/production/666b3af27fc6d5653142b0af/onvsx8trugc8vjkw1z6k.jpg",
+                "https://assets.guesty.com/image/upload/v1729880302/production/666b3af27fc6d5653142b0af/sv4jnghykco4ujlmwcu2.jpg",
+                "https://assets.guesty.com/image/upload/v1729880304/production/666b3af27fc6d5653142b0af/qdy9q2zjbe0ph5izypeu.jpg",
+                "https://assets.guesty.com/image/upload/v1729880313/production/666b3af27fc6d5653142b0af/egxy8tqrynbzvevprtav.jpg",
+                "https://assets.guesty.com/image/upload/v1729880312/production/666b3af27fc6d5653142b0af/ndd3tvu5sfmfv6bvpkne.jpg",
+                "https://assets.guesty.com/image/upload/v1729880319/production/666b3af27fc6d5653142b0af/n65svsbkgoxtyya0xobx.jpg",
+                "https://assets.guesty.com/image/upload/v1729880281/production/666b3af27fc6d5653142b0af/pgifbypnm1hl1xhndsgy.jpg",
+                "https://assets.guesty.com/image/upload/v1729880288/production/666b3af27fc6d5653142b0af/rukwiskbwjfi6tcpumov.jpg",
+                "https://assets.guesty.com/image/upload/v1729880337/production/666b3af27fc6d5653142b0af/ogwd4xiiefqw9ksgnlds.jpg",
+                "https://assets.guesty.com/image/upload/v1729880382/production/666b3af27fc6d5653142b0af/ebitg85yz2bdsaqj3tdm.jpg",
+                "https://assets.guesty.com/image/upload/v1729880382/production/666b3af27fc6d5653142b0af/ebitg85yz2bdsaqj3tdm.jpg",
+                "https://assets.guesty.com/image/upload/v1729880449/production/666b3af27fc6d5653142b0af/yjvhihtsff6lgdifsale.jpg"
+            ],
+            "rooms": [
+                {
+                    "type": "Stylish 1BR At HWH by OneLuxStay",
+                    "guests": 2,
+                    "guestyid": "66e1e3875a1f6300d736f28e",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 Queen Bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 260,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1729880292/production/666b3af27fc6d5653142b0af/blcezruagaqhzxm1w3lw.jpg",
+                        "https://assets.guesty.com/image/upload/v1729880306/production/666b3af27fc6d5653142b0af/onvsx8trugc8vjkw1z6k.jpg",
+                        "https://assets.guesty.com/image/upload/v1729880302/production/666b3af27fc6d5653142b0af/sv4jnghykco4ujlmwcu2.jpg",
+                        "https://assets.guesty.com/image/upload/v1729880304/production/666b3af27fc6d5653142b0af/qdy9q2zjbe0ph5izypeu.jpg",
+                        "https://assets.guesty.com/image/upload/v1729880313/production/666b3af27fc6d5653142b0af/egxy8tqrynbzvevprtav.jpg",
+                        "https://assets.guesty.com/image/upload/v1729880312/production/666b3af27fc6d5653142b0af/ndd3tvu5sfmfv6bvpkne.jpg",
+                        "https://assets.guesty.com/image/upload/v1729880319/production/666b3af27fc6d5653142b0af/n65svsbkgoxtyya0xobx.jpg",
+                        "https://assets.guesty.com/image/upload/v1729880281/production/666b3af27fc6d5653142b0af/pgifbypnm1hl1xhndsgy.jpg",
+                        "https://assets.guesty.com/image/upload/v1729880288/production/666b3af27fc6d5653142b0af/rukwiskbwjfi6tcpumov.jpg",
+                        "https://assets.guesty.com/image/upload/v1729880337/production/666b3af27fc6d5653142b0af/ogwd4xiiefqw9ksgnlds.jpg",
+                        "https://assets.guesty.com/image/upload/v1729880382/production/666b3af27fc6d5653142b0af/ebitg85yz2bdsaqj3tdm.jpg",
+                        "https://assets.guesty.com/image/upload/v1729880382/production/666b3af27fc6d5653142b0af/ebitg85yz2bdsaqj3tdm.jpg",
+                        "https://assets.guesty.com/image/upload/v1729880449/production/666b3af27fc6d5653142b0af/yjvhihtsff6lgdifsale.jpg"
+                    ]
+                },
+                {
+                    "type": "Stylish Deluxe 1BR At HWH by OneLuxStay",
+                    "guests": 3,
+                    "guestyid": "66e2f7710119af001391b08f",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 Queen Bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "Living Room Sofa Bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 260,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1730116946/production/666b3af27fc6d5653142b0af/vhzwqemfvhek3ofahevh.jpg",
+                        "https://assets.guesty.com/image/upload/v1730116971/production/666b3af27fc6d5653142b0af/ofmwd6knehxvg0fz9bfa.jpg",
+                        "https://assets.guesty.com/image/upload/v1730116972/production/666b3af27fc6d5653142b0af/l0npit6ihajcxsom1io6.jpg",
+                        "https://assets.guesty.com/image/upload/v1730116994/production/666b3af27fc6d5653142b0af/lbk3swojzxadnduih3mm.jpg",
+                        "https://assets.guesty.com/image/upload/v1730116994/production/666b3af27fc6d5653142b0af/kzzzjvpmk6zsvadzrl6p.jpg",
+                        "https://assets.guesty.com/image/upload/v1730117000/production/666b3af27fc6d5653142b0af/yqq80wuedzmjnjnql5jp.jpg",
+                        "https://assets.guesty.com/image/upload/v1730116995/production/666b3af27fc6d5653142b0af/tvgxtbtparzrejruiqcz.jpg",
+                        "https://assets.guesty.com/image/upload/v1730117003/production/666b3af27fc6d5653142b0af/t9gace14gmbgxydccpum.jpg",
+                        "https://assets.guesty.com/image/upload/v1730117006/production/666b3af27fc6d5653142b0af/kbd0ao1wbwuokvahtnnh.jpg",
+                        "https://assets.guesty.com/image/upload/v1730117126/production/666b3af27fc6d5653142b0af/vtmaziz4skmvidkjdi0b.jpg",
+                        "https://assets.guesty.com/image/upload/v1730117150/production/666b3af27fc6d5653142b0af/ivwyiggofyr6eptk0oea.jpg"
+                    ]
+                },
+                {
+                    "type": "Stylish 2BR/1BA at HWH by OneLuxStay",
+                    "guests": 4,
+                    "guestyid": "66e32ea43751f2001243a847",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 Queen Bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "1 Queen Bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 260,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1730118305/production/666b3af27fc6d5653142b0af/ffcghkb2udhlvvic1ioq.jpg",
+                        "https://assets.guesty.com/image/upload/v1730118319/production/666b3af27fc6d5653142b0af/ljltzpwfrkextydmuzus.jpg",
+                        "https://assets.guesty.com/image/upload/v1730118321/production/666b3af27fc6d5653142b0af/zqzyurcby54qefc2mhor.jpg",
+                        "https://assets.guesty.com/image/upload/v1730118326/production/666b3af27fc6d5653142b0af/sy6xorydkaju5nmqhpu3.jpg",
+                        "https://assets.guesty.com/image/upload/v1730118267/production/666b3af27fc6d5653142b0af/acnfjdl3i4uhpbee1t79.jpg",
+                        "https://assets.guesty.com/image/upload/v1730118376/production/666b3af27fc6d5653142b0af/mbxyvpvq7g81jbtg78gr.jpg",
+                        "https://assets.guesty.com/image/upload/v1730118387/production/666b3af27fc6d5653142b0af/uyh7gpwf3uqk6crj3lgu.jpg",
+                        "https://assets.guesty.com/image/upload/v1730118390/production/666b3af27fc6d5653142b0af/qn0p3grleiyhsxu7ef3e.jpg",
+                        "https://assets.guesty.com/image/upload/v1730118393/production/666b3af27fc6d5653142b0af/gxz7cmgp8tfirulu2cmm.jpg",
+                        "https://assets.guesty.com/image/upload/v1730118393/production/666b3af27fc6d5653142b0af/wtuzj4ceipucsyenbqyb.jpg",
+                        "https://assets.guesty.com/image/upload/v1730117126/production/666b3af27fc6d5653142b0af/vtmaziz4skmvidkjdi0b.jpg",
+                        "https://assets.guesty.com/image/upload/v1730117150/production/666b3af27fc6d5653142b0af/ivwyiggofyr6eptk0oea.jpg"
+                    ]
+                },
+                {
+                    "type": "Stylish 2BR/2BA At HWH by OneLuxStay",
+                    "guests": 4,
+                    "guestyid": "66e3bd82536929001303452f",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 Queen Bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "1 Queen Bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 260,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1730118996/production/666b3af27fc6d5653142b0af/lbolfb0ev3bv5qh1znv9.jpg",
+                        "https://assets.guesty.com/image/upload/v1730118962/production/666b3af27fc6d5653142b0af/a9amblelwfv18ak6ugfj.jpg",
+                        "https://assets.guesty.com/image/upload/v1730118979/production/666b3af27fc6d5653142b0af/w3j5uvethcixm91ksvln.jpg",
+                        "https://assets.guesty.com/image/upload/v1730118981/production/666b3af27fc6d5653142b0af/c2bv0va0gxceuukg3q4f.jpg",
+                        "https://assets.guesty.com/image/upload/v1730119042/production/666b3af27fc6d5653142b0af/v1ubsxo6pygtji9jz8nr.jpg",
+                        "https://assets.guesty.com/image/upload/v1730119042/production/666b3af27fc6d5653142b0af/epgr2zoe3mkuigrqfzkg.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "hollywood-5",
+            "title": "OneLuxStay Hollywood",
+            "address": "Hollywood, CA",
+            "location": {
+                "city": "Los Angeles",
+                "neighborhood": "Hollywood Hills",
+                "area": "Walk of Fame"
+            },
+            "badge": "Walk of Fame",
+            "rating": 9.3,
+            "reviews": 890,
+            "url": "losangelesProp",
+            "summary": "A luxurious Hollywood BNB description should highlight exclusive amenities, stylish design, and a prime location to attract affluent travelers",
+            "price": {
+                "from": 250,
+                "currency": "USD"
+            },
+            "images": [
+                "https://assets.guesty.com/image/upload/v1729697658/production/666b3af27fc6d5653142b0af/kq0guwngflmtrihxmurs.jpg",
+                "https://assets.guesty.com/image/upload/v1729697658/production/666b3af27fc6d5653142b0af/kq0guwngflmtrihxmurs.jpg",
+                "https://assets.guesty.com/image/upload/v1729697693/production/666b3af27fc6d5653142b0af/w3jslobvqu8tcafydhsc.jpg",
+                "https://assets.guesty.com/image/upload/v1729697704/production/666b3af27fc6d5653142b0af/ae3nckwnem1vldjevpig.jpg",
+                "https://assets.guesty.com/image/upload/v1729697631/production/666b3af27fc6d5653142b0af/lnaepi4yswioz8teba8w.jpg",
+                "https://assets.guesty.com/image/upload/v1729697658/production/666b3af27fc6d5653142b0af/akt9eaisnnp5aeebkhy6.jpg",
+                "https://assets.guesty.com/image/upload/v1729697673/production/666b3af27fc6d5653142b0af/ouoj7gfj6rmbgillqc1c.jpg",
+                "https://assets.guesty.com/image/upload/v1729697775/production/666b3af27fc6d5653142b0af/kmfjhdzr9evvgmewp0g1.jpg",
+                "https://assets.guesty.com/image/upload/v1729697775/production/666b3af27fc6d5653142b0af/h3qvtnqafp6nl0e4isdd.jpg",
+                "https://assets.guesty.com/image/upload/v1729697768/production/666b3af27fc6d5653142b0af/tbdtzivfxanafusddtcq.jpg",
+                "https://assets.guesty.com/image/upload/v1729697786/production/666b3af27fc6d5653142b0af/skk12jcxue8b4oaxk8ak.jpg",
+                "https://assets.guesty.com/image/upload/v1729697794/production/666b3af27fc6d5653142b0af/dgeqcztrt9nnv3ybcvy3.jpg"
+            ],
+            "rooms": [
+                {
+                    "type": "2 Bedroom Apartment with Hollywood Sign View by OneLuxStay",
+                    "guests": 5,
+                    "guestyid": "66e85a13902eec0011ec7c81",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King Bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "1 Queen Bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 260,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1729697658/production/666b3af27fc6d5653142b0af/kq0guwngflmtrihxmurs.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697658/production/666b3af27fc6d5653142b0af/kq0guwngflmtrihxmurs.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697693/production/666b3af27fc6d5653142b0af/w3jslobvqu8tcafydhsc.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697704/production/666b3af27fc6d5653142b0af/ae3nckwnem1vldjevpig.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697631/production/666b3af27fc6d5653142b0af/lnaepi4yswioz8teba8w.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697658/production/666b3af27fc6d5653142b0af/akt9eaisnnp5aeebkhy6.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697673/production/666b3af27fc6d5653142b0af/ouoj7gfj6rmbgillqc1c.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697775/production/666b3af27fc6d5653142b0af/kmfjhdzr9evvgmewp0g1.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697775/production/666b3af27fc6d5653142b0af/h3qvtnqafp6nl0e4isdd.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697768/production/666b3af27fc6d5653142b0af/tbdtzivfxanafusddtcq.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697786/production/666b3af27fc6d5653142b0af/skk12jcxue8b4oaxk8ak.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697794/production/666b3af27fc6d5653142b0af/dgeqcztrt9nnv3ybcvy3.jpg"
+                    ]
+                },
+                {
+                    "type": "2 Bedroom in Hollywood with Pool View by OneLuxStay",
+                    "guests": 5,
+                    "guestyid": "66e85deca8a40a00145be974",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King Bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "1 Queen Bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 260,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1729698123/production/666b3af27fc6d5653142b0af/gbfnbuvqtbreaw3100fk.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698128/production/666b3af27fc6d5653142b0af/pzmuyxg83s7hgui06qii.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698141/production/666b3af27fc6d5653142b0af/drvkanrqzhrbd5hbyxxj.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698136/production/666b3af27fc6d5653142b0af/onye3nm5fmta8ztncxwx.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698109/production/666b3af27fc6d5653142b0af/y1yp7biew08g6pe8atpt.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698136/production/666b3af27fc6d5653142b0af/pffej6glfqo4lvlg1kb6.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698158/production/666b3af27fc6d5653142b0af/vgqlt43boiu60sl6ttug.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698175/production/666b3af27fc6d5653142b0af/yz4b7hsipnxl2nlc3qwi.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698176/production/666b3af27fc6d5653142b0af/qpmisf4pjddwfikfxe0k.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698183/production/666b3af27fc6d5653142b0af/z0b6anaiua76hry1mpvk.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698189/production/666b3af27fc6d5653142b0af/xtsipidhzgbopnkkfmyb.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698196/production/666b3af27fc6d5653142b0af/alpos8aid5qnlszjeld2.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698188/production/666b3af27fc6d5653142b0af/npduwkmr0ykgdz4y2n2w.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698209/production/666b3af27fc6d5653142b0af/jni1fbbytqas8d5isk7e.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698196/production/666b3af27fc6d5653142b0af/ii2bggslaioe2wez1ilb.jpg"
+                    ]
+                },
+                {
+                    "type": "3 Bedroom in Hollywood with Hollywood Sign View by OneLuxStay",
+                    "guests": 6,
+                    "guestyid": "66e8609683fcfd0013a6cd03",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King Bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "1 Queen Bed"
+                        },
+                        {
+                            "bedroom": 3,
+                            "beds": "1 Queen Bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 260,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1729698598/production/666b3af27fc6d5653142b0af/l5brbx7tkcyh8n3pgr1j.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698577/production/666b3af27fc6d5653142b0af/ngqyffrt65bnggpsqh3m.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698598/production/666b3af27fc6d5653142b0af/at1j16rqji4epdet5xna.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698577/production/666b3af27fc6d5653142b0af/cbxzontue96oouwaryyr.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698675/production/666b3af27fc6d5653142b0af/rjzwe8l7rmhl5khvw1uw.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698675/production/666b3af27fc6d5653142b0af/qxjmqi2kqhntqj6aqio4.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698585/production/666b3af27fc6d5653142b0af/xn8mz9u24jbvkwfznnkt.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698658/production/666b3af27fc6d5653142b0af/o53rvdibermbdqjf2mcy.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698666/production/666b3af27fc6d5653142b0af/rc8q4dl8a6ron3h05rk5.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698661/production/666b3af27fc6d5653142b0af/mmsiojhrqk7k8d9u9cix.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698570/production/666b3af27fc6d5653142b0af/fozo3xd4szje7xal8lek.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698646/production/666b3af27fc6d5653142b0af/maljh33hhky80vufmrvf.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698630/production/666b3af27fc6d5653142b0af/i5kza740x2p6eovvluhs.jpg"
+                    ]
+                },
+                {
+                    "type": "3 Bedroom in Hollywood with Hollywood Sign View by OneLuxStay",
+                    "guests": 6,
+                    "guestyid": "66e8609683fcfd0013a6cd03",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King Bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "1 Queen Bed"
+                        },
+                        {
+                            "bedroom": 3,
+                            "beds": "1 Queen Bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 260,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1729698598/production/666b3af27fc6d5653142b0af/l5brbx7tkcyh8n3pgr1j.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698577/production/666b3af27fc6d5653142b0af/ngqyffrt65bnggpsqh3m.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698598/production/666b3af27fc6d5653142b0af/at1j16rqji4epdet5xna.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698577/production/666b3af27fc6d5653142b0af/cbxzontue96oouwaryyr.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698675/production/666b3af27fc6d5653142b0af/rjzwe8l7rmhl5khvw1uw.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698675/production/666b3af27fc6d5653142b0af/qxjmqi2kqhntqj6aqio4.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698585/production/666b3af27fc6d5653142b0af/xn8mz9u24jbvkwfznnkt.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698658/production/666b3af27fc6d5653142b0af/o53rvdibermbdqjf2mcy.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698666/production/666b3af27fc6d5653142b0af/rc8q4dl8a6ron3h05rk5.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698661/production/666b3af27fc6d5653142b0af/mmsiojhrqk7k8d9u9cix.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698570/production/666b3af27fc6d5653142b0af/fozo3xd4szje7xal8lek.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698646/production/666b3af27fc6d5653142b0af/maljh33hhky80vufmrvf.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698630/production/666b3af27fc6d5653142b0af/i5kza740x2p6eovvluhs.jpg"
+                    ]
+                },
+                {
+                    "type": "2 Bedroom Apartment in Hollywood with City View by OneLuxStay",
+                    "guests": 5,
+                    "guestyid": "67c87c999136c80011b09c77",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King Bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "1 Queen Bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 260,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1729697700/production/666b3af27fc6d5653142b0af/zshaun668dbn6vlfjc60.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697711/production/666b3af27fc6d5653142b0af/rpueg4sikoydxlksnwns.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697694/production/666b3af27fc6d5653142b0af/uvlwnj4l7d2g7q8m4auu.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697631/production/666b3af27fc6d5653142b0af/lnaepi4yswioz8teba8w.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697691/production/666b3af27fc6d5653142b0af/qoh1d9tx9tb2tqlzfijw.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697775/production/666b3af27fc6d5653142b0af/kmfjhdzr9evvgmewp0g1.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697775/production/666b3af27fc6d5653142b0af/h3qvtnqafp6nl0e4isdd.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697768/production/666b3af27fc6d5653142b0af/tbdtzivfxanafusddtcq.jpg"
+                    ]
+                },
+                {
+                    "type": "1 Bedroom Apartment in Hollywood by OneLuxStay",
+                    "guests": 5,
+                    "guestyid": "68238ce5bf3cce0021033c30",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 Queen Bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "Living Room Sofa Bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 260,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1751444464/production/666b3af27fc6d5653142b0af/sejz0dlbcgrgnrablmrm.jpg",
+                        "https://assets.guesty.com/image/upload/v1751444482/production/666b3af27fc6d5653142b0af/z00bqe54ljr3p7csyu8c.jpg",
+                        "https://assets.guesty.com/image/upload/v1751444473/production/666b3af27fc6d5653142b0af/oglky5aqgivfd8doem75.jpg",
+                        "https://assets.guesty.com/image/upload/v1751444464/production/666b3af27fc6d5653142b0af/camjqpkjgmynpjineal9.jpg",
+                        "https://assets.guesty.com/image/upload/v1751444446/production/666b3af27fc6d5653142b0af/tj9arx4hmomgtqysj0tl.jpg",
+                        "https://assets.guesty.com/image/upload/v1751444541/production/666b3af27fc6d5653142b0af/ft3q9rnvclly4j98lyrn.jpg",
+                        "https://assets.guesty.com/image/upload/v1751444710/production/666b3af27fc6d5653142b0af/mszlgtxe7pbcbh7iicdz.jpg",
+                        "https://assets.guesty.com/image/upload/v1751444715/production/666b3af27fc6d5653142b0af/gasf8dzwcesnnhfomyoo.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "downtown-la-chinatown-2",
+            "title": "One Lux Stay – Downtown Los Angeles Near Chinatown",
+            "address": "Downtown Los Angeles – Chinatown District, Los Angeles, CA",
+            "location": {
+                "city": "Los Angeles",
+                "neighborhood": "Downtown LA",
+                "area": "Chinatown"
+            },
+            "badge": "Near Chinatown",
+            "rating": 9.6,
+            "reviews": 1320,
+            "url": "downtown-la-chinatown-2",
+            "summary": "Modern luxury stay in Downtown Los Angeles, just steps from Chinatown, Union Station, and top cultural landmarks. Perfect for guests seeking a stylish urban base with easy access to nightlife, dining, and business hubs.",
+            "price": {
+                "from": 420,
+                "currency": "USD"
+            },
+            "images": [
+                "https://assets.guesty.com/image/upload/v1733506487/production/666b3af27fc6d5653142b0af/cn3kogx6qjzqvg1mtisu.jpg",
+                "https://assets.guesty.com/image/upload/v1733506487/production/666b3af27fc6d5653142b0af/vounciguul936tbcbnwc.jpg",
+                "https://assets.guesty.com/image/upload/v1733506486/production/666b3af27fc6d5653142b0af/hweyukh7lqdbn42vvhoq.jpg",
+                "https://assets.guesty.com/image/upload/v1733506490/production/666b3af27fc6d5653142b0af/sx9otctnp0xlevbe380b.jpg",
+                "https://assets.guesty.com/image/upload/v1733506497/production/666b3af27fc6d5653142b0af/xb6tqdcweja9qlgxl1bc.jpg",
+                "https://assets.guesty.com/image/upload/v1733506501/production/666b3af27fc6d5653142b0af/dayjedhpucxl4xms20hv.jpg",
+                "https://assets.guesty.com/image/upload/v1733506497/production/666b3af27fc6d5653142b0af/fatsblsl2bhgf5ylppxx.jpg",
+                "https://assets.guesty.com/image/upload/v1733506490/production/666b3af27fc6d5653142b0af/gerbsujsgpvsvcwzwdhr.jpg",
+                "https://assets.guesty.com/image/upload/v1733506489/production/666b3af27fc6d5653142b0af/no3x4mj8qiplrhcaidat.jpg",
+                "https://assets.guesty.com/image/upload/v1733506493/production/666b3af27fc6d5653142b0af/qr9jenz4pxtpos0jsh0d.jpg",
+                "https://assets.guesty.com/image/upload/v1729697027/production/666b3af27fc6d5653142b0af/jmi3qbqlgzdahn9zguin.jpg",
+                "https://assets.guesty.com/image/upload/v1733506497/production/666b3af27fc6d5653142b0af/pgieicdt4d7ysapupqvh.jpg",
+                "https://assets.guesty.com/image/upload/v1733506496/production/666b3af27fc6d5653142b0af/xsjreqqqerpwocpjpros.jpg"
+            ],
+            "rooms": [
+                {
+                    "type": "Stylish 1BR Family Apartment by DTLA",
+                    "guests": 4,
+                    "guestyid": "66e8886fc4856b0011256a7e",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King Bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "Living Room Sofa Bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 450,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1733506487/production/666b3af27fc6d5653142b0af/cn3kogx6qjzqvg1mtisu.jpg",
+                        "https://assets.guesty.com/image/upload/v1733506487/production/666b3af27fc6d5653142b0af/vounciguul936tbcbnwc.jpg",
+                        "https://assets.guesty.com/image/upload/v1733506486/production/666b3af27fc6d5653142b0af/hweyukh7lqdbn42vvhoq.jpg",
+                        "https://assets.guesty.com/image/upload/v1733506490/production/666b3af27fc6d5653142b0af/sx9otctnp0xlevbe380b.jpg",
+                        "https://assets.guesty.com/image/upload/v1733506497/production/666b3af27fc6d5653142b0af/xb6tqdcweja9qlgxl1bc.jpg",
+                        "https://assets.guesty.com/image/upload/v1733506501/production/666b3af27fc6d5653142b0af/dayjedhpucxl4xms20hv.jpg",
+                        "https://assets.guesty.com/image/upload/v1733506497/production/666b3af27fc6d5653142b0af/fatsblsl2bhgf5ylppxx.jpg",
+                        "https://assets.guesty.com/image/upload/v1733506490/production/666b3af27fc6d5653142b0af/gerbsujsgpvsvcwzwdhr.jpg",
+                        "https://assets.guesty.com/image/upload/v1733506489/production/666b3af27fc6d5653142b0af/no3x4mj8qiplrhcaidat.jpg",
+                        "https://assets.guesty.com/image/upload/v1733506493/production/666b3af27fc6d5653142b0af/qr9jenz4pxtpos0jsh0d.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697027/production/666b3af27fc6d5653142b0af/jmi3qbqlgzdahn9zguin.jpg",
+                        "https://assets.guesty.com/image/upload/v1733506497/production/666b3af27fc6d5653142b0af/pgieicdt4d7ysapupqvh.jpg",
+                        "https://assets.guesty.com/image/upload/v1733506496/production/666b3af27fc6d5653142b0af/xsjreqqqerpwocpjpros.jpg"
+                    ]
+                },
+                {
+                    "type": "Stylish 2BR Family Apartment by DTLA",
+                    "guests": 5,
+                    "guestyid": "66e88bf666f853000edfbe47",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King Bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "1 Queen Bed"
+                        },
+                        {
+                            "bedroom": 3,
+                            "beds": "Living Room Sofa Bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 450,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1733503769/production/666b3af27fc6d5653142b0af/hv7dsbvi3sbvibwf6cm9.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503767/production/666b3af27fc6d5653142b0af/fqmqme0mdcbamy3v62rj.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503787/production/666b3af27fc6d5653142b0af/hjadx4yirqqofjl5upxs.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503751/production/666b3af27fc6d5653142b0af/aoxum7vydlwcnxlfjtsk.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503761/production/666b3af27fc6d5653142b0af/bfxeksmanwhfldqclndr.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503772/production/666b3af27fc6d5653142b0af/bxdneiykxyjpbttkmqba.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503793/production/666b3af27fc6d5653142b0af/rj3hxgxftifmo2zwiajl.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503769/production/666b3af27fc6d5653142b0af/vfmcbusqwp9pan9fu8ex.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503767/production/666b3af27fc6d5653142b0af/pg1ulpdpzrnm99smigq9.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503748/production/666b3af27fc6d5653142b0af/xcx8thevcxrctw2yrep4.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503764/production/666b3af27fc6d5653142b0af/botkb2kzem2kafg0po0m.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503772/production/666b3af27fc6d5653142b0af/g77magkxirggweteucof.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503777/production/666b3af27fc6d5653142b0af/zdxq8fve7leyhcyuosxi.jpg"
+                    ]
+                },
+                {
+                    "type": "Stylish 2BR Deluxe Family Apartment by DTLA",
+                    "guests": 5,
+                    "guestyid": "691b844f8b32740013bc7c2c",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 Queen Bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "1 King Bed"
+                        },
+                        {
+                            "bedroom": 3,
+                            "beds": "Living Room Sofa Bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 450,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1733503769/production/666b3af27fc6d5653142b0af/hv7dsbvi3sbvibwf6cm9.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503767/production/666b3af27fc6d5653142b0af/fqmqme0mdcbamy3v62rj.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503787/production/666b3af27fc6d5653142b0af/hjadx4yirqqofjl5upxs.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503751/production/666b3af27fc6d5653142b0af/aoxum7vydlwcnxlfjtsk.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503761/production/666b3af27fc6d5653142b0af/bfxeksmanwhfldqclndr.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503772/production/666b3af27fc6d5653142b0af/bxdneiykxyjpbttkmqba.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503769/production/666b3af27fc6d5653142b0af/vfmcbusqwp9pan9fu8ex.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503767/production/666b3af27fc6d5653142b0af/pg1ulpdpzrnm99smigq9.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503748/production/666b3af27fc6d5653142b0af/xcx8thevcxrctw2yrep4.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503764/production/666b3af27fc6d5653142b0af/botkb2kzem2kafg0po0m.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503772/production/666b3af27fc6d5653142b0af/g77magkxirggweteucof.jpg",
+                        "https://assets.guesty.com/image/upload/v1733503777/production/666b3af27fc6d5653142b0af/zdxq8fve7leyhcyuosxi.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "dubai-downtown-1",
+            "title": "One Lux Stay Grande Signature Residences",
+            "address": "Downtown Dubai, UAE",
+            "location": {
+                "city": "Dubai",
+                "neighborhood": "Downtown Dubai Central",
+                "area": "Near Burj Khalifa"
+            },
+            "badge": "Exceptional location",
+            "rating": 9.7,
+            "reviews": 2000,
+            "url": "dubaiProp",
+            "summary": "With a prestigious spot alongside Dubai Opera, Grande Signature Residences only a 4-minute walk to The Dubai Mall, 3-minute walk to the Burj Khalifa and a 2-minute stroll to Dubai Opera. What's more, you can reach DIFC and all the major highways of Dubai within just 5 minutes.",
+            "price": {
+                "from": 400,
+                "currency": "AED"
+            },
+            "images": [
+                "https://assets.guesty.com/image/upload/v1734471111/production/666b3af27fc6d5653142b0af/r7gvjbchkqhijshvsnwe.jpg",
+                "https://assets.guesty.com/image/upload/v1734471100/production/666b3af27fc6d5653142b0af/unrhbjadnigkjth8gmpf.jpg",
+                "https://assets.guesty.com/image/upload/v1734471025/production/666b3af27fc6d5653142b0af/epz5tdiyjezrjw1zka6a.jpg",
+                "https://assets.guesty.com/image/upload/v1732915599/production/666b3af27fc6d5653142b0af/d6gssokthezsgkhxselp.jpg",
+                "https://assets.guesty.com/image/upload/v1732915239/production/666b3af27fc6d5653142b0af/nwtrcv06j3nr9qtaocmv.jpg",
+                "https://assets.guesty.com/image/upload/v1732915289/production/666b3af27fc6d5653142b0af/spt9cwertdhzn4vgacd7.jpg",
+                "https://assets.guesty.com/image/upload/v1732915044/production/666b3af27fc6d5653142b0af/yiah9dh6ja7b9cddxjx9.jpg",
+                "https://assets.guesty.com/image/upload/v1732915024/production/666b3af27fc6d5653142b0af/ksjhk00lcinsin9dcdk9.jpg",
+                "https://assets.guesty.com/image/upload/v1732915268/production/666b3af27fc6d5653142b0af/oxwjo1dpctjjgkrwxpoe.jpg",
+                "https://assets.guesty.com/image/upload/v1732915502/production/666b3af27fc6d5653142b0af/r4h0yzxzbjsirfh77ygb.jpg",
+                "https://assets.guesty.com/image/upload/v1732915462/production/666b3af27fc6d5653142b0af/kwjmlxf7n8qb8nuynglp.jpg",
+                "https://assets.guesty.com/image/upload/v1732915472/production/666b3af27fc6d5653142b0af/i0noah2imatn84rflgtz.jpg",
+                "https: //assets.guesty.com/image/upload/v1734471377/production/666b3af27fc6d5653142b0af/amkhbpjzsyxlfh3mduck.jpg",
+                "https: //assets.guesty.com/image/upload/v1734471382/production/666b3af27fc6d5653142b0af/blnsbotichjiacqgcmwy.jpg",
+                "https: //assets.guesty.com/image/upload/v1735568485/production/666b3af27fc6d5653142b0af/dgysehy3vgyt5zebdy6l.jpg",
+                "https: //assets.guesty.com/image/upload/v1735568477/production/666b3af27fc6d5653142b0af/yagv8dryqulqkahgdeia.jpg",
+                "https: //assets.guesty.com/image/upload/v1735568495/production/666b3af27fc6d5653142b0af/jjb1pmh8t1oefdhvkmgz.jpg",
+                "https: //assets.guesty.com/image/upload/v1735568494/production/666b3af27fc6d5653142b0af/u3gyfgs0ibllg82u9esf.jpg",
+                "https: //assets.guesty.com/image/upload/v1735568489/production/666b3af27fc6d5653142b0af/himn0bxspoxtfeeq2kps.jpg",
+                "https: //assets.guesty.com/image/upload/v1735568477/production/666b3af27fc6d5653142b0af/w8ekcz05hxilnle2ycca.jpg",
+                "https: //assets.guesty.com/image/upload/v1734471419/production/666b3af27fc6d5653142b0af/kcs3r0edupo1hzddai6t.jpg",
+                "https: //assets.guesty.com/image/upload/v1735568487/production/666b3af27fc6d5653142b0af/h5xzcbcnlvglxpsqi0mw.jpg",
+                "https: //assets.guesty.com/image/upload/v1734471443/production/666b3af27fc6d5653142b0af/ryaobaa6atm0kewiwaxm.jpg"
+            ],
+            "rooms": [
+                {
+                    "type": "Luxury 4BR 3BA One Lux Stay Grande Signature Residences",
+                    "guests": 7,
+                    "guestyid": "67250a7e6cafcb0013e9cb18",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "2 Queen beds"
+                        },
+                        {
+                            "bedroom": 3,
+                            "beds": "2 Single beds"
+                        },
+                        {
+                            "bedroom": 4,
+                            "beds": "Maids Room 1 Single bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 3650,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1734471111/production/666b3af27fc6d5653142b0af/r7gvjbchkqhijshvsnwe.jpg",
+                        "https://assets.guesty.com/image/upload/v1734471100/production/666b3af27fc6d5653142b0af/unrhbjadnigkjth8gmpf.jpg",
+                        "https://assets.guesty.com/image/upload/v1734471025/production/666b3af27fc6d5653142b0af/epz5tdiyjezrjw1zka6a.jpg",
+                        "https://assets.guesty.com/image/upload/v1732915599/production/666b3af27fc6d5653142b0af/d6gssokthezsgkhxselp.jpg",
+                        "https://assets.guesty.com/image/upload/v1732915239/production/666b3af27fc6d5653142b0af/nwtrcv06j3nr9qtaocmv.jpg",
+                        "https://assets.guesty.com/image/upload/v1732915289/production/666b3af27fc6d5653142b0af/spt9cwertdhzn4vgacd7.jpg",
+                        "https://assets.guesty.com/image/upload/v1732915044/production/666b3af27fc6d5653142b0af/yiah9dh6ja7b9cddxjx9.jpg",
+                        "https://assets.guesty.com/image/upload/v1732915024/production/666b3af27fc6d5653142b0af/ksjhk00lcinsin9dcdk9.jpg",
+                        "https://assets.guesty.com/image/upload/v1732915268/production/666b3af27fc6d5653142b0af/oxwjo1dpctjjgkrwxpoe.jpg",
+                        "https://assets.guesty.com/image/upload/v1732915502/production/666b3af27fc6d5653142b0af/r4h0yzxzbjsirfh77ygb.jpg",
+                        "https://assets.guesty.com/image/upload/v1732915462/production/666b3af27fc6d5653142b0af/kwjmlxf7n8qb8nuynglp.jpg",
+                        "https://assets.guesty.com/image/upload/v1732915472/production/666b3af27fc6d5653142b0af/i0noah2imatn84rflgtz.jpg"
+                    ]
+                },
+                {
+                    "type": "Luxury 2BR 2BA One Lux Stay Grande Signature Residences",
+                    "guests": 5,
+                    "guestyid": "67460cc0416b6d0013781721",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "2 Queen beds"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 400,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1734471377/production/666b3af27fc6d5653142b0af/amkhbpjzsyxlfh3mduck.jpg",
+                        "https://assets.guesty.com/image/upload/v1734471382/production/666b3af27fc6d5653142b0af/blnsbotichjiacqgcmwy.jpg",
+                        "https://assets.guesty.com/image/upload/v1735568485/production/666b3af27fc6d5653142b0af/dgysehy3vgyt5zebdy6l.jpg",
+                        "https://assets.guesty.com/image/upload/v1735568477/production/666b3af27fc6d5653142b0af/yagv8dryqulqkahgdeia.jpg",
+                        "https://assets.guesty.com/image/upload/v1735568495/production/666b3af27fc6d5653142b0af/jjb1pmh8t1oefdhvkmgz.jpg",
+                        "https://assets.guesty.com/image/upload/v1735568494/production/666b3af27fc6d5653142b0af/u3gyfgs0ibllg82u9esf.jpg",
+                        "https://assets.guesty.com/image/upload/v1735568489/production/666b3af27fc6d5653142b0af/himn0bxspoxtfeeq2kps.jpg",
+                        "https://assets.guesty.com/image/upload/v1735568477/production/666b3af27fc6d5653142b0af/w8ekcz05hxilnle2ycca.jpg",
+                        "https://assets.guesty.com/image/upload/v1734471419/production/666b3af27fc6d5653142b0af/kcs3r0edupo1hzddai6t.jpg",
+                        "https://assets.guesty.com/image/upload/v1735568487/production/666b3af27fc6d5653142b0af/h5xzcbcnlvglxpsqi0mw.jpg",
+                        "https://assets.guesty.com/image/upload/v1734471443/production/666b3af27fc6d5653142b0af/ryaobaa6atm0kewiwaxm.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "antwerp-central-5",
+            "title": "OneLuxStay near Antwerp Central",
+            "address": "Lange Leemstraat Center, Antwerp",
+            "location": {
+                "city": "Antwerp",
+                "neighborhood": "Antwerp Center",
+                "area": "Near Central Station"
+            },
+            "badge": "Exceptional location",
+            "rating": 9.7,
+            "reviews": 2000,
+            "url": "antwerpProp",
+            "summary": "Welcome to One Lux Stay Near Antwerp Central.  Located in the vibrant heart of Antwerp, One Lux Stay offers modern, stylish accommodations just moments away from the city’s most iconic attractions—including the MAS Museum, Astrid Square, and Antwerp Zoo. You’ll also enjoy easy access to renowned shopping streets and cultural hotspots like Meir and Groenplaats.",
+            "price": {
+                "from": 280,
+                "currency": "EUR"
+            },
+            "images": [
+                "https://assets.guesty.com/image/upload/v1746655195/production/666b3af27fc6d5653142b0af/xdittrsj6j4mffxldtj3.jpg",
+                "https://assets.guesty.com/image/upload/v1746655198/production/666b3af27fc6d5653142b0af/ozyivx4ykbs590vhxehl.jpg",
+                "https://assets.guesty.com/image/upload/v1746655197/production/666b3af27fc6d5653142b0af/gv8aatuqy7hzseewlfsb.jpg",
+                "https://assets.guesty.com/image/upload/v1746655201/production/666b3af27fc6d5653142b0af/dtmcnquqsgq9hqqozvc3.jpg",
+                "https://assets.guesty.com/image/upload/v1747518329/production/666b3af27fc6d5653142b0af/hvvymfne036j2chi5gla.jpg",
+                "https://assets.guesty.com/image/upload/v1747518334/production/666b3af27fc6d5653142b0af/l57v5kyhlumqtcg7dxrb.jpg",
+                "https://assets.guesty.com/image/upload/v1747518324/production/666b3af27fc6d5653142b0af/w9sejeumi2ek5wxhansk.jpg",
+                "https://assets.guesty.com/image/upload/v1747518329/production/666b3af27fc6d5653142b0af/h12uooauerdt1bbp4qsu.jpg",
+                "https://assets.guesty.com/image/upload/v1747518319/production/666b3af27fc6d5653142b0af/zch3fcv4hl8pusavxahg.jpg",
+                "https://assets.guesty.com/image/upload/v1747518329/production/666b3af27fc6d5653142b0af/m97nu89p53qqg4hpsghv.jpg",
+                "https://assets.guesty.com/image/upload/v1747518334/production/666b3af27fc6d5653142b0af/bwhxf9fbjq8rsfup4h04.jpg",
+                "https://assets.guesty.com/image/upload/v1747518334/production/666b3af27fc6d5653142b0af/yu1pk0qwc2avfiigs7cb.jpg",
+                "https://assets.guesty.com/image/upload/v1747518319/production/666b3af27fc6d5653142b0af/cowfqegmuf7iyqm5xanp.jpg"
+            ],
+            "rooms": [
+                {
+                    "type": "One Lux Stay Near Antwerp Central Grande Deluxe 3 bedroom suite",
+                    "guests": 6,
+                    "guestyid": "6811675405d52b0010c3fae5",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "2 Queen beds"
+                        },
+                        {
+                            "bedroom": 3,
+                            "beds": "1 King bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 350,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1747518329/production/666b3af27fc6d5653142b0af/hvvymfne036j2chi5gla.jpg",
+                        "https://assets.guesty.com/image/upload/v1747518334/production/666b3af27fc6d5653142b0af/l57v5kyhlumqtcg7dxrb.jpg",
+                        "https://assets.guesty.com/image/upload/v1747518324/production/666b3af27fc6d5653142b0af/w9sejeumi2ek5wxhansk.jpg",
+                        "https://assets.guesty.com/image/upload/v1747518329/production/666b3af27fc6d5653142b0af/h12uooauerdt1bbp4qsu.jpg",
+                        "https://assets.guesty.com/image/upload/v1747518319/production/666b3af27fc6d5653142b0af/zch3fcv4hl8pusavxahg.jpg",
+                        "https://assets.guesty.com/image/upload/v1747518329/production/666b3af27fc6d5653142b0af/m97nu89p53qqg4hpsghv.jpg",
+                        "https://assets.guesty.com/image/upload/v1747518334/production/666b3af27fc6d5653142b0af/bwhxf9fbjq8rsfup4h04.jpg",
+                        "https://assets.guesty.com/image/upload/v1747518334/production/666b3af27fc6d5653142b0af/yu1pk0qwc2avfiigs7cb.jpg",
+                        "https://assets.guesty.com/image/upload/v1747518319/production/666b3af27fc6d5653142b0af/cowfqegmuf7iyqm5xanp.jpg"
+                    ]
+                },
+                {
+                    "type": "One Lux Stay Near Antwerp Central - 3 Bedroom 1.5 Bathroom",
+                    "guests": 6,
+                    "guestyid": "67a37db6314411002c6c4e10",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King Bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "2 Single Beds"
+                        },
+                        {
+                            "bedroom": 3,
+                            "beds": "2 Single Beds"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 380,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1747518329/production/666b3af27fc6d5653142b0af/hvvymfne036j2chi5gla.jpg",
+                        "https://assets.guesty.com/image/upload/v1747518334/production/666b3af27fc6d5653142b0af/l57v5kyhlumqtcg7dxrb.jpg",
+                        "https://assets.guesty.com/image/upload/v1747518324/production/666b3af27fc6d5653142b0af/w9sejeumi2ek5wxhansk.jpg",
+                        "https://assets.guesty.com/image/upload/v1747518329/production/666b3af27fc6d5653142b0af/h12uooauerdt1bbp4qsu.jpg",
+                        "https://assets.guesty.com/image/upload/v1747518319/production/666b3af27fc6d5653142b0af/zch3fcv4hl8pusavxahg.jpg",
+                        "https://assets.guesty.com/image/upload/v1747518329/production/666b3af27fc6d5653142b0af/m97nu89p53qqg4hpsghv.jpg",
+                        "https://assets.guesty.com/image/upload/v1747518334/production/666b3af27fc6d5653142b0af/bwhxf9fbjq8rsfup4h04.jpg",
+                        "https://assets.guesty.com/image/upload/v1747518334/production/666b3af27fc6d5653142b0af/yu1pk0qwc2avfiigs7cb.jpg",
+                        "https://assets.guesty.com/image/upload/v1747518319/production/666b3af27fc6d5653142b0af/cowfqegmuf7iyqm5xanp.jpg"
+                    ]
+                },
+                {
+                    "type": "One Lux Stay Near Antwerp Central - 3 Bedroom 2 full bathrooms",
+                    "guests": 6,
+                    "guestyid": "6811502ba32aee000eebcef5",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 king bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "2 Single beds"
+                        },
+                        {
+                            "bedroom": 3,
+                            "beds": "2 Single beds"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 420,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1747519135/production/666b3af27fc6d5653142b0af/hfjlae6bklsnbhkyr46j.jpg",
+                        "https://assets.guesty.com/image/upload/v1747519135/production/666b3af27fc6d5653142b0af/wuk3mcz5dqeyt3n9y5rh.jpg",
+                        "https://assets.guesty.com/image/upload/v1747519140/production/666b3af27fc6d5653142b0af/c8ipr1z1fymzdkhrkx6m.jpg",
+                        "https://assets.guesty.com/image/upload/v1747519140/production/666b3af27fc6d5653142b0af/ksetesjxwikfqs1khvzw.jpg",
+                        "https://assets.guesty.com/image/upload/v1747519143/production/666b3af27fc6d5653142b0af/u3gdtzaede1utrmxzuoy.jpg",
+                        "https://assets.guesty.com/image/upload/v1747519140/production/666b3af27fc6d5653142b0af/meeudpc4ez18krpv01ck.jpg",
+                        "https://assets.guesty.com/image/upload/v1747519143/production/666b3af27fc6d5653142b0af/auwerkvhdxaii0ddvjyx.jpg",
+                        "https://assets.guesty.com/image/upload/v1747519144/production/666b3af27fc6d5653142b0af/suan0mswab8yshiyr7by.jpg",
+                        "https://assets.guesty.com/image/upload/v1747519145/production/666b3af27fc6d5653142b0af/u4p8dhgef75ebxxvclie.jpg",
+                        "https://assets.guesty.com/image/upload/v1747519138/production/666b3af27fc6d5653142b0af/lzgsbvkc9irriqyowlso.jpg",
+                        "https://assets.guesty.com/image/upload/v1747519136/production/666b3af27fc6d5653142b0af/w2s6jikol3wwyvlpan26.jpg",
+                        "https://assets.guesty.com/image/upload/v1747519136/production/666b3af27fc6d5653142b0af/uqfp8e0mmcqqqcpde97i.jpg",
+                        "https://assets.guesty.com/image/upload/v1747519141/production/666b3af27fc6d5653142b0af/hi69dyqgwag5ys8vh9fx.jpg",
+                        "https://assets.guesty.com/image/upload/v1747519142/production/666b3af27fc6d5653142b0af/adodka2qk21vla5ieszz.jpg"
+                    ]
+                },
+                {
+                    "type": "One Lux Stay Near Antwerp Central - 2 Bedroom 1.5 Bathroom",
+                    "guests": 6,
+                    "guestyid": "689119ada230c60012c6cc45",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "2 Single beds"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 300,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1747520368/production/666b3af27fc6d5653142b0af/xmefmeaoi3nla534otbt.jpg",
+                        "https://assets.guesty.com/image/upload/v1747520370/production/666b3af27fc6d5653142b0af/gpcnbjh3vshiwg31g6rc.jpg",
+                        "https://assets.guesty.com/image/upload/v1747520363/production/666b3af27fc6d5653142b0af/ihcbdtwkdiaq9xyezgrs.jpg",
+                        "https://assets.guesty.com/image/upload/v1747520364/production/666b3af27fc6d5653142b0af/xtvxwrpjogjtbautwrex.jpg",
+                        "https://assets.guesty.com/image/upload/v1747520364/production/666b3af27fc6d5653142b0af/qv6ev1taz8olfttbnkev.jpg",
+                        "https://assets.guesty.com/image/upload/v1747520366/production/666b3af27fc6d5653142b0af/gfkzrufytdxvkarqm9cb.jpg",
+                        "https://assets.guesty.com/image/upload/v1747520366/production/666b3af27fc6d5653142b0af/hyuw7dvoitkcfchb06a4.jpg",
+                        "https://assets.guesty.com/image/upload/v1747520372/production/666b3af27fc6d5653142b0af/iupqzik8qqzkkscfmlgi.jpg",
+                        "https://assets.guesty.com/image/upload/v1747520363/production/666b3af27fc6d5653142b0af/sgsmqhdjhe0h6ij6cbfe.jpg",
+                        "https://assets.guesty.com/image/upload/v1747520361/production/666b3af27fc6d5653142b0af/flqtkx8vegyi9pa7w0om.jpg",
+                        "https://assets.guesty.com/image/upload/v1747520364/production/666b3af27fc6d5653142b0af/aghauzgswlcqv6qxneoq.jpg",
+                        "https://assets.guesty.com/image/upload/v1747520368/production/666b3af27fc6d5653142b0af/uwdhak5dhshsun2toywg.jpg"
+                    ]
+                },
+                {
+                    "type": "One Lux Stay Near Antwerp Central - Studio Apartment",
+                    "guests": 6,
+                    "guestyid": "67a37cffc99f430029d80908",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "2 Single beds"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 300,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1746655198/production/666b3af27fc6d5653142b0af/ozyivx4ykbs590vhxehl.jpg",
+                        "https://assets.guesty.com/image/upload/v1746655199/production/666b3af27fc6d5653142b0af/uuf3zzdfgseub8wrzpbz.jpg",
+                        "https://assets.guesty.com/image/upload/v1746655200/production/666b3af27fc6d5653142b0af/hktxjbaegqll82yhoduc.jpg",
+                        "https://assets.guesty.com/image/upload/v1746655197/production/666b3af27fc6d5653142b0af/gv8aatuqy7hzseewlfsb.jpg",
+                        "https://assets.guesty.com/image/upload/v1746655195/production/666b3af27fc6d5653142b0af/xdittrsj6j4mffxldtj3.jpg",
+                        "https://assets.guesty.com/image/upload/v1746655201/production/666b3af27fc6d5653142b0af/dtmcnquqsgq9hqqozvc3.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "antwerp-fashion-12",
+            "title": "OneLuxStay near Fashion District",
+            "address": "Lange Leemstraat, Antwerp",
+            "location": {
+                "city": "Antwerp",
+                "neighborhood": "Fashion District",
+                "area": "Boutique Shopping Streets"
+            },
+            "badge": "Prime Fashion Location",
+            "rating": 9.5,
+            "reviews": 1450,
+            "summary": "Our properties Located in Antwerp, close to MAS Museum Antwerp, Astrid Square and Antwerp Zoo, One lux stay at Antwerp City Center provides free WiFi. It is close to the Meir, and Groenplaats Antwerp.",
+            "price": {
+                "from": 250,
+                "currency": "EUR"
+            },
+            "images": [
+                "https://assets.guesty.com/image/upload/v1745513914/production/666b3af27fc6d5653142b0af/bgzno0g5jgamcaidxnwq.jpg",
+                "https://assets.guesty.com/image/upload/v1745513906/production/666b3af27fc6d5653142b0af/l1n1u6mofv7dguu9ocrd.jpg",
+                "https://assets.guesty.com/image/upload/v1745513897/production/666b3af27fc6d5653142b0af/oojx1n1xtyl8kxxydrrm.jpg",
+                "https://assets.guesty.com/image/upload/v1745513940/production/666b3af27fc6d5653142b0af/ieecodpd8xe6ndj8tvcw.jpg",
+                "https://assets.guesty.com/image/upload/v1745513908/production/666b3af27fc6d5653142b0af/dsqcddoyxinlgihw2vrt.jpg",
+                "https://assets.guesty.com/image/upload/v1745513885/production/666b3af27fc6d5653142b0af/ouoblh3orju9hdx6rk8l.jpg",
+                "https://assets.guesty.com/image/upload/v1745513891/production/666b3af27fc6d5653142b0af/npsbra2wowoskedaxvgt.jpg",
+                "https://assets.guesty.com/image/upload/v1745513920/production/666b3af27fc6d5653142b0af/ufehacjwv6kp3sdv8lmj.jpg",
+                "https://assets.guesty.com/image/upload/v1745513919/production/666b3af27fc6d5653142b0af/qutr0tlnupcc7iwwxreh.jpg",
+                "https://assets.guesty.com/image/upload/v1745513928/production/666b3af27fc6d5653142b0af/bgflfnbda8dyfgpvrqb3.jpg",
+                "https://assets.guesty.com/image/upload/v1745513940/production/666b3af27fc6d5653142b0af/hl0sa5ktext3urxot7yf.jpg",
+                "https://assets.guesty.com/image/upload/v1745513929/production/666b3af27fc6d5653142b0af/bewh4zuhzlydwmhizeid.jpg",
+                "https://assets.guesty.com/image/upload/v1728291025/production/666b3af27fc6d5653142b0af/xeofcpz58q610unzn0vx.jpg",
+                "https://assets.guesty.com/image/upload/v1728291024/production/666b3af27fc6d5653142b0af/opv4vajayd2ulrfcg3q1.jpg",
+                "https://assets.guesty.com/image/upload/v1728291024/production/666b3af27fc6d5653142b0af/bnvfyqe4rb4b0ohhfwo7.jpg",
+                "https://assets.guesty.com/image/upload/v1728291025/production/666b3af27fc6d5653142b0af/hwnznf4pnqs6gl2adxgr.jpg",
+                "https://assets.guesty.com/image/upload/v1728291025/production/666b3af27fc6d5653142b0af/l7hz7rb3psi8mowrqvcu.jpg",
+                "https://assets.guesty.com/image/upload/v1728291027/production/666b3af27fc6d5653142b0af/ruylylwihvp8sxaq14dj.jpg",
+                "https://assets.guesty.com/image/upload/v1752093747/production/666b3af27fc6d5653142b0af/xvr7ipp1orziymtdlmtm.jpg"
+            ],
+            "rooms": [
+                {
+                    "type": "Luxury 2BR 2BA Near Fashion District by OneLuxStay",
+                    "guests": 4,
+                    "guestyid": "66e85443a8a40a00145bb9ce",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 Double bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "1 Double bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 280,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1745510790/production/666b3af27fc6d5653142b0af/dp2eipfy51rfoie4fnoq.jpg",
+                        "https://assets.guesty.com/image/upload/v1745510758/production/666b3af27fc6d5653142b0af/kq4tvuqsedsrglmfhowt.jpg",
+                        "https://assets.guesty.com/image/upload/v1745510807/production/666b3af27fc6d5653142b0af/ffwfdmzu7dcqouz3uqrb.jpg",
+                        "https://assets.guesty.com/image/upload/v1745510782/production/666b3af27fc6d5653142b0af/nekdlmbo3ukl4snj5rxg.jpg",
+                        "https://assets.guesty.com/image/upload/v1745510904/production/666b3af27fc6d5653142b0af/yaavmrjthimldvijfyux.jpg",
+                        "https://assets.guesty.com/image/upload/v1745510856/production/666b3af27fc6d5653142b0af/ilgbh7wtwrv898qrjhww.jpg",
+                        "https://assets.guesty.com/image/upload/v1745510960/production/666b3af27fc6d5653142b0af/eu33rd1ukbexiexftncy.jpg",
+                        "https://assets.guesty.com/image/upload/v1745510928/production/666b3af27fc6d5653142b0af/nvzgxqjl7cjvph6a6ytw.jpg",
+                        "https://assets.guesty.com/image/upload/v1745510987/production/666b3af27fc6d5653142b0af/iipgdtrikwiwwgsftdux.jpg",
+                        "https://assets.guesty.com/image/upload/v1745510983/production/666b3af27fc6d5653142b0af/r6jjsuclsc4q0ptz2oob.jpg",
+                        "https://assets.guesty.com/image/upload/v1745511005/production/666b3af27fc6d5653142b0af/oanrgwszsw1tlz2fixsn.jpg",
+                        "https://assets.guesty.com/image/upload/v1745510987/production/666b3af27fc6d5653142b0af/hqs5wkt5k6zpqpea98y9.jpg"
+                    ]
+                },
+                {
+                    "type": "Luxury 2BR 1BA Near Fashion District by OneLuxStay",
+                    "guests": 4,
+                    "guestyid": "66e85329cabeeb001331087a",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 Queen bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "2 Double beds"
+                        },
+                        {
+                            "bedroom": 3,
+                            "beds": "Living Room Sofabed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 310,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1745513914/production/666b3af27fc6d5653142b0af/bgzno0g5jgamcaidxnwq.jpg",
+                        "https://assets.guesty.com/image/upload/v1745513906/production/666b3af27fc6d5653142b0af/l1n1u6mofv7dguu9ocrd.jpg",
+                        "https://assets.guesty.com/image/upload/v1745513897/production/666b3af27fc6d5653142b0af/oojx1n1xtyl8kxxydrrm.jpg",
+                        "https://assets.guesty.com/image/upload/v1745513940/production/666b3af27fc6d5653142b0af/ieecodpd8xe6ndj8tvcw.jpg",
+                        "https://assets.guesty.com/image/upload/v1745513908/production/666b3af27fc6d5653142b0af/dsqcddoyxinlgihw2vrt.jpg",
+                        "https://assets.guesty.com/image/upload/v1745513885/production/666b3af27fc6d5653142b0af/ouoblh3orju9hdx6rk8l.jpg",
+                        "https://assets.guesty.com/image/upload/v1745513891/production/666b3af27fc6d5653142b0af/npsbra2wowoskedaxvgt.jpg",
+                        "https://assets.guesty.com/image/upload/v1745513920/production/666b3af27fc6d5653142b0af/ufehacjwv6kp3sdv8lmj.jpg",
+                        "https://assets.guesty.com/image/upload/v1745513919/production/666b3af27fc6d5653142b0af/qutr0tlnupcc7iwwxreh.jpg",
+                        "https://assets.guesty.com/image/upload/v1745513928/production/666b3af27fc6d5653142b0af/bgflfnbda8dyfgpvrqb3.jpg",
+                        "https://assets.guesty.com/image/upload/v1745513940/production/666b3af27fc6d5653142b0af/hl0sa5ktext3urxot7yf.jpg",
+                        "https://assets.guesty.com/image/upload/v1745513929/production/666b3af27fc6d5653142b0af/bewh4zuhzlydwmhizeid.jpg"
+                    ]
+                },
+                {
+                    "type": "Luxury Dlx 1BR Near Fashion District by OneLuxStay",
+                    "guests": 4,
+                    "guestyid": "66e851144e166e00139af852",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "2 Single beds"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "Living Room Sofabed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 340,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1728299617/production/666b3af27fc6d5653142b0af/usbsalgcyugursxmxshg.jpg",
+                        "https://assets.guesty.com/image/upload/v1728299613/production/666b3af27fc6d5653142b0af/yx3nc0rsdmqzfgseyfmu.jpg",
+                        "https://assets.guesty.com/image/upload/v1728299622/production/666b3af27fc6d5653142b0af/iso2cspzl2gj7rynexgl.jpg",
+                        "https://assets.guesty.com/image/upload/v1728299619/production/666b3af27fc6d5653142b0af/wtwjmho8n8pvnjgyf5hv.jpg",
+                        "https://assets.guesty.com/image/upload/v1728299609/production/666b3af27fc6d5653142b0af/prwjxsgitthvlusyn9jh.jpg",
+                        "https://assets.guesty.com/image/upload/v1728299605/production/666b3af27fc6d5653142b0af/pdmbbanbxfcaoix03kqk.jpg",
+                        "https://assets.guesty.com/image/upload/v1728299600/production/666b3af27fc6d5653142b0af/xxstiidgvcln1ro4lkg4.jpg",
+                        "https://assets.guesty.com/image/upload/v1728299606/production/666b3af27fc6d5653142b0af/uhmh51rutqiaeflwf7lz.jpg",
+                        "https://assets.guesty.com/image/upload/v1728299552/production/666b3af27fc6d5653142b0af/semdd0hyjv6ahvqjpv0u.jpg",
+                        "https://assets.guesty.com/image/upload/v1728299552/production/666b3af27fc6d5653142b0af/pzb7zhxmvlsh0cpdveqg.jpg",
+                        "https://assets.guesty.com/image/upload/v1728299587/production/666b3af27fc6d5653142b0af/ez4kmrgkgjegoyqglaq9.jpg",
+                        "https://assets.guesty.com/image/upload/v1728299592/production/666b3af27fc6d5653142b0af/aem61gi2kxunt95xvxdm.jpg"
+                    ]
+                },
+                {
+                    "type": "Luxury 1BR Near Fashion District by OneLuxStay",
+                    "guests": 2,
+                    "guestyid": "66e84ff286eee700136a4a54",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "2 Single beds"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 340,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1728293043/production/666b3af27fc6d5653142b0af/zg8co2yzlbxkznprcrem.jpg",
+                        "https://assets.guesty.com/image/upload/v1728293043/production/666b3af27fc6d5653142b0af/bjt1iypr6wrpwsl6bdaw.jpg",
+                        "https://assets.guesty.com/image/upload/v1728293044/production/666b3af27fc6d5653142b0af/g300hr1ianzpquene5rb.jpg",
+                        "https://assets.guesty.com/image/upload/v1728293044/production/666b3af27fc6d5653142b0af/spqqnpffk0tqqqsbdeew.jpg",
+                        "https://assets.guesty.com/image/upload/v1728293044/production/666b3af27fc6d5653142b0af/atlvtj5uda8wzjopayyh.jpg",
+                        "https://assets.guesty.com/image/upload/v1728293048/production/666b3af27fc6d5653142b0af/ygx3sghyw28mrkxkcly0.jpg",
+                        "https://assets.guesty.com/image/upload/v1728293050/production/666b3af27fc6d5653142b0af/fkfwfzupdgcorsrvgjf7.jpg",
+                        "https://assets.guesty.com/image/upload/v1728293051/production/666b3af27fc6d5653142b0af/t5bp0abjxffnfaoifc9g.jpg",
+                        "https://assets.guesty.com/image/upload/v1728293051/production/666b3af27fc6d5653142b0af/sy72gclcj3vcwbsvcblf.jpg",
+                        "https://assets.guesty.com/image/upload/v1728293048/production/666b3af27fc6d5653142b0af/uxdvvepw6i4qe7dpklrh.jpg"
+                    ]
+                },
+                {
+                    "type": "Studio Suite Antwerp Fashion District by OneLuxStay",
+                    "guests": 2,
+                    "guestyid": "66e84dae4994a7009cbbdd70",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 Double bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 340,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1728291025/production/666b3af27fc6d5653142b0af/xeofcpz58q610unzn0vx.jpg",
+                        "https://assets.guesty.com/image/upload/v1728291024/production/666b3af27fc6d5653142b0af/opv4vajayd2ulrfcg3q1.jpg",
+                        "https://assets.guesty.com/image/upload/v1728291024/production/666b3af27fc6d5653142b0af/bnvfyqe4rb4b0ohhfwo7.jpg",
+                        "https://assets.guesty.com/image/upload/v1728291025/production/666b3af27fc6d5653142b0af/hwnznf4pnqs6gl2adxgr.jpg",
+                        "https://assets.guesty.com/image/upload/v1728291025/production/666b3af27fc6d5653142b0af/l7hz7rb3psi8mowrqvcu.jpg",
+                        "https://assets.guesty.com/image/upload/v1728291027/production/666b3af27fc6d5653142b0af/ruylylwihvp8sxaq14dj.jpg",
+                        "https://assets.guesty.com/image/upload/v1752093747/production/666b3af27fc6d5653142b0af/xvr7ipp1orziymtdlmtm.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "antwerp-centre-20",
+            "title": "OneLuxStay near Antwerp City Centre",
+            "address": "Kribbestraat, Antwerp",
+            "location": {
+                "city": "Antwerp",
+                "neighborhood": "Centre",
+                "area": "Cultural & Historic Hub"
+            },
+            "badge": "Cultural hotspot",
+            "rating": 9.4,
+            "reviews": 1600,
+            "summary": "The building is highly secure and has an elevator for your convenience. The super market is a 5 minute walk away and the tram is a 2 minutes away. Close to the city center, public transport and tons of dining options. This apartment is perfect for couples, solo adventurers and business travelers.",
+            "price": {
+                "from": 270,
+                "currency": "EUR"
+            },
+            "images": [
+                "https://assets.guesty.com/image/upload/v1740605563/production/666b3af27fc6d5653142b0af/bfjzlbsjkgiom4eibgou.jpg",
+                "https://assets.guesty.com/image/upload/v1740605600/production/666b3af27fc6d5653142b0af/odass87wnjtxezsujnaz.jpg",
+                "https://assets.guesty.com/image/upload/v1740605573/production/666b3af27fc6d5653142b0af/zl73arsts7xuz4ib446d.jpg",
+                "https://assets.guesty.com/image/upload/v1740605557/production/666b3af27fc6d5653142b0af/x5spa2kevo5p4no0ssib.jpg",
+                "https://assets.guesty.com/image/upload/v1740605563/production/666b3af27fc6d5653142b0af/sezskgqsrksrxhyhasfw.jpg",
+                "https://assets.guesty.com/image/upload/v1740605569/production/666b3af27fc6d5653142b0af/jrrfsaked0me1ujtsryt.jpg",
+                "https://assets.guesty.com/image/upload/v1740605643/production/666b3af27fc6d5653142b0af/le5swhkksrapvrzl6go5.jpg",
+                "https://assets.guesty.com/image/upload/v1740605733/production/666b3af27fc6d5653142b0af/hhmleptv1krpwvvthzwo.jpg",
+                "https://assets.guesty.com/image/upload/v1740605725/production/666b3af27fc6d5653142b0af/qqeqdfjh83pvksfandry.jpg",
+                "https://assets.guesty.com/image/upload/v1740605737/production/666b3af27fc6d5653142b0af/izl19u9x3ti7q7cyamt3.jpg",
+                "https://assets.guesty.com/image/upload/v1740605743/production/666b3af27fc6d5653142b0af/cxmi47oluwypeh6fvw9a.jpg",
+                "https://assets.guesty.com/image/upload/v1740605744/production/666b3af27fc6d5653142b0af/xnjyywflvhdlyhd1csxe.jpg"
+            ],
+            "rooms": [
+                {
+                    "type": "Cozy 1BR City Centre Near Meir Shopping by OneLuxStay",
+                    "guests": 3,
+                    "guestyid": "66e4864c4505490013bf16b5",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 Queen bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "Living Room Sofabed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 290,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1740605563/production/666b3af27fc6d5653142b0af/bfjzlbsjkgiom4eibgou.jpg",
+                        "https://assets.guesty.com/image/upload/v1740605600/production/666b3af27fc6d5653142b0af/odass87wnjtxezsujnaz.jpg",
+                        "https://assets.guesty.com/image/upload/v1740605573/production/666b3af27fc6d5653142b0af/zl73arsts7xuz4ib446d.jpg",
+                        "https://assets.guesty.com/image/upload/v1740605557/production/666b3af27fc6d5653142b0af/x5spa2kevo5p4no0ssib.jpg",
+                        "https://assets.guesty.com/image/upload/v1740605563/production/666b3af27fc6d5653142b0af/sezskgqsrksrxhyhasfw.jpg",
+                        "https://assets.guesty.com/image/upload/v1740605569/production/666b3af27fc6d5653142b0af/jrrfsaked0me1ujtsryt.jpg",
+                        "https://assets.guesty.com/image/upload/v1740605643/production/666b3af27fc6d5653142b0af/le5swhkksrapvrzl6go5.jpg",
+                        "https://assets.guesty.com/image/upload/v1740605733/production/666b3af27fc6d5653142b0af/hhmleptv1krpwvvthzwo.jpg",
+                        "https://assets.guesty.com/image/upload/v1740605725/production/666b3af27fc6d5653142b0af/qqeqdfjh83pvksfandry.jpg",
+                        "https://assets.guesty.com/image/upload/v1740605737/production/666b3af27fc6d5653142b0af/izl19u9x3ti7q7cyamt3.jpg",
+                        "https://assets.guesty.com/image/upload/v1740605743/production/666b3af27fc6d5653142b0af/cxmi47oluwypeh6fvw9a.jpg",
+                        "https://assets.guesty.com/image/upload/v1740605744/production/666b3af27fc6d5653142b0af/xnjyywflvhdlyhd1csxe.jpg"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "antwerp-diamond-30",
+            "title": "OneLuxStay near Diamond District",
+            "address": "Appelmansstraat 30, Diamond District, 2000 Antwerp, Belgium",
+            "location": {
+                "city": "Antwerp",
+                "neighborhood": "Diamond District",
+                "area": "Jewelry & Diamond Shops"
+            },
+            "badge": "Exclusive district",
+            "rating": 9.6,
+            "reviews": 1200,
+            "summary": "Stylish 2-bedroom apartment in Antwerp's Diamond District. Ideal for visitors exploring the world-famous jewelry shops and city attractions.",
+            "price": {
+                "from": 290,
+                "currency": "EUR"
+            },
+            "images": [
+                "https://assets.guesty.com/image/upload/v1728292768/production/666b3af27fc6d5653142b0af/vi1wuxug2sjwknjkutqa.jpg",
+                "https://assets.guesty.com/image/upload/v1728292768/production/666b3af27fc6d5653142b0af/kchf1b7va21qebasqwgw.jpg",
+                "https://assets.guesty.com/image/upload/v1728292770/production/666b3af27fc6d5653142b0af/lzbzwwdd6owmxzna4kpy.jpg",
+                "https://assets.guesty.com/image/upload/v1728292779/production/666b3af27fc6d5653142b0af/drnr2swoj0kgjrexnsfl.jpg",
+                "https://assets.guesty.com/image/upload/v1728292780/production/666b3af27fc6d5653142b0af/i9snaxeu28ofkr6vybuj.jpg",
+                "https://assets.guesty.com/image/upload/v1728293110/production/666b3af27fc6d5653142b0af/z7r1kg60ialdjhpiigiz.jpg",
+                "https://assets.guesty.com/image/upload/v1728293112/production/666b3af27fc6d5653142b0af/sxl36qtjrcg45m7hgjeu.jpg",
+                "https://assets.guesty.com/image/upload/v1728293101/production/666b3af27fc6d5653142b0af/auh5tqfhop1w17urvj7f.jpg",
+                "https://assets.guesty.com/image/upload/v1728293122/production/666b3af27fc6d5653142b0af/gtoixbje9fcir45rky9s.jpg",
+                "https://assets.guesty.com/image/upload/v1728293101/production/666b3af27fc6d5653142b0af/qtl49s1wqforigdqe5zk.jpg",
+                "https://assets.guesty.com/image/upload/v1728293328/production/666b3af27fc6d5653142b0af/uapmwxoy3awpw8ee6vwt.jpg",
+                "https://assets.guesty.com/image/upload/v1728293328/production/666b3af27fc6d5653142b0af/rtxtkjqn3htuzgqohv1p.jpg",
+                "https://assets.guesty.com/image/upload/v1728293325/production/666b3af27fc6d5653142b0af/bbkqjp9eumbdggh7ihsd.jpg"
+            ],
+            "rooms": [
+                {
+                    "type": "Spacious 3BR 2.5 BA Near Diamond District by OneLuxStay",
+                    "guests": 6,
+                    "guestyid": "66e849a74149880013d1be34",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 king bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "2 Single beds"
+                        },
+                        {
+                            "bedroom": 3,
+                            "beds": "2 Single beds"
+                        },
+                        {
+                            "bedroom": 4,
+                            "beds": "Living Room Sofabed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 320,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1745528333/production/666b3af27fc6d5653142b0af/kqnpjcgiy8vnavviqkgs.jpg",
+                        "https://assets.guesty.com/image/upload/v1745528338/production/666b3af27fc6d5653142b0af/ocwr4290jhmg5zauicgf.jpg",
+                        "https://assets.guesty.com/image/upload/v1745528325/production/666b3af27fc6d5653142b0af/p3o8a8jl2sms9frjr9qe.jpg",
+                        "https://assets.guesty.com/image/upload/v1745528308/production/666b3af27fc6d5653142b0af/p7peh3ug6o4gyjynftow.jpg",
+                        "https://assets.guesty.com/image/upload/v1745528312/production/666b3af27fc6d5653142b0af/hkihhvzkdylhbwo5fouq.jpg",
+                        "https://assets.guesty.com/image/upload/v1745528313/production/666b3af27fc6d5653142b0af/tlzr1dyugeyyl35exvbt.jpg",
+                        "https://assets.guesty.com/image/upload/v1745528321/production/666b3af27fc6d5653142b0af/blmf1c2jw5imezsoeepy.jpg",
+                        "https://assets.guesty.com/image/upload/v1745528322/production/666b3af27fc6d5653142b0af/wnn4pzjg4jiy7aljhcw3.jpg",
+                        "https://assets.guesty.com/image/upload/v1745528308/production/666b3af27fc6d5653142b0af/avtrozhygd89xqmxqmdf.jpg",
+                        "https://assets.guesty.com/image/upload/v1745528310/production/666b3af27fc6d5653142b0af/hgasg00enwvntzfdpira.jpg",
+                        "https://assets.guesty.com/image/upload/v1745528316/production/666b3af27fc6d5653142b0af/ntlnmbaclozrdqykivwf.jpg"
+                    ]
+                },
+                {
+                    "type": "Modern 2BR Penthouse Near Diamond District by OneLuxStay",
+                    "guests": 4,
+                    "guestyid": "66e848a86c89730012f1e5fb",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 king bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "2 bunk beds"
+                        },
+                        {
+                            "bedroom": 3,
+                            "beds": "Living Room Sofabed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 400,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1728288330/production/666b3af27fc6d5653142b0af/roqvk0ey4otg4y7xm1t1.jpg",
+                        "https://assets.guesty.com/image/upload/v1728288301/production/666b3af27fc6d5653142b0af/hjjdravqsaedhuizlgis.jpg",
+                        "https://assets.guesty.com/image/upload/v1728288301/production/666b3af27fc6d5653142b0af/e73umrkmbwscahmkpg5f.jpg",
+                        "https://assets.guesty.com/image/upload/v1728288714/production/666b3af27fc6d5653142b0af/nam0al4cirsxcksnjyqa.jpg",
+                        "https://assets.guesty.com/image/upload/v1728288715/production/666b3af27fc6d5653142b0af/zwocn5d7jhu7dku8gmyb.jpg",
+                        "https://assets.guesty.com/image/upload/v1728288723/production/666b3af27fc6d5653142b0af/kkwktrjafzmidhly8yxc.jpg",
+                        "https://assets.guesty.com/image/upload/v1728288703/production/666b3af27fc6d5653142b0af/peudum43chqrhyw5480v.jpg",
+                        "https://assets.guesty.com/image/upload/v1728288701/production/666b3af27fc6d5653142b0af/cbxmw0oll0xnesncoyv5.jpg",
+                        "https://assets.guesty.com/image/upload/v1728288707/production/666b3af27fc6d5653142b0af/apetfqutpj9umrds5py5.jpg",
+                        "https://assets.guesty.com/image/upload/v1728288732/production/666b3af27fc6d5653142b0af/v3jowi8qctcbbgi2nbj8.jpg",
+                        "https://assets.guesty.com/image/upload/v1728288739/production/666b3af27fc6d5653142b0af/oqrdokawy5sgu6xnjohx.jpg",
+                        "https://assets.guesty.com/image/upload/v1728288744/production/666b3af27fc6d5653142b0af/gfwn4e7z3lbvp197qbii.jpg",
+                        "https://assets.guesty.com/image/upload/v1728288745/production/666b3af27fc6d5653142b0af/bicymnr8hdxwphtsfjvo.jpg",
+                        "https://assets.guesty.com/image/upload/v1728288748/production/666b3af27fc6d5653142b0af/eyxtrv8rhatdkrj3kzyo.jpg",
+                        "https://assets.guesty.com/image/upload/v1728288756/production/666b3af27fc6d5653142b0af/crcvunmdbas2xrvs54vz.jpg",
+                        "https://assets.guesty.com/image/upload/v1728291101/production/666b3af27fc6d5653142b0af/oajaow5cuavri22qkyjk.jpg"
+                    ]
+                },
+                {
+                    "type": "Modern 2BR 1.5 BA Near Diamond District by OneLuxStay",
+                    "guests": 4,
+                    "guestyid": "66e84713e4904400128c4a90",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "2 Single Beds"
+                        },
+                        {
+                            "bedroom": 3,
+                            "beds": "Living Room Sofabed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 400,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1728292768/production/666b3af27fc6d5653142b0af/vi1wuxug2sjwknjkutqa.jpg",
+                        "https://assets.guesty.com/image/upload/v1728292768/production/666b3af27fc6d5653142b0af/kchf1b7va21qebasqwgw.jpg",
+                        "https://assets.guesty.com/image/upload/v1728292770/production/666b3af27fc6d5653142b0af/lzbzwwdd6owmxzna4kpy.jpg",
+                        "https://assets.guesty.com/image/upload/v1728292779/production/666b3af27fc6d5653142b0af/drnr2swoj0kgjrexnsfl.jpg",
+                        "https://assets.guesty.com/image/upload/v1728292780/production/666b3af27fc6d5653142b0af/i9snaxeu28ofkr6vybuj.jpg",
+                        "https://assets.guesty.com/image/upload/v1728293110/production/666b3af27fc6d5653142b0af/z7r1kg60ialdjhpiigiz.jpg",
+                        "https://assets.guesty.com/image/upload/v1728293112/production/666b3af27fc6d5653142b0af/sxl36qtjrcg45m7hgjeu.jpg",
+                        "https://assets.guesty.com/image/upload/v1728293101/production/666b3af27fc6d5653142b0af/auh5tqfhop1w17urvj7f.jpg",
+                        "https://assets.guesty.com/image/upload/v1728293122/production/666b3af27fc6d5653142b0af/gtoixbje9fcir45rky9s.jpg",
+                        "https://assets.guesty.com/image/upload/v1728293101/production/666b3af27fc6d5653142b0af/qtl49s1wqforigdqe5zk.jpg",
+                        "https://assets.guesty.com/image/upload/v1728293328/production/666b3af27fc6d5653142b0af/uapmwxoy3awpw8ee6vwt.jpg",
+                        "https://assets.guesty.com/image/upload/v1728293328/production/666b3af27fc6d5653142b0af/rtxtkjqn3htuzgqohv1p.jpg",
+                        "https://assets.guesty.com/image/upload/v1728293325/production/666b3af27fc6d5653142b0af/bbkqjp9eumbdggh7ihsd.jpg"
+                    ]
+                },
+                {
+                    "type": "Modern 1BR Near Diamond District by OneLuxStay",
+                    "guests": 2,
+                    "guestyid": "66e833c67fa4dc0099fbb0aa",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "Living Room Sofabed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 400,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1729963196/production/666b3af27fc6d5653142b0af/zgy9t3mrewkjgpefig4d.jpg",
+                        "https://assets.guesty.com/image/upload/v1729963185/production/666b3af27fc6d5653142b0af/gw9wmiqg9pbg5qeisnvt.jpg",
+                        "https://assets.guesty.com/image/upload/v1729963195/production/666b3af27fc6d5653142b0af/psqboruckbl7e90cpvjq.jpg",
+                        "https://assets.guesty.com/image/upload/v1729963186/production/666b3af27fc6d5653142b0af/ckhzokgm3f9pkr35govt.jpg",
+                        "https://assets.guesty.com/image/upload/v1729963173/production/666b3af27fc6d5653142b0af/enxsewcmowuk2p1o8nns.jpg",
+                        "https://assets.guesty.com/image/upload/v1729963186/production/666b3af27fc6d5653142b0af/klqomdim6wn9h4xbxkgd.jpg",
+                        "https://assets.guesty.com/image/upload/v1729963176/production/666b3af27fc6d5653142b0af/ovdaryzlqxl5ozy1svf6.jpg",
+                        "https://assets.guesty.com/image/upload/v1729963195/production/666b3af27fc6d5653142b0af/f6yjm5wakit6mowidyzr.jpg",
+                        "https://assets.guesty.com/image/upload/v1729963163/production/666b3af27fc6d5653142b0af/l4yhtqu3ryxe3mlq6dor.jpg",
+                        "https://assets.guesty.com/image/upload/v1729963164/production/666b3af27fc6d5653142b0af/yzenh9jxchx6ewvbhvtg.jpg"
+                    ]
+                }
+            ]
+        }
+    ]
+}

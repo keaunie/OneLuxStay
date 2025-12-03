@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="/" />
+    <title>One Lux Stay — Global Listings</title>
+    <meta name="description"
+        content="Discover One Lux Stay's luxury apartments across Antwerp, Miami, Dubai, Los Angeles, and more." />
+    <style>
+        :root {
+            --gold: #d4af37;
+            --ink: #0b0b0b;
+            --bg: #0f0f10;
+            --card: #151517;
+            --muted: #bdbdbd;
+            --ring: rgba(212, 175, 55, .35);
+            --radius: 16px;
+            --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+            --maxw: 1200px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+            color: #fff;
+            background:
+                radial-gradient(1800px 1000px at -20% -20%, rgba(212, 175, 55, 0.06), transparent 80%),
+                radial-gradient(1800px 1000px at 120% -20%, rgba(212, 175, 55, 0.06), transparent 80%),
+                linear-gradient(to bottom, rgba(212, 175, 55, 0.025) 0%, transparent 60%),
+                var(--bg);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        /* CARD WRAPPER */
+        .ols-pp-card-wrapper {
+            width: 100%;
+            padding: 10% 16px;
+            display: flex;
+            justify-content: center;
+            background: #000;
+            /* pure black SPA background */
+        }
+
+        /* CARD */
+        .ols-pp-card {
+            background: #111;
+            border-radius: 20px;
+            padding: 40px 32px;
+            max-width: 900px;
+            width: 100%;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            color: #fff;
+            /* white text */
+        }
+
+        /* TITLES */
+        .ols-pp-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--gold, #d4af37);
+            text-align: center;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .ols-pp-subtitle {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 32px;
+            letter-spacing: 0.1em;
+        }
+
+        /* CONTENT */
+        .ols-pp-content section {
+            margin-bottom: 28px;
+        }
+
+        .ols-pp-content h2 {
+            color: #f7e7c2;
+            /* soft gold */
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+        }
+
+        .ols-pp-content p,
+        .ols-pp-content li {
+            color: #fff;
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        .ols-pp-content ul {
+            margin-left: 20px;
+        }
+
+        .ols-pp-content a {
+            color: #d4af37;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+
+        .ols-pp-content a:hover {
+            border-bottom: 1px solid #d4af37;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            .ols-pp-card {
+                padding: 28px 22px;
+            }
+
+            /* CARD WRAPPER */
+            .ols-pp-card-wrapper {
+                padding: 20% 16px;
+            }
+
+            .ols-pp-title {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ols-pp-card-wrapper" data-component="ols-privacy-policy">
+
+        <div class="ols-pp-card">
+            <h1 class="ols-pp-title">Privacy Policy</h1>
+            <p class="ols-pp-subtitle">Last Updated: January 14, 2025</p>
+
+            <div class="ols-pp-content">
+
+                <section>
+                    <h2>Introduction</h2>
+                    <p>
+                        This Privacy Policy (“Policy”) explains how One Lux Stay (“we,” “us,” “our”) collects, uses,
+                        and protects your personal information when you use <strong>tgest.oneluxstay.com</strong> and
+                        related services.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Collection of Personal Information</h2>
+                    <p>We collect information you provide when creating an account, booking a stay, or filling forms:
+                    </p>
+                    <ul>
+                        <li>Name, email, phone number, and address</li>
+                        <li>Payment information (credit card, bank details)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Collection of Non-Personal Information</h2>
+                    <p>Your browser automatically sends:</p>
+                    <ul>
+                        <li>IP address, browser type, OS version</li>
+                        <li>Language settings, referring pages</li>
+                        <li>Date & time of access</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Use of Information</h2>
+                    <ul>
+                        <li>Personalize user experience</li>
+                        <li>Process bookings & payments</li>
+                        <li>Customer service</li>
+                        <li>Security improvements and troubleshooting</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Legal Basis</h2>
+                    <ul>
+                        <li><strong>Consent</strong></li>
+                        <li><strong>Contractual necessity</strong></li>
+                        <li><strong>Legitimate interests</strong></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Cookies</h2>
+                    <p>
+                        Our Website uses cookies to improve your browsing experience. You can disable cookies in your
+                        browser,
+                        but some features may not function properly.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Your Rights</h2>
+                    <ul>
+                        <li>Access, update, delete your data</li>
+                        <li>Data portability</li>
+                        <li>Limit or object to processing</li>
+                        <li>Withdraw consent at any time</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Sharing of Information</h2>
+                    <p>
+                        We share information with secure, trusted third-party partners only when necessary for:
+                    </p>
+                    <ul>
+                        <li>Payments</li>
+                        <li>Website functionality</li>
+                        <li>Legal compliance</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Data Retention</h2>
+                    <p>
+                        We retain your information only as long as required for legitimate business, legal, or
+                        operational purposes.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Children's Privacy</h2>
+                    <p>
+                        We do not knowingly collect information from individuals under the age of 16.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Information Security</h2>
+                    <p>
+                        We implement administrative, technical, and physical safeguards—but no method is 100% secure.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Data Breaches</h2>
+                    <p>If a breach occurs, we will:</p>
+                    <ul>
+                        <li>Investigate immediately</li>
+                        <li>Notify affected users (if required)</li>
+                        <li>Report to authorities when applicable</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Legal Disclosure</h2>
+                    <p>We may disclose data to comply with legal obligations or business transitions.</p>
+                </section>
+
+                <section>
+                    <h2>Acceptance</h2>
+                    <p>
+                        By using our Website, you acknowledge and accept this Privacy Policy.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Contact Us</h2>
+                    <p>
+                        Email: <a href="mailto:reservations@oneluxstay.com">reservations@oneluxstay.com</a><br>
+                    </p>
+
+                    <p>
+                        UAE: +971 557277059<br>
+                        USA: +1 2138663589<br>
+                        EU: +32 38080719
+                    </p>
+                </section>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

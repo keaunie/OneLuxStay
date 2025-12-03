@@ -1,0 +1,113 @@
+{
+    "properties": [
+        {
+            "id": "brickell-bay-club",
+            "title": "OneLuxStay — Brickell Bay Club Residences",
+            "address": "Brickell, Miami, FL 33129, USA",
+            "location": {
+                "city": "Miami",
+                "neighborhood": "Brickell",
+                "area": "Brickell Bay Waterfront"
+            },
+            "badge": "Skyline & Waterfront Views",
+            "rating": 9.6,
+            "reviews": 25,
+            "url": "miamiProp",
+            "summary": "Experience luxury living at Brickell Bay Club — one of Miami’s most iconic waterfront residences. Enjoy sweeping bay and city skyline views, resort-style amenities, and unbeatable access to Brickell City Centre, restaurants, and nightlife.",
+            "price": {
+                "from": 150,
+                "currency": "USD"
+            },
+            "images": [
+                "https://assets.guesty.com/image/upload/v1729089138/production/666b3af27fc6d5653142b0af/rbd6ledyy3p3ktrrlxnr.jpg",
+                "https://assets.guesty.com/image/upload/v1729089154/production/666b3af27fc6d5653142b0af/me0osevkx28wb09ngkle.jpg",
+                "https://assets.guesty.com/image/upload/v1729089183/production/666b3af27fc6d5653142b0af/xjitduixgsbrru0mfjt2.jpg",
+                "https://assets.guesty.com/image/upload/v1729089126/production/666b3af27fc6d5653142b0af/njycg2dbyykyxmsac0ty.jpg",
+                "https://assets.guesty.com/image/upload/v1729089126/production/666b3af27fc6d5653142b0af/ayrincblpbtscqxgejab.jpg",
+                "https://assets.guesty.com/image/upload/v1729089133/production/666b3af27fc6d5653142b0af/pbca7myyhhji9fjyfnjn.jpg",
+                "https://assets.guesty.com/image/upload/v1729089132/production/666b3af27fc6d5653142b0af/tonq7sb4iicrbeqgt2oy.jpg",
+                "https://assets.guesty.com/image/upload/v1729089052/production/666b3af27fc6d5653142b0af/ggh1yxwxn5h7mtu6n2jm.jpg",
+                "https://assets.guesty.com/image/upload/v1729089073/production/666b3af27fc6d5653142b0af/w8nzwkdnpocovb43o8hq.jpg",
+                "https://assets.guesty.com/image/upload/v1729089049/production/666b3af27fc6d5653142b0af/t867i7vrfbptbjtxo3sb.jpg",
+                "https://assets.guesty.com/image/upload/v1729089137/production/666b3af27fc6d5653142b0af/q4ipr5cap876vuwvs9lx.jpg",
+                "https://assets.guesty.com/image/upload/v1729089199/production/666b3af27fc6d5653142b0af/jkdqow5rbzqohzqlzj7a.jpg",
+                "https://assets.guesty.com/image/upload/v1729179707/production/666b3af27fc6d5653142b0af/f0avbpd9ycf7bfvb3hnl.jpg",
+                "https://assets.guesty.com/image/upload/v1729179705/production/666b3af27fc6d5653142b0af/owdkirofeqnplxf3p35h.jpg",
+                "https://assets.guesty.com/image/upload/v1729179730/production/666b3af27fc6d5653142b0af/kdnqyghmxoyoca9gvwav.jpg",
+                "https://assets.guesty.com/image/upload/v1729179730/production/666b3af27fc6d5653142b0af/vk5ohcyq4decgfopqcoi.jpg",
+                "https://assets.guesty.com/image/upload/v1729179744/production/666b3af27fc6d5653142b0af/bxs7izsotnrcj7qmg6uw.jpg",
+                "https://assets.guesty.com/image/upload/v1729179789/production/666b3af27fc6d5653142b0af/bzhnom2gvbuizmzparqg.jpg",
+                "https://assets.guesty.com/image/upload/v1729179727/production/666b3af27fc6d5653142b0af/ndlnvi78rufkbgux55zk.jpg",
+                "https://assets.guesty.com/image/upload/v1729179722/production/666b3af27fc6d5653142b0af/jnovxvjcbtmrvraw25sr.jpg",
+                "https://assets.guesty.com/image/upload/v1729179709/production/666b3af27fc6d5653142b0af/elye8ei8r9ghlgbgiixu.jpg",
+                "https://assets.guesty.com/image/upload/v1729179699/production/666b3af27fc6d5653142b0af/m0z4zgwqd6askjbvzkz1.jpg",
+                "https://assets.guesty.com/image/upload/v1729179732/production/666b3af27fc6d5653142b0af/dycc1j1ipwthaarllocp.jpg",
+                "https://assets.guesty.com/image/upload/v1729179735/production/666b3af27fc6d5653142b0af/imhe6o11qp0vl6fuoil6.jpg"
+            ],
+            "rooms": [
+                {
+                    "type": "Stylish 1BR – Brickell Bay Club",
+                    "guests": 4,
+                    "guestyid": "66e876b98cb1f00010ea8ad5",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 Queen bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "Living Room Sofa bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 150,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1729089138/production/666b3af27fc6d5653142b0af/rbd6ledyy3p3ktrrlxnr.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089154/production/666b3af27fc6d5653142b0af/me0osevkx28wb09ngkle.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089183/production/666b3af27fc6d5653142b0af/xjitduixgsbrru0mfjt2.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089126/production/666b3af27fc6d5653142b0af/njycg2dbyykyxmsac0ty.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089126/production/666b3af27fc6d5653142b0af/ayrincblpbtscqxgejab.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089133/production/666b3af27fc6d5653142b0af/pbca7myyhhji9fjyfnjn.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089132/production/666b3af27fc6d5653142b0af/tonq7sb4iicrbeqgt2oy.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089052/production/666b3af27fc6d5653142b0af/ggh1yxwxn5h7mtu6n2jm.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089073/production/666b3af27fc6d5653142b0af/w8nzwkdnpocovb43o8hq.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089049/production/666b3af27fc6d5653142b0af/t867i7vrfbptbjtxo3sb.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089137/production/666b3af27fc6d5653142b0af/q4ipr5cap876vuwvs9lx.jpg",
+                        "https://assets.guesty.com/image/upload/v1729089199/production/666b3af27fc6d5653142b0af/jkdqow5rbzqohzqlzj7a.jpg"
+                    ]
+                },
+                {
+                    "type": "Modern 1BR – Brickell Bay Club",
+                    "guests": 4,
+                    "guestyid": "66e87b1317f98200115bfb55",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "2 Air Matress bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 150,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1729179707/production/666b3af27fc6d5653142b0af/f0avbpd9ycf7bfvb3hnl.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179705/production/666b3af27fc6d5653142b0af/owdkirofeqnplxf3p35h.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179730/production/666b3af27fc6d5653142b0af/kdnqyghmxoyoca9gvwav.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179730/production/666b3af27fc6d5653142b0af/vk5ohcyq4decgfopqcoi.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179744/production/666b3af27fc6d5653142b0af/bxs7izsotnrcj7qmg6uw.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179789/production/666b3af27fc6d5653142b0af/bzhnom2gvbuizmzparqg.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179727/production/666b3af27fc6d5653142b0af/ndlnvi78rufkbgux55zk.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179722/production/666b3af27fc6d5653142b0af/jnovxvjcbtmrvraw25sr.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179709/production/666b3af27fc6d5653142b0af/elye8ei8r9ghlgbgiixu.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179699/production/666b3af27fc6d5653142b0af/m0z4zgwqd6askjbvzkz1.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179732/production/666b3af27fc6d5653142b0af/dycc1j1ipwthaarllocp.jpg",
+                        "https://assets.guesty.com/image/upload/v1729179735/production/666b3af27fc6d5653142b0af/imhe6o11qp0vl6fuoil6.jpg"
+                    ]
+                }
+            ]
+        }
+    ]
+}

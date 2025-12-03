@@ -1,0 +1,1422 @@
+<!-- ===================== ONE LUX STAY — HOME (SPA PARTIAL) ===================== -->
+<section id="home-root" class="ols-home luxe-home" data-component="ols-home">
+
+  <!-- Notification (SPA compatibility) -->
+  <div id="notification" class="notification" style="display:none;"></div>
+
+  <div class="cursor-orb" aria-hidden="true"></div>
+  <div class="cursor-trail" aria-hidden="true"></div>
+
+  <!-- ===== IMMERSIVE HERO ===== -->
+  <section class="immersive-hero" aria-label="Hero">
+    <div class="hero-layers" aria-hidden="true">
+      <div class="hero-layer hero-layer--glow" data-parallax="0.08"></div>
+      <div class="hero-layer hero-layer--grid" data-parallax="0.04"></div>
+      <div class="hero-layer hero-layer--particles" data-parallax="0.12"></div>
+      <div class="hero-layer hero-layer--video" data-parallax="0.02">
+        <video class="hero-video" autoplay muted loop playsinline
+          poster="/image/miami-luxury-apartments-twilight-waterfront-palm-lined-promenade-cityscape.webp">
+          <source src="/assets/Herosection.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+
+    <div class="hero-content container">
+      <p class="hero-kicker animate-on-scroll">The Art of Elevated Stays</p>
+      <h1 class="hero-title animate-on-scroll">Experience Timeless Luxury Living</h1>
+      <p class="hero-sub animate-on-scroll">Curated penthouses, skyline suites, and oceanside sanctuaries spanning
+        Antwerp, Dubai, Los Angeles, Miami, and beyond.</p>
+
+      <div class="hero-destinations animate-on-scroll" aria-label="Featured destinations">
+        <a href="/antwerp" data-link aria-label="Explore Antwerp stays">
+          <img
+            src="https://assets.guesty.com/image/upload/v1762983593/production/666b3af27fc6d5653142b0af/rhipugh4blshkdlknw0y.jpg"
+            alt="" aria-hidden="true" loading="lazy" />
+          <span>Antwerpen</span>
+        </a>
+        <a href="/dubai" data-link aria-label="Explore Dubai stays">
+          <img
+            src="https://assets.guesty.com/image/upload/v1762983594/production/666b3af27fc6d5653142b0af/og8pc3hk7dkvvowp3yxe.jpg"
+            alt="" aria-hidden="true" loading="lazy" />
+          <span>Dubai</span>
+        </a>
+        <a href="/losangeles" data-link aria-label="Explore Los Angeles stays">
+          <img
+            src="https://assets.guesty.com/image/upload/v1762983593/production/666b3af27fc6d5653142b0af/qswo8beahox41r5gaebf.jpg"
+            alt="" aria-hidden="true" loading="lazy" />
+          <span>Los Angeles</span>
+        </a>
+        <a href="/hollywood" data-link aria-label="Explore Hollywood stays">
+          <img
+            src="https://images.unsplash.com/photo-1534253893894-10d024888e49?auto=format&fit=crop&q=80&w=600"
+            alt="" aria-hidden="true" loading="lazy" />
+          <span>Hollywood</span>
+        </a>
+        <a href="/redondo" data-link aria-label="Explore Redondo Beach stays">
+          <img
+            src="https://assets.guesty.com/image/upload/v1762983593/production/666b3af27fc6d5653142b0af/nvwxruidl4cl3yopufrw.jpg"
+            alt="" aria-hidden="true" loading="lazy" />
+          <span>Redondo Beach</span>
+        </a>
+        <a href="/miami" data-link aria-label="Explore Miami stays">
+          <img
+            src="https://assets.guesty.com/image/upload/v1762983593/production/666b3af27fc6d5653142b0af/jk89sv4gqd8hmnaiccpr.jpg"
+            alt="" aria-hidden="true" loading="lazy" />
+          <span>Miami Beach</span>
+        </a>
+      </div>
+
+      <form class="hero-booking search-box animate-on-scroll" id="ols-search" role="search" aria-label="Find a stay">
+        <label class="sr-only" for="ols-destination">Destination</label>
+        <select class="booking-select booking-select-destination" id="ols-destination" name="destination" required>
+          <option value="" selected disabled>Destination</option>
+          <option>Antwerpen</option>
+          <option>Dubai</option>
+          <option>Los Angeles</option>
+          <option>Hollywood</option>
+          <option>Redondo Beach</option>
+          <option>Miami</option>
+        </select>
+
+        <label class="sr-only" for="checkin">Check-in</label>
+        <input type="text" id="checkin" name="checkin" inputmode="none" placeholder="Check-in" readonly />
+
+        <label class="sr-only" for="checkout">Check-out</label>
+        <input type="text" id="checkout" name="checkout" inputmode="none" placeholder="Check-out" readonly />
+
+        <label class="sr-only" for="ols-guests">Guest/s</label>
+        <select class="booking-select-guests" id="ols-guests" name="guest" required>
+          <option value="" selected disabled>Guest/s</option>
+          <option>1 Guest</option>
+          <option>2 Guests</option>
+          <option>3 Guests</option>
+          <option>4 Guests</option>
+          <option>5 Guests</option>
+          <option>6 Guests</option>
+        </select>
+
+        <button type="submit" id="search-btn" title="Search">Book</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== SIGNATURE PROMISE ===== -->
+  <section class="signature-grid" aria-label="Signature experiences">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <p class="kicker">Signature Promise</p>
+        <h2>Luxury-level hospitality with smooth, intuitive technology.</h2>
+      </div>
+
+      <div class="signature-cards">
+        <article class="feature-card animate-on-scroll">
+          <div class="feature-icon"><i data-feather="award"></i></div>
+          <h3>Curated Residences</h3>
+          <p>Each suite is hand-selected for architecture, provenance, and the emotions evoked the moment you arrive.
+          </p>
+        </article>
+
+        <article class="feature-card animate-on-scroll">
+          <div class="feature-icon"><i data-feather="shield"></i></div>
+          <h3>Secure Journeys</h3>
+          <p>Encrypted check-ins, biometric access where available, and private transfers arranged on request.</p>
+        </article>
+
+        <article class="feature-card animate-on-scroll">
+          <div class="feature-icon"><i data-feather="headphones"></i></div>
+          <h3>Concierge Atelier</h3>
+          <p>Dedicated tastemakers coordinate chef dinners, heli-transfers, wellness rituals, and VIP cultural access.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TOP LOCATIONS ===== -->
+  <section class="collection-gallery" aria-label="Top Locations">
+    <div class="parallax-sheen parallax-sheen--left" data-parallax="0.06" aria-hidden="true"></div>
+    <div class="parallax-sheen parallax-sheen--right" data-parallax="0.1" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <p class="kicker">Featured Destinations</p>
+        <h2>Live the itinerary of your dreams.</h2>
+      </div>
+
+      <div class="destinations-stack animate-on-scroll">
+        <a class="destination-card immersive-card animate-on-scroll" href="/antwerp" data-link aria-label="Explore Antwerp listings"
+          style="--destination-accent:#f5d07a;">
+          <div class="destination-media"
+            style="background-image:url('https://assets.guesty.com/image/upload/v1762983593/production/666b3af27fc6d5653142b0af/rhipugh4blshkdlknw0y.jpg');">
+          </div>
+          <div class="destination-body">
+            <p class="destination-label">ANTWERPEN</p>
+            <p class="destination-copy">Heritage lofts, diamond-quarter penthouses, and riverside ateliers.</p>
+            <span class="destination-pill">Explore Antwerp →</span>
+          </div>
+          <div class="destination-reveal"
+            style="--experience-img:url('https://assets.guesty.com/image/upload/v1762983593/production/666b3af27fc6d5653142b0af/rhipugh4blshkdlknw0y.jpg'); --experience-accent:#f4d28f;">
+            <div class="experience-media"></div>
+            <div class="experience-content">
+              <p class="experience-kicker">Welcome to</p>
+              <h4>Antwerp</h4>
+              <p>Private guides unlock diamond ateliers, cathedral rooftops, and courtyard dinners with Michelin chefs.
+              </p>
+              <span class="reveal-cta">Explore destination →</span>
+            </div>
+          </div>
+          <span class="destination-depth">01</span>
+        </a>
+
+        <a class="destination-card immersive-card animate-on-scroll" href="/dubai" data-link aria-label="Explore Dubai listings"
+          style="--destination-accent:#f0c05a;">
+          <div class="destination-media"
+            style="background-image:url('https://assets.guesty.com/image/upload/v1762983594/production/666b3af27fc6d5653142b0af/og8pc3hk7dkvvowp3yxe.jpg');">
+          </div>
+          <div class="destination-body">
+            <p class="destination-label">DUBAI</p>
+            <p class="destination-copy">Skyline sanctuaries above Downtown, Palm Jumeirah, and DIFC.</p>
+            <span class="destination-pill">Skyline itineraries →</span>
+          </div>
+          <div class="destination-reveal"
+            style="--experience-img:url('https://assets.guesty.com/image/upload/v1762983594/production/666b3af27fc6d5653142b0af/og8pc3hk7dkvvowp3yxe.jpg'); --experience-accent:#f0c05a;">
+            <div class="experience-media"></div>
+            <div class="experience-content">
+              <p class="experience-kicker">Welcome to</p>
+              <h4>Dubai</h4>
+              <p>Heli transfers, Burj rooftops, yacht sunsets, and desert conservatories curated on demand.</p>
+              <span class="reveal-cta">Rise above →</span>
+            </div>
+          </div>
+          <span class="destination-depth">02</span>
+        </a>
+
+        <a class="destination-card immersive-card animate-on-scroll" href="/redondo" data-link
+          aria-label="Explore Redondo Beach listings" style="--destination-accent:#7fd5ff;">
+          <div class="destination-media"
+            style="background-image:url('https://assets.guesty.com/image/upload/v1762983593/production/666b3af27fc6d5653142b0af/nvwxruidl4cl3yopufrw.jpg');">
+          </div>
+          <div class="destination-body">
+            <p class="destination-label">REDONDO BEACH</p>
+            <p class="destination-copy">Pacific-facing suites with firepits, cold-plunges, and beach cruisers.</p>
+            <span class="destination-pill">Coastal retreats →</span>
+          </div>
+          <div class="destination-reveal"
+            style="--experience-img:url('https://assets.guesty.com/image/upload/v1762983593/production/666b3af27fc6d5653142b0af/nvwxruidl4cl3yopufrw.jpg'); --experience-accent:#7fd5ff;">
+            <div class="experience-media"></div>
+            <div class="experience-content">
+              <p class="experience-kicker">Welcome to</p>
+              <h4>Redondo</h4>
+              <p>Seaside terraces with salt therapy, curated surf lessons at dawn, and ceviche ateliers on the pier.</p>
+              <span class="reveal-cta">Hit the coast →</span>
+            </div>
+          </div>
+          <span class="destination-depth">03</span>
+        </a>
+
+        <a class="destination-card immersive-card animate-on-scroll" href="/losangeles" data-link
+          aria-label="Explore Los Angeles listings" style="--destination-accent:#f9a4b7;">
+          <div class="destination-media"
+            style="background-image:url('https://assets.guesty.com/image/upload/v1762983593/production/666b3af27fc6d5653142b0af/qswo8beahox41r5gaebf.jpg');">
+          </div>
+          <div class="destination-body">
+            <p class="destination-label">LOS ANGELES</p>
+            <p class="destination-copy">Hollywood Hills observatories, DTLA lofts, and coastal modern villas.</p>
+            <span class="destination-pill">Los Angeles stories →</span>
+          </div>
+          <div class="destination-reveal"
+            style="--experience-img:url('https://assets.guesty.com/image/upload/v1762983593/production/666b3af27fc6d5653142b0af/qswo8beahox41r5gaebf.jpg'); --experience-accent:#f9a4b7;">
+            <div class="experience-media"></div>
+            <div class="experience-content">
+              <p class="experience-kicker">Welcome to</p>
+              <h4>Los Angeles</h4>
+              <p>Private cinema nights, DTLA gallery walkthroughs, and Malibu drives capped with sunset sound baths.</p>
+              <span class="reveal-cta">Design the set →</span>
+            </div>
+          </div>
+          <span class="destination-depth">04</span>
+        </a>
+
+        <a class="destination-card immersive-card animate-on-scroll" href="/hollywood" data-link aria-label="Explore Hollywood listings"
+          style="--destination-accent:#ffb86b;">
+          <div class="destination-media"
+            style="background-image:url('https://images.unsplash.com/photo-1534253893894-10d024888e49?auto=format&fit=crop&q=80&w=1800');">
+          </div>
+          <div class="destination-body">
+            <p class="destination-label">HOLLYWOOD</p>
+            <p class="destination-copy">Sunset Strip hideaways with private screening rooms and mixology bars.</p>
+            <span class="destination-pill">Cue the lights →</span>
+          </div>
+          <div class="destination-reveal"
+            style="--experience-img:url('https://images.unsplash.com/photo-1534253893894-10d024888e49?auto=format&fit=crop&q=80&w=1800'); --experience-accent:#ffb86b;">
+            <div class="experience-media"></div>
+            <div class="experience-content">
+              <p class="experience-kicker">Welcome to</p>
+              <h4>Hollywood</h4>
+              <p>After-hours studio tours, speakeasy jazz, and panoramic penthouses with butler-served martinis.</p>
+              <span class="reveal-cta">Cue the lights →</span>
+            </div>
+          </div>
+          <span class="destination-depth">05</span>
+        </a>
+
+        <a class="destination-card immersive-card animate-on-scroll" href="/miami" data-link aria-label="Explore Miami listings"
+          style="--destination-accent:#6ff0d0;">
+          <div class="destination-media"
+            style="background-image:url('https://assets.guesty.com/image/upload/v1762983593/production/666b3af27fc6d5653142b0af/jk89sv4gqd8hmnaiccpr.jpg');">
+          </div>
+          <div class="destination-body">
+            <p class="destination-label">MIAMI BEACH</p>
+            <p class="destination-copy">Ocean Drive penthouses, wellness villas, and yacht-access residences.</p>
+            <span class="destination-pill">Vibrant escapes →</span>
+          </div>
+          <div class="destination-reveal"
+            style="--experience-img:url('https://assets.guesty.com/image/upload/v1762983593/production/666b3af27fc6d5653142b0af/jk89sv4gqd8hmnaiccpr.jpg'); --experience-accent:#6ff0d0;">
+            <div class="experience-media"></div>
+            <div class="experience-content">
+              <p class="experience-kicker">Welcome to</p>
+              <h4>Miami</h4>
+              <p>Oceanfront sanctuaries with sound healers, yacht slips, Wynwood art dinners, and sunrise paddles.</p>
+              <span class="reveal-cta">Dive in →</span>
+            </div>
+          </div>
+          <span class="destination-depth">06</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonial-marble" aria-label="Guest testimonials">
+    <div class="container">
+      <div class="section-title animate-on-scroll">
+        <p class="kicker">Guest Reflections</p>
+        <h2>Immersive narratives from One Lux Stay travelers.</h2>
+      </div>
+
+      <div class="testimonials-grid animate-on-scroll">
+        <figure class="testimonial">
+          <blockquote>The Antwerp townhouse blended gallery appeal with private members-club service. Seamless insider
+            access.</blockquote>
+          <figcaption>
+            <span class="name">Sarah Lee</span>
+            <span class="location">Los Angeles, CA</span>
+          </figcaption>
+        </figure>
+
+        <figure class="testimonial">
+          <blockquote>Dubai’s suite hovered over the clouds. Their concierge arranged a last-minute yacht and chef
+            tasting menu effortlessly.</blockquote>
+          <figcaption>
+            <span class="name">James Patel</span>
+            <span class="location">Dubai, UAE</span>
+          </figcaption>
+        </figure>
+
+        <figure class="testimonial">
+          <blockquote>Our Miami escape felt like an editorial shoot. Wellness concierge, sunrise sound baths, and
+            curated dining each night.</blockquote>
+          <figcaption>
+            <span class="name">Amanda Gomez</span>
+            <span class="location">Miami, FL</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="skyline-cta" aria-labelledby="cta-title">
+    <div class="cta-wrap container">
+      <p class="cta-kicker">One&nbsp;Lux&nbsp;Stay</p>
+      <h2 id="cta-title" class="cta-title">Where will your next signature stay unfold?</h2>
+      <p class="cta-subtitle">Our tastemakers design bespoke itineraries across Antwerp, Dubai, Los Angeles, Miami, and
+        new coastlines soon.</p>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="/properties-list" data-link>Browse the Collection</a>
+        <a class="btn btn-ghost" href="/contactus" data-link>Consult a Concierge</a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ===== STYLES (scoped) ===== -->
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  :root {
+    --ink: #040407;
+    --midnight: #05060b;
+    --charcoal: #10121a;
+    --card: rgba(10, 11, 20, 0.8);
+    --frost: rgba(255, 255, 255, 0.12);
+    --gold: #d9b866;
+    --rose: #f8e2c6;
+    --muted: #bfbecb;
+    --radius: 22px;
+    --shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+    --glass: rgba(7, 7, 16, 0.5);
+  }
+
+  .luxe-home {
+    color: #fff;
+    background: radial-gradient(1800px 800px at 10% 0%, rgba(217, 184, 102, 0.07), transparent 60%),
+      radial-gradient(1500px 900px at 90% 10%, rgba(90, 146, 255, 0.08), transparent 65%),
+      var(--ink);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .luxe-home::before {
+    content: "";
+    position: fixed;
+    inset: -30%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 196, 122, 0.18), transparent 55%),
+      radial-gradient(circle at 70% 10%, rgba(146, 178, 255, 0.12), transparent 60%);
+    filter: blur(60px);
+    opacity: 0.45;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    animation: auroraShift 35s ease-in-out infinite alternate;
+    z-index: 0;
+  }
+
+  .container {
+    width: min(1220px, calc(100vw - 40px));
+    margin-inline: auto;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .section-title .kicker {
+    letter-spacing: 0.24em;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .section-title h2 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(36px);
+    filter: blur(12px);
+    transition: opacity 0.9s ease, transform 0.9s ease, filter 0.9s ease;
+    will-change: opacity, transform, filter;
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+  /* HERO */
+  .immersive-hero {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 160px;
+    overflow: hidden;
+  }
+
+  .hero-layers {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .hero-layer {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero-layer--glow {
+    background: radial-gradient(circle at 20% 20%, rgba(217, 184, 102, 0.2), transparent 60%),
+      radial-gradient(circle at 80% 0%, rgba(120, 170, 255, 0.3), transparent 45%);
+    filter: blur(20px);
+    animation: auroraShift 16s ease-in-out infinite alternate;
+  }
+
+  .hero-layer--grid {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 80px 80px;
+    backdrop-filter: blur(1px);
+    animation: gridPan 30s linear infinite;
+  }
+
+  .hero-layer--particles::before,
+  .hero-layer--particles::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+    background-size: 200px 200px;
+    animation: drift 40s linear infinite;
+  }
+
+  .hero-layer--particles::after {
+    animation-duration: 55s;
+    opacity: 0.5;
+  }
+
+  .hero-layer--video {
+    mix-blend-mode: screen;
+    opacity: 0.35;
+  }
+
+  .hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.15) contrast(1.05);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .cursor-orb {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: clamp(140px, 14vw, 220px);
+    height: clamp(140px, 14vw, 220px);
+    pointer-events: none;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 217, 142, 0.55) 0%, rgba(255, 255, 255, 0.1) 45%, rgba(255, 255, 255, 0) 70%);
+    filter: blur(0px);
+    mix-blend-mode: screen;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+
+  .cursor-orb::before,
+  .cursor-orb::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+  }
+
+  .cursor-orb::before {
+    inset: 15%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent 70%);
+    filter: blur(12px);
+  }
+
+  .cursor-orb::after {
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 222, 160, 0.45) 1px, transparent 1px);
+    background-size: 18px 18px;
+    animation: sparkle 4s linear infinite;
+    opacity: 0.6;
+  }
+
+  .cursor-trail {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 4;
+    overflow: visible;
+    mix-blend-mode: screen;
+  }
+
+  .cursor-spark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    pointer-events: none;
+    background: radial-gradient(circle, var(--sparkle-color, rgba(255, 255, 255, 0.95)), rgba(255, 255, 255, 0));
+    box-shadow: 0 0 20px var(--sparkle-shadow, rgba(255, 214, 153, 0.8));
+    transform: translate(-50%, -50%) scale(0.4);
+    opacity: 0;
+    animation: sparkleDust 0.9s ease-out forwards;
+    filter: drop-shadow(0 0 8px rgba(255, 200, 150, 0.6));
+  }
+
+  .hero-kicker {
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.4rem, 7vw, 4.6rem);
+    font-weight: 600;
+    margin-bottom: 14px;
+    text-wrap: balance;
+  }
+
+  .hero-sub {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: var(--muted);
+    margin-bottom: 40px;
+    text-wrap: balance;
+  }
+
+  .hero-destinations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+
+  .hero-destinations a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px 10px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(4, 4, 8, 0.55);
+    box-shadow: inset 0 0 0 1px rgba(217, 184, 102, 0.12);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: floatChip 8s ease-in-out infinite;
+  }
+
+  .hero-destinations a img {
+    width: 34px;
+    height: 34px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .hero-destinations a:hover,
+  .hero-destinations a:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(217, 184, 102, 0.25);
+  }
+
+  .hero-booking {
+    margin: 0 auto 32px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 16px;
+    background: rgba(8, 8, 13, 0.75);
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(14px);
+  }
+
+  .hero-booking select,
+  .hero-booking input {
+    height: 54px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(6, 6, 11, 0.85);
+    color: #fff;
+    padding: 0 14px;
+    font-size: 0.95rem;
+  }
+
+  #search-btn {
+    grid-column: span 4;
+    height: 58px;
+    border: none;
+    border-radius: 18px;
+    background: linear-gradient(120deg, #f4e3a5, var(--gold));
+    color: #050505;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  #search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 40px rgba(196, 165, 85, 0.4);
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .hero-stats div {
+    padding: 18px 24px;
+    border-radius: 20px;
+    background: rgba(19, 19, 25, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+    animation: statFloat 10s ease-in-out infinite;
+  }
+
+  .hero-stats div:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+
+  .hero-stats div:nth-child(3) {
+    animation-delay: 0.8s;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 600;
+    color: #f8f8fb;
+  }
+
+  .stat-number span {
+    font-size: 1.2rem;
+    color: #dcdcee;
+    margin-left: 6px;
+  }
+
+  .stat-label {
+    margin: 4px 0 0;
+    color: #e6e6f5;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+  }
+
+  /* SIGNATURE GRID */
+  .signature-grid {
+    padding: 100px 0;
+  }
+
+  .signature-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .feature-card {
+    padding: 28px;
+    border-radius: var(--radius);
+    background: rgba(7, 7, 12, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transform-style: preserve-3d;
+  }
+
+  .feature-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(circle at top left, rgba(217, 184, 102, 0.15), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .feature-card:hover::after {
+    opacity: 1;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+  }
+
+  .feature-card h3 {
+    margin: 18px 0 12px;
+  }
+
+  .feature-card p {
+    color: #f2f2f7;
+    line-height: 1.6;
+  }
+
+  .feature-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    background: rgba(217, 184, 102, 0.13);
+    border: 1px solid rgba(217, 184, 102, 0.3);
+  }
+
+  /* IMMERSIVE PANELS */
+  .immersive-panels {
+    padding: 40px 0 100px;
+  }
+
+  .panel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .panel-card {
+    border-radius: 26px;
+    background: var(--glass);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    min-height: 360px;
+    transform-style: preserve-3d;
+    perspective: 800px;
+  }
+
+  .panel-media {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    filter: saturate(1.05);
+    transform: translateZ(0);
+  }
+
+  .panel-body {
+    padding: 24px;
+    color: #fdfdff;
+  }
+
+  .panel-body p {
+    color: #dedde8;
+    line-height: 1.6;
+  }
+
+  .panel-kicker {
+    color: var(--gold);
+    letter-spacing: 0.2em;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  /* TOP LOCATIONS */
+  .collection-gallery {
+    padding: 110px 0;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(255, 199, 235, 0.35), transparent 55%),
+      radial-gradient(circle at 80% 15%, rgba(177, 234, 255, 0.4), transparent 55%),
+      radial-gradient(circle at 60% 80%, rgba(255, 226, 161, 0.35), transparent 60%),
+      #0f1017;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .parallax-sheen {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.35;
+    mix-blend-mode: screen;
+    pointer-events: none;
+  }
+
+  .parallax-sheen--left {
+    top: 5%;
+    left: -120px;
+    background: radial-gradient(circle, rgba(255, 212, 138, 0.4), transparent 70%);
+  }
+
+  .parallax-sheen--right {
+    bottom: -10%;
+    right: -80px;
+    background: radial-gradient(circle, rgba(142, 199, 255, 0.5), transparent 65%);
+  }
+
+  .destinations-stack {
+    display: grid;
+    gap: 32px;
+  }
+
+  .destination-card {
+    --card-offset: 0px;
+    display: flex;
+    align-items: flex-end;
+    gap: 32px;
+    padding: clamp(32px, 5.5vw, 72px);
+    min-height: 360px;
+    border-radius: 44px;
+    background: linear-gradient(150deg, rgba(8, 7, 14, 0.92), rgba(9, 9, 16, 0.78));
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transition: transform 0.45s ease, box-shadow 0.45s ease, opacity 0.6s ease;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .destination-card::before {
+    content: "";
+    position: absolute;
+    inset: auto auto -40% -40%;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: var(--destination-accent, rgba(255, 255, 255, 0.3));
+    filter: blur(120px);
+    opacity: 0.45;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    z-index: 0;
+  }
+
+  .destination-media {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: saturate(1.05) brightness(0.9);
+    transform: scale(1.05);
+    opacity: 0.45;
+    transition: transform 0.6s ease, opacity 0.6s ease, filter 0.6s ease;
+    z-index: 0;
+  }
+
+  .destination-card:hover .destination-media,
+  .destination-card:focus-visible .destination-media {
+    opacity: 0.95;
+    transform: scale(1.1);
+    filter: saturate(1.15) brightness(1);
+  }
+
+  .destination-card:hover::before,
+  .destination-card:focus-visible::before {
+    opacity: 0.75;
+    transform: translate(30px, -30px);
+  }
+
+  .destination-card.animate-on-scroll:not(.visible) {
+    opacity: 0;
+    transform: translateY(40px) translateX(var(--card-offset, 0px));
+  }
+
+  .destination-card.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+
+  .destination-card:nth-child(1) {
+    transition-delay: 0s;
+  }
+
+  .destination-card:nth-child(2) {
+    transition-delay: 0.05s;
+  }
+
+  .destination-card:nth-child(3) {
+    transition-delay: 0.1s;
+  }
+
+  .destination-card:nth-child(4) {
+    transition-delay: 0.15s;
+  }
+
+  .destination-card:nth-child(5) {
+    transition-delay: 0.2s;
+  }
+
+  .destination-card:nth-child(6) {
+    transition-delay: 0.25s;
+  }
+
+  .destination-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 0);
+    background-size: 28px 28px;
+    mix-blend-mode: screen;
+    opacity: 0.25;
+    transition: opacity 0.45s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .destination-card:nth-child(odd) {
+    margin-left: 40px;
+    --card-offset: -90px;
+  }
+
+  .destination-card:nth-child(even) {
+    margin-right: 40px;
+    --card-offset: 90px;
+  }
+
+  .destination-card:hover,
+  .destination-card:focus-visible {
+    transform: translateY(-10px) scale(1.015);
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.6);
+    z-index: 5;
+  }
+
+  .destination-card:hover::after,
+  .destination-card:focus-visible::after {
+    opacity: 0.08;
+  }
+
+  .destination-body {
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.4s ease, transform 0.4s ease, background 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px 28px;
+    border-radius: 28px;
+    backdrop-filter: blur(14px);
+    background: rgba(6, 6, 14, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+    max-width: min(540px, 100%);
+  }
+
+  .destination-card:hover .destination-body,
+  .destination-card:focus-visible .destination-body {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+
+  .destination-reveal {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: clamp(24px, 6vw, 48px);
+    background: radial-gradient(circle at 20% 20%, rgba(2, 2, 6, 0.9), rgba(2, 2, 10, 0.65));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    opacity: 0;
+    transform: scale(0.94);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+    pointer-events: none;
+    z-index: 2;
+    text-shadow: 0 12px 30px rgba(0, 0, 0, 0.65);
+  }
+
+  .experience-media {
+    display: none;
+  }
+
+  .experience-content {
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .experience-kicker {
+    margin: 0;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    color: var(--destination-accent, var(--gold));
+  }
+
+  .destination-reveal h4 {
+    margin: 0;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .destination-reveal p {
+    margin: 0;
+    color: #f9f9ff;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  .reveal-cta {
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    color: var(--destination-accent, rgba(255, 255, 255, 0.85));
+  }
+
+  .destination-card:hover .destination-reveal,
+  .destination-card:focus-visible .destination-reveal {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .destination-depth {
+    position: absolute;
+    right: 24px;
+    bottom: 18px;
+    font-size: 0.78rem;
+    letter-spacing: 0.5em;
+    color: rgba(255, 255, 255, 0.35);
+    pointer-events: none;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .destination-card:hover .destination-depth {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+
+  .destination-label {
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .destination-copy {
+    margin: 0;
+    color: #f6f5ff;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .destination-pill {
+    align-self: flex-start;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 0.65rem;
+    color: var(--destination-accent, var(--gold));
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /* TESTIMONIALS */
+  .testimonial-marble {
+    padding: 100px 0;
+    background: linear-gradient(180deg, rgba(10, 10, 14, 0.9), rgba(8, 8, 12, 0.9)),
+      url('/assets/reviewsbackdrop.jpg') center/cover fixed;
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 26px;
+  }
+
+  .testimonial {
+    padding: 26px;
+    border-radius: 24px;
+    background: rgba(9, 9, 15, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow);
+  }
+
+  .testimonial blockquote {
+    margin: 0 0 18px;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #f1f1f5;
+  }
+
+  .testimonial figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  .testimonial .name {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  /* CTA */
+  .skyline-cta {
+    padding: 120px 0;
+    background: radial-gradient(circle at 50% 0%, rgba(217, 184, 102, 0.25), transparent 60%),
+      var(--midnight);
+  }
+
+  .cta-wrap {
+    text-align: center;
+    padding: 40px;
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(5, 5, 9, 0.8);
+    box-shadow: var(--shadow);
+  }
+
+  .cta-kicker {
+    color: var(--gold);
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+  }
+
+  .cta-title {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    margin: 16px 0;
+  }
+
+  .cta-subtitle {
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    min-width: 190px;
+    height: 54px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  }
+
+  .btn-primary {
+    background: linear-gradient(120deg, var(--rose), var(--gold));
+    color: #1b1206;
+    border: none;
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: #fff;
+  }
+
+  /* Motion */
+  @keyframes drift {
+    from {
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateY(-200px);
+    }
+  }
+
+  @keyframes auroraShift {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    50% {
+      transform: translate3d(60px, -30px, 0) scale(1.05);
+    }
+
+    100% {
+      transform: translate3d(-40px, 20px, 0) scale(1.1);
+    }
+  }
+
+  @keyframes gridPan {
+    from {
+      background-position: 0 0, 0 0;
+    }
+
+    to {
+      background-position: 120px 80px, 80px 120px;
+    }
+  }
+
+  @keyframes floatChip {
+    0% {
+      transform: translateY(0);
+      filter: drop-shadow(0 0 0 rgba(217, 184, 102, 0));
+    }
+
+    50% {
+      transform: translateY(-8px);
+      filter: drop-shadow(0 12px 18px rgba(217, 184, 102, 0.15));
+    }
+
+    100% {
+      transform: translateY(0);
+      filter: drop-shadow(0 0 0 rgba(217, 184, 102, 0));
+    }
+  }
+
+  @keyframes slowZoom {
+    from {
+      transform: scale(1);
+    }
+
+    to {
+      transform: scale(1.08);
+    }
+  }
+
+  @keyframes sparkle {
+    0% {
+      transform: translate3d(0, 0, 0);
+      opacity: 0.5;
+    }
+
+    50% {
+      transform: translate3d(-10px, -6px, 0);
+      opacity: 0.9;
+    }
+
+    100% {
+      transform: translate3d(8px, 4px, 0);
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes sparkleDust {
+    0% {
+      opacity: 0.9;
+      transform: translate(-50%, -50%) scale(0.35);
+    }
+
+    60% {
+      opacity: 0.8;
+      transform: translate(
+          calc(-50% + var(--sparkle-drift-x, 0px)),
+          calc(-50% + var(--sparkle-drift-y, -20px))
+        )
+        scale(1);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translate(
+          calc(-50% + var(--sparkle-drift-x, 0px)),
+          calc(-50% + var(--sparkle-drift-y, -20px))
+        )
+        scale(0.1);
+    }
+  }
+
+  @keyframes statFloat {
+    0% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-6px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes stackReveal {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .hero-booking {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    #search-btn {
+      grid-column: span 2;
+    }
+
+    .hero-stats {
+      grid-template-columns: 1fr;
+    }
+
+    .signature-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .destination-card:nth-child(odd),
+    .destination-card:nth-child(even) {
+      margin: 0;
+      --card-offset: 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero-booking {
+      grid-template-columns: 1fr;
+    }
+
+    #search-btn {
+      grid-column: span 1;
+    }
+
+    .destination-card {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .destination-body {
+      text-align: center;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+
+    .hero-layer--particles::before,
+    .hero-layer--particles::after {
+      animation: none;
+    }
+  }
+</style>
+
+<!-- ===================== END HOME (SPA PARTIAL) ===================== -->

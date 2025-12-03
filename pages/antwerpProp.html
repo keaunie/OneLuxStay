@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Property Detail</title>
+  <style>
+    /* ===== One Lux Stay — Luxe Dark Theme ===== */
+    :root {
+      --gold: #d4af37;
+      --ink: #0b0b0b;
+      --bg: #0f0f10;
+      --card: #151517;
+      --muted: #bdbdbd;
+      --ring: rgba(212, 175, 55, .35);
+      --radius: 14px;
+      --shadow: 0 12px 30px rgba(0, 0, 0, .38);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+
+    body {
+      padding: 8% 0%;
+      color: #fff;
+      line-height: 1.55;
+      background:
+        radial-gradient(1800px 1000px at -20% -20%, rgba(212, 175, 55, 0.06), transparent 80%),
+        radial-gradient(1800px 1000px at 120% -20%, rgba(212, 175, 55, 0.06), transparent 80%),
+        linear-gradient(to bottom, rgba(212, 175, 55, 0.025) 0%, transparent 60%),
+        var(--bg);
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 24px;
+    }
+
+    /* Headings / meta */
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      letter-spacing: .2px;
+      font-weight: 600;
+    }
+
+    .badge {
+      background: linear-gradient(180deg, rgba(212, 175, 55, .9), rgba(212, 175, 55, .8));
+      color: #111;
+      padding: 6px 12px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-bottom: 10px;
+      font-size: .9rem;
+      font-weight: 700;
+      box-shadow: 0 0 0 3px var(--ring);
+    }
+
+    .location {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .rating span {
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    /* Carousel */
+    .carousel-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .carousel-main {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 12px;
+    }
+
+    .carousel-main img {
+      height: 420px;
+      flex-shrink: 0;
+      width: auto;
+      border-radius: 16px;
+      scroll-snap-align: start;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .carousel-thumbs {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+    }
+
+    .carousel-thumbs img {
+      height: 86px;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      opacity: .9;
+      background: #0b0b0b;
+    }
+
+    .carousel-thumbs img.active {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px var(--ring);
+      opacity: 1;
+    }
+
+    /* Summary / price */
+    .summary {
+      margin-bottom: 18px;
+      color: #e8e8e8;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: #fff;
+    }
+
+    /* Selector (dates & guests) */
+    .selector {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+      background: linear-gradient(180deg, #161616, #111);
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 16px;
+      padding: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .selector label {
+      display: flex;
+      flex-direction: column;
+      font-size: .9rem;
+      color: var(--muted);
+      gap: 6px;
+    }
+
+    .selector input,
+    .selector select {
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, .15);
+      background: #151517;
+      color: #fff;
+      transition: border .2s ease, box-shadow .2s ease;
+    }
+
+    .selector input:focus,
+    .selector select:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px var(--ring);
+    }
+
+    /* Rooms */
+    .rooms {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .room {
+      background: var(--card);
+      padding: 16px;
+      border-radius: 18px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(255, 255, 255, .06);
+      box-shadow: var(--shadow);
+    }
+
+    .room-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .room-type {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .room-price {
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .bedrooms {
+      font-size: .92rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    /* CTA */
+    .book-btn {
+      padding: 12px 18px;
+      background: var(--gold);
+      color: #111;
+      border: none;
+      border-radius: 12px;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      letter-spacing: .2px;
+      box-shadow: 0 8px 18px rgba(212, 175, 55, .25);
+    }
+
+    .book-btn:hover {
+      filter: brightness(.95);
+    }
+
+    /* Similar properties */
+    .similar-properties {
+      margin-top: 40px;
+    }
+
+    .similar-properties h2 {
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .similar-list {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+    }
+
+    .similar-card {
+      background: var(--card);
+      border-radius: 16px;
+      width: 260px;
+      flex-shrink: 0;
+      padding: 12px;
+      border: 1px solid rgba(255, 255, 255, .06);
+      box-shadow: var(--shadow);
+    }
+
+    .similar-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .similar-card h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .similar-card .price {
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    /* Responsive */
+    @media(max-width:768px) {
+      .carousel-main img {
+        height: 260px;
+      }
+
+      .carousel-thumbs img {
+        height: 56px;
+      }
+    }
+
+    /* Booking.com-style date picker */
+    .bk-datebar {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      flex-wrap: wrap;
+      background: #111;
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 16px;
+      padding: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .35)
+    }
+
+    .bk-datebar label {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 12px;
+      color: #bdbdbd
+    }
+
+    .bk-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      height: 42px;
+      padding: 0 14px;
+      cursor: pointer;
+      background: #fff;
+      color: #0b0b0b;
+      border: 1px solid #d6d9dc;
+      border-radius: 10px;
+      box-shadow: 0 2px 0 rgba(0, 0, 0, .06)
+    }
+
+    .bk-btn:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px #f9d775
+    }
+
+    .bk-ico {
+      width: 18px;
+      height: 18px;
+      opacity: .8
+    }
+
+    /* Overlay & panel */
+    .bk-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .5);
+      display: none;
+      z-index: 60
+    }
+
+    .bk-panel {
+      position: absolute;
+      left: 50%;
+      top: 92px;
+      transform: translateX(-50%);
+      width: min(820px, 94vw);
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, .5);
+      color: #111;
+      overflow: hidden
+    }
+
+    /* Header tabs */
+    .bk-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px 0
+    }
+
+    .bk-tabs {
+      display: flex;
+      gap: 22px;
+      border-bottom: 1px solid #e6e8eb;
+      padding: 0 16px
+    }
+
+    .bk-tab {
+      position: relative;
+      padding: 12px 0;
+      font-weight: 600;
+      color: #6b7280
+    }
+
+    .bk-tab.active {
+      color: #0a64d2
+    }
+
+    .bk-tab.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 3px;
+      background: #0a64d2;
+      border-radius: 3px
+    }
+
+    /* Calendar grid */
+    .bk-calwrap {
+      display: flex;
+      gap: 18px;
+      padding: 16px
+    }
+
+    .bk-cal {
+      width: 370px;
+      max-width: calc(50% - 9px)
+    }
+
+    .bk-cal header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 2px 6px 6px
+    }
+
+    .bk-nav {
+      background: #fff;
+      border: 1px solid #d6d9dc;
+      border-radius: 10px;
+      width: 34px;
+      height: 34px;
+      cursor: pointer
+    }
+
+    .bk-title {
+      font-weight: 700
+    }
+
+    .bk-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+      padding: 8px
+    }
+
+    .bk-dow,
+    .bk-day {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px
+    }
+
+    .bk-dow {
+      color: #6b7280;
+      font-size: 12px
+    }
+
+    .bk-day {
+      cursor: pointer;
+      border: 1px solid transparent
+    }
+
+    .bk-day.disabled {
+      color: #c6cbd0;
+      cursor: not-allowed
+    }
+
+    .bk-day.in-range {
+      background: #e7f0ff;
+      border-color: #d6e7ff
+    }
+
+    .bk-day.start,
+    .bk-day.end {
+      background: #0a64d2;
+      color: #fff;
+      font-weight: 700;
+      border-color: #0a64d2
+    }
+
+    .bk-day.today {
+      outline: 1px dashed #c7ccd1
+    }
+
+    .bk-legend {
+      display: flex;
+      gap: 8px;
+      padding: 0 16px 8px;
+      color: #6b7280;
+      font-size: 12px
+    }
+
+    /* Quick chips & footer */
+    .bk-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px 16px
+    }
+
+    .bk-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px
+    }
+
+    .bk-chip {
+      background: #fff;
+      border: 1px solid #d6d9dc;
+      border-radius: 999px;
+      padding: 8px 12px;
+      cursor: pointer
+    }
+
+    .bk-chip:hover {
+      border-color: #0a64d2
+    }
+
+    .bk-close {
+      background: #0a64d2;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      height: 40px;
+      padding: 0 16px;
+      font-weight: 700;
+      cursor: pointer
+    }
+
+    /* FIX: Make Book Now button smaller */
+    .room .book-btn {
+      display: inline-block !important;
+      width: auto !important;
+      padding: 10px 20px !important;
+      margin-top: 10px;
+      align-self: flex-end !important;
+      border-radius: 10px;
+      font-size: 0.95rem;
+    }
+
+    .room .book-btn:hover {
+      transform: translateY(-1px);
+      filter: brightness(.93);
+    }
+
+    /* Make room title look like a link but keep your typography */
+    .room-type.room-trigger {
+      background: none;
+      border: none;
+      padding: 0;
+      margin: 0;
+      font: inherit;
+      color: #fff;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .room-type.room-trigger:hover {
+      text-decoration: underline;
+    }
+
+    /* ========== Room modal (existing) ========== */
+    .room-modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 120;
+    }
+
+    .room-modal.open {
+      display: flex;
+    }
+
+    .room-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, .65);
+    }
+
+    .room-modal-dialog {
+      position: relative;
+      z-index: 1;
+      width: min(980px, 96vw);
+      max-height: 90vh;
+      background: #111;
+      border-radius: 18px;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, .8);
+      border: 1px solid rgba(255, 255, 255, .12);
+      padding: 18px 18px 20px;
+      overflow: hidden;
+    }
+
+    .room-modal-close {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: none;
+      background: rgba(0, 0, 0, .6);
+      color: #fff;
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .room-modal-layout {
+      display: flex;
+      gap: 18px;
+      margin-top: 12px;
+    }
+
+    .room-modal-media {
+      flex: 1.1;
+      display: flex;
+      width: 50%;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .room-modal-main {
+      border-radius: 14px;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .room-modal-main img {
+      display: flex;
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+    }
+
+    .room-modal-thumbs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+    }
+
+    .room-modal-thumbs img {
+      height: 70px;
+      border-radius: 10px;
+      cursor: pointer;
+      opacity: .75;
+      border: 2px solid transparent;
+    }
+
+    .room-modal-thumbs img.active {
+      opacity: 1;
+      border-color: var(--gold);
+    }
+
+    .room-modal-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    #roomModalTitle {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .room-modal-size,
+    .room-modal-price {
+      font-size: .95rem;
+      color: var(--muted);
+    }
+
+    .room-modal-price {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .room-modal-subtitle {
+      margin-top: 10px;
+      font-size: .95rem;
+      font-weight: 600;
+    }
+
+    .room-modal-facilities,
+    .room-modal-beds {
+      list-style: none;
+      padding-left: 0;
+      margin: 4px 0 0;
+      font-size: .9rem;
+      color: #e5e5e5;
+    }
+
+    .room-modal-facilities li::before {
+      content: "✓ ";
+      color: var(--gold);
+    }
+
+    @media (max-width: 768px) {
+      .room-modal-dialog {
+        padding: 14px 14px 16px;
+      }
+
+      .room-modal-layout {
+        flex-direction: column;
+      }
+
+      .room-modal-media {
+        flex: 1.1;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .room-modal-main img {
+        max-height: 260px;
+      }
+    }
+
+    body.room-modal-open {
+      overflow: hidden;
+    }
+
+    #roomModal {
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      display: none;
+    }
+
+    #roomModal.open {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px 16px;
+      overflow-y: auto;
+    }
+
+    #roomModal .room-modal-content {
+      max-width: 1120px;
+      width: 100%;
+      background: #050506;
+      border-radius: 18px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.8);
+      max-height: calc(100vh - 48px);
+      overflow-y: auto;
+    }
+
+    #roomModalMainImage {
+      max-width: 100%;
+      height: auto;
+      max-height: 60vh;
+      object-fit: cover;
+      border-radius: 16px 16px 0 0;
+    }
+
+    /* ===== Image Lightbox for Carousel Main ===== */
+    .img-modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 24px 16px;
+      background: rgba(0, 0, 0, 0.88);
+      z-index: 9999;
+    }
+
+    .img-modal.open {
+      display: flex;
+    }
+
+    .img-modal-content {
+      position: relative;
+      max-width: 1100px;
+      width: 100%;
+      max-height: calc(100vh - 80px);
+      border-radius: 18px;
+      overflow: hidden;
+      background: #050506;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .img-modal img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: calc(100vh - 80px);
+      object-fit: contain;
+      background: #000;
+    }
+
+    .img-modal-close {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: none;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .img-modal-close:hover {
+      background: rgba(0, 0, 0, 0.9);
+    }
+
+    body.img-modal-open {
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div id="property-detail-antwerp"></div>
+  </div>
+
+  <!-- Image Lightbox Modal for Carousel Main -->
+  <div id="imageModal" class="img-modal" aria-hidden="true">
+    <div class="img-modal-content">
+      <button type="button" class="img-modal-close" aria-label="Close image" data-image-modal-close>
+        &times;
+      </button>
+      <img id="imageModalImg" src="" alt="Enlarged property image" />
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("imageModalImg");
+
+      if (!modal || !modalImg) return;
+
+      function openImageModal(src, alt) {
+        modalImg.src = src;
+        modalImg.alt = alt || "Enlarged property image";
+        modal.classList.add("open");
+        document.body.classList.add("img-modal-open");
+      }
+
+      function closeImageModal() {
+        modal.classList.remove("open");
+        document.body.classList.remove("img-modal-open");
+        modalImg.src = "";
+      }
+
+      // Event delegation: handles images added dynamically inside .carousel-main
+      document.addEventListener("click", function (e) {
+        const img = e.target.closest(".carousel-main img");
+        if (img) {
+          // if you ever add data-large, it will prefer that for higher-res
+          const largeSrc = img.getAttribute("data-large") || img.src;
+          openImageModal(largeSrc, img.alt);
+          return;
+        }
+
+        // Close if clicking on close button
+        if (e.target.matches("[data-image-modal-close]")) {
+          closeImageModal();
+          return;
+        }
+
+        // Close if clicking on the dark backdrop (outside content)
+        if (e.target === modal) {
+          closeImageModal();
+        }
+      });
+
+      // Close on ESC
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && modal.classList.contains("open")) {
+          closeImageModal();
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>

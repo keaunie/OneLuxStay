@@ -1,0 +1,194 @@
+{
+    "properties": [
+        {
+            "id": "hollywood-5",
+            "title": "OneLuxStay Hollywood",
+            "address": "Hollywood, CA",
+            "location": {
+                "city": "Los Angeles",
+                "neighborhood": "Hollywood Hills",
+                "area": "Walk of Fame"
+            },
+            "badge": "Walk of Fame",
+            "rating": 9.3,
+            "reviews": 63,
+            "url": "losangelesProp",
+            "summary": "A luxurious Hollywood BNB description should highlight exclusive amenities, stylish design, and a prime location to attract affluent travelers",
+            "price": {
+                "from": 250,
+                "currency": "USD"
+            },
+            "images": [
+                "https://assets.guesty.com/image/upload/v1729697658/production/666b3af27fc6d5653142b0af/kq0guwngflmtrihxmurs.jpg",
+                "https://assets.guesty.com/image/upload/v1729697658/production/666b3af27fc6d5653142b0af/kq0guwngflmtrihxmurs.jpg",
+                "https://assets.guesty.com/image/upload/v1729697693/production/666b3af27fc6d5653142b0af/w3jslobvqu8tcafydhsc.jpg",
+                "https://assets.guesty.com/image/upload/v1729697704/production/666b3af27fc6d5653142b0af/ae3nckwnem1vldjevpig.jpg",
+                "https://assets.guesty.com/image/upload/v1729697631/production/666b3af27fc6d5653142b0af/lnaepi4yswioz8teba8w.jpg",
+                "https://assets.guesty.com/image/upload/v1729697658/production/666b3af27fc6d5653142b0af/akt9eaisnnp5aeebkhy6.jpg",
+                "https://assets.guesty.com/image/upload/v1729697673/production/666b3af27fc6d5653142b0af/ouoj7gfj6rmbgillqc1c.jpg",
+                "https://assets.guesty.com/image/upload/v1729697775/production/666b3af27fc6d5653142b0af/kmfjhdzr9evvgmewp0g1.jpg",
+                "https://assets.guesty.com/image/upload/v1729697775/production/666b3af27fc6d5653142b0af/h3qvtnqafp6nl0e4isdd.jpg",
+                "https://assets.guesty.com/image/upload/v1729697768/production/666b3af27fc6d5653142b0af/tbdtzivfxanafusddtcq.jpg",
+                "https://assets.guesty.com/image/upload/v1729697786/production/666b3af27fc6d5653142b0af/skk12jcxue8b4oaxk8ak.jpg",
+                "https://assets.guesty.com/image/upload/v1729697794/production/666b3af27fc6d5653142b0af/dgeqcztrt9nnv3ybcvy3.jpg"
+            ],
+            "rooms": [
+                {
+                    "type": "2 Bedroom Apartment with Hollywood Sign View by OneLuxStay",
+                    "guests": 5,
+                    "guestyid": "66e85a13902eec0011ec7c81",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King Bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "1 Queen Bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 350,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1729697658/production/666b3af27fc6d5653142b0af/kq0guwngflmtrihxmurs.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697658/production/666b3af27fc6d5653142b0af/kq0guwngflmtrihxmurs.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697693/production/666b3af27fc6d5653142b0af/w3jslobvqu8tcafydhsc.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697704/production/666b3af27fc6d5653142b0af/ae3nckwnem1vldjevpig.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697631/production/666b3af27fc6d5653142b0af/lnaepi4yswioz8teba8w.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697658/production/666b3af27fc6d5653142b0af/akt9eaisnnp5aeebkhy6.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697673/production/666b3af27fc6d5653142b0af/ouoj7gfj6rmbgillqc1c.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697775/production/666b3af27fc6d5653142b0af/kmfjhdzr9evvgmewp0g1.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697775/production/666b3af27fc6d5653142b0af/h3qvtnqafp6nl0e4isdd.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697768/production/666b3af27fc6d5653142b0af/tbdtzivfxanafusddtcq.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697786/production/666b3af27fc6d5653142b0af/skk12jcxue8b4oaxk8ak.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697794/production/666b3af27fc6d5653142b0af/dgeqcztrt9nnv3ybcvy3.jpg"
+                    ]
+                },
+                {
+                    "type": "2 Bedroom in Hollywood with Pool View by OneLuxStay",
+                    "guests": 5,
+                    "guestyid": "66e85deca8a40a00145be974",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King Bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "1 Queen Bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 350,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1729698123/production/666b3af27fc6d5653142b0af/gbfnbuvqtbreaw3100fk.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698128/production/666b3af27fc6d5653142b0af/pzmuyxg83s7hgui06qii.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698141/production/666b3af27fc6d5653142b0af/drvkanrqzhrbd5hbyxxj.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698136/production/666b3af27fc6d5653142b0af/onye3nm5fmta8ztncxwx.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698109/production/666b3af27fc6d5653142b0af/y1yp7biew08g6pe8atpt.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698136/production/666b3af27fc6d5653142b0af/pffej6glfqo4lvlg1kb6.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698158/production/666b3af27fc6d5653142b0af/vgqlt43boiu60sl6ttug.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698175/production/666b3af27fc6d5653142b0af/yz4b7hsipnxl2nlc3qwi.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698176/production/666b3af27fc6d5653142b0af/qpmisf4pjddwfikfxe0k.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698183/production/666b3af27fc6d5653142b0af/z0b6anaiua76hry1mpvk.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698189/production/666b3af27fc6d5653142b0af/xtsipidhzgbopnkkfmyb.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698196/production/666b3af27fc6d5653142b0af/alpos8aid5qnlszjeld2.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698188/production/666b3af27fc6d5653142b0af/npduwkmr0ykgdz4y2n2w.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698209/production/666b3af27fc6d5653142b0af/jni1fbbytqas8d5isk7e.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698196/production/666b3af27fc6d5653142b0af/ii2bggslaioe2wez1ilb.jpg"
+                    ]
+                },
+                {
+                    "type": "3 Bedroom in Hollywood with Hollywood Sign View by OneLuxStay",
+                    "guests": 6,
+                    "guestyid": "66e8609683fcfd0013a6cd03",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King Bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "1 Queen Bed"
+                        },
+                        {
+                            "bedroom": 3,
+                            "beds": "1 Queen Bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 450,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1729698598/production/666b3af27fc6d5653142b0af/l5brbx7tkcyh8n3pgr1j.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698577/production/666b3af27fc6d5653142b0af/ngqyffrt65bnggpsqh3m.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698598/production/666b3af27fc6d5653142b0af/at1j16rqji4epdet5xna.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698577/production/666b3af27fc6d5653142b0af/cbxzontue96oouwaryyr.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698675/production/666b3af27fc6d5653142b0af/rjzwe8l7rmhl5khvw1uw.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698675/production/666b3af27fc6d5653142b0af/qxjmqi2kqhntqj6aqio4.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698585/production/666b3af27fc6d5653142b0af/xn8mz9u24jbvkwfznnkt.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698658/production/666b3af27fc6d5653142b0af/o53rvdibermbdqjf2mcy.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698666/production/666b3af27fc6d5653142b0af/rc8q4dl8a6ron3h05rk5.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698661/production/666b3af27fc6d5653142b0af/mmsiojhrqk7k8d9u9cix.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698570/production/666b3af27fc6d5653142b0af/fozo3xd4szje7xal8lek.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698646/production/666b3af27fc6d5653142b0af/maljh33hhky80vufmrvf.jpg",
+                        "https://assets.guesty.com/image/upload/v1729698630/production/666b3af27fc6d5653142b0af/i5kza740x2p6eovvluhs.jpg"
+                    ]
+                },
+                {
+                    "type": "2 Bedroom Apartment in Hollywood with City View by OneLuxStay",
+                    "guests": 5,
+                    "guestyid": "67c87c999136c80011b09c77",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 King Bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "1 Queen Bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 350,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1729697700/production/666b3af27fc6d5653142b0af/zshaun668dbn6vlfjc60.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697711/production/666b3af27fc6d5653142b0af/rpueg4sikoydxlksnwns.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697694/production/666b3af27fc6d5653142b0af/uvlwnj4l7d2g7q8m4auu.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697631/production/666b3af27fc6d5653142b0af/lnaepi4yswioz8teba8w.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697691/production/666b3af27fc6d5653142b0af/qoh1d9tx9tb2tqlzfijw.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697775/production/666b3af27fc6d5653142b0af/kmfjhdzr9evvgmewp0g1.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697775/production/666b3af27fc6d5653142b0af/h3qvtnqafp6nl0e4isdd.jpg",
+                        "https://assets.guesty.com/image/upload/v1729697768/production/666b3af27fc6d5653142b0af/tbdtzivfxanafusddtcq.jpg"
+                    ]
+                },
+                {
+                    "type": "1 Bedroom Apartment in Hollywood by OneLuxStay",
+                    "guests": 5,
+                    "guestyid": "68238ce5bf3cce0021033c30",
+                    "bedrooms": [
+                        {
+                            "bedroom": 1,
+                            "beds": "1 Queen Bed"
+                        },
+                        {
+                            "bedroom": 2,
+                            "beds": "Living Room Sofa Bed"
+                        }
+                    ],
+                    "availability": "Available",
+                    "price_per_night": 250,
+                    "images": [
+                        "https://assets.guesty.com/image/upload/v1751444464/production/666b3af27fc6d5653142b0af/sejz0dlbcgrgnrablmrm.jpg",
+                        "https://assets.guesty.com/image/upload/v1751444482/production/666b3af27fc6d5653142b0af/z00bqe54ljr3p7csyu8c.jpg",
+                        "https://assets.guesty.com/image/upload/v1751444473/production/666b3af27fc6d5653142b0af/oglky5aqgivfd8doem75.jpg",
+                        "https://assets.guesty.com/image/upload/v1751444464/production/666b3af27fc6d5653142b0af/camjqpkjgmynpjineal9.jpg",
+                        "https://assets.guesty.com/image/upload/v1751444446/production/666b3af27fc6d5653142b0af/tj9arx4hmomgtqysj0tl.jpg",
+                        "https://assets.guesty.com/image/upload/v1751444541/production/666b3af27fc6d5653142b0af/ft3q9rnvclly4j98lyrn.jpg",
+                        "https://assets.guesty.com/image/upload/v1751444710/production/666b3af27fc6d5653142b0af/mszlgtxe7pbcbh7iicdz.jpg",
+                        "https://assets.guesty.com/image/upload/v1751444715/production/666b3af27fc6d5653142b0af/gasf8dzwcesnnhfomyoo.jpg"
+                    ]
+                }
+            ]
+        }
+    ]
+}

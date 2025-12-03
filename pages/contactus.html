@@ -1,0 +1,290 @@
+<!-- =========================
+     CONTACT & RESERVATIONS — One Lux Stay
+     Vanilla CSS / Responsive
+========================= -->
+<section class="ols-contact">
+  <div class="ols-contact__inner">
+    <!-- Header -->
+    <header class="ols-contact__header">
+      <h2 class="ols-contact__title">CONTACT &amp; RESERVATIONS</h2>
+      <p class="ols-contact__subtitle">
+        Need to book a stay, ask a question, or get help with an existing reservation?
+        Reach us directly using any of the options below — no apps, no forms, just clear
+        ways to contact our team.
+      </p>
+    </header>
+
+    <!-- 2-column content -->
+    <div class="ols-contact__grid">
+      <!-- LEFT: How to book -->
+      <div class="ols-contact__card">
+        <div class="ols-contact__card-header">
+          <h3>How to book or reach us</h3>
+        </div>
+        <p>
+          Our reservations team can assist you with bookings in Antwerp, Dubai,
+          Los Angeles, Redondo Beach and Miami. Whether you prefer to call, email,
+          or chat on WhatsApp, we’ll guide you through availability, rates,
+          and any special requests for your stay.
+        </p>
+
+        <div class="ols-contact__actions">
+          <a href="https://reservations.oneluxstay.com" class="ols-contact__btn ols-contact__btn--primary">
+            Book online →
+          </a>
+          <!-- <a href="https://wa.me/+639608959053" class="whatsapp" target="_blank" aria-label="WhatsApp">
+            Chat on WhatsApp
+          </a> -->
+        </div>
+      </div>
+
+      <!-- RIGHT: Concrete info (this is the part that was “empty”) -->
+      <div class="ols-contact__card ols-contact__card--right">
+        <h3>Concrete contact details</h3>
+
+        <dl class="ols-contact__list">
+
+          <div>
+            <dt>Email</dt>
+            <dd>
+              <a href="mailto:reservations@oneluxstay.com">
+                reservations@oneluxstay.com
+              </a>
+            </dd>
+          </div>
+
+          <div>
+            <dt>Phone</dt>
+            <dd>
+              +1 213 866 3589
+            </dd>
+          </div>
+
+          <div>
+            <dt>Reservation hours</dt>
+            <dd>
+              24/7 available <br />
+              support available for in-house guests.
+            </dd>
+          </div>
+
+          <div>
+            <dt>Booking channels</dt>
+            <dd>
+              One Lux Stay direct bookings, Airbnb, Booking.com and partner platforms.
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ols-contact {
+    --ols-gold: #d4af37;
+    --ols-bg: #000000;
+    --ols-card-bg: #070707;
+    --ols-card-soft: #101010;
+    --ols-muted: #d4d4d4;
+    --ols-border: rgba(255, 255, 255, 0.12);
+
+    background: radial-gradient(circle at top, #111111 0, var(--ols-bg) 60%);
+    color: #ffffff;
+    padding: 10% 24px 96px;
+    box-sizing: border-box;
+  }
+
+  .ols-contact__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .ols-contact__header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 48px;
+  }
+
+  .ols-contact__title {
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    margin: 0 0 16px;
+  }
+
+  .ols-contact__subtitle {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--ols-muted);
+  }
+
+  .ols-contact__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .ols-contact__card {
+    background: radial-gradient(circle at top left, #141414 0, var(--ols-card-bg) 55%);
+    border-radius: 20px;
+    border: 1px solid var(--ols-border);
+    padding: 24px 26px 24px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
+    font-size: 0.96rem;
+    line-height: 1.7;
+    color: var(--ols-muted);
+  }
+
+  .ols-contact__card--right {
+    background: linear-gradient(135deg, var(--ols-card-soft), #050505);
+  }
+
+  .ols-contact__card h3 {
+    margin: 0 0 10px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  .ols-contact__card>p {
+    margin: 0 0 18px;
+    color: white;
+  }
+
+  .ols-contact__card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+
+  .ols-contact__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    background: rgba(212, 175, 55, 0.06);
+    border: 1px solid rgba(212, 175, 55, 0.5);
+    font-size: 1rem;
+  }
+
+  .ols-contact__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .ols-contact__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease,
+      border-color 0.18s ease, color 0.18s ease;
+  }
+
+  .ols-contact__btn--primary {
+    background: linear-gradient(90deg, #d4af37, #b9912b);
+    color: #111111;
+    border: 1px solid transparent;
+    box-shadow: 0 10px 28px rgba(212, 175, 55, 0.35);
+  }
+
+  .ols-contact__btn--primary:hover {
+    background: linear-gradient(90deg, #c29e2d, #a47f23);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 36px rgba(212, 175, 55, 0.45);
+  }
+
+  .ols-contact__btn--ghost {
+    background: #000000;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .ols-contact__btn--ghost:hover {
+    background: #111111;
+    border-color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65);
+  }
+
+  /* Right column list */
+  .ols-contact__list {
+    margin: 10px 0 0;
+    padding: 0;
+  }
+
+  .ols-contact__list>div {
+    margin-bottom: 14px;
+  }
+
+  .ols-contact__list dt {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 2px;
+  }
+
+  .ols-contact__list dd {
+    margin: 0;
+    font-size: 0.94rem;
+    color: var(--ols-muted);
+  }
+
+  .ols-contact__list a {
+    color: var(--ols-gold);
+    text-decoration: none;
+  }
+
+  .ols-contact__list a:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .ols-contact {
+      padding: 72px 20px 80px;
+    }
+
+    .ols-contact__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .ols-contact {
+      padding: 56px 16px 72px;
+    }
+
+    .ols-contact__header {
+      margin-bottom: 40px;
+    }
+
+    .ols-contact__card {
+      padding: 20px 18px 22px;
+    }
+
+    .ols-contact__actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .ols-contact__btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

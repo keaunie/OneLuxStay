@@ -1,0 +1,92 @@
+{
+    "initialSceneId": "living",
+    "initialView": {
+        "yaw": 0,
+        "pitch": 0,
+        "fov": 90
+    },
+    "scenes": [
+        {
+            "id": "hallway",
+            "name": "Hallway – Unit 517",
+            "imageUrl": "assets/livingroom.jpg",
+            "width": 4000,
+            "linkHotspots": [
+                {
+                    "target": "living",
+                    "yaw": 0.7,
+                    "pitch": 0,
+                    "label": "Go to Living Room"
+                }
+            ]
+        },
+        {
+            "id": "living",
+            "name": "Living Room",
+            "imageUrl": "assets/livingroom.jpg",
+            "width": 4000,
+            "linkHotspots": [
+                {
+                    "target": "hallway",
+                    "yaw": 2.2,
+                    "pitch": 0,
+                    "label": "Back to Hallway"
+                },
+                {
+                    "target": "room1",
+                    "yaw": 0.6,
+                    "pitch": 0,
+                    "label": "Go to Bedroom 1"
+                },
+                {
+                    "target": "room2",
+                    "yaw": 0.4,
+                    "pitch": 0,
+                    "label": "Go to Bedroom 2"
+                }
+            ]
+        },
+        {
+            "id": "room1",
+            "name": "Bedroom 1",
+            "imageUrl": "https://res.cloudinary.com/dajua7tff/image/upload/v1762272152/livingroom_vbchtq.jpg",
+            "width": 4000,
+            "linkHotspots": [
+                {
+                    "target": "living",
+                    "yaw": 2.9,
+                    "pitch": 0,
+                    "label": "Back to Living Room"
+                }
+            ]
+        },
+        {
+            "id": "room2",
+            "name": "Bedroom 2",
+            "imageUrl": "https://res.cloudinary.com/dajua7tff/image/upload/v1762344172/room2_dx8tw4.jpg",
+            "width": 4000,
+            "linkHotspots": [
+                {
+                    "target": "living",
+                    "yaw": 2.5,
+                    "pitch": 0,
+                    "label": "Back to Living Room"
+                }
+            ]
+        },
+        {
+            "id": "lobby",
+            "name": "Lobby",
+            "imageUrl": "https://res.cloudinary.com/dajua7tff/image/upload/v1762342500/elevground_y6ln1g.jpg",
+            "width": 4000,
+            "linkHotspots": [
+                {
+                    "target": "hallway",
+                    "yaw": -1.6,
+                    "pitch": 0,
+                    "label": "Go to Hallway"
+                }
+            ]
+        }
+    ]
+}
