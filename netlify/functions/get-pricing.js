@@ -1,8 +1,8 @@
 // netlify/functions/get-pricing.js
-// Uses Guesty Booking Engine API (NOT open-api)
+// Uses Guesty Booking Engine API
 
-const GUESTY_AUTH_URL = "https://booking.guesty.com/oauth2/token"; // BEAPI auth
-const GUESTY_API_BASE = "https://booking.guesty.com/api"; // BEAPI base (calendar, etc.)
+const GUESTY_AUTH_URL = "https://booking.guesty.com/oauth2/token"; // BE API auth
+const GUESTY_API_BASE = "https://booking.guesty.com/api"; // BE API base
 
 // in-memory auth token cache (per warm lambda)
 let tokenCache = {
@@ -33,7 +33,7 @@ async function getGuestyAccessToken() {
 
   const body = new URLSearchParams({
     grant_type: "client_credentials",
-    scope: "booking_engine:api", // important: BEAPI scope
+    scope: "booking_engine:api", // <- Booking Engine API scope
     client_id: clientId,
     client_secret: clientSecret,
   });
@@ -60,7 +60,7 @@ async function getGuestyAccessToken() {
     throw new Error("Guesty auth response missing access_token");
   }
 
-  const ttlMs = (data.expires_in || 86400) * 1000; // docs: usually 86400s
+  const ttlMs = (data.expires_in || 86400) * 1000;
   tokenCache = {
     token: data.access_token,
     expiresAt: Date.now() + ttlMs,
@@ -80,8 +80,8 @@ exports.handler = async (event) => {
 
     const params = event.queryStringParameters || {};
     const listingId = params.listingId;
-    const startDate = params.startDate;
-    const endDate = params.endDate;
+    const startDate = params.startDate; // YYYY-MM-DD
+    const endDate = params.endDate; // YYYY-MM-DD
 
     if (!listingId || !startDate || !endDate) {
       return {
@@ -95,7 +95,7 @@ exports.handler = async (event) => {
     const cacheKey = `${listingId}|${startDate}|${endDate}`;
     const now = Date.now();
 
-    // ✅ Serve from cache if still fresh
+    // ✅ serve from cache if still fresh
     const cached = priceCache.get(cacheKey);
     if (cached && now < cached.expiresAt) {
       return {
@@ -106,14 +106,12 @@ exports.handler = async (event) => {
 
     const accessToken = await getGuestyAccessToken();
 
-    // Booking Engine "listing availability calendar" endpoint:
-    // GET https://booking.guesty.com/api/listings/{listingId}/calendar
+    // 📌 Booking Engine calendar expects ?from=YYYY-MM-DD&to=YYYY-MM-DD
     const url = new URL(
       `${GUESTY_API_BASE}/listings/${encodeURIComponent(listingId)}/calendar`
     );
-    // most BEAPI calendar examples take startDate / endDate (YYYY-MM-DD)
-    url.searchParams.set("startDate", startDate);
-    url.searchParams.set("endDate", endDate);
+    url.searchParams.set("from", startDate);
+    url.searchParams.set("to", endDate);
 
     const res = await fetch(url.toString(), {
       method: "GET",
@@ -139,21 +137,20 @@ exports.handler = async (event) => {
 
     const data = await res.json();
 
-    // Shape varies slightly per account; common patterns:
-    // { status: 200, data: { days: [...] } }  OR { days: [...] }
+    // Common BE calendar shapes:
+    // { days: [...] } OR { data: { days: [...] } }
     const daysRaw =
       (data && data.data && Array.isArray(data.data.days) && data.data.days) ||
       (Array.isArray(data.days) && data.days) ||
       [];
 
-    // Normalize to what the frontend expects
     const days = daysRaw.map((day) => ({
       date: day.date,
       price:
         day.price ??
         (day.money && (day.money.total || day.money.nightly)) ??
         null,
-      currency: day.currency || "EUR",
+      currency: day.currency || (day.money && day.money.currencyCode) || "EUR",
       minNights: day.minNights ?? day.minimumNights ?? null,
       status: day.status || null,
     }));
