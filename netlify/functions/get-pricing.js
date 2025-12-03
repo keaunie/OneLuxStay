@@ -1,11 +1,13 @@
 // netlify/functions/get-pricing.js
-// Uses built-in fetch (no axios needed)
 
-// ⚠️ Adjust these URLs if your Guesty docs say something different:
-const GUESTY_AUTH_URL = "https://api.guesty.com/oauth2/token"; // example
-const GUESTY_API_BASE = "https://api.guesty.com/api/v2";
+// ✅ Official Guesty Open API host
+const GUESTY_AUTH_URL = "https://open-api.guesty.com/oauth2/token";
+const GUESTY_API_BASE = "https://open-api.guesty.com/v1";
 
-// Get an access token from Guesty using client_id + client_secret
+/**
+ * Get an access token from Guesty using clientId + clientSecret
+ * Docs: https://open-api-docs.guesty.com/docs/authentication
+ */
 async function getGuestyAccessToken() {
   const clientId = process.env.GUESTY_CLIENT_ID;
   const clientSecret = process.env.GUESTY_CLIENT_SECRET;
@@ -16,8 +18,10 @@ async function getGuestyAccessToken() {
     );
   }
 
+  // Using x-www-form-urlencoded style from the docs
   const body = new URLSearchParams({
     grant_type: "client_credentials",
+    scope: "open-api",
     client_id: clientId,
     client_secret: clientSecret,
   });
@@ -25,14 +29,17 @@ async function getGuestyAccessToken() {
   const res = await fetch(GUESTY_AUTH_URL, {
     method: "POST",
     headers: {
+      Accept: "application/json",
       "Content-Type": "application/x-www-form-urlencoded",
     },
     body,
   });
 
   if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`Guesty auth failed: ${res.status} ${text}`);
+    const text = await res.text().catch(() => "");
+    throw new Error(
+      `Guesty auth failed: ${res.status} ${text || res.statusText}`
+    );
   }
 
   const data = await res.json();
@@ -45,7 +52,6 @@ async function getGuestyAccessToken() {
 
 exports.handler = async (event) => {
   try {
-    // Only allow GET
     if (event.httpMethod !== "GET") {
       return {
         statusCode: 405,
@@ -70,55 +76,56 @@ exports.handler = async (event) => {
     // 1) Get Guesty access token
     const accessToken = await getGuestyAccessToken();
 
-    // 2) Call Guesty pricing/availability endpoint
-    // ⚠️ Adjust path if your Guesty API docs use a different route:
+    // 2) Call Guesty availability-pricing calendar endpoint
+    // Docs example:
+    // GET https://open-api.guesty.com/v1/availability-pricing/api/calendar/listings/{id}?startDate=YYYY-MM-DD&endDate=YYYY-MM-DD&includeAllotment=true
     const url = new URL(
-      `${GUESTY_API_BASE}/listings/${encodeURIComponent(
+      `${GUESTY_API_BASE}/availability-pricing/api/calendar/listings/${encodeURIComponent(
         listingId
-      )}/availability/prices`
+      )}`
     );
-    url.searchParams.set("from", startDate);
-    url.searchParams.set("to", endDate);
+    url.searchParams.set("startDate", startDate);
+    url.searchParams.set("endDate", endDate);
+    url.searchParams.set("includeAllotment", "true");
 
     const res = await fetch(url.toString(), {
       method: "GET",
       headers: {
+        Accept: "application/json",
         Authorization: `Bearer ${accessToken}`,
-        "Content-Type": "application/json",
       },
     });
 
     if (!res.ok) {
-      const text = await res.text();
-      console.error("Guesty pricing error:", res.status, text);
+      const text = await res.text().catch(() => "");
+      console.error("Guesty pricing HTTP error:", res.status, text);
       return {
         statusCode: 502,
         body: JSON.stringify({
           error: "Guesty pricing request failed",
           status: res.status,
-          details: text,
+          details: text || res.statusText,
         }),
       };
     }
 
     const data = await res.json();
 
-    // Normalize output to: { days: [ { date, price, currency, available, minStay }, ... ] }
-    // Adjust this mapping if Guesty returns a different shape.
-    const daysRaw = Array.isArray(data.days)
-      ? data.days
-      : Array.isArray(data)
-      ? data
-      : [];
+    // Docs response shape:
+    // { status: 200, data: { days: [ { date, currency, price, minNights, status, ... } ] }, message: "OK" }
+    const daysRaw =
+      (data && data.data && Array.isArray(data.data.days) && data.data.days) ||
+      (Array.isArray(data.days) && data.days) ||
+      [];
+
     const days = daysRaw.map((day) => ({
       date: day.date,
-      price:
-        (day.price && (day.price.amount ?? day.price.value)) ??
-        day.price ??
-        null,
-      currency: (day.price && day.price.currency) || "EUR",
-      available: typeof day.available === "boolean" ? day.available : true,
-      minStay: day.minNights ?? day.minStay ?? null,
+      listingId: day.listingId,
+      price: day.price ?? null,
+      currency: day.currency || "EUR",
+      minNights: day.minNights ?? null,
+      status: day.status || null,
+      // You can add more fields if you need them later
     }));
 
     return {
