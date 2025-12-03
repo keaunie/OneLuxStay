@@ -5,14 +5,35 @@
 const TOKEN_URL = "https://booking.guesty.com/oauth2/token";
 const BE_BASE_URL = "https://booking.guesty.com/api";
 
-// Optional in-memory token cache so we don’t ask for a token on every call
-let cachedToken = null;
-let cachedTokenExpiry = 0; // epoch ms
+// =============================
+// Token management (Booking Engine API)
+// =============================
+
+// shared across invocations in the SAME warm Lambda
+let tokenCache = {
+  accessToken: null,
+  // timestamp in ms when token expires (we set it a bit early)
+  expiresAt: 0,
+};
+
+// simple backoff if Guesty sends 429s for token requests
+let tokenBackoffUntil = 0;
 
 async function getAccessToken() {
   const now = Date.now();
-  if (cachedToken && now < cachedTokenExpiry - 60_000) {
-    return cachedToken;
+
+  // 1) If we already have a token and it's not close to expiry, reuse it
+  if (tokenCache.accessToken && now < tokenCache.expiresAt) {
+    return tokenCache.accessToken;
+  }
+
+  // 2) If we previously got a 429, respect backoff
+  if (now < tokenBackoffUntil) {
+    throw new Error(
+      `Guesty token rate-limited, backing off until ${new Date(
+        tokenBackoffUntil
+      ).toISOString()}`
+    );
   }
 
   const clientId = process.env.GUESTY_CLIENT_ID;
@@ -40,20 +61,45 @@ async function getAccessToken() {
     body,
   });
 
+  // 3) Handle rate limiting explicitly
+  if (res.status === 429) {
+    const text = await res.text().catch(() => "");
+    console.error("Guesty token 429 Too Many Requests:", text);
+
+    // back off for 60 seconds (tune if needed)
+    tokenBackoffUntil = Date.now() + 60_000;
+
+    throw new Error(
+      `Guesty token error 429 Too Many Requests (backing off 60s): ${text}`
+    );
+  }
+
   if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`Guesty token error ${res.status}: ${text}`);
+    const text = await res.text().catch(() => "");
+    throw new Error(
+      `Guesty token error ${res.status}: ${text || res.statusText}`
+    );
   }
 
   const json = await res.json();
   const accessToken = json.access_token;
   const expiresIn = Number(json.expires_in || 86400); // seconds
 
-  cachedToken = accessToken;
-  cachedTokenExpiry = Date.now() + expiresIn * 1000;
+  // refresh 5 minutes BEFORE actual expiry (but at least 60s)
+  const effectiveTtlSeconds = Math.max(expiresIn - 300, 60);
+
+  tokenCache = {
+    accessToken,
+    expiresAt: Date.now() + effectiveTtlSeconds * 1000,
+  };
+  tokenBackoffUntil = 0; // reset backoff on success
 
   return accessToken;
 }
+
+// =============================
+// Main Netlify function handler
+// =============================
 
 exports.handler = async (event) => {
   if (event.httpMethod !== "GET") {
@@ -84,7 +130,7 @@ exports.handler = async (event) => {
   try {
     const token = await getAccessToken();
 
-    // 1) Create a reservation quote – this is what the Guesty booking widget uses
+    // 1) Create a reservation quote – same flow Guesty booking widget uses
     const quoteRes = await fetch(`${BE_BASE_URL}/reservations/quotes`, {
       method: "POST",
       headers: {
@@ -102,6 +148,7 @@ exports.handler = async (event) => {
 
     if (!quoteRes.ok) {
       const text = await quoteRes.text();
+      console.error("Guesty quote error:", quoteRes.status, text);
       return {
         statusCode: quoteRes.status,
         headers: { "Content-Type": "application/json" },
