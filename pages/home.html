@@ -47,9 +47,8 @@
           <span>Los Angeles</span>
         </a>
         <a href="/hollywood" data-link aria-label="Explore Hollywood stays">
-          <img
-            src="https://images.unsplash.com/photo-1534253893894-10d024888e49?auto=format&fit=crop&q=80&w=600"
-            alt="" aria-hidden="true" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1534253893894-10d024888e49?auto=format&fit=crop&q=80&w=600" alt=""
+            aria-hidden="true" loading="lazy" />
           <span>Hollywood</span>
         </a>
         <a href="/redondo" data-link aria-label="Explore Redondo Beach stays">
@@ -124,9 +123,8 @@
 
         <article class="feature-card animate-on-scroll">
           <div class="feature-icon"><i data-feather="headphones"></i></div>
-          <h3>Concierge Atelier</h3>
-          <p>Dedicated tastemakers coordinate chef dinners, heli-transfers, wellness rituals, and VIP cultural access.
-          </p>
+          <h3>24/7 Support</h3>
+          <p>Concierge-level assistance before, during, and after your stay—any time zone.</p>
         </article>
       </div>
     </div>
@@ -143,8 +141,8 @@
       </div>
 
       <div class="destinations-stack animate-on-scroll">
-        <a class="destination-card immersive-card animate-on-scroll" href="/antwerp" data-link aria-label="Explore Antwerp listings"
-          style="--destination-accent:#f5d07a;">
+        <a class="destination-card immersive-card animate-on-scroll" href="/antwerp" data-link
+          aria-label="Explore Antwerp listings" style="--destination-accent:#f5d07a;">
           <div class="destination-media"
             style="background-image:url('https://assets.guesty.com/image/upload/v1762983593/production/666b3af27fc6d5653142b0af/rhipugh4blshkdlknw0y.jpg');">
           </div>
@@ -167,8 +165,8 @@
           <span class="destination-depth">01</span>
         </a>
 
-        <a class="destination-card immersive-card animate-on-scroll" href="/dubai" data-link aria-label="Explore Dubai listings"
-          style="--destination-accent:#f0c05a;">
+        <a class="destination-card immersive-card animate-on-scroll" href="/dubai" data-link
+          aria-label="Explore Dubai listings" style="--destination-accent:#f0c05a;">
           <div class="destination-media"
             style="background-image:url('https://assets.guesty.com/image/upload/v1762983594/production/666b3af27fc6d5653142b0af/og8pc3hk7dkvvowp3yxe.jpg');">
           </div>
@@ -236,8 +234,8 @@
           <span class="destination-depth">04</span>
         </a>
 
-        <a class="destination-card immersive-card animate-on-scroll" href="/hollywood" data-link aria-label="Explore Hollywood listings"
-          style="--destination-accent:#ffb86b;">
+        <a class="destination-card immersive-card animate-on-scroll" href="/hollywood" data-link
+          aria-label="Explore Hollywood listings" style="--destination-accent:#ffb86b;">
           <div class="destination-media"
             style="background-image:url('https://images.unsplash.com/photo-1534253893894-10d024888e49?auto=format&fit=crop&q=80&w=1800');">
           </div>
@@ -259,8 +257,8 @@
           <span class="destination-depth">05</span>
         </a>
 
-        <a class="destination-card immersive-card animate-on-scroll" href="/miami" data-link aria-label="Explore Miami listings"
-          style="--destination-accent:#6ff0d0;">
+        <a class="destination-card immersive-card animate-on-scroll" href="/miami" data-link
+          aria-label="Explore Miami listings" style="--destination-accent:#6ff0d0;">
           <div class="destination-media"
             style="background-image:url('https://assets.guesty.com/image/upload/v1762983593/production/666b3af27fc6d5653142b0af/jk89sv4gqd8hmnaiccpr.jpg');">
           </div>
@@ -1174,6 +1172,11 @@
     font-weight: 600;
   }
 
+  .testimonial .location {
+    color: #d4af37;
+    font-weight: 600;
+  }
+
   /* CTA */
   .skyline-cta {
     padding: 120px 0;
@@ -1323,20 +1326,14 @@
 
     60% {
       opacity: 0.8;
-      transform: translate(
-          calc(-50% + var(--sparkle-drift-x, 0px)),
-          calc(-50% + var(--sparkle-drift-y, -20px))
-        )
-        scale(1);
+      transform: translate(calc(-50% + var(--sparkle-drift-x, 0px)),
+          calc(-50% + var(--sparkle-drift-y, -20px))) scale(1);
     }
 
     100% {
       opacity: 0;
-      transform: translate(
-          calc(-50% + var(--sparkle-drift-x, 0px)),
-          calc(-50% + var(--sparkle-drift-y, -20px))
-        )
-        scale(0.1);
+      transform: translate(calc(-50% + var(--sparkle-drift-x, 0px)),
+          calc(-50% + var(--sparkle-drift-y, -20px))) scale(0.1);
     }
   }
 
