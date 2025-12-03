@@ -1,8 +1,8 @@
 // netlify/functions/get-pricing.js
-// Uses Guesty Booking Engine API
+// Uses Guesty Booking Engine API and normalizes to: { listingId, startDate, endDate, days: [ { date, price, currency, minNights, status }, ... ] }
 
-const GUESTY_AUTH_URL = "https://booking.guesty.com/oauth2/token"; // BE API auth
-const GUESTY_API_BASE = "https://booking.guesty.com/api"; // BE API base
+const GUESTY_AUTH_URL = "https://booking.guesty.com/oauth2/token";
+const GUESTY_API_BASE = "https://booking.guesty.com/api";
 
 // in-memory auth token cache (per warm lambda)
 let tokenCache = {
@@ -33,7 +33,7 @@ async function getGuestyAccessToken() {
 
   const body = new URLSearchParams({
     grant_type: "client_credentials",
-    scope: "booking_engine:api", // <- Booking Engine API scope
+    scope: "booking_engine:api", // Booking Engine API scope
     client_id: clientId,
     client_secret: clientSecret,
   });
@@ -69,6 +69,54 @@ async function getGuestyAccessToken() {
   return data.access_token;
 }
 
+// helper: aggressively try to pull a numeric price from a "day" object
+function extractPriceFromDay(day) {
+  if (!day || typeof day !== "object") return null;
+
+  const directCandidates = [
+    day.price,
+    day.dailyPrice,
+    day.basePrice,
+    day.nightlyPrice,
+    day.rate,
+  ];
+
+  const nestedCandidates = [
+    day.money && day.money.nightly,
+    day.money && day.money.total,
+    day.money && day.money.amount,
+    day.money && day.money.price,
+    day.rate && day.rate.nightly,
+    day.rate && day.rate.total,
+  ];
+
+  const all = [...directCandidates, ...nestedCandidates];
+
+  for (const v of all) {
+    const n = Number(v);
+    if (!Number.isNaN(n) && n > 0) return n;
+  }
+
+  return null;
+}
+
+function normalizeDays(raw) {
+  if (!raw) return [];
+
+  // Case 1: array already
+  if (Array.isArray(raw)) return raw;
+
+  // Case 2: object keyed by date: { "2025-12-04": { ... }, ... }
+  if (typeof raw === "object") {
+    return Object.entries(raw).map(([date, value]) => ({
+      date,
+      ...value,
+    }));
+  }
+
+  return [];
+}
+
 exports.handler = async (event) => {
   try {
     if (event.httpMethod !== "GET") {
@@ -95,7 +143,7 @@ exports.handler = async (event) => {
     const cacheKey = `${listingId}|${startDate}|${endDate}`;
     const now = Date.now();
 
-    // ✅ serve from cache if still fresh
+    // serve from cache if still fresh
     const cached = priceCache.get(cacheKey);
     if (cached && now < cached.expiresAt) {
       return {
@@ -106,7 +154,7 @@ exports.handler = async (event) => {
 
     const accessToken = await getGuestyAccessToken();
 
-    // 📌 Booking Engine calendar expects ?from=YYYY-MM-DD&to=YYYY-MM-DD
+    // Booking Engine calendar expects ?from=YYYY-MM-DD&to=YYYY-MM-DD
     const url = new URL(
       `${GUESTY_API_BASE}/listings/${encodeURIComponent(listingId)}/calendar`
     );
@@ -137,23 +185,28 @@ exports.handler = async (event) => {
 
     const data = await res.json();
 
-    // Common BE calendar shapes:
-    // { days: [...] } OR { data: { days: [...] } }
-    const daysRaw =
-      (data && data.data && Array.isArray(data.data.days) && data.data.days) ||
-      (Array.isArray(data.days) && data.days) ||
-      [];
+    // shapes:
+    // { days: [...] } OR { data: { days: [...] } } OR { days: { "2025-12-04": {...}, ... } }
+    const rawDays = (data && data.data && data.data.days) || data.days || null;
 
-    const days = daysRaw.map((day) => ({
-      date: day.date,
-      price:
-        day.price ??
-        (day.money && (day.money.total || day.money.nightly)) ??
-        null,
-      currency: day.currency || (day.money && day.money.currencyCode) || "EUR",
-      minNights: day.minNights ?? day.minimumNights ?? null,
-      status: day.status || null,
-    }));
+    const daysNormalized = normalizeDays(rawDays);
+
+    const days = daysNormalized.map((day) => {
+      const price = extractPriceFromDay(day);
+
+      const currency =
+        day.currency ||
+        (day.money && (day.money.currency || day.money.currencyCode)) ||
+        "EUR";
+
+      return {
+        date: day.date,
+        price,
+        currency,
+        minNights: day.minNights ?? day.minimumNights ?? null,
+        status: day.status || null,
+      };
+    });
 
     const payload = {
       listingId,
