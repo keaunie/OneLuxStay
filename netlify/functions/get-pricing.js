@@ -1,25 +1,18 @@
 // netlify/functions/get-pricing.js
-// Uses Guesty Booking Engine API and normalizes to: { listingId, startDate, endDate, days: [ { date, price, currency, minNights, status }, ... ] }
+// Uses Guesty Booking Engine "reservation quote" endpoint
+// and returns { listingId, startDate, endDate, days[] } to the front-end.
 
-const GUESTY_AUTH_URL = "https://booking.guesty.com/oauth2/token";
-const GUESTY_API_BASE = "https://booking.guesty.com/api";
+const TOKEN_URL = "https://booking.guesty.com/oauth2/token";
+const BE_BASE_URL = "https://booking.guesty.com/api";
 
-// in-memory auth token cache (per warm lambda)
-let tokenCache = {
-  token: null,
-  expiresAt: 0,
-};
+// Optional in-memory token cache so we don’t ask for a token on every call
+let cachedToken = null;
+let cachedTokenExpiry = 0; // epoch ms
 
-// in-memory price cache: key = listingId|startDate|endDate
-let priceCache = new Map();
-const PRICE_TTL_MS = 5 * 60 * 1000; // 5 minutes
-
-async function getGuestyAccessToken() {
+async function getAccessToken() {
   const now = Date.now();
-
-  // reuse token if still valid (minus 1 minute buffer)
-  if (tokenCache.token && now < tokenCache.expiresAt - 60_000) {
-    return tokenCache.token;
+  if (cachedToken && now < cachedTokenExpiry - 60_000) {
+    return cachedToken;
   }
 
   const clientId = process.env.GUESTY_CLIENT_ID;
@@ -27,211 +20,141 @@ async function getGuestyAccessToken() {
 
   if (!clientId || !clientSecret) {
     throw new Error(
-      "Missing GUESTY_CLIENT_ID or GUESTY_CLIENT_SECRET env vars."
+      "Missing GUESTY_CLIENT_ID or GUESTY_CLIENT_SECRET env vars"
     );
   }
 
   const body = new URLSearchParams({
     grant_type: "client_credentials",
-    scope: "booking_engine:api", // Booking Engine API scope
+    scope: "booking_engine:api",
     client_id: clientId,
     client_secret: clientSecret,
   });
 
-  const res = await fetch(GUESTY_AUTH_URL, {
+  const res = await fetch(TOKEN_URL, {
     method: "POST",
     headers: {
       accept: "application/json",
-      "cache-control": "no-cache,no-cache",
       "content-type": "application/x-www-form-urlencoded",
     },
     body,
   });
 
   if (!res.ok) {
-    const text = await res.text().catch(() => "");
-    throw new Error(
-      `Guesty auth failed: ${res.status} ${text || res.statusText}`
-    );
+    const text = await res.text();
+    throw new Error(`Guesty token error ${res.status}: ${text}`);
   }
 
-  const data = await res.json();
-  if (!data.access_token) {
-    throw new Error("Guesty auth response missing access_token");
-  }
+  const json = await res.json();
+  const accessToken = json.access_token;
+  const expiresIn = Number(json.expires_in || 86400); // seconds
 
-  const ttlMs = (data.expires_in || 86400) * 1000;
-  tokenCache = {
-    token: data.access_token,
-    expiresAt: Date.now() + ttlMs,
-  };
+  cachedToken = accessToken;
+  cachedTokenExpiry = Date.now() + expiresIn * 1000;
 
-  return data.access_token;
-}
-
-// helper: aggressively try to pull a numeric price from a "day" object
-function extractPriceFromDay(day) {
-  if (!day || typeof day !== "object") return null;
-
-  const directCandidates = [
-    day.price,
-    day.dailyPrice,
-    day.basePrice,
-    day.nightlyPrice,
-    day.rate,
-  ];
-
-  const nestedCandidates = [
-    day.money && day.money.nightly,
-    day.money && day.money.total,
-    day.money && day.money.amount,
-    day.money && day.money.price,
-    day.rate && day.rate.nightly,
-    day.rate && day.rate.total,
-  ];
-
-  const all = [...directCandidates, ...nestedCandidates];
-
-  for (const v of all) {
-    const n = Number(v);
-    if (!Number.isNaN(n) && n > 0) return n;
-  }
-
-  return null;
-}
-
-function normalizeDays(raw) {
-  if (!raw) return [];
-
-  // Case 1: array already
-  if (Array.isArray(raw)) return raw;
-
-  // Case 2: object keyed by date: { "2025-12-04": { ... }, ... }
-  if (typeof raw === "object") {
-    return Object.entries(raw).map(([date, value]) => ({
-      date,
-      ...value,
-    }));
-  }
-
-  return [];
+  return accessToken;
 }
 
 exports.handler = async (event) => {
+  if (event.httpMethod !== "GET") {
+    return {
+      statusCode: 405,
+      headers: { "Content-Type": "text/plain" },
+      body: "Method not allowed",
+    };
+  }
+
+  const params = event.queryStringParameters || {};
+  const listingId = params.listingId;
+  const startDate = params.startDate;
+  const endDate = params.endDate;
+  const guests = Number(params.guests || 1) || 1;
+
+  if (!listingId || !startDate || !endDate) {
+    return {
+      statusCode: 400,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        error: "Missing required query params",
+        details: { listingId, startDate, endDate },
+      }),
+    };
+  }
+
   try {
-    if (event.httpMethod !== "GET") {
-      return {
-        statusCode: 405,
-        body: JSON.stringify({ error: "Method Not Allowed" }),
-      };
-    }
+    const token = await getAccessToken();
 
-    const params = event.queryStringParameters || {};
-    const listingId = params.listingId;
-    const startDate = params.startDate; // YYYY-MM-DD
-    const endDate = params.endDate; // YYYY-MM-DD
-
-    if (!listingId || !startDate || !endDate) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({
-          error: "Missing required query params: listingId, startDate, endDate",
-        }),
-      };
-    }
-
-    const cacheKey = `${listingId}|${startDate}|${endDate}`;
-    const now = Date.now();
-
-    // serve from cache if still fresh
-    const cached = priceCache.get(cacheKey);
-    if (cached && now < cached.expiresAt) {
-      return {
-        statusCode: 200,
-        body: JSON.stringify(cached.payload),
-      };
-    }
-
-    const accessToken = await getGuestyAccessToken();
-
-    // Booking Engine calendar expects ?from=YYYY-MM-DD&to=YYYY-MM-DD
-    const url = new URL(
-      `${GUESTY_API_BASE}/listings/${encodeURIComponent(listingId)}/calendar`
-    );
-    url.searchParams.set("from", startDate);
-    url.searchParams.set("to", endDate);
-
-    const res = await fetch(url.toString(), {
-      method: "GET",
+    // 1) Create a reservation quote – this is what the Guesty booking widget uses
+    const quoteRes = await fetch(`${BE_BASE_URL}/reservations/quotes`, {
+      method: "POST",
       headers: {
         accept: "application/json",
-        Authorization: `Bearer ${accessToken}`,
+        "content-type": "application/json",
+        authorization: `Bearer ${token}`,
       },
+      body: JSON.stringify({
+        listingId,
+        guestsCount: guests,
+        checkInDateLocalized: startDate,
+        checkOutDateLocalized: endDate,
+      }),
     });
 
-    if (!res.ok) {
-      const text = await res.text().catch(() => "");
-      console.error("Guesty pricing HTTP error:", res.status, text);
-
+    if (!quoteRes.ok) {
+      const text = await quoteRes.text();
       return {
-        statusCode: res.status,
+        statusCode: quoteRes.status,
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           error: "Guesty pricing request failed",
-          status: res.status,
-          details: text || res.statusText,
+          status: quoteRes.status,
+          details: text,
         }),
       };
     }
 
-    const data = await res.json();
+    const quote = await quoteRes.json();
 
-    // shapes:
-    // { days: [...] } OR { data: { days: [...] } } OR { days: { "2025-12-04": {...}, ... } }
-    const rawDays = (data && data.data && data.data.days) || data.days || null;
+    // 2) Normalize into the simple shape your front-end expects:
+    //    { days: [{ date, price, currency }, ...] }
+    let days = [];
 
-    const daysNormalized = normalizeDays(rawDays);
+    // Case A: quote already has a top-level "days" array
+    if (Array.isArray(quote.days)) {
+      days = quote.days.map((d) => ({
+        date: d.date,
+        price: Number(d.price) || 0,
+        currency: d.currency || quote.currency || "EUR",
+      }));
+    }
+    // Case B: some accounts nest it under priceBreakdown.days
+    else if (quote.priceBreakdown && Array.isArray(quote.priceBreakdown.days)) {
+      days = quote.priceBreakdown.days.map((d) => ({
+        date: d.date,
+        price: Number(d.price) || 0,
+        currency: d.currency || quote.currency || "EUR",
+      }));
+    }
 
-    const days = daysNormalized.map((day) => {
-      const price = extractPriceFromDay(day);
-
-      const currency =
-        day.currency ||
-        (day.money && (day.money.currency || day.money.currencyCode)) ||
-        "EUR";
-
-      return {
-        date: day.date,
-        price,
-        currency,
-        minNights: day.minNights ?? day.minimumNights ?? null,
-        status: day.status || null,
-      };
-    });
-
-    const payload = {
-      listingId,
-      startDate,
-      endDate,
-      days,
-    };
-
-    // cache for a few minutes
-    priceCache.set(cacheKey, {
-      payload,
-      expiresAt: now + PRICE_TTL_MS,
-    });
-
+    // Final response back to your browser
     return {
       statusCode: 200,
-      body: JSON.stringify(payload),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        listingId,
+        startDate,
+        endDate,
+        days,
+      }),
     };
   } catch (err) {
-    console.error("Error in get-pricing function:", err);
+    console.error("Guesty get-pricing handler error:", err);
     return {
       statusCode: 500,
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         error: "Failed to fetch pricing from Guesty",
-        details: err.message || String(err),
+        details: String(err.message || err),
       }),
     };
   }
