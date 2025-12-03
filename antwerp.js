@@ -37,6 +37,48 @@ function parsePropsUrls(raw, fallbackUrls = DEFAULT_PROPS_URLS) {
   return csv.length ? csv : fallbackUrls;
 }
 
+/* ==========================================
+   Guesty pricing helper (via Netlify function)
+   ========================================== */
+async function fetchGuestyPricing(guestyId, startDate, endDate) {
+  if (!guestyId || !startDate || !endDate) return null;
+
+  const qs = new URLSearchParams({
+    listingId: guestyId,
+    startDate,
+    endDate,
+  }).toString();
+
+  try {
+    const res = await fetch(`/.netlify/functions/get-pricing?${qs}`, {
+      cache: "no-store",
+    });
+
+    if (!res.ok) {
+      console.warn("Guesty pricing HTTP error:", res.status, await res.text());
+      return null;
+    }
+
+    const data = await res.json();
+    if (!data || !Array.isArray(data.days) || !data.days.length) return null;
+
+    const nights = data.days.length;
+    const currency = data.days[0]?.currency || "EUR";
+    const sum = data.days.reduce((acc, d) => acc + (Number(d.price) || 0), 0);
+    const avgPerNight = nights > 0 ? sum / nights : null;
+
+    return {
+      nights,
+      avgPerNight,
+      currency,
+      days: data.days,
+    };
+  } catch (err) {
+    console.warn("Error calling Guesty pricing function:", err);
+    return null;
+  }
+}
+
 /* =========================
    LISTINGS PAGE (MULTI JSON)
    ========================= */
@@ -53,7 +95,7 @@ function initListingsPage() {
     clear: document.getElementById("clear"),
   };
 
-  // 👉 ADDED: filters.cities for location chips
+  // 👉 filters.cities for location chips
   const state = {
     all: [],
     filters: {
@@ -87,16 +129,14 @@ function initListingsPage() {
     return s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
   }
 
-  // 👉 NEW: build location chips from state.all
+  // 👉 build location chips from state.all
   function buildCityChips() {
     if (!els.chips) return;
 
-    // Get unique city names from loaded properties
     const cities = Array.from(
       new Set(state.all.map((p) => (p.city || "").trim()).filter(Boolean))
     );
 
-    // If nothing, keep whatever static chips you have
     if (!cities.length) return;
 
     els.chips.innerHTML = cities
@@ -117,14 +157,14 @@ function initListingsPage() {
   function derive() {
     let items = [...state.all];
 
-    // 👉 NEW: filter by city
+    // filter by city
     if (state.filters.cities.size) {
       items = items.filter((p) =>
         state.filters.cities.has((p.city || "").toLowerCase())
       );
     }
 
-    // Existing area filter (still works if you use area chips)
+    // Existing area filter
     if (state.filters.areas.size) {
       items = items.filter((p) =>
         state.filters.areas.has((p.area || "").toLowerCase())
@@ -229,7 +269,6 @@ function initListingsPage() {
                   )}${p.price_from.toLocaleString()} / night</div>`
                 : `<div class="price ghost">Price available on request</div>`
             }
-            <!-- route to detail page -->
             <a class="btn btn--gold btn--price" href="/antwerpProp?id=${encodeURIComponent(
               p.id
             )}" data-link>
@@ -252,7 +291,7 @@ function initListingsPage() {
       update();
     });
 
-    // 👉 NEW: chips click handler (city + area)
+    // chips click handler (city + area)
     if (els.chips) {
       els.chips.addEventListener("click", (e) => {
         const chip = e.target.closest(".chip");
@@ -305,11 +344,9 @@ function initListingsPage() {
     });
   }
 
-  // MULTI JSON: from data-props or default list
   const rawProps = root.dataset.props || "";
   const propsUrls = parsePropsUrls(rawProps, DEFAULT_PROPS_URLS);
 
-  // ❗ Fixed: only ONE Promise.all here
   Promise.all(
     propsUrls.map((u) =>
       fetch(u, { cache: "no-store" })
@@ -337,7 +374,7 @@ function initListingsPage() {
   )
     .then((arrays) => {
       state.all = arrays.flat();
-      buildCityChips(); // 👉 build location filters now that we have data
+      buildCityChips();
       wireControls();
       update();
     })
@@ -350,7 +387,6 @@ function initListingsPage() {
     });
 }
 
-// expose if you like:
 window.initListingsPage = initListingsPage;
 
 /* =========================
@@ -433,7 +469,6 @@ function initPropertyDetailPageAntwerp() {
         property.price?.currency
       )}</div>
 
-      <!-- ============ Selector (Booking.com-style dates) ============ -->
       <div class="selector">
         <label>Dates
           <button type="button" id="dateRangeBtn" style="height:38px;padding:0 12px;border:1px solid #ccc;border-radius:6px;cursor:pointer;background:#fff">
@@ -441,7 +476,6 @@ function initPropertyDetailPageAntwerp() {
           </button>
         </label>
 
-        <!-- Hidden native date inputs (kept for your logic) -->
         <input type="date" id="checkin"
                value="${fmtDate(today)}"
                min="${fmtDate(today)}"
@@ -459,10 +493,9 @@ function initPropertyDetailPageAntwerp() {
         </label>
       </div>
 
-            <div class="rooms">
+      <div class="rooms">
         ${(property.rooms || [])
           .map((room, idx) => {
-            // Prefer room-level tour config, but you could also fall back to property-level if you add it:
             const tourJson =
               room.virtualTourJson ||
               room.virtual_tour_json ||
@@ -521,15 +554,12 @@ function initPropertyDetailPageAntwerp() {
           .join("")}
       </div>
 
-
-      <!-- Room detail modal -->
       <div class="room-modal" id="roomModal" aria-hidden="true">
         <div class="room-modal-backdrop"></div>
         <div class="room-modal-dialog" role="dialog" aria-modal="true">
           <button class="room-modal-close" type="button">&times;</button>
 
           <div class="room-modal-layout">
-            <!-- Left: photos -->
             <div class="room-modal-media">
               <div class="room-modal-main">
                 <img id="roomModalMainImage" src="" alt="">
@@ -537,7 +567,6 @@ function initPropertyDetailPageAntwerp() {
               <div class="room-modal-thumbs" id="roomModalThumbs"></div>
             </div>
 
-            <!-- Right: info -->
             <div class="room-modal-info">
               <h2 id="roomModalTitle"></h2>
               <div class="room-modal-size" id="roomModalSize"></div>
@@ -552,12 +581,69 @@ function initPropertyDetailPageAntwerp() {
           </div>
         </div>
       </div>
-
     `;
 
     initRoomModal(property);
 
-    // ===== Date range button behavior (single control, native pickers) =====
+    // ============================
+    // live Guesty pricing hook
+    // ============================
+    async function refreshRoomPrices() {
+      const ciEl = container.querySelector("#checkin");
+      const coEl = container.querySelector("#checkout");
+      const headerPriceEl = container.querySelector(".price");
+
+      if (!ciEl || !coEl) return;
+      const checkin = ciEl.value;
+      const checkout = coEl.value;
+      if (!checkin || !checkout) return;
+
+      let globalMin = null;
+      let globalCurrency = property.price?.currency || "EUR";
+
+      const roomEls = container.querySelectorAll(".room");
+      roomEls.forEach((roomEl) => {
+        const bookBtn = roomEl.querySelector(".book-btn[data-guesty-id]");
+        const priceEl = roomEl.querySelector(".room-price");
+        const guestyId = bookBtn?.dataset.guestyId;
+
+        if (!guestyId || !priceEl) return;
+
+        priceEl.textContent = "Loading live price…";
+
+        fetchGuestyPricing(guestyId, checkin, checkout)
+          .then((res) => {
+            if (!res || res.avgPerNight == null) {
+              priceEl.textContent = "Price on request";
+              return;
+            }
+
+            const { avgPerNight, currency } = res;
+            globalCurrency = currency || globalCurrency;
+
+            priceEl.textContent = `Starts at: ${fmtMoney(
+              avgPerNight,
+              currency
+            )} per night`;
+
+            if (globalMin == null || avgPerNight < globalMin) {
+              globalMin = avgPerNight;
+            }
+
+            if (headerPriceEl && globalMin != null) {
+              headerPriceEl.textContent = `From ${fmtMoney(
+                globalMin,
+                globalCurrency
+              )}`;
+            }
+          })
+          .catch((err) => {
+            console.warn("Guesty price error for room", guestyId, err);
+            priceEl.textContent = "Price on request";
+          });
+      });
+    }
+
     (function initDateRangeSelectorWithinContainer() {
       const btn = container.querySelector("#dateRangeBtn");
       const txt = container.querySelector("#dateRangeText");
@@ -593,6 +679,7 @@ function initPropertyDetailPageAntwerp() {
         if (!co.value || co.value < next) co.value = next;
         co.showPicker && co.showPicker();
         updateText();
+        refreshRoomPrices();
       });
 
       co.addEventListener("change", () => {
@@ -602,13 +689,13 @@ function initPropertyDetailPageAntwerp() {
         const minStr = fmt(minOut);
         if (co.value < minStr) co.value = minStr;
         updateText();
+        refreshRoomPrices();
       });
 
-      // initial text
       updateText();
+      refreshRoomPrices();
     })();
 
-    // Carousel thumbs
     const mainImgs = container.querySelectorAll(".carousel-main img");
     const thumbs = container.querySelectorAll(".carousel-thumbs img");
     thumbs.forEach((t) =>
@@ -620,7 +707,6 @@ function initPropertyDetailPageAntwerp() {
       })
     );
 
-    // Booking links
     container.querySelectorAll(".book-btn[data-room-id]").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.preventDefault();
@@ -644,7 +730,6 @@ function initPropertyDetailPageAntwerp() {
       });
     });
 
-    // Re-run global enhancements
     window.ensureFeather?.();
     window.initScrollAnimations?.();
     if (typeof window.__nav_refreshHero === "function")
@@ -669,13 +754,8 @@ function initPropertyDetailPageAntwerp() {
     const triggers = document.querySelectorAll(".room-trigger");
 
     function openRoom(room) {
-      // Title
       titleEl.textContent = `${room.type} (${room.guests} guests)`;
-
-      // Optional size
       sizeEl.textContent = room.size ? `Size: ${room.size}` : "";
-
-      // Price
       priceEl.textContent = room.price_per_night
         ? `From ${fmtMoney(
             room.price_per_night,
@@ -683,7 +763,6 @@ function initPropertyDetailPageAntwerp() {
           )} per night`
         : "";
 
-      // Use room.images, fall back to property.images
       const imgs =
         (Array.isArray(room.images) && room.images.length
           ? room.images
@@ -711,12 +790,10 @@ function initPropertyDetailPageAntwerp() {
         thumbsEl.innerHTML = "";
       }
 
-      // Beds
       bedsEl.innerHTML = (room.bedrooms || [])
         .map((b) => `<li>Bedroom ${b.bedroom}: ${b.beds}</li>`)
         .join("");
 
-      // Facilities
       facilitiesEl.innerHTML = (room.amenities || [])
         .map((a) => `<li>${a}</li>`)
         .join("");
@@ -725,7 +802,6 @@ function initPropertyDetailPageAntwerp() {
       modal.setAttribute("aria-hidden", "false");
     }
 
-    // Hook up triggers
     triggers.forEach((btn) => {
       btn.addEventListener("click", () => {
         const idx = Number(btn.dataset.roomIndex);
@@ -745,7 +821,6 @@ function initPropertyDetailPageAntwerp() {
       if (e.key === "Escape") closeModal();
     });
 
-    // Thumbnail click → change main image
     thumbsEl.addEventListener("click", (e) => {
       const img = e.target.closest("img[data-index]");
       if (!img) return;
@@ -763,7 +838,6 @@ function initPropertyDetailPageAntwerp() {
 
   container.innerHTML = '<p style="padding:16px">Loading…</p>';
 
-  // MULTI JSON: load all files, then find property by id
   Promise.all(
     propsUrls.map((u) =>
       fetch(u, { cache: "no-store" })
@@ -797,7 +871,7 @@ function initPropertyDetailPageAntwerp() {
    Listings utils (global, idempotent)
    ========================================== */
 (function () {
-  if (window.normalizeProperties) return; // already defined
+  if (window.normalizeProperties) return;
 
   function computeAntwerpAreaSlug(city, neighborhood, areaLabel) {
     const isAntwerp = (city || "").toLowerCase().includes("antwerp");
@@ -860,7 +934,7 @@ function initPropertyDetailPageAntwerp() {
       id: it.id || title.toLowerCase().replace(/\s+/g, "-"),
       name: title,
       district,
-      city, // 👉 ADDED: used for location filters
+      city,
       area,
       rating: it.rating ?? 0,
       reviews: it.reviews ?? 0,
@@ -872,7 +946,6 @@ function initPropertyDetailPageAntwerp() {
       currency,
       images: it.images || [],
       url: it.booking_url || it.url || "#",
-      // Keep raw reference for detail page
       __raw: it,
     };
   }
@@ -883,5 +956,4 @@ function initPropertyDetailPageAntwerp() {
   };
 })();
 
-// expose detail init if you need to call it manually
 window.initPropertyDetailPageAntwerp = initPropertyDetailPageAntwerp;
