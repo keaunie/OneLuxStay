@@ -1,14 +1,22 @@
 // netlify/functions/get-pricing.js
 
-// ✅ Official Guesty Open API host
 const GUESTY_AUTH_URL = "https://open-api.guesty.com/oauth2/token";
 const GUESTY_API_BASE = "https://open-api.guesty.com/v1";
 
-/**
- * Get an access token from Guesty using clientId + clientSecret
- * Docs: https://open-api-docs.guesty.com/docs/authentication
- */
+// simple in-memory token cache (persists while the Lambda is warm)
+let tokenCache = {
+  token: null,
+  expiresAt: 0,
+};
+
 async function getGuestyAccessToken() {
+  const now = Date.now();
+
+  // reuse token if not close to expiry
+  if (tokenCache.token && now < tokenCache.expiresAt - 60_000) {
+    return tokenCache.token;
+  }
+
   const clientId = process.env.GUESTY_CLIENT_ID;
   const clientSecret = process.env.GUESTY_CLIENT_SECRET;
 
@@ -18,7 +26,6 @@ async function getGuestyAccessToken() {
     );
   }
 
-  // Using x-www-form-urlencoded style from the docs
   const body = new URLSearchParams({
     grant_type: "client_credentials",
     scope: "open-api",
@@ -47,6 +54,12 @@ async function getGuestyAccessToken() {
     throw new Error("Guesty auth response missing access_token");
   }
 
+  const ttl = (data.expires_in || 3600) * 1000;
+  tokenCache = {
+    token: data.access_token,
+    expiresAt: now + ttl,
+  };
+
   return data.access_token;
 }
 
@@ -73,12 +86,8 @@ exports.handler = async (event) => {
       };
     }
 
-    // 1) Get Guesty access token
     const accessToken = await getGuestyAccessToken();
 
-    // 2) Call Guesty availability-pricing calendar endpoint
-    // Docs example:
-    // GET https://open-api.guesty.com/v1/availability-pricing/api/calendar/listings/{id}?startDate=YYYY-MM-DD&endDate=YYYY-MM-DD&includeAllotment=true
     const url = new URL(
       `${GUESTY_API_BASE}/availability-pricing/api/calendar/listings/${encodeURIComponent(
         listingId
@@ -99,8 +108,9 @@ exports.handler = async (event) => {
     if (!res.ok) {
       const text = await res.text().catch(() => "");
       console.error("Guesty pricing HTTP error:", res.status, text);
+      // pass through 429 so you can see it in DevTools if it happens
       return {
-        statusCode: 502,
+        statusCode: res.status,
         body: JSON.stringify({
           error: "Guesty pricing request failed",
           status: res.status,
@@ -110,9 +120,6 @@ exports.handler = async (event) => {
     }
 
     const data = await res.json();
-
-    // Docs response shape:
-    // { status: 200, data: { days: [ { date, currency, price, minNights, status, ... } ] }, message: "OK" }
     const daysRaw =
       (data && data.data && Array.isArray(data.data.days) && data.data.days) ||
       (Array.isArray(data.days) && data.days) ||
@@ -125,7 +132,6 @@ exports.handler = async (event) => {
       currency: day.currency || "EUR",
       minNights: day.minNights ?? null,
       status: day.status || null,
-      // You can add more fields if you need them later
     }));
 
     return {

@@ -601,47 +601,66 @@ function initPropertyDetailPageAntwerp() {
       let globalMin = null;
       let globalCurrency = property.price?.currency || "EUR";
 
-      const roomEls = container.querySelectorAll(".room");
-      roomEls.forEach((roomEl) => {
+      const roomEls = Array.from(container.querySelectorAll(".room"));
+      if (!roomEls.length) return;
+
+      // Group all room-price elements by Guesty listing id
+      const byListing = new Map();
+
+      for (const roomEl of roomEls) {
         const bookBtn = roomEl.querySelector(".book-btn[data-guesty-id]");
         const priceEl = roomEl.querySelector(".room-price");
         const guestyId = bookBtn?.dataset.guestyId;
 
-        if (!guestyId || !priceEl) return;
+        if (!guestyId || !priceEl) continue;
 
         priceEl.textContent = "Loading live price…";
 
-        fetchGuestyPricing(guestyId, checkin, checkout)
-          .then((res) => {
-            if (!res || res.avgPerNight == null) {
-              priceEl.textContent = "Price on request";
-              return;
-            }
+        if (!byListing.has(guestyId)) {
+          byListing.set(guestyId, []);
+        }
+        byListing.get(guestyId).push(priceEl);
+      }
 
-            const { avgPerNight, currency } = res;
-            globalCurrency = currency || globalCurrency;
+      // Call Netlify func once per Guesty listing id
+      for (const [guestyId, priceEls] of byListing.entries()) {
+        try {
+          const res = await fetchGuestyPricing(guestyId, checkin, checkout);
 
-            priceEl.textContent = `Starts at: ${fmtMoney(
+          if (!res || res.avgPerNight == null) {
+            priceEls.forEach((el) => {
+              el.textContent = "Price on request";
+            });
+            continue;
+          }
+
+          const { avgPerNight, currency } = res;
+          globalCurrency = currency || globalCurrency;
+
+          priceEls.forEach((el) => {
+            el.textContent = `Starts at: ${fmtMoney(
               avgPerNight,
               currency
             )} per night`;
-
-            if (globalMin == null || avgPerNight < globalMin) {
-              globalMin = avgPerNight;
-            }
-
-            if (headerPriceEl && globalMin != null) {
-              headerPriceEl.textContent = `From ${fmtMoney(
-                globalMin,
-                globalCurrency
-              )}`;
-            }
-          })
-          .catch((err) => {
-            console.warn("Guesty price error for room", guestyId, err);
-            priceEl.textContent = "Price on request";
           });
-      });
+
+          if (globalMin == null || avgPerNight < globalMin) {
+            globalMin = avgPerNight;
+          }
+
+          if (headerPriceEl && globalMin != null) {
+            headerPriceEl.textContent = `From ${fmtMoney(
+              globalMin,
+              globalCurrency
+            )}`;
+          }
+        } catch (err) {
+          console.warn("Guesty price error for listing", guestyId, err);
+          priceEls.forEach((el) => {
+            el.textContent = "Price on request";
+          });
+        }
+      }
     }
 
     (function initDateRangeSelectorWithinContainer() {
