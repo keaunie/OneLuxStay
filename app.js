@@ -602,6 +602,9 @@ function initHomeExperience() {
       this.end = e;
       this.inputStart.value = fmt(s);
       this.inputEnd.value = fmt(e);
+      const changeEvent = new Event("change", { bubbles: true });
+      this.inputStart.dispatchEvent(changeEvent);
+      this.inputEnd.dispatchEvent(changeEvent);
       this.close();
     }
 

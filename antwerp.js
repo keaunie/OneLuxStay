@@ -441,6 +441,27 @@ function initPropertyDetailPageAntwerp() {
     const pad = (n) => String(n).padStart(2, "0");
     return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
   };
+  const fmtDisplayDate = (d) => {
+    const pad = (n) => String(n).padStart(2, "0");
+    return `${pad(d.getMonth() + 1)}/${pad(d.getDate())}/${d.getFullYear()}`;
+  };
+  const parseInputDate = (value) => {
+    if (!value) return null;
+    if (/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+      const [y, m, d] = value.split("-").map(Number);
+      return new Date(y, m - 1, d);
+    }
+    if (/^\d{2}\/\d{2}\/\d{4}$/.test(value)) {
+      const [m, d, y] = value.split("/").map(Number);
+      return new Date(y, m - 1, d);
+    }
+    const parsed = new Date(value);
+    return Number.isNaN(parsed.getTime()) ? null : parsed;
+  };
+  const toISODateString = (value) => {
+    const date = parseInputDate(value);
+    return date ? fmtDate(date) : "";
+  };
   const fmtMoney = (amount, ccy = "EUR") =>
     `${currencySymbol(ccy)}${Number(amount || 0).toLocaleString()}`;
 
@@ -505,20 +526,18 @@ function initPropertyDetailPageAntwerp() {
       )}</div>
 
       <div class="selector">
-        <label>Dates
-          <button type="button" id="dateRangeBtn" style="height:38px;padding:0 12px;border:1px solid #ccc;border-radius:6px;cursor:pointer;background:#fff">
-            <span id="dateRangeText">Select dates</span>
-          </button>
-        </label>
-
-        <input type="date" id="checkin"
-               value="${fmtDate(today)}"
-               min="${fmtDate(today)}"
-               style="position:absolute;opacity:0;width:0;height:0;pointer-events:none">
-        <input type="date" id="checkout"
-               value="${fmtDate(tomorrow)}"
-               min="${fmtDate(tomorrow)}"
-               style="position:absolute;opacity:0;width:0;height:0;pointer-events:none">
+        <div class="selector-dates">
+          <label for="checkin">Check-in
+            <input type="text" id="checkin" value="${fmtDisplayDate(
+              today
+            )}" readonly placeholder="Check-in">
+          </label>
+          <label for="checkout">Check-out
+            <input type="text" id="checkout" value="${fmtDisplayDate(
+              tomorrow
+            )}" readonly placeholder="Check-out">
+          </label>
+        </div>
 
         <label>Guests
           <select id="guests">${Array.from(
@@ -629,8 +648,8 @@ function initPropertyDetailPageAntwerp() {
       const headerPriceEl = container.querySelector(".price");
 
       if (!ciEl || !coEl) return;
-      const checkin = ciEl.value;
-      const checkout = coEl.value;
+      const checkin = toISODateString(ciEl.value);
+      const checkout = toISODateString(coEl.value);
       if (!checkin || !checkout) return;
 
       let globalMin = null;
@@ -725,57 +744,12 @@ function initPropertyDetailPageAntwerp() {
       }
     }
 
-    (function initDateRangeSelectorWithinContainer() {
-      const btn = container.querySelector("#dateRangeBtn");
-      const txt = container.querySelector("#dateRangeText");
-      const ci = container.querySelector("#checkin");
-      const co = container.querySelector("#checkout");
+    const ciInput = container.querySelector("#checkin");
+    const coInput = container.querySelector("#checkout");
+    ciInput?.addEventListener("change", refreshRoomPrices);
+    coInput?.addEventListener("change", refreshRoomPrices);
 
-      const pad = (n) => String(n).padStart(2, "0");
-      const fmt = (d) =>
-        `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
-      const pretty = (val) => {
-        if (!val) return "—";
-        const d = new Date(val);
-        return d.toLocaleDateString(undefined, {
-          weekday: "short",
-          month: "short",
-          day: "numeric",
-        });
-      };
-
-      function updateText() {
-        txt.textContent = `${pretty(ci.value)} — ${pretty(co.value)}`;
-      }
-
-      btn.addEventListener("click", () => {
-        ci.showPicker && ci.showPicker();
-      });
-
-      ci.addEventListener("change", () => {
-        const d = new Date(ci.value);
-        d.setDate(d.getDate() + 1);
-        const next = fmt(d);
-        co.min = next;
-        if (!co.value || co.value < next) co.value = next;
-        co.showPicker && co.showPicker();
-        updateText();
-        refreshRoomPrices();
-      });
-
-      co.addEventListener("change", () => {
-        const base = new Date(ci.value);
-        const minOut = new Date(base);
-        minOut.setDate(minOut.getDate() + 1);
-        const minStr = fmt(minOut);
-        if (co.value < minStr) co.value = minStr;
-        updateText();
-        refreshRoomPrices();
-      });
-
-      updateText();
-      refreshRoomPrices();
-    })();
+    refreshRoomPrices();
 
     const mainImgs = container.querySelectorAll(".carousel-main img");
     const thumbs = container.querySelectorAll(".carousel-thumbs img");
@@ -793,8 +767,12 @@ function initPropertyDetailPageAntwerp() {
         e.preventDefault();
         const roomGuests = container.querySelector("#guests")?.value || "";
         const roomId = btn.dataset.guestyId;
-        const checkin = container.querySelector("#checkin")?.value || "";
-        const checkout = container.querySelector("#checkout")?.value || "";
+        const checkin = toISODateString(
+          container.querySelector("#checkin")?.value || ""
+        );
+        const checkout = toISODateString(
+          container.querySelector("#checkout")?.value || ""
+        );
 
         const url =
           `https://reservations.oneluxstay.com/en/properties/${encodeURIComponent(
