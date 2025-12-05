@@ -1,26 +1,34 @@
-const { getGuestyToken } = require("../lib/guestyToken");
+const { getBookingToken } = require("../lib/bookingToken");
 
-const CALENDAR_URL =
-  "https://api.guesty.com/api/v3/calendar/availability-pricing";
+const CALENDAR_URL = "https://booking.guesty.com/api";
 
 function normalizeCalendarEntry(entry) {
-  if (!entry || !Array.isArray(entry.days)) {
+  const calendar =
+    (entry &&
+      (entry.calendar || entry.days || entry.calendarDays || entry.data)) ||
+    [];
+
+  if (!Array.isArray(calendar)) {
     return {
       days: [],
       totals: { nights: 0, subtotal: 0, currency: entry?.currency || "EUR" },
     };
   }
 
-  const currency = entry.currency || "EUR";
-  const days = entry.days.map((day) => {
-    const pricing = day.pricing || {};
-    const price =
-      Number(pricing.nightlyRate ?? pricing.basePrice ?? day.price ?? 0) || 0;
+  const currency = entry?.currency || "EUR";
+  const days = calendar.map((day) => {
+    const price = Number(
+      day.basePrice ??
+        day.nightlyRate ??
+        day.price ??
+        (day.pricing && (day.pricing.price || day.pricing.nightlyRate)) ??
+        0
+    );
     return {
       date: day.date || day.day || day.calendarDate,
-      price,
-      currency: pricing.currency || currency,
-      available: day.isAvailable ?? day.available ?? true,
+      price: Number.isFinite(price) ? price : 0,
+      currency: day.currency || currency,
+      available: day.available ?? day.isAvailable ?? true,
     };
   });
 
@@ -63,25 +71,23 @@ exports.handler = async (event) => {
   }
 
   try {
-    const token = await getGuestyToken();
+    const token = await getBookingToken();
 
     const qs = new URLSearchParams({
-      listingIds: listingId,
-      startDate,
-      endDate,
-      includeAvailability: "true",
-      includePricing: "true",
-      includeReservations: "false",
-      guestsCount: guests,
+      from: startDate,
+      to: endDate,
     });
 
-    const res = await fetch(`${CALENDAR_URL}?${qs.toString()}`, {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        authorization: `Bearer ${token}`,
-      },
-    });
+    const res = await fetch(
+      `${CALENDAR_URL}/listings/${listingId}/calendar?${qs.toString()}`,
+      {
+        method: "GET",
+        headers: {
+          accept: "application/json",
+          authorization: `Bearer ${token}`,
+        },
+      }
+    );
 
     if (!res.ok) {
       const text = await res.text();
@@ -98,11 +104,7 @@ exports.handler = async (event) => {
     }
 
     const json = await res.json();
-    const entry =
-      (Array.isArray(json?.data) && json.data[0]) ||
-      (Array.isArray(json?.results) && json.results[0]) ||
-      json;
-    const { days, totals } = normalizeCalendarEntry(entry);
+    const { days, totals } = normalizeCalendarEntry(json);
 
     return {
       statusCode: 200,

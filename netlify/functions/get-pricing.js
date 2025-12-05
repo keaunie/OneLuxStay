@@ -2,23 +2,12 @@
 // Uses Guesty Booking Engine "reservation quote" endpoint
 // and returns { listingId, startDate, endDate, days[] } to the front-end.
 
-const TOKEN_URL = "https://booking.guesty.com/oauth2/token";
 const BE_BASE_URL = "https://booking.guesty.com/api";
+const { getBookingToken } = require("../lib/bookingToken");
 
 // =============================
 // Token management (Booking Engine API)
 // =============================
-
-// shared across invocations in the SAME warm Lambda
-let tokenCache = {
-  accessToken: null,
-  // timestamp in ms when token expires (we set it a bit early)
-  expiresAt: 0,
-};
-
-// simple backoff if Guesty sends 429s for token requests
-let tokenBackoffUntil = 0;
-let tokenPromise = null;
 
 function normalizeMoneyResponse(payload) {
   if (!payload) return null;
@@ -83,95 +72,6 @@ function normalizeQuoteResponse(quote) {
   return [];
 }
 
-async function getAccessToken() {
-  const now = Date.now();
-
-  // 1) If we already have a token and it's not close to expiry, reuse it
-  if (tokenCache.accessToken && now < tokenCache.expiresAt) {
-    return tokenCache.accessToken;
-  }
-
-  // 2) If we previously got a 429, respect backoff
-  if (now < tokenBackoffUntil) {
-    throw new Error(
-      `Guesty token rate-limited, backing off until ${new Date(
-        tokenBackoffUntil
-      ).toISOString()}`
-    );
-  }
-
-  if (tokenPromise) {
-    return tokenPromise;
-  }
-
-  tokenPromise = (async () => {
-    const clientId = process.env.GUESTY_CLIENT_ID;
-    const clientSecret = process.env.GUESTY_CLIENT_SECRET;
-
-    if (!clientId || !clientSecret) {
-      throw new Error(
-        "Missing GUESTY_CLIENT_ID or GUESTY_CLIENT_SECRET env vars"
-      );
-    }
-
-    const body = new URLSearchParams({
-      grant_type: "client_credentials",
-      scope: "booking_engine:api",
-      client_id: clientId,
-      client_secret: clientSecret,
-    });
-
-    const res = await fetch(TOKEN_URL, {
-      method: "POST",
-      headers: {
-        accept: "application/json",
-        "content-type": "application/x-www-form-urlencoded",
-      },
-      body,
-    });
-
-    // 3) Handle rate limiting explicitly
-    if (res.status === 429) {
-      const text = await res.text().catch(() => "");
-      console.error("Guesty token 429 Too Many Requests:", text);
-
-      // back off for 60 seconds (tune if needed)
-      tokenBackoffUntil = Date.now() + 60_000;
-      throw new Error(
-        `Guesty token error 429 Too Many Requests (backing off 60s): ${text}`
-      );
-    }
-
-    if (!res.ok) {
-      const text = await res.text().catch(() => "");
-      throw new Error(
-        `Guesty token error ${res.status}: ${text || res.statusText}`
-      );
-    }
-
-    const json = await res.json();
-    const accessToken = json.access_token;
-    const expiresIn = Number(json.expires_in || 86400); // seconds
-
-    // refresh 5 minutes BEFORE actual expiry (but at least 60s)
-    const effectiveTtlSeconds = Math.max(expiresIn - 300, 60);
-
-    tokenCache = {
-      accessToken,
-      expiresAt: Date.now() + effectiveTtlSeconds * 1000,
-    };
-    tokenBackoffUntil = 0; // reset backoff on success
-
-    return accessToken;
-  })();
-
-  try {
-    return await tokenPromise;
-  } finally {
-    tokenPromise = null;
-  }
-}
-
 // =============================
 // Main Netlify function handler
 // =============================
@@ -203,7 +103,7 @@ exports.handler = async (event) => {
   }
 
   try {
-    const token = await getAccessToken();
+    const token = await getBookingToken();
 
     const payload = {
       listingId,
