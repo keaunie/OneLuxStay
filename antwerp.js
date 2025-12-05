@@ -60,18 +60,53 @@ async function fetchGuestyPricing(guestyId, startDate, endDate) {
     }
 
     const data = await res.json();
-    if (!data || !Array.isArray(data.days) || !data.days.length) return null;
+    if (!data) return null;
 
-    const nights = data.days.length;
-    const currency = data.days[0]?.currency || "EUR";
-    const sum = data.days.reduce((acc, d) => acc + (Number(d.price) || 0), 0);
-    const avgPerNight = nights > 0 ? sum / nights : null;
+    const days = Array.isArray(data.days) ? data.days : [];
+    const totals = data.totals && typeof data.totals === "object" ? data.totals : null;
+    const currency =
+      days[0]?.currency || totals?.currency || data.currency || "EUR";
+
+    const nightsFromDays = days.length;
+    const nightsFromRange = (() => {
+      const ci = Date.parse(startDate);
+      const co = Date.parse(endDate);
+      if (Number.isNaN(ci) || Number.isNaN(co)) return 0;
+      const diff = Math.round((co - ci) / 86400000);
+      return diff > 0 ? diff : 0;
+    })();
+    const nights = nightsFromDays || nightsFromRange;
+
+    const nightlySum = days.reduce(
+      (acc, d) => acc + (Number(d.price) || 0),
+      0
+    );
+    const totalFromTotals = totals
+      ? (Number(totals.subTotal) || 0) + (Number(totals.taxes) || 0)
+      : 0;
+    const totalPrice =
+      totalFromTotals > 0
+        ? totalFromTotals
+        : nightlySum > 0
+        ? nightlySum
+        : null;
+
+    const avgPerNight =
+      nights > 0 && totalPrice != null
+        ? totalPrice / nights
+        : nightsFromDays > 0
+        ? nightlySum / nightsFromDays
+        : null;
+
+    if (!days.length && totalPrice == null) return null;
 
     return {
-      nights,
+      nights: nights || null,
       avgPerNight,
+      totalPrice,
       currency,
-      days: data.days,
+      days,
+      totals,
     };
   } catch (err) {
     console.warn("Error calling Guesty pricing function:", err);
@@ -627,25 +662,52 @@ function initPropertyDetailPageAntwerp() {
         try {
           const res = await fetchGuestyPricing(guestyId, checkin, checkout);
 
-          if (!res || res.avgPerNight == null) {
+          if (!res) {
             priceEls.forEach((el) => {
               el.textContent = "Price on request";
             });
             continue;
           }
 
-          const { avgPerNight, currency } = res;
+          const { avgPerNight, currency, totalPrice, nights } = res;
           globalCurrency = currency || globalCurrency;
 
-          priceEls.forEach((el) => {
-            el.textContent = `Starts at: ${fmtMoney(
-              avgPerNight,
-              currency
-            )} per night`;
-          });
+          const effectiveAvg =
+            typeof avgPerNight === "number" && !Number.isNaN(avgPerNight)
+              ? avgPerNight
+              : nights && totalPrice != null
+              ? totalPrice / nights
+              : null;
 
-          if (globalMin == null || avgPerNight < globalMin) {
-            globalMin = avgPerNight;
+          if (totalPrice != null) {
+            const nightsLabel =
+              nights && nights > 0
+                ? ` for ${nights} night${nights > 1 ? "s" : ""}`
+                : "";
+            priceEls.forEach((el) => {
+              el.textContent = `${fmtMoney(
+                totalPrice,
+                currency
+              )} total${nightsLabel}`;
+            });
+          } else if (effectiveAvg != null) {
+            priceEls.forEach((el) => {
+              el.textContent = `Starts at: ${fmtMoney(
+                effectiveAvg,
+                currency
+              )} per night`;
+            });
+          } else {
+            priceEls.forEach((el) => {
+              el.textContent = "Price on request";
+            });
+          }
+
+          if (
+            effectiveAvg != null &&
+            (globalMin == null || effectiveAvg < globalMin)
+          ) {
+            globalMin = effectiveAvg;
           }
 
           if (headerPriceEl && globalMin != null) {

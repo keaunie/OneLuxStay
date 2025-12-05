@@ -207,8 +207,8 @@ exports.handler = async (event) => {
       const moneyUrl = new URL(`${BE_BASE_URL}/reservations/money`);
       moneyUrl.searchParams.set("listingId", listingId);
       moneyUrl.searchParams.set("guestsCount", String(guests));
-      moneyUrl.searchParams.set("checkInDateLocalized", startDate);
-      moneyUrl.searchParams.set("checkOutDateLocalized", endDate);
+      moneyUrl.searchParams.set("checkIn", startDate);
+      moneyUrl.searchParams.set("checkOut", endDate);
 
       const moneyRes = await fetch(moneyUrl.toString(), {
         method: "GET",
