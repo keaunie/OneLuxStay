@@ -204,14 +204,18 @@ exports.handler = async (event) => {
     //    expose fareAccommodation + nightly breakdowns.
     let moneyData = null;
     try {
-      const moneyRes = await fetch(`${BE_BASE_URL}/reservations/money`, {
-        method: "POST",
+      const moneyUrl = new URL(`${BE_BASE_URL}/reservations/money`);
+      moneyUrl.searchParams.set("listingId", listingId);
+      moneyUrl.searchParams.set("guestsCount", String(guests));
+      moneyUrl.searchParams.set("checkInDateLocalized", startDate);
+      moneyUrl.searchParams.set("checkOutDateLocalized", endDate);
+
+      const moneyRes = await fetch(moneyUrl.toString(), {
+        method: "GET",
         headers: {
           accept: "application/json",
-          "content-type": "application/json",
           authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(payload),
       });
 
       if (!moneyRes.ok) {
