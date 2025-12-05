@@ -50,7 +50,7 @@ async function fetchGuestyPricing(guestyId, startDate, endDate) {
   }).toString();
 
   try {
-    const res = await fetch(`/.netlify/functions/get-pricing?${qs}`, {
+    const res = await fetch(`/.netlify/functions/get-calendar-pricing?${qs}`, {
       cache: "no-store",
     });
 
