@@ -19,6 +19,69 @@ let tokenCache = {
 // simple backoff if Guesty sends 429s for token requests
 let tokenBackoffUntil = 0;
 
+function normalizeMoneyResponse(payload) {
+  if (!payload) return null;
+  const money = payload.money || payload;
+  if (!money) return null;
+
+  const currency = money.currency || "EUR";
+  const nightsItems = Array.isArray(money.nightlyRateInvoiceItems)
+    ? money.nightlyRateInvoiceItems
+    : [];
+
+  const accommodationItem = nightsItems.find((item) => {
+    if (!item || !Array.isArray(item.nightsBreakdown)) return false;
+    return (
+      item.normalType === "AF" ||
+      item.type === "ACCOMMODATION_FARE" ||
+      item.title === "Accommodation fare"
+    );
+  });
+
+  const days = accommodationItem
+    ? accommodationItem.nightsBreakdown.map((night) => ({
+        date: night.date,
+        price: Number(night.basePrice) || 0,
+        currency,
+      }))
+    : [];
+
+  return {
+    days,
+    totals: {
+      fareAccommodation: Number(money.fareAccommodation) || 0,
+      cleaningFee: Number(money.fareCleaning) || 0,
+      fees: Number(money.totalFees) || 0,
+      taxes: Number(money.totalTaxes) || 0,
+      subTotal: Number(money.subTotalPrice) || 0,
+      currency,
+    },
+  };
+}
+
+function normalizeQuoteResponse(quote) {
+  if (!quote) return [];
+  const currency = quote.currency || "EUR";
+
+  if (Array.isArray(quote.days)) {
+    return quote.days.map((d) => ({
+      date: d.date,
+      price: Number(d.price) || 0,
+      currency: d.currency || currency,
+    }));
+  }
+
+  if (quote.priceBreakdown && Array.isArray(quote.priceBreakdown.days)) {
+    return quote.priceBreakdown.days.map((d) => ({
+      date: d.date,
+      price: Number(d.price) || 0,
+      currency: d.currency || currency,
+    }));
+  }
+
+  return [];
+}
+
 async function getAccessToken() {
   const now = Date.now();
 
@@ -130,7 +193,54 @@ exports.handler = async (event) => {
   try {
     const token = await getAccessToken();
 
-    // 1) Create a reservation quote – same flow Guesty booking widget uses
+    const payload = {
+      listingId,
+      guestsCount: guests,
+      checkInDateLocalized: startDate,
+      checkOutDateLocalized: endDate,
+    };
+
+    // 1) Try the more detailed reservations/money endpoint first so we can
+    //    expose fareAccommodation + nightly breakdowns.
+    let moneyData = null;
+    try {
+      const moneyRes = await fetch(`${BE_BASE_URL}/reservations/money`, {
+        method: "POST",
+        headers: {
+          accept: "application/json",
+          "content-type": "application/json",
+          authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!moneyRes.ok) {
+        const text = await moneyRes.text();
+        throw new Error(
+          `Guesty money endpoint error ${moneyRes.status}: ${text}`
+        );
+      }
+
+      moneyData = await moneyRes.json();
+    } catch (moneyErr) {
+      console.error("Guesty reservations/money error:", moneyErr);
+    }
+
+    const normalizedMoney = normalizeMoneyResponse(moneyData);
+    if (normalizedMoney) {
+      return {
+        statusCode: 200,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          listingId,
+          startDate,
+          endDate,
+          ...normalizedMoney,
+        }),
+      };
+    }
+
+    // 2) Fall back to the older reservations/quotes endpoint if needed.
     const quoteRes = await fetch(`${BE_BASE_URL}/reservations/quotes`, {
       method: "POST",
       headers: {
@@ -138,12 +248,7 @@ exports.handler = async (event) => {
         "content-type": "application/json",
         authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({
-        listingId,
-        guestsCount: guests,
-        checkInDateLocalized: startDate,
-        checkOutDateLocalized: endDate,
-      }),
+      body: JSON.stringify(payload),
     });
 
     if (!quoteRes.ok) {
@@ -161,29 +266,8 @@ exports.handler = async (event) => {
     }
 
     const quote = await quoteRes.json();
+    const quoteDays = normalizeQuoteResponse(quote);
 
-    // 2) Normalize into the simple shape your front-end expects:
-    //    { days: [{ date, price, currency }, ...] }
-    let days = [];
-
-    // Case A: quote already has a top-level "days" array
-    if (Array.isArray(quote.days)) {
-      days = quote.days.map((d) => ({
-        date: d.date,
-        price: Number(d.price) || 0,
-        currency: d.currency || quote.currency || "EUR",
-      }));
-    }
-    // Case B: some accounts nest it under priceBreakdown.days
-    else if (quote.priceBreakdown && Array.isArray(quote.priceBreakdown.days)) {
-      days = quote.priceBreakdown.days.map((d) => ({
-        date: d.date,
-        price: Number(d.price) || 0,
-        currency: d.currency || quote.currency || "EUR",
-      }));
-    }
-
-    // Final response back to your browser
     return {
       statusCode: 200,
       headers: { "Content-Type": "application/json" },
@@ -191,7 +275,7 @@ exports.handler = async (event) => {
         listingId,
         startDate,
         endDate,
-        days,
+        days: quoteDays,
       }),
     };
   } catch (err) {
