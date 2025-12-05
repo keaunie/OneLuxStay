@@ -1,3 +1,5 @@
+const axios = require("axios");
+
 let cachedToken = null;
 let expiresAt = 0;
 let pendingRequest = null;
@@ -15,25 +17,17 @@ async function requestGuestyToken() {
     );
   }
 
-  const res = await fetch(GUESTY_TOKEN_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
+  const { data } = await axios.post(
+    GUESTY_TOKEN_URL,
+    {
       client_id: GUESTY_CLIENT_ID,
       client_secret: GUESTY_CLIENT_SECRET,
       grant_type: "client_credentials",
-      scope: "open_api:api",
-    }),
-  });
-
-  if (!res.ok) {
-    const text = await res.text().catch(() => "");
-    throw new Error(
-      `Guesty token request failed ${res.status}: ${text || res.statusText}`
-    );
-  }
-
-  const data = await res.json();
+    },
+    {
+      headers: { "Content-Type": "application/json" },
+    }
+  );
 
   if (!data?.access_token) {
     throw new Error("Guesty token response is missing access_token.");
