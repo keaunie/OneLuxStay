@@ -525,17 +525,17 @@ function initPropertyDetailPageAntwerp() {
         property.price?.currency
       )}</div>
 
-      <div class="selector">
+      <div class="selector search-box">
         <div class="selector-dates">
           <label for="checkin">Check-in
             <input type="text" id="checkin" value="${fmtDisplayDate(
               today
-            )}" readonly placeholder="Check-in">
+            )}" readonly inputmode="none" placeholder="Check-in">
           </label>
           <label for="checkout">Check-out
             <input type="text" id="checkout" value="${fmtDisplayDate(
               tomorrow
-            )}" readonly placeholder="Check-out">
+            )}" readonly inputmode="none" placeholder="Check-out">
           </label>
         </div>
 
