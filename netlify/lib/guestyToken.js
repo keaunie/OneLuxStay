@@ -15,16 +15,15 @@ async function requestGuestyToken() {
     );
   }
 
-  const body = new URLSearchParams({
-    client_id: GUESTY_CLIENT_ID,
-    client_secret: GUESTY_CLIENT_SECRET,
-    grant_type: "client_credentials",
-  });
-
   const res = await fetch(GUESTY_TOKEN_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: body.toString(),
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      client_id: GUESTY_CLIENT_ID,
+      client_secret: GUESTY_CLIENT_SECRET,
+      grant_type: "client_credentials",
+      scope: "open_api:api",
+    }),
   });
 
   if (!res.ok) {
