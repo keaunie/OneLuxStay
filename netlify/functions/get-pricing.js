@@ -18,6 +18,7 @@ let tokenCache = {
 
 // simple backoff if Guesty sends 429s for token requests
 let tokenBackoffUntil = 0;
+let tokenPromise = null;
 
 function normalizeMoneyResponse(payload) {
   if (!payload) return null;
@@ -99,65 +100,76 @@ async function getAccessToken() {
     );
   }
 
-  const clientId = process.env.GUESTY_CLIENT_ID;
-  const clientSecret = process.env.GUESTY_CLIENT_SECRET;
-
-  if (!clientId || !clientSecret) {
-    throw new Error(
-      "Missing GUESTY_CLIENT_ID or GUESTY_CLIENT_SECRET env vars"
-    );
+  if (tokenPromise) {
+    return tokenPromise;
   }
 
-  const body = new URLSearchParams({
-    grant_type: "client_credentials",
-    scope: "booking_engine:api",
-    client_id: clientId,
-    client_secret: clientSecret,
-  });
+  tokenPromise = (async () => {
+    const clientId = process.env.GUESTY_CLIENT_ID;
+    const clientSecret = process.env.GUESTY_CLIENT_SECRET;
 
-  const res = await fetch(TOKEN_URL, {
-    method: "POST",
-    headers: {
-      accept: "application/json",
-      "content-type": "application/x-www-form-urlencoded",
-    },
-    body,
-  });
+    if (!clientId || !clientSecret) {
+      throw new Error(
+        "Missing GUESTY_CLIENT_ID or GUESTY_CLIENT_SECRET env vars"
+      );
+    }
 
-  // 3) Handle rate limiting explicitly
-  if (res.status === 429) {
-    const text = await res.text().catch(() => "");
-    console.error("Guesty token 429 Too Many Requests:", text);
+    const body = new URLSearchParams({
+      grant_type: "client_credentials",
+      scope: "booking_engine:api",
+      client_id: clientId,
+      client_secret: clientSecret,
+    });
 
-    // back off for 60 seconds (tune if needed)
-    tokenBackoffUntil = Date.now() + 60_000;
+    const res = await fetch(TOKEN_URL, {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "content-type": "application/x-www-form-urlencoded",
+      },
+      body,
+    });
 
-    throw new Error(
-      `Guesty token error 429 Too Many Requests (backing off 60s): ${text}`
-    );
+    // 3) Handle rate limiting explicitly
+    if (res.status === 429) {
+      const text = await res.text().catch(() => "");
+      console.error("Guesty token 429 Too Many Requests:", text);
+
+      // back off for 60 seconds (tune if needed)
+      tokenBackoffUntil = Date.now() + 60_000;
+      throw new Error(
+        `Guesty token error 429 Too Many Requests (backing off 60s): ${text}`
+      );
+    }
+
+    if (!res.ok) {
+      const text = await res.text().catch(() => "");
+      throw new Error(
+        `Guesty token error ${res.status}: ${text || res.statusText}`
+      );
+    }
+
+    const json = await res.json();
+    const accessToken = json.access_token;
+    const expiresIn = Number(json.expires_in || 86400); // seconds
+
+    // refresh 5 minutes BEFORE actual expiry (but at least 60s)
+    const effectiveTtlSeconds = Math.max(expiresIn - 300, 60);
+
+    tokenCache = {
+      accessToken,
+      expiresAt: Date.now() + effectiveTtlSeconds * 1000,
+    };
+    tokenBackoffUntil = 0; // reset backoff on success
+
+    return accessToken;
+  })();
+
+  try {
+    return await tokenPromise;
+  } finally {
+    tokenPromise = null;
   }
-
-  if (!res.ok) {
-    const text = await res.text().catch(() => "");
-    throw new Error(
-      `Guesty token error ${res.status}: ${text || res.statusText}`
-    );
-  }
-
-  const json = await res.json();
-  const accessToken = json.access_token;
-  const expiresIn = Number(json.expires_in || 86400); // seconds
-
-  // refresh 5 minutes BEFORE actual expiry (but at least 60s)
-  const effectiveTtlSeconds = Math.max(expiresIn - 300, 60);
-
-  tokenCache = {
-    accessToken,
-    expiresAt: Date.now() + effectiveTtlSeconds * 1000,
-  };
-  tokenBackoffUntil = 0; // reset backoff on success
-
-  return accessToken;
 }
 
 // =============================
