@@ -1453,10 +1453,6 @@ function bookingFormInit() {
       1,
       parseInt((guestsVal.match(/\d+/) || [1])[0], 10) || 1
     );
-    const minRooms = Math.max(
-      1,
-      parseInt((roomVal.match(/\d+/) || [1])[0], 10) || 1
-    );
 
     const checkin = checkinInput?.value || "";
     const checkout = checkoutInput?.value || "";
@@ -1494,7 +1490,6 @@ function bookingFormInit() {
     if (dest) p.set("city", dest);
     if (country) p.set("country", country);
     p.set("minOccupancy", String(minOccupancy));
-    p.set("numberOfBedrooms", String(minRooms));
 
     if (checkin && checkout) {
       p.set("checkIn", checkin);
