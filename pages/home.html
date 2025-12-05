@@ -65,7 +65,7 @@
         </a>
       </div>
 
-      <form class="hero-booking search-box animate-on-scroll" id="ols-search" role="search" aria-label="Find a stay">
+      <form class="hero-booking search-box animate-on-scroll" id="ols-search" role="search" aria-label="Find a stay" data-ols-date-range>
         <label class="sr-only" for="ols-destination">Destination</label>
         <select class="booking-select booking-select-destination" id="ols-destination" name="destination" required>
           <option value="" selected disabled>Destination</option>
@@ -78,10 +78,10 @@
         </select>
 
         <label class="sr-only" for="checkin">Check-in</label>
-        <input type="text" id="checkin" name="checkin" inputmode="none" placeholder="Check-in" readonly />
+        <input type="text" id="checkin" name="checkin" inputmode="none" placeholder="Check-in" readonly data-ols-checkin />
 
         <label class="sr-only" for="checkout">Check-out</label>
-        <input type="text" id="checkout" name="checkout" inputmode="none" placeholder="Check-out" readonly />
+        <input type="text" id="checkout" name="checkout" inputmode="none" placeholder="Check-out" readonly data-ols-checkout />
 
         <label class="sr-only" for="ols-guests">Guest/s</label>
         <select class="booking-select-guests" id="ols-guests" name="guest" required>

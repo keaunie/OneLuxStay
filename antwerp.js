@@ -525,17 +525,17 @@ function initPropertyDetailPageAntwerp() {
         property.price?.currency
       )}</div>
 
-      <div class="selector search-box">
+      <div class="selector search-box" data-ols-date-range>
         <div class="selector-dates">
           <label for="checkin">Check-in
             <input type="text" id="checkin" value="${fmtDisplayDate(
               today
-            )}" readonly inputmode="none" placeholder="Check-in">
+            )}" readonly inputmode="none" placeholder="Check-in" data-ols-checkin>
           </label>
           <label for="checkout">Check-out
             <input type="text" id="checkout" value="${fmtDisplayDate(
               tomorrow
-            )}" readonly inputmode="none" placeholder="Check-out">
+            )}" readonly inputmode="none" placeholder="Check-out" data-ols-checkout>
           </label>
         </div>
 
@@ -749,6 +749,7 @@ function initPropertyDetailPageAntwerp() {
     ciInput?.addEventListener("change", refreshRoomPrices);
     coInput?.addEventListener("change", refreshRoomPrices);
 
+    window.initOLSDatePicker?.();
     refreshRoomPrices();
 
     const mainImgs = container.querySelectorAll(".carousel-main img");

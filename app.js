@@ -721,22 +721,39 @@ function initHomeExperience() {
 
   // ===== INIT (call after SPA page load) =====
   window.initOLSDatePicker = function () {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const wrappers = document.querySelectorAll("[data-ols-date-range]");
+    if (wrappers.length) {
+      wrappers.forEach((wrapper) => {
+        if (wrapper.__olsDatePickerInitialized) return;
+        const checkin = wrapper.querySelector("[data-ols-checkin]");
+        const checkout = wrapper.querySelector("[data-ols-checkout]");
+        if (!checkin || !checkout) return;
+
+        new OLSDateRange({
+          anchor: checkin,
+          inputStart: checkin,
+          inputEnd: checkout,
+          min: today,
+        });
+
+        wrapper.__olsDatePickerInitialized = true;
+      });
+      return;
+    }
+
     const checkin = document.getElementById("checkin");
     const checkout = document.getElementById("checkout");
     if (!checkin || !checkout) return;
 
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-
-    const dp = new OLSDateRange({
+    new OLSDateRange({
       anchor: checkin,
       inputStart: checkin,
       inputEnd: checkout,
       min: today,
     });
-
-    // Open the calendar when either input is focused
-    // (already wired inside the component)
   };
 
   // Auto-run now if elements already present
