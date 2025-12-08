@@ -4,11 +4,21 @@
 
 window.__useOLSDatePicker = true;
 let cleanupHomeExperience = null;
+let cleanupAntwerpExperience = null;
 
 // Load page content into the #app container
 function loadPage(pageName) {
   const app = document.getElementById("app");
   app.style.opacity = 0;
+
+  if (cleanupHomeExperience) {
+    cleanupHomeExperience();
+    cleanupHomeExperience = null;
+  }
+  if (cleanupAntwerpExperience) {
+    cleanupAntwerpExperience();
+    cleanupAntwerpExperience = null;
+  }
 
   fetch(`/pages/${pageName}.html`)
     .then((res) => res.text())
@@ -92,6 +102,7 @@ function loadPage(pageName) {
         }
 
         initHomeExperience();
+        initAntwerpExperience();
       }, 150);
     })
     .catch((err) => {
@@ -379,6 +390,312 @@ function initHomeExperience() {
       window.removeEventListener("scroll", parallaxHandler);
     }
     cursorCleanup?.();
+  };
+}
+
+function initAntwerpExperience() {
+  cleanupAntwerpExperience?.();
+
+  const antwerpRoot = document.getElementById("antwerp-root");
+  if (!antwerpRoot) {
+    cleanupAntwerpExperience = null;
+    return;
+  }
+
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  const parallaxLayers = prefersReducedMotion
+    ? []
+    : Array.from(antwerpRoot.querySelectorAll("[data-parallax]"));
+  let parallaxHandler = null;
+  let parallaxTicking = false;
+
+  const runParallax = () => {
+    const scrollY =
+      window.pageYOffset || document.documentElement.scrollTop || 0;
+    parallaxLayers.forEach((layer) => {
+      const depth = parseFloat(layer.dataset.parallax || "0");
+      layer.style.transform = `translate3d(0, ${scrollY * depth * -1}px, 0)`;
+    });
+    parallaxTicking = false;
+  };
+
+  if (parallaxLayers.length) {
+    parallaxHandler = () => {
+      if (parallaxTicking) return;
+      parallaxTicking = true;
+      requestAnimationFrame(runParallax);
+    };
+    window.addEventListener("scroll", parallaxHandler, { passive: true });
+    runParallax();
+  }
+
+  const cursorOrb = antwerpRoot.querySelector(".cursor-orb");
+  const cursorTrail = antwerpRoot.querySelector(".cursor-trail");
+  let cursorCleanup = null;
+  let landmarkCleanup = null;
+  let transitCleanup = null;
+
+  const allowCursor =
+    cursorOrb &&
+    !prefersReducedMotion &&
+    !window.matchMedia("(pointer: coarse)").matches;
+
+  if (allowCursor) {
+    let orbX = window.innerWidth / 2;
+    let orbY = window.innerHeight / 2;
+    let targetX = orbX;
+    let targetY = orbY;
+    let orbVisible = false;
+    let orbHalfW = cursorOrb.offsetWidth / 2;
+    let orbHalfH = cursorOrb.offsetHeight / 2;
+    let rafId;
+    let lastSparkleTime = 0;
+    let sparkleCount = 0;
+    const MAX_SPARKLES = 14;
+    let orbGlowTimeout = null;
+    let isGlowing = false;
+    let orbFadeTimeout = null;
+
+    const updateOrbSize = () => {
+      orbHalfW = cursorOrb.offsetWidth / 2;
+      orbHalfH = cursorOrb.offsetHeight / 2;
+    };
+
+    const renderOrb = () => {
+      orbX += (targetX - orbX) * 0.15;
+      orbY += (targetY - orbY) * 0.15;
+      cursorOrb.style.opacity = orbVisible ? "0.85" : "0";
+      cursorOrb.style.transform = `translate3d(${orbX - orbHalfW}px, ${
+        orbY - orbHalfH
+      }px, 0)`;
+      rafId = requestAnimationFrame(renderOrb);
+    };
+
+    const spawnSparkle = (x, y) => {
+      if (!cursorTrail) return;
+      if (sparkleCount >= MAX_SPARKLES) {
+        const oldest = cursorTrail.firstElementChild;
+        if (oldest) {
+          oldest.remove();
+          sparkleCount = Math.max(0, sparkleCount - 1);
+        }
+      }
+      const sparkle = document.createElement("span");
+      sparkle.className = "cursor-spark";
+      const size = 6 + Math.random() * 10;
+      sparkle.style.width = `${size}px`;
+      sparkle.style.height = `${size}px`;
+      sparkle.style.left = `${x}px`;
+      sparkle.style.top = `${y}px`;
+      sparkle.style.setProperty(
+        "--sparkle-drift-x",
+        `${(Math.random() - 0.5) * 70}px`
+      );
+      sparkle.style.setProperty(
+        "--sparkle-drift-y",
+        `${-20 - Math.random() * 70}px`
+      );
+      cursorTrail.appendChild(sparkle);
+      sparkleCount += 1;
+      sparkle.addEventListener("animationend", () => {
+        sparkle.remove();
+        sparkleCount = Math.max(0, sparkleCount - 1);
+      });
+    };
+
+    const pointerHandler = (event) => {
+      targetX = event.clientX;
+      targetY = event.clientY;
+      orbVisible = true;
+      if (orbFadeTimeout) clearTimeout(orbFadeTimeout);
+      orbFadeTimeout = setTimeout(() => {
+        orbVisible = false;
+        cursorOrb.classList.remove("cursor-orb--glow");
+        isGlowing = false;
+      }, 350);
+      if (!isGlowing) {
+        isGlowing = true;
+        cursorOrb.classList.add("cursor-orb--glow");
+      }
+      if (orbGlowTimeout) {
+        clearTimeout(orbGlowTimeout);
+      }
+      orbGlowTimeout = setTimeout(() => {
+        cursorOrb.classList.remove("cursor-orb--glow");
+        isGlowing = false;
+      }, 400);
+      const now = performance.now();
+      if (now - lastSparkleTime > 60) {
+        spawnSparkle(event.clientX, event.clientY);
+        lastSparkleTime = now;
+      }
+    };
+
+    const leaveHandler = () => {
+      orbVisible = false;
+      cursorOrb.classList.remove("cursor-orb--glow");
+      isGlowing = false;
+      if (orbFadeTimeout) clearTimeout(orbFadeTimeout);
+    };
+
+    window.addEventListener("pointermove", pointerHandler, { passive: true });
+    window.addEventListener("pointerleave", leaveHandler, { passive: true });
+    window.addEventListener("resize", updateOrbSize);
+    renderOrb();
+
+      cursorCleanup = () => {
+        window.removeEventListener("pointermove", pointerHandler);
+        window.removeEventListener("pointerleave", leaveHandler);
+        window.removeEventListener("resize", updateOrbSize);
+        cancelAnimationFrame(rafId);
+        if (orbGlowTimeout) clearTimeout(orbGlowTimeout);
+        if (orbFadeTimeout) clearTimeout(orbFadeTimeout);
+        cursorOrb.classList.remove("cursor-orb--glow");
+        isGlowing = false;
+        cursorOrb.style.opacity = "0";
+        if (cursorTrail) {
+          cursorTrail.innerHTML = "";
+        }
+      };
+  }
+
+  const landmarkTokens = Array.from(
+    antwerpRoot.querySelectorAll(".landmark-token")
+  );
+  if (landmarkTokens.length) {
+    const media = antwerpRoot.querySelector(".landmark-showcase-media");
+    const labelEl = antwerpRoot.querySelector("[data-landmark-label]");
+    const titleEl = antwerpRoot.querySelector("[data-landmark-title]");
+    const copyEl = antwerpRoot.querySelector("[data-landmark-copy]");
+
+    const activate = (token) => {
+      if (!token) return;
+      landmarkTokens.forEach((btn) => {
+        const isActive = btn === token;
+        btn.classList.toggle("active", isActive);
+        btn.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+      const photo = token.getAttribute("data-photo");
+      if (media && photo) {
+        media.style.backgroundImage = `linear-gradient(135deg, rgba(0,0,0,0.25), rgba(0,0,0,0.55)), url('${photo}')`;
+      }
+      if (labelEl) labelEl.textContent = token.getAttribute("data-label") || "";
+      if (titleEl) titleEl.textContent = token.getAttribute("data-title") || "";
+      if (copyEl) copyEl.textContent = token.getAttribute("data-copy") || "";
+    };
+
+    const listeners = landmarkTokens.map((token) => {
+      const handler = () => activate(token);
+      token.addEventListener("click", handler);
+      return { token, handler };
+    });
+
+    activate(
+      landmarkTokens.find((btn) => btn.classList.contains("active")) ||
+        landmarkTokens[0]
+    );
+
+    landmarkCleanup = () => {
+      listeners.forEach(({ token, handler }) =>
+        token.removeEventListener("click", handler)
+      );
+    };
+  }
+
+  const transitTokens = Array.from(
+    antwerpRoot.querySelectorAll(".transit-chip")
+  );
+  if (transitTokens.length) {
+    const glyphImg = antwerpRoot.querySelector("[data-transit-glyph]");
+    const tagEl = antwerpRoot.querySelector("[data-transit-tag]");
+    const titleEl = antwerpRoot.querySelector("[data-transit-title]");
+    const descEl = antwerpRoot.querySelector("[data-transit-desc]");
+    const ghostLeftImg = antwerpRoot.querySelector("[data-transit-ghost-left]");
+    const ghostRightImg = antwerpRoot.querySelector("[data-transit-ghost-right]");
+    const prevBtn = antwerpRoot.querySelector("[data-transit-prev]");
+    const nextBtn = antwerpRoot.querySelector("[data-transit-next]");
+    let currentIndex = transitTokens.findIndex((btn) =>
+      btn.classList.contains("active")
+    );
+    if (currentIndex < 0) currentIndex = 0;
+
+    const setImage = (imgEl, src, altText) => {
+      if (!imgEl || !src) return;
+      imgEl.src = src;
+      if (typeof altText === "string") {
+        imgEl.alt = altText;
+      }
+    };
+
+    const setGhost = (imgEl, idx) => {
+      if (!imgEl) return;
+      const token = transitTokens[idx];
+      if (!token) return;
+      setImage(imgEl, token.getAttribute("data-image"), "");
+    };
+
+    const activateTransit = (index) => {
+      const token = transitTokens[index];
+      if (!token) return;
+      currentIndex = index;
+      transitTokens.forEach((btn, idx) => {
+        const isActive = idx === index;
+        btn.classList.toggle("active", isActive);
+        btn.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+      const image = token.getAttribute("data-image");
+      const altText =
+        token.getAttribute("data-alt") || token.getAttribute("data-title") || "";
+      setImage(glyphImg, image, altText);
+      if (tagEl) tagEl.textContent = token.getAttribute("data-tag") || "";
+      if (titleEl) titleEl.textContent = token.getAttribute("data-title") || "";
+      if (descEl) descEl.textContent = token.getAttribute("data-desc") || "";
+      const total = transitTokens.length;
+      setGhost(
+        ghostLeftImg,
+        (index - 1 + total) % total
+      );
+      setGhost(ghostRightImg, (index + 1) % total);
+    };
+
+    const tokenListeners = transitTokens.map((token, idx) => {
+      const handler = () => activateTransit(idx);
+      token.addEventListener("click", handler);
+      return { token, handler };
+    });
+
+    const step = (delta) => {
+      const total = transitTokens.length;
+      const next = (currentIndex + delta + total) % total;
+      activateTransit(next);
+    };
+
+    const prevHandler = () => step(-1);
+    const nextHandler = () => step(1);
+    prevBtn?.addEventListener("click", prevHandler);
+    nextBtn?.addEventListener("click", nextHandler);
+
+    activateTransit(currentIndex);
+
+    transitCleanup = () => {
+      tokenListeners.forEach(({ token, handler }) =>
+        token.removeEventListener("click", handler)
+      );
+      prevBtn?.removeEventListener("click", prevHandler);
+      nextBtn?.removeEventListener("click", nextHandler);
+    };
+  }
+
+  cleanupAntwerpExperience = () => {
+    if (parallaxLayers.length && parallaxHandler) {
+      window.removeEventListener("scroll", parallaxHandler);
+    }
+    cursorCleanup?.();
+    landmarkCleanup?.();
+    transitCleanup?.();
   };
 }
 

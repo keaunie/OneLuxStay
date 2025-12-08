@@ -14,26 +14,40 @@
 <!-- =========================
      One Lux Stay — Antwerp Page (SPA fragment)
      ========================= -->
-<section class="page-antwerp">
+<section id="antwerp-root" class="page-antwerp" data-component="page-antwerp">
+    <div class="cursor-orb" aria-hidden="true"></div>
+    <div class="cursor-trail" aria-hidden="true"></div>
 
     <!-- ===== Hero ===== -->
-    <section class="hero">
-
-        <img class="hero-video" src="https://images.pexels.com/photos/220760/pexels-photo-220760.jpeg"
-            alt="Antwerp cityscape - One Lux Stay Hero Image" loading="eager" />
+    <section class="hero immersive-hero" aria-label="Antwerp hero">
+        <div class="hero-layers" aria-hidden="true">
+            <div class="hero-layer hero-layer--glow" data-parallax="0.08"></div>
+            <div class="hero-layer hero-layer--grid" data-parallax="0.05"></div>
+            <div class="hero-layer hero-layer--particles" data-parallax="0.12"></div>
+            <div class="hero-layer hero-layer--media" data-parallax="0.02">
+                <img class="hero-video" src="https://images.pexels.com/photos/220760/pexels-photo-220760.jpeg"
+                    alt="Antwerp cityscape - One Lux Stay Hero Image" loading="eager" />
+                <div class="hero-overlay"></div>
+            </div>
+        </div>
 
         <div class="container hero-content">
+            <span class="hero-crest">One Lux Antwerp</span>
             <p class="eyebrow">Antwerpen, Belgium</p>
             <h1 class="headline">Luxury Stays in the Heart of Antwerp</h1>
             <p class="subhead">
                 Designer apartments near Central Station, Diamond District, and the city’s cultural icons.
             </p>
-            
-        <!-- <div class="hero-actions">
-            <a class="btn btn-primary" href="/properties-antwerp" data-link>Browse Antwerp Suites</a>
-            <a class="btn btn-ghost" href="/properties-list" data-link>Explore All Cities</a>
-        </div>  -->
-       
+            <div class="hero-divider" aria-hidden="true"></div>
+            <ul class="hero-amenities">
+                <li>Diamond District vistas</li>
+                <li>Fashion Quarter ateliers</li>
+                <li>Historic Cathedral Square</li>
+            </ul>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="/properties-antwerp" data-link>Browse Antwerp Suites</a>
+                <a class="btn btn-ghost" href="/properties-list" data-link>Explore All Cities</a>
+            </div>
         </div>
     </section>
 
@@ -117,193 +131,244 @@
     <!-- ===== Nearby Landmarks ===== -->
     <section class="antwerp-landmarks-transpo">
 
-        <section class="section-2">
+        <section class="section landmark-section" aria-label="Landmarks & Attractions">
             <div class="container">
-                <header class="section-title">
-                    <h2 style="color: #fff;">Landmarks & Attractions</h2>
-                    <p>Explore Antwerp’s icons, all within easy reach of our residences.</p>
-                </header>
-                <div class="gallery-grid">
-                    <!-- 12 cards from your list -->
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2025/02/st-paul-church.webp"
-                            alt="Sint-Pauluskerk — baroque church and artworks" />
-                        <h3>St. Paul’s Church</h3>
-                        <p>Baroque splendor and historic artworks.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Chocolate-Nation-e1740153314453.webp"
-                            alt="Chocolate Nation — immersive Belgian chocolate museum" />
-                        <h3>Chocolate Nation</h3>
-                        <p>Tastings, exhibits, and sweet stories.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2025/02/Red-Star-Line-Museum.webp"
-                            alt="Red Star Line — migration stories to America" />
-                        <h3>Red Star Line Museum</h3>
-                        <p>Moving journeys and heritage.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/mas.webp"
-                            alt="MAS Museum — riverfront landmark with panoramas" />
-                        <h3>MAS Museum</h3>
-                        <p>City history with rooftop views.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/de-roma.webp"
-                            alt="De Roma — historic concert theatre" />
-                        <h3>De Roma</h3>
-                        <p>Beloved venue for performances.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Antwerp-Zoo-e1740153102544.webp"
-                            alt="Antwerp Zoo — one of the world’s oldest" />
-                        <h3>Antwerp Zoo</h3>
-                        <p>6,000+ animals beside Central Station.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Rubenshuis-e1740152684224.webp"
-                            alt="Rubenshuis — the master’s home & studio" />
-                        <h3>Rubenshuis</h3>
-                        <p>Masterpieces in a historic home.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2025/02/Museum-Plantin-Moretus.webp"
-                            alt="Plantin-Moretus — UNESCO printing museum" />
-                        <h3>Plantin-Moretus Museum</h3>
-                        <p>UNESCO-listed printing heritage.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/11/cathedral-of-our-lady-e1740152378116.webp"
-                            alt="Cathedral of Our Lady — Gothic masterpiece" />
-                        <h3>Cathedral of Our Lady</h3>
-                        <p>Gothic art and Rubens works.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Royal-Museum-of-Fine-Arts.webp"
-                            alt="KMSKA — Royal Museum of Fine Arts" />
-                        <h3>Royal Museum of Fine Arts</h3>
-                        <p>European art in a grand space.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Grand-Place-e1740155128968.webp"
-                            alt="Grote Markt — ornate guild houses & square" />
-                        <h3>Grote Markt</h3>
-                        <p>Atmospheric square and Town Hall.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Vleeshuis-e1740154678283.webp"
-                            alt="Vleeshuis — Butcher’s Hall museum" />
-                        <h3>Butcher’s Hall</h3>
-                        <p>Music & craft heritage museum.</p>
-                    </article>
+                <div class="landmark-header">
+                    <p class="eyebrow">Landmarks &amp; Attractions</p>
+                    <h2>Explore Antwerp’s icons within minutes of every residence.</h2>
+                    <p>From baroque chapels to modern museums, these highlights sit along the itineraries we curate for
+                        guests.</p>
+                </div>
+                <div class="landmark-gallery">
+                    <div class="landmark-showcase animate-on-scroll">
+                        <div class="landmark-showcase-media"
+                            style="background-image: linear-gradient(135deg, rgba(0,0,0,0.25), rgba(0,0,0,0.55)), url('https://tgest.oneluxstay.com/wp-content/uploads/2025/02/st-paul-church.webp');">
+                        </div>
+                        <div class="landmark-showcase-info" aria-live="polite">
+                            <span class="landmark-label" data-landmark-label>01 • Baroque Gem</span>
+                            <h3 data-landmark-title>St. Paul’s Church</h3>
+                            <p data-landmark-copy>Gilded altars, Rubens canvases, and cloister courtyards perfect for
+                                private organ
+                                recitals.</p>
+                        </div>
+                    </div>
+                    <div class="landmark-roster animate-on-scroll" role="tablist"
+                        aria-label="Select an Antwerp landmark">
+                        <button class="landmark-token active" type="button" aria-selected="true"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2025/02/st-paul-church.webp"
+                            data-title="St. Paul’s Church" data-label="01 • Baroque Gem"
+                            data-copy="Gilded altars, Rubens canvases, and cloister courtyards perfect for private organ recitals.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2025/02/st-paul-church.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">01</span>
+                                <span class="token-name">St. Paul’s Church</span>
+                                <span class="token-desc">Baroque gem</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Chocolate-Nation-e1740153314453.webp"
+                            data-title="Chocolate Nation" data-label="02 • Epicurean Lab"
+                            data-copy="Immersive tastings and bean-to-bar ateliers arranged exclusively for our guests.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Chocolate-Nation-e1740153314453.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">02</span>
+                                <span class="token-name">Chocolate Nation</span>
+                                <span class="token-desc">Epicurean lab</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2025/02/Red-Star-Line-Museum.webp"
+                            data-title="Red Star Line Museum" data-label="03 • Harbor Stories"
+                            data-copy="Migration chronicles along the Scheldt, paired with sunset cocktails on the pier.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2025/02/Red-Star-Line-Museum.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">03</span>
+                                <span class="token-name">Red Star Line Museum</span>
+                                <span class="token-desc">Harbor stories</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/mas.webp"
+                            data-title="MAS Museum" data-label="04 • Skyline Icon"
+                            data-copy="Private rooftop access reveals Antwerp&#39;s docks, cathedral spires, and twilight glow.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2024/12/mas.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">04</span>
+                                <span class="token-name">MAS Museum</span>
+                                <span class="token-desc">Skyline icon</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/de-roma.webp"
+                            data-title="De Roma" data-label="05 • Vintage Stage"
+                            data-copy="Historic cinema turned concert hall—ask our concierge for backstage jazz evenings.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2024/12/de-roma.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">05</span>
+                                <span class="token-name">De Roma</span>
+                                <span class="token-desc">Vintage stage</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://images.pexels.com/photos/31742859/pexels-photo-31742859.jpeg"
+                            data-title="Antwerp Zoo" data-label="06 • Urban Oasis"
+                            data-copy="One of the world&#39;s oldest zoological gardens beside Central Station—morning tours before doors open.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://images.pexels.com/photos/31742859/pexels-photo-31742859.jpeg');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">06</span>
+                                <span class="token-name">Antwerp Zoo</span>
+                                <span class="token-desc">Urban oasis</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Royal-Museum-of-Fine-Arts.webp"
+                            data-title="Royal Museum of Fine Arts" data-label="07 • Art Revival"
+                            data-copy="European masters framed inside a dramatically restored palace of culture.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Royal-Museum-of-Fine-Arts.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">07</span>
+                                <span class="token-name">Royal Museum of Fine Arts</span>
+                                <span class="token-desc">Art revival</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Grand-Place-e1740155128968.webp"
+                            data-title="Grote Markt" data-label="08 • Historic Square"
+                            data-copy="Guild houses, the Brabo fountain, and café terraces where we arrange aperitivo crawls.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Grand-Place-e1740155128968.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">08</span>
+                                <span class="token-name">Grote Markt</span>
+                                <span class="token-desc">Historic square</span>
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== Transport Options ===== -->
-        <section class="section-2">
+        <section class="section transit-section" aria-label="Transportation">
             <div class="container">
-                <header class="section-title">
-                    <h2 style="color: #fff;">Transportation Options</h2>
-                    <p>Seamless access to the City Centre, Diamond District & Fashion District.</p>
-                </header>
-
-                <div class="gallery-grid small">
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Antwerp-Taxis-e1740158793395.webp"
-                            alt="Antwerp Taxis — reliable metered cabs citywide" />
-                        <h3>Antwerp Taxis</h3>
-                        <p>On-demand, citywide coverage.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2025/02/antwerp-metro.webp"
-                            alt="Antwerp Metro — fast three-line network" />
-                        <h3>Metro</h3>
-                        <p>Quick links across the city.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2025/02/buses-in-antwerp.webp"
-                            alt="Antwerp buses — De Lijn network" />
-                        <h3>Buses</h3>
-                        <p>Comprehensive De Lijn routes.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/antwerp-Airport-Shuttles.webp"
-                            alt="Airport shuttles — ANR & BRU connections" />
-                        <h3>Airport Shuttles</h3>
-                        <p>Easy transfers to ANR & BRU.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/antwerp-River-Shuttles.webp"
-                            alt="River shuttles — scenic Scheldt rides" />
-                        <h3>River Shuttles</h3>
-                        <p>Scenic links along the Scheldt.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/antwerp-bike-central.webp"
-                            alt="Bike lanes — well-marked cycling routes" />
-                        <h3>Bicycle Lanes</h3>
-                        <p>Extensive and well-signed.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Antwerp-Car-Rental-Services.webp"
-                            alt="Car rental services — flexible exploration" />
-                        <h3>Car Rental</h3>
-                        <p>Freedom to roam beyond the city.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/antwerp-Walking-Paths.webp"
-                            alt="Walking paths — cobblestone streets & zones" />
-                        <h3>Walking Paths</h3>
-                        <p>Discover hidden gems on foot.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Bicycle-Rental-Services-e1740158636344.webp"
-                            alt="Bicycle rental — easy city touring" />
-                        <h3>Bike Rental</h3>
-                        <p>Eco-friendly sightseeing.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Antwerp-Berchem-Station-e1740158540945.webp"
-                            alt="Antwerp-Berchem Station — regional hub" />
-                        <h3>Berchem Station</h3>
-                        <p>Convenient rail connections.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Antwerp-Central-Station-e1740158286580.webp"
-                            alt="Antwerp-Central Station — Railway Cathedral" />
-                        <h3>Antwerp-Central</h3>
-                        <p>Architectural icon & hub.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Antwerp-Tram-Stop.webp"
-                            alt="Antwerp trams — frequent streetcars" />
-                        <h3>Trams</h3>
-                        <p>Fast links between districts.</p>
-                    </article>
+                <div class="landmark-header">
+                    <p class="eyebrow">Transportation</p>
+                    <h2>Effortless movement between the City Centre, Diamond District, and the Scheldt.</h2>
+                    <p>Our concierges arrange transfers, while Antwerp’s network keeps everything within minutes.</p>
+                </div>
+                <div class="transit-experience">
+                    <div class="transit-stage animate-on-scroll">
+                        <button class="transit-arrow" type="button" data-transit-prev
+                            aria-label="Previous transport mode">
+                            <span>&lsaquo;</span>
+                        </button>
+                        <div class="transit-spotlight">
+                            <div class="transit-ghost transit-ghost--left" aria-hidden="true">
+                                <img data-transit-ghost-left src="https://img.icons8.com/fluency/96/airport.png"
+                                    alt="" />
+                            </div>
+                            <div class="transit-ghost transit-ghost--right" aria-hidden="true">
+                                <img data-transit-ghost-right src="https://img.icons8.com/fluency/96/train.png"
+                                    alt="" />
+                            </div>
+                            <div class="transit-spotlight-glow"></div>
+                            <div class="transit-spotlight-glyph">
+                                <img data-transit-glyph src="https://img.icons8.com/fluency/96/taxi.png"
+                                    alt="Chauffeured &amp; Taxis icon" />
+                            </div>
+                            <div class="transit-spotlight-info">
+                                <p class="transit-tag" data-transit-tag>Private Transfer</p>
+                                <h3 data-transit-title>Chauffeured &amp; Taxis</h3>
+                                <p data-transit-desc>On-call sedans or vintage taxis escorting guests between suites,
+                                    ateliers, and dinners.</p>
+                            </div>
+                        </div>
+                        <button class="transit-arrow" type="button" data-transit-next aria-label="Next transport mode">
+                            <span>&rsaquo;</span>
+                        </button>
+                    </div>
+                    <div class="transit-roster animate-on-scroll" role="tablist"
+                        aria-label="Select Antwerp transportation option">
+                        <button class="transit-chip active" type="button" aria-selected="true" data-transit-index="0"
+                            data-image="https://img.icons8.com/fluency/96/taxi.png" data-tag="Private Transfer"
+                            data-title="Chauffeured &amp; Taxis" data-alt="Chauffeured &amp; Taxis icon"
+                            data-desc="On-call sedans or vintage taxis escorting guests between suites, ateliers, and dinners."
+                            data-hint="Door-to-door sedans">
+                            <span class="chip-icon"><img src="https://img.icons8.com/fluency/96/taxi.png"
+                                    alt="" /></span>
+                            <span class="chip-text">
+                                <span class="chip-name">Chauffeured &amp; Taxis</span>
+                                <span class="chip-hint">Door-to-door sedans</span>
+                            </span>
+                        </button>
+                        <button class="transit-chip" type="button" aria-selected="false" data-transit-index="1"
+                            data-image="https://img.icons8.com/fluency/96/train.png" data-tag="City Rhythm"
+                            data-title="Metro &amp; Trams" data-alt="Metro &amp; Trams icon"
+                            data-desc="Three underground lines plus frequent surface trams glide across the Fashion and Diamond districts."
+                            data-hint="Lines under the city">
+                            <span class="chip-icon"><img src="https://img.icons8.com/fluency/96/train.png"
+                                    alt="" /></span>
+                            <span class="chip-text">
+                                <span class="chip-name">Metro &amp; Trams</span>
+                                <span class="chip-hint">Lines under the city</span>
+                            </span>
+                        </button>
+                        <button class="transit-chip" type="button" aria-selected="false" data-transit-index="2"
+                            data-image="https://img.icons8.com/fluency/96/bus.png" data-tag="Neighborhood Loop"
+                            data-title="De Lijn Buses" data-alt="De Lijn buses icon"
+                            data-desc="Comprehensive routes ideal for gallery hopping, fashion calls, and riverfront promenades."
+                            data-hint="Hop between ateliers">
+                            <span class="chip-icon"><img src="https://img.icons8.com/fluency/96/bus.png"
+                                    alt="" /></span>
+                            <span class="chip-text">
+                                <span class="chip-name">De Lijn Buses</span>
+                                <span class="chip-hint">Hop between ateliers</span>
+                            </span>
+                        </button>
+                        <button class="transit-chip" type="button" aria-selected="false" data-transit-index="3"
+                            data-image="https://img.icons8.com/fluency/96/ferry.png" data-tag="Scheldt Crossing"
+                            data-title="River Shuttles" data-alt="River shuttles icon"
+                            data-desc="Water taxis sweep across the Scheldt with sunset wine pairings arranged by our team."
+                            data-hint="Scheldt water taxis">
+                            <span class="chip-icon"><img src="https://img.icons8.com/fluency/96/ferry.png"
+                                    alt="" /></span>
+                            <span class="chip-text">
+                                <span class="chip-name">River Shuttles</span>
+                                <span class="chip-hint">Scheldt crossings</span>
+                            </span>
+                        </button>
+                        <button class="transit-chip" type="button" aria-selected="false" data-transit-index="4"
+                            data-image="https://img.icons8.com/fluency/96/bicycle.png" data-tag="Slow Exploration"
+                            data-title="Bicycle Network" data-alt="Bicycle network icon"
+                            data-desc="Curated bike routes through the Diamond District, Meir boutiques, and riverside promenades."
+                            data-hint="Diamond District loops">
+                            <span class="chip-icon"><img src="https://img.icons8.com/fluency/96/bicycle.png"
+                                    alt="" /></span>
+                            <span class="chip-text">
+                                <span class="chip-name">Bicycle Network</span>
+                                <span class="chip-hint">Diamond District loops</span>
+                            </span>
+                        </button>
+                        <button class="transit-chip" type="button" aria-selected="false" data-transit-index="5"
+                            data-image="https://img.icons8.com/fluency/96/airport.png"
+                            data-tag="Arrivals &amp; Departures" data-title="Airport Transfers"
+                            data-alt="Airport transfers icon"
+                            data-desc="Private drivers link suites to Antwerp International or Brussels in under an hour."
+                            data-hint="Jet-set ready">
+                            <span class="chip-icon"><img src="https://img.icons8.com/fluency/96/airport.png"
+                                    alt="" /></span>
+                            <span class="chip-text">
+                                <span class="chip-name">Airport Transfers</span>
+                                <span class="chip-hint">Jet-set ready</span>
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -472,7 +537,6 @@
     }
 
     .page-antwerp .antwerp-landmarks-transpo {
-        padding-block: 56px;
 
         background-image: linear-gradient(rgba(0, 0, 0, 0.8), transparent), url("/assets/backdrop.jpg");
         background-color: #b9912b;
@@ -631,40 +695,407 @@
         order: 2
     }
 
-    /* Gallery Grids */
-    .page-antwerp .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 14px
+    /* Landmark + Transit grids */
+    .page-antwerp .landmark-section,
+    .page-antwerp .transit-section {
+        position: relative;
+        padding-block: 80px;
+        overflow: hidden;
+        background: #09090f;
     }
 
-    .page-antwerp .gallery-grid.small {
-        grid-template-columns: repeat(4, 1fr)
+    .page-antwerp .landmark-section::before,
+    .page-antwerp .landmark-section::after,
+    .page-antwerp .transit-section::before,
+    .page-antwerp .transit-section::after {
+        content: "";
+        position: absolute;
+        inset: -40%;
+        background: radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.15), transparent 55%),
+            radial-gradient(circle at 80% 0%, rgba(102, 160, 255, 0.15), transparent 55%);
+        animation: landmarkDrift 30s linear infinite;
+        opacity: 0.8;
+        pointer-events: none;
+        z-index: 0;
     }
 
-    .page-antwerp .gallery-card {
-        background: var(--card);
-        border: 1px solid rgba(255, 255, 255, .06);
-        border-radius: var(--radius);
-        overflow: hidden
+    .page-antwerp .landmark-section::after,
+    .page-antwerp .transit-section::after {
+        animation-direction: reverse;
+        animation-duration: 42s;
     }
 
-    .page-antwerp .gallery-card img {
-        width: 100%;
-        aspect-ratio: 16/11;
-        object-fit: cover
+    @keyframes landmarkDrift {
+        from {
+            transform: translate3d(-5%, -5%, 0) rotate(0deg);
+        }
+
+        to {
+            transform: translate3d(5%, 5%, 0) rotate(3deg);
+        }
     }
 
-    .page-antwerp .gallery-card h3 {
-        color: #fff;
-        font-size: 1rem;
-        font-weight: 700;
-        padding: .55rem .7rem .2rem
+    .page-antwerp .landmark-header {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto 32px;
     }
 
-    .page-antwerp .gallery-card p {
+    .page-antwerp .landmark-header h2 {
+        font-size: clamp(1.8rem, 4vw, 2.4rem);
+        margin: 6px 0;
+    }
+
+    .page-antwerp .landmark-header p {
         color: var(--muted);
-        padding: 0 .7rem .8rem
+    }
+
+    .page-antwerp .landmark-gallery {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .page-antwerp .landmark-showcase {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+        gap: 28px;
+        border-radius: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(7, 7, 14, 0.92);
+        padding: clamp(20px, 4vw, 36px);
+        box-shadow: 0 35px 80px rgba(0, 0, 0, 0.55);
+    }
+
+    .page-antwerp .landmark-showcase-media {
+        position: relative;
+        border-radius: 32px;
+        overflow: hidden;
+        min-height: 360px;
+        background-size: cover;
+        background-position: center;
+        transition: background-image .4s ease;
+        filter: brightness(1.2) contrast(1.08) saturate(1.15);
+    }
+
+    .page-antwerp .landmark-showcase-media::after {
+        display: none;
+    }
+
+    .page-antwerp .landmark-showcase-info {
+        border-radius: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        background:
+            radial-gradient(circle at top, rgba(212, 175, 55, 0.25), transparent 60%),
+            rgba(8, 8, 14, 0.95);
+        box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.35);
+        padding: clamp(18px, 3vw, 32px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        min-height: 320px;
+    }
+
+    .page-antwerp .landmark-showcase-info h3 {
+        margin: 0;
+        font-size: clamp(1.8rem, 4vw, 2.4rem);
+    }
+
+    .page-antwerp .landmark-showcase-info p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.92);
+    }
+
+    .page-antwerp .landmark-label {
+        font-size: 0.78rem;
+        letter-spacing: 0.45em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.65);
+    }
+
+    .page-antwerp .landmark-roster {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 16px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .page-antwerp .landmark-token {
+        border-radius: 26px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(6, 6, 12, 0.85);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        color: inherit;
+        transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+    }
+
+    .page-antwerp .landmark-token .token-thumb {
+        width: 56px;
+        height: 56px;
+        border-radius: 18px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    .page-antwerp .landmark-token .token-thumb::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.35));
+    }
+
+    .page-antwerp .landmark-token .token-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        text-align: left;
+    }
+
+    .page-antwerp .landmark-token .token-number {
+        font-size: 0.7rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.55);
+    }
+
+    .page-antwerp .landmark-token .token-name {
+        font-weight: 600;
+    }
+
+    .page-antwerp .landmark-token .token-desc {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.65);
+    }
+
+    .page-antwerp .landmark-token.active {
+        border-color: rgba(212, 175, 55, 0.6);
+        box-shadow: 0 20px 45px rgba(212, 175, 55, 0.18);
+        transform: translateY(-2px);
+    }
+
+    .page-antwerp .landmark-token:focus-visible {
+        outline: 2px solid rgba(212, 175, 55, 0.8);
+        outline-offset: 2px;
+    }
+
+    .page-antwerp .transit-experience {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .page-antwerp .transit-stage {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        position: relative;
+    }
+
+    .page-antwerp .transit-spotlight {
+        flex: 1;
+        position: relative;
+        min-height: 340px;
+        border-radius: 38px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: radial-gradient(120% 120% at 50% 40%, rgba(212, 175, 55, 0.25), rgba(5, 5, 10, 0.95));
+        overflow: hidden;
+        box-shadow: 0 45px 90px rgba(0, 0, 0, 0.55);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: clamp(20px, 4vw, 40px);
+        isolation: isolate;
+    }
+
+    .page-antwerp .transit-spotlight-glow {
+        position: absolute;
+        inset: auto auto 30px 50%;
+        width: 220px;
+        height: 40px;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.45), transparent 70%);
+        filter: blur(12px);
+        opacity: 0.6;
+        pointer-events: none;
+    }
+
+    .page-antwerp .transit-spotlight-glyph {
+        position: absolute;
+        top: 16%;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: transitPulse 3s ease-in-out infinite;
+        z-index: 2;
+    }
+
+    .page-antwerp .transit-spotlight-glyph img {
+        width: clamp(80px, 13vw, 140px);
+        height: clamp(80px, 13vw, 140px);
+        object-fit: contain;
+        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.45));
+    }
+
+    @keyframes transitPulse {
+        0% {
+            transform: translateX(-50%) scale(0.9);
+            opacity: 0.7;
+        }
+
+        50% {
+            transform: translateX(-50%) scale(1.05);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateX(-50%) scale(0.9);
+            opacity: 0.7;
+        }
+    }
+
+    .page-antwerp .transit-spotlight-info {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .page-antwerp .transit-spotlight-info h3 {
+        margin: 0;
+        font-size: clamp(1.6rem, 3vw, 2.3rem);
+    }
+
+    .page-antwerp .transit-spotlight-info p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    .page-antwerp .transit-tag {
+        margin: 0;
+        font-size: 0.7rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.65);
+    }
+
+    .page-antwerp .transit-arrow {
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: rgba(10, 10, 16, 0.85);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        font-size: 1.8rem;
+        cursor: pointer;
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .page-antwerp .transit-arrow:hover {
+        transform: translateY(-2px);
+        border-color: rgba(212, 175, 55, 0.7);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .page-antwerp .transit-ghost {
+        position: absolute;
+        top: 18%;
+        z-index: 1;
+    }
+
+    .page-antwerp .transit-ghost img {
+        width: clamp(60px, 9vw, 100px);
+        height: clamp(60px, 9vw, 100px);
+        object-fit: contain;
+        opacity: 0.2;
+        filter: blur(1px);
+    }
+
+    .page-antwerp .transit-ghost--left {
+        left: 10%;
+    }
+
+    .page-antwerp .transit-ghost--right {
+        right: 10%;
+    }
+
+    .page-antwerp .transit-roster {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 14px;
+    }
+
+    .page-antwerp .transit-chip {
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(6, 6, 12, 0.85);
+        padding: 10px 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        color: inherit;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .page-antwerp .transit-chip .chip-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 16px;
+        background: rgba(212, 175, 55, 0.12);
+        display: grid;
+        place-items: center;
+        box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.35);
+    }
+
+    .page-antwerp .transit-chip .chip-icon img {
+        width: 26px;
+        height: 26px;
+        object-fit: contain;
+    }
+
+    .page-antwerp .transit-chip .chip-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.15;
+    }
+
+    .page-antwerp .transit-chip .chip-name {
+        font-weight: 600;
+    }
+
+    .page-antwerp .transit-chip .chip-hint {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .page-antwerp .transit-chip.active {
+        border-color: rgba(212, 175, 55, 0.6);
+        box-shadow: 0 16px 30px rgba(212, 175, 55, 0.15);
+        transform: translateY(-2px);
+    }
+
+    .page-antwerp .transit-chip:focus-visible {
+        outline: 2px solid rgba(212, 175, 55, 0.8);
+        outline-offset: 3px;
     }
 
     /* CTA */
@@ -710,11 +1141,6 @@
             grid-template-columns: 1fr 1fr
         }
 
-        .page-antwerp .gallery-grid,
-        .page-antwerp .gallery-grid.small {
-            grid-template-columns: 1fr 1fr
-        }
-
         .page-antwerp .split {
             grid-template-columns: 1fr;
             gap: 16px
@@ -722,6 +1148,23 @@
 
         .page-antwerp .section-split.invert .split .split-media {
             order: 0
+        }
+
+        .page-antwerp .landmark-showcase {
+            grid-template-columns: 1fr;
+        }
+
+        .page-antwerp .landmark-showcase-info {
+            min-height: auto;
+        }
+
+        .page-antwerp .transit-stage {
+            flex-direction: column;
+        }
+
+        .page-antwerp .transit-arrow {
+            width: 64px;
+            height: 64px;
         }
     }
 
@@ -731,9 +1174,16 @@
             grid-template-columns: 1fr
         }
 
-        .page-antwerp .gallery-grid,
-        .page-antwerp .gallery-grid.small {
-            grid-template-columns: 1fr
+        .page-antwerp .landmark-roster {
+            grid-template-columns: 1fr;
+        }
+
+        .page-antwerp .transit-roster {
+            grid-template-columns: 1fr;
+        }
+
+        .page-antwerp .transit-spotlight {
+            min-height: 280px;
         }
     }
 
@@ -1066,6 +1516,263 @@
         transition: none !important;
         animation: none !important;
         filter: none !important;
+    }
+
+    /* === Antwerp immersive hero refresh === */
+    #antwerp-root {
+        position: relative;
+        background:
+            radial-gradient(1400px 640px at 10% -10%, rgba(212, 175, 55, 0.08), transparent 45%),
+            radial-gradient(1200px 720px at 90% 0%, rgba(96, 154, 255, 0.08), transparent 55%),
+            var(--bg);
+        overflow: hidden;
+    }
+
+    #antwerp-root .cursor-orb {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: clamp(140px, 12vw, 200px);
+        height: clamp(140px, 12vw, 200px);
+        pointer-events: none;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 221, 170, 0.45), rgba(255, 255, 255, 0));
+        mix-blend-mode: screen;
+        opacity: 0;
+        transition: opacity 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        box-shadow: 0 0 80px rgba(212, 175, 55, 0.25), 0 0 140px rgba(212, 175, 55, 0.15);
+    }
+
+    #antwerp-root .cursor-orb.cursor-orb--glow {
+        box-shadow:
+            0 0 120px rgba(255, 214, 147, 0.45),
+            0 0 220px rgba(212, 175, 55, 0.35),
+            0 0 320px rgba(148, 199, 255, 0.2);
+    }
+
+    #antwerp-root .cursor-trail {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 4;
+        mix-blend-mode: screen;
+    }
+
+    #antwerp-root .cursor-spark {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 230, 190, 0.95), rgba(255, 255, 255, 0));
+        box-shadow: 0 0 20px rgba(255, 220, 170, 0.8);
+        transform: translate(-50%, -50%);
+        animation: antwerpSparkle 0.9s ease-out forwards;
+    }
+
+    @keyframes antwerpSparkle {
+        0% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(0.4);
+        }
+
+        70% {
+            opacity: 0.8;
+            transform: translate(calc(-50% + var(--sparkle-drift-x, 0px)),
+                    calc(-50% + var(--sparkle-drift-y, -20px))) scale(1);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translate(calc(-50% + var(--sparkle-drift-x, 0px)),
+                    calc(-50% + var(--sparkle-drift-y, -20px))) scale(0.1);
+        }
+    }
+
+    #antwerp-root .immersive-hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 120px 0 150px;
+        overflow: hidden;
+    }
+
+    #antwerp-root .hero-layers {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+    }
+
+    #antwerp-root .hero-layer {
+        position: absolute;
+        inset: 0;
+    }
+
+    #antwerp-root .hero-layer--glow {
+        background: radial-gradient(circle at 15% 10%, rgba(212, 175, 55, 0.35), transparent 55%),
+            radial-gradient(circle at 85% 0%, rgba(102, 160, 255, 0.28), transparent 60%);
+        filter: blur(20px);
+        animation: antwerpAurora 26s ease-in-out infinite alternate;
+    }
+
+    #antwerp-root .hero-layer--grid {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        background-size: 80px 80px;
+        opacity: 0.4;
+        animation: antwerpGridPan 40s linear infinite;
+    }
+
+    #antwerp-root .hero-layer--particles::before,
+    #antwerp-root .hero-layer--particles::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+        background-size: 200px 200px;
+        animation: antwerpParticleDrift 55s linear infinite;
+    }
+
+    #antwerp-root .hero-layer--particles::after {
+        animation-duration: 75s;
+        opacity: 0.5;
+    }
+
+    #antwerp-root .hero-layer--media .hero-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(1.05) contrast(1.05) brightness(0.9);
+    }
+
+    #antwerp-root .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(70% 50% at 50% 50%, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.15));
+    }
+
+    #antwerp-root .hero-content {
+        position: relative;
+        z-index: 2;
+        width: min(720px, 95vw);
+        margin: 0;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    #antwerp-root .hero-crest {
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    #antwerp-root .hero-divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+        margin: 10px 0;
+    }
+
+    #antwerp-root .subhead {
+        color: #fff4db;
+    }
+
+    #antwerp-root .hero-amenities {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 8px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    #antwerp-root .hero-amenities li {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        padding: 6px 14px;
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.8);
+        background: rgba(0, 0, 0, 0.25);
+    }
+
+    #antwerp-root .hero-actions {
+        margin-top: 8px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    #antwerp-root .hero-actions .btn {
+        min-width: 180px;
+        justify-content: center;
+    }
+
+    @media (max-width: 960px) {
+        #antwerp-root .hero-content {
+            width: 100%;
+            align-items: center;
+            text-align: center;
+        }
+
+        #antwerp-root .hero-amenities {
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 620px) {
+        #antwerp-root .hero-content {
+            align-items: center;
+        }
+
+        #antwerp-root .hero-actions {
+            flex-direction: column;
+        }
+    }
+
+    @keyframes antwerpAurora {
+        0% {
+            transform: translate3d(0, 0, 0);
+        }
+
+        50% {
+            transform: translate3d(40px, -20px, 0);
+        }
+
+        100% {
+            transform: translate3d(-30px, 10px, 0);
+        }
+    }
+
+    @keyframes antwerpGridPan {
+        from {
+            background-position: 0 0, 0 0;
+        }
+
+        to {
+            background-position: 120px 80px, 80px 120px;
+        }
+    }
+
+    @keyframes antwerpParticleDrift {
+        from {
+            transform: translateY(0);
+        }
+
+        to {
+            transform: translateY(-200px);
+        }
     }
 </style>
 

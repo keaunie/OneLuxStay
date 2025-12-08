@@ -539,7 +539,7 @@ function initPropertyDetailPageAntwerp() {
           </label>
         </div>
 
-        <label>Guests
+        <label class="guest-label">Guests
           <select id="guests">${Array.from(
             { length: 6 },
             (_, i) => `<option value="${i + 1}">${i + 1}</option>`
