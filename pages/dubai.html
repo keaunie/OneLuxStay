@@ -1,282 +1,315 @@
+<!-- SEO meta tags -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>One Lux Stay | Luxury Vacation Rentals in Miami, Antwerp, Dubai & More</title>
+    <meta name="description"
+        content="Book luxury vacation rentals in Miami, Antwerp, Dubai, Los Angeles, and more with One Lux Stay. Enjoy premium apartments, stunning views, and unforgettable stays.">
+    <meta name="keywords"
+        content="luxury vacation rentals, Miami apartments, Antwerp stays, Dubai luxury apartments, Los Angeles rentals, One Lux Stay">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
 <!-- =========================
      One Lux Stay — Dubai Page (SPA fragment)
      ========================= -->
-<section class="page-dubai">
+<section id="dubai-root" class="page-dubai" data-component="page-dubai">
+    <div class="cursor-orb" aria-hidden="true"></div>
+    <div class="cursor-trail" aria-hidden="true"></div>
 
-    <section class="hero">
-
-        <img class="hero-image" src="https://images.pexels.com/photos/2115367/pexels-photo-2115367.jpeg"
-            alt="Downtown Dubai luxury skyline – One Lux Stay" loading="eager" />
-
-        <div class="container hero-content">
-            <p class="eyebrow">Dubai, United Arab Emirates</p>
-
-            <h1 class="hero-title">
-                Luxury stays beside Burj&nbsp;Khalifa &amp; Dubai&nbsp;Opera
-            </h1>
-
-            <p class="hero-sub">
-                Skyline-view residences in the heart of Downtown Dubai — a short walk to Dubai Mall,
-                Dubai Opera, and the iconic Burj Khalifa.
-            </p>
+    <!-- ===== Hero ===== -->
+    <section class="hero immersive-hero" aria-label="Dubai hero">
+        <div class="hero-layers" aria-hidden="true">
+            <div class="hero-layer hero-layer--glow" data-parallax="0.08"></div>
+            <div class="hero-layer hero-layer--grid" data-parallax="0.05"></div>
+            <div class="hero-layer hero-layer--particles" data-parallax="0.12"></div>
+            <div class="hero-layer hero-layer--media" data-parallax="0.02">
+                <img class="hero-video" src="https://images.pexels.com/photos/2115367/pexels-photo-2115367.jpeg"
+                    alt="Downtown Dubai skyline - One Lux Stay" loading="eager" />
+                <div class="hero-overlay"></div>
+            </div>
         </div>
 
+        <div class="container hero-content">
+            <span class="hero-crest">One Lux Dubai</span>
+            <p class="eyebrow">Dubai, United Arab Emirates</p>
+            <h1 class="headline">Experience Timeless Luxury Living</h1>
+            <p class="subhead">
+                Skyline-view residences beside Burj Khalifa, Dubai Opera, and the Dubai Fountain’s nightly spectacle.
+            </p>
+            <div class="hero-divider" aria-hidden="true"></div>
+            <ul class="hero-amenities">
+                <li>Burj Khalifa vistas</li>
+                <li>Dubai Mall access</li>
+                <li>Opera District culture</li>
+            </ul>
+            <!-- <div class="hero-actions">
+                <a class="btn btn-primary" href="/properties-dubai" data-link>Browse Dubai Suites</a>
+                <a class="btn btn-ghost" href="/properties-list" data-link>Explore All Cities</a>
+            </div> -->
+        </div>
     </section>
 
 
+    <!-- ===== Featured Properties ===== -->
 
-    <!-- ===== Featured Residences (Downtown & Opera District) ===== -->
+
+    <!-- ===== Featured Residences (Dubai) ===== -->
     <section class="section section-split"
-        style="--bg-img: url('https://images.unsplash.com/flagged/photo-1559717201-fbb671ff56b7?auto=format&fit=crop&q=80&w=2671')">
+        style="--bg-img: url('https://assets.guesty.com/image/upload/v1734471100/production/666b3af27fc6d5653142b0af/unrhbjadnigkjth8gmpf.jpg')">
         <div class="container split">
             <div class="split-media">
                 <img src="https://assets.guesty.com/image/upload/h_960/v1734471111/production/666b3af27fc6d5653142b0af/r7gvjbchkqhijshvsnwe.jpg"
-                    alt="Grande Signature Residences — modern living room with bright, minimal decor in Downtown Dubai." />
-                <span class="badge badge-sale">10% – 20% off</span>
+                    alt="Grande Signature Residences living room overlooking Downtown Dubai" />
+                <span class="badge badge-sale">Opera &amp; Fountain views</span>
             </div>
             <div class="split-body">
-                <h2>Grande Signature Residences
-                    <span class="meta-location">Downtown Dubai • Opera District</span>
-                </h2>
-                <p>
-                    With a prestigious spot alongside Dubai Opera, Grande Signature Residences is only a 4-minute walk
-                    to
-                    Dubai Mall, a 3-minute walk to Burj Khalifa, and a 2-minute stroll to Dubai Opera. DIFC and major
-                    highways
-                    are just 5 minutes away.
-                </p>
+                <h2>Grande Signature Residences <br><span style="font-size: 15px; color: var(--muted);" muted>Downtown •
+                        Opera District</span></h2>
+                <p>Steps from Dubai Opera, Burj Khalifa, and Dubai Mall, these refined suites balance marble finishes
+                    with curated art and concierge service.</p>
                 <a class="btn btn-primary" href="/dubaiProp?id=dubai-downtown-1" data-link>View Details</a>
             </div>
         </div>
     </section>
 
-    <!-- View all Dubai units -->
-    <!-- <section class="section center">
-        <div class="container">
-            <a class="btn btn-primary" href="/properties-dubai" data-link>Check All Units in Dubai</a>
-        </div>
-    </section> -->
-
-    <!-- ===== Landmarks & Transport (ALL info from old HTML) ===== -->
+    <!-- ===== Landmarks & Transport ===== -->
     <section class="dubai-landmarks-transpo">
-
-        <!-- Landmarks & Attractions -->
-        <section class="section-2">
+        <section class="section landmark-section" aria-label="Landmarks & Attractions">
             <div class="container">
-                <header class="section-title">
-                    <h2>Popular Attractions in Dubai</h2>
-                    <p>Live in the heart of Dubai’s most iconic neighborhood.</p>
-                </header>
-
-                <div class="gallery-grid">
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Burj-Khalifa.webp"
-                            alt="Burj Khalifa — the world's tallest tower in Downtown Dubai." />
-                        <h3>Burj Khalifa</h3>
-                        <p>The world’s tallest building at 828 meters, offering breathtaking city views from its
-                            observation decks.
-                        </p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Dubai-Mall.webp"
-                            alt="Dubai Mall — luxury shopping and entertainment complex." />
-                        <h3>Dubai Mall</h3>
-                        <p>The largest shopping and entertainment complex in the world, with 1,200+ shops, an ice rink,
-                            aquarium, and
-                            indoor theme park.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2025/07/dubai-fountain-night-gold.webp"
-                            alt="Dubai Fountain — evening fountain show near Burj Khalifa." />
-                        <h3>Dubai Fountain</h3>
-                        <p>Outside Dubai Mall, experience a spectacular water and light show set to music, framed by
-                            Burj Khalifa.
-                        </p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Dubai-Opera.webp"
-                            alt="Dubai Opera — iconic performing arts venue in Downtown Dubai." />
-                        <h3>Dubai Opera</h3>
-                        <p>An architectural landmark hosting opera, ballet, concerts, and theatre in the heart of
-                            Downtown.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/At-The-Top-Burj-Khalifa.webp"
-                            alt="At The Top, Burj Khalifa viewing deck." />
-                        <h3>At The Top, Burj Khalifa</h3>
-                        <p>Observation decks on the 124th and 148th floors offer unmatched panoramic views and magical
-                            sunsets.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/the-dubai-frame.webp"
-                            alt="The Dubai Frame — landmark with views of old and new Dubai." />
-                        <h3>The Dubai Frame</h3>
-                        <p>A unique structure delivering views of both historic and modern Dubai, blending past and
-                            future.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2025/03/the-dubai-city-walk.webp"
-                            alt="Dubai City Walk — urban lifestyle district." />
-                        <h3>Dubai City Walk</h3>
-                        <p>A vibrant urban destination with shopping, dining, and entertainment in a contemporary
-                            European-style
-                            setting.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/dubai-souk-al-bahar.webp"
-                            alt="Souk Al Bahar — traditional souk near Dubai Mall." />
-                        <h3>Souk Al Bahar</h3>
-                        <p>Traditional-style souk across from Dubai Mall, with boutiques, galleries, and waterfront
-                            restaurants.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Dubai-Aquarium-Underwater-Zoo.webp"
-                            alt="Dubai Aquarium & Underwater Zoo inside Dubai Mall." />
-                        <h3>Dubai Aquarium &amp; Underwater Zoo</h3>
-                        <p>Located in Dubai Mall, this massive aquarium features thousands of marine animals and a
-                            270-degree tunnel
-                            walk-through.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Jumeirah-Beach-Road-La-Mer.webp"
-                            alt="La Mer beachfront district along Jumeirah Beach Road." />
-                        <h3>Jumeirah Beach Road &amp; La Mer</h3>
-                        <p>A trendy beachfront district with restaurants, shops, and art installations — just a short
-                            drive away.
-                        </p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/The-Dubai-Mall-Ice-Rink.webp"
-                            alt="The Dubai Mall Ice Rink — Olympic-sized rink inside the mall." />
-                        <h3>The Dubai Mall Ice Rink</h3>
-                        <p>An Olympic-sized rink for public skating and events, right in the center of Dubai Mall.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Dubai-Design-District.webp"
-                            alt="Dubai Design District (d3) — creative and design hub." />
-                        <h3>Dubai Design District (d3)</h3>
-                        <p>A creative hub of art galleries, design studios, and cafes showcasing Dubai’s global design
-                            influence.
-                        </p>
-                    </article>
+                <div class="landmark-header">
+                    <p class="eyebrow">Landmarks &amp; Attractions</p>
+                    <h2>All of Downtown Dubai’s icons are minutes from our residences.</h2>
+                    <p>From sky-high viewpoints to waterfront souks, curate your stay around these signature
+                        experiences.</p>
+                </div>
+                <div class="landmark-gallery">
+                    <div class="landmark-showcase animate-on-scroll">
+                        <div class="landmark-showcase-media"
+                            style="background-image: url('https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Burj-Khalifa.webp');">
+                        </div>
+                        <div class="landmark-showcase-info" aria-live="polite">
+                            <span class="landmark-label" data-landmark-label>01 • Skyline Icon</span>
+                            <h3 data-landmark-title>Burj Khalifa</h3>
+                            <p data-landmark-copy>The world’s tallest tower at 828m — dusk cocktails and private
+                                viewings arranged by our hosts.</p>
+                        </div>
+                    </div>
+                    <div class="landmark-roster animate-on-scroll" role="tablist" aria-label="Select a Dubai landmark">
+                        <button class="landmark-token active" type="button" aria-selected="true"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Burj-Khalifa.webp"
+                            data-title="Burj Khalifa" data-label="01 • Skyline Icon"
+                            data-copy="The world’s tallest tower at 828m — dusk cocktails and private viewings arranged by our hosts.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Burj-Khalifa.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">01</span>
+                                <span class="token-name">Burj Khalifa</span>
+                                <span class="token-desc">Skyline icon</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Dubai-Mall.webp"
+                            data-title="Dubai Mall" data-label="02 • Retail Stage"
+                            data-copy="1,200+ boutiques, Michelin dining, ice rink, aquarium, and the Dubai Fountain just outside.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Dubai-Mall.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">02</span>
+                                <span class="token-name">Dubai Mall</span>
+                                <span class="token-desc">Retail theatre</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2025/07/dubai-fountain-night-gold.webp"
+                            data-title="Dubai Fountain" data-label="03 • Water Ballet"
+                            data-copy="Nightly water and light performances choreographed beneath Burj Khalifa.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2025/07/dubai-fountain-night-gold.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">03</span>
+                                <span class="token-name">Dubai Fountain</span>
+                                <span class="token-desc">Water ballet</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Dubai-Opera.webp"
+                            data-title="Dubai Opera" data-label="04 • Cultural Jewel"
+                            data-copy="Glass-draped dhow-inspired venue hosting opera, concerts, and galas within a short walk.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Dubai-Opera.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">04</span>
+                                <span class="token-name">Dubai Opera</span>
+                                <span class="token-desc">Cultural jewel</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/At-The-Top-Burj-Khalifa.webp"
+                            data-title="At The Top" data-label="05 • Observation Deck"
+                            data-copy="Glass sky decks on levels 124 &amp; 148 provide sunrise yoga and private skyline photo ops.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2024/12/At-The-Top-Burj-Khalifa.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">05</span>
+                                <span class="token-name">At The Top</span>
+                                <span class="token-desc">Observation decks</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2025/03/the-dubai-city-walk.webp"
+                            data-title="Dubai City Walk" data-label="06 • Lifestyle District"
+                            data-copy="Open-air promenades, art installations, and European-style cafés moments from Downtown.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2025/03/the-dubai-city-walk.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">06</span>
+                                <span class="token-name">Dubai City Walk</span>
+                                <span class="token-desc">Lifestyle district</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/dubai-souk-al-bahar.webp"
+                            data-title="Souk Al Bahar" data-label="07 • Waterfront Souk"
+                            data-copy="Boutiques, galleries, and terrace dining with Dubai Fountain views across the bridge.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2024/12/dubai-souk-al-bahar.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">07</span>
+                                <span class="token-name">Souk Al Bahar</span>
+                                <span class="token-desc">Waterfront souk</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Dubai-Aquarium-Underwater-Zoo.webp"
+                            data-title="Dubai Aquarium &amp; Underwater Zoo" data-label="08 • Immersive Blue"
+                            data-copy="Walk through the 270° tunnel surrounded by rays, sharks, and glowing reef life.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Dubai-Aquarium-Underwater-Zoo.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">08</span>
+                                <span class="token-name">Dubai Aquarium</span>
+                                <span class="token-desc">Immersive blue</span>
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Transportation Options -->
-        <section class="section-2">
+        <section class="section transit-section" aria-label="Transportation">
             <div class="container">
-                <header class="section-title">
-                    <h2>Dubai Transportation Options</h2>
-                    <p>Our Dubai residences are perfectly placed near major transport links for exploring the city and
-                        beyond.
-                    </p>
-                </header>
-
-                <div class="gallery-grid small">
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Dubai-Tram.webp"
-                            alt="Dubai Tram passing through Dubai Marina." />
-                        <h3>Dubai Trams</h3>
-                        <p>Serving Dubai Marina and JBR, trams offer smooth, scenic travel for shorter coastal journeys.
-                        </p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Dubai-Metro.webp"
-                            alt="Dubai Metro train approaching a station." />
-                        <h3>Dubai Metro</h3>
-                        <p>A fast, efficient rail network connecting Downtown Dubai, Dubai Marina, and DXB airport.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Taxis-in-Dubai.webp"
-                            alt="Taxis lined up on a street in Dubai." />
-                        <h3>Taxis in Dubai</h3>
-                        <p>Metered and widely available, taxis are a convenient door-to-door option or can be booked via
-                            apps.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Dubai-RTA-Buses.webp"
-                            alt="Dubai RTA buses on a city road." />
-                        <h3>RTA Buses</h3>
-                        <p>Air-conditioned and comprehensive, buses connect key neighborhoods and attractions across the
-                            city.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Ride-Hailing-Apps.webp"
-                            alt="Ride-hailing car in Dubai at night." />
-                        <h3>Ride-Hailing Apps</h3>
-                        <p>Services like Uber and Careem offer flexible pick-up and drop-off with a private car
-                            experience.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Dubai-Water-Taxi-and-Ferry.webp"
-                            alt="Dubai ferry on the coastline with city skyline." />
-                        <h3>Dubai Ferry</h3>
-                        <p>Scenic coastal rides along Dubai Marina and Dubai Creek with views of Palm Jumeirah and
-                            Downtown.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/dubai-abra-traditional-boat.webp"
-                            alt="Abra traditional wooden boat on Dubai Creek." />
-                        <h3>Abra (Traditional Boats)</h3>
-                        <p>Cross Dubai Creek on traditional wooden abras — an authentic and affordable heritage
-                            experience.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/rental-cars-in-dubai.webp"
-                            alt="Rental car driving on a Dubai road." />
-                        <h3>Rental Cars</h3>
-                        <p>For full flexibility, rent a car to explore Dubai and neighboring emirates at your own pace.
-                        </p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/E-Scooters-and-Bikes.webp"
-                            alt="E-scooters parked along a Dubai street." />
-                        <h3>E-Scooters &amp; Bikes</h3>
-                        <p>Eco-friendly and fun ways to explore Downtown and other selected areas.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/dubai-airport-transfer.webp"
-                            alt="Chauffeur opening a car door for airport transfer." />
-                        <h3>Airport Transfers</h3>
-                        <p>Private and shared transfer options from Dubai International Airport for seamless arrivals.
-                        </p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Palm-Jumeirah-Monorail.webp"
-                            alt="Palm Jumeirah Monorail train with sea views." />
-                        <h3>Palm Jumeirah Monorail</h3>
-                        <p>Scenic rides across Palm Jumeirah, connecting attractions like Atlantis, The Palm and Nakheel
-                            Mall.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/dubai-water-taxis.webp"
-                            alt="Dubai water taxi cruising along the water." />
-                        <h3>Dubai Water Taxis</h3>
-                        <p>RTA-operated water taxis connecting Dubai Marina, Dubai Creek, Festival City, and more.</p>
-                    </article>
+                <div class="landmark-header">
+                    <p class="eyebrow">Transportation</p>
+                    <h2>Effortless movement across Downtown, Dubai Marina, and the airport.</h2>
+                    <p>Concierge-arranged drivers plus an efficient public network keep every district within reach.</p>
+                </div>
+                <div class="transit-experience">
+                    <div class="transit-stage animate-on-scroll">
+                        <button class="transit-arrow" type="button" data-transit-prev
+                            aria-label="Previous transport mode">
+                            <span>&lsaquo;</span>
+                        </button>
+                        <div class="transit-spotlight">
+                            <div class="transit-ghost transit-ghost--left" aria-hidden="true">
+                                <img data-transit-ghost-left src="https://img.icons8.com/fluency/96/tram.png" alt="" />
+                            </div>
+                            <div class="transit-ghost transit-ghost--right" aria-hidden="true">
+                                <img data-transit-ghost-right src="https://img.icons8.com/fluency/96/taxi.png" alt="" />
+                            </div>
+                            <div class="transit-spotlight-glow"></div>
+                            <div class="transit-spotlight-glyph">
+                                <img data-transit-glyph src="https://img.icons8.com/fluency/96/train.png"
+                                    alt="Dubai Metro icon" />
+                            </div>
+                            <div class="transit-spotlight-info">
+                                <p class="transit-tag" data-transit-tag>City Spine</p>
+                                <h3 data-transit-title>Dubai Metro</h3>
+                                <p data-transit-desc>Driverless Red &amp; Green lines link Downtown, Dubai Marina, Expo,
+                                    and DXB in minutes.</p>
+                            </div>
+                        </div>
+                        <button class="transit-arrow" type="button" data-transit-next aria-label="Next transport mode">
+                            <span>&rsaquo;</span>
+                        </button>
+                    </div>
+                    <div class="transit-roster animate-on-scroll" role="tablist"
+                        aria-label="Select a Dubai transportation option">
+                        <button class="transit-chip active" type="button" aria-selected="true" data-transit-index="0"
+                            data-image="https://img.icons8.com/fluency/96/train.png" data-tag="City Spine"
+                            data-title="Dubai Metro" data-alt="Dubai Metro icon"
+                            data-desc="Driverless Red &amp; Green lines link Downtown, Marina, Expo, and DXB in minutes."
+                            data-hint="Red &amp; Green lines">
+                            <span class="chip-icon"><img src="https://img.icons8.com/fluency/96/train.png"
+                                    alt="" /></span>
+                            <span class="chip-text">
+                                <span class="chip-name">Dubai Metro</span>
+                                <span class="chip-hint">Red &amp; Green lines</span>
+                            </span>
+                        </button>
+                        <button class="transit-chip" type="button" aria-selected="false" data-transit-index="1"
+                            data-image="https://img.icons8.com/fluency/96/tram.png" data-tag="Marina Loop"
+                            data-title="Dubai Tram" data-alt="Dubai Tram icon"
+                            data-desc="Glide through Dubai Marina and JBR with air-conditioned cabins and marina views."
+                            data-hint="Marina &amp; JBR">
+                            <span class="chip-icon"><img src="https://img.icons8.com/fluency/96/tram.png"
+                                    alt="" /></span>
+                            <span class="chip-text">
+                                <span class="chip-name">Dubai Tram</span>
+                                <span class="chip-hint">Marina &amp; JBR</span>
+                            </span>
+                        </button>
+                        <button class="transit-chip" type="button" aria-selected="false" data-transit-index="2"
+                            data-image="https://img.icons8.com/fluency/96/bus.png" data-tag="Air-Conditioned Network"
+                            data-title="RTA Buses" data-alt="RTA bus icon"
+                            data-desc="Comprehensive routes with Wi-Fi and climate control connecting every neighborhood."
+                            data-hint="Citywide routes">
+                            <span class="chip-icon"><img src="https://img.icons8.com/fluency/96/bus.png"
+                                    alt="" /></span>
+                            <span class="chip-text">
+                                <span class="chip-name">RTA Buses</span>
+                                <span class="chip-hint">Citywide routes</span>
+                            </span>
+                        </button>
+                        <button class="transit-chip" type="button" aria-selected="false" data-transit-index="3"
+                            data-image="https://img.icons8.com/fluency/96/ferry.png" data-tag="Creek Crossing"
+                            data-title="Abra &amp; Water Taxis" data-alt="Water taxi icon"
+                            data-desc="Traditional abras and modern water taxis ferry guests across Dubai Creek and Marina."
+                            data-hint="Creek &amp; Marina">
+                            <span class="chip-icon"><img src="https://img.icons8.com/fluency/96/ferry.png"
+                                    alt="" /></span>
+                            <span class="chip-text">
+                                <span class="chip-name">Abra &amp; Water Taxis</span>
+                                <span class="chip-hint">Creek &amp; Marina</span>
+                            </span>
+                        </button>
+                        <button class="transit-chip" type="button" aria-selected="false" data-transit-index="4"
+                            data-image="https://img.icons8.com/fluency/96/taxi.png" data-tag="Door-to-Door"
+                            data-title="RTA Taxis &amp; Ride-Hail" data-alt="Taxi icon"
+                            data-desc="Metered RTA taxis or Careem/Uber rides for quick hops between boutiques, dining, and galleries."
+                            data-hint="Metered convenience">
+                            <span class="chip-icon"><img src="https://img.icons8.com/fluency/96/taxi.png"
+                                    alt="" /></span>
+                            <span class="chip-text">
+                                <span class="chip-name">RTA Taxis &amp; Apps</span>
+                                <span class="chip-hint">Metered convenience</span>
+                            </span>
+                        </button>
+                        <button class="transit-chip" type="button" aria-selected="false" data-transit-index="5"
+                            data-image="https://img.icons8.com/fluency/96/airport.png"
+                            data-tag="Arrivals &amp; Departures" data-title="Chauffeur &amp; Transfers"
+                            data-alt="Airport transfer icon"
+                            data-desc="Private sedans or SUVs meet guests at DXB, DWC, or helipads for seamless arrivals."
+                            data-hint="Private drivers">
+                            <span class="chip-icon"><img src="https://img.icons8.com/fluency/96/airport.png"
+                                    alt="" /></span>
+                            <span class="chip-text">
+                                <span class="chip-name">Chauffeur &amp; Transfers</span>
+                                <span class="chip-hint">Private drivers</span>
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -304,8 +337,8 @@
     .page-dubai {
         --gold: #d4af37;
         --ink: #0b0b0b;
-        --bg: #080809;
-        --card: #141417;
+        --bg: #0f0f10;
+        --card: #151517;
         --muted: #bdbdbd;
         --ring: rgba(212, 175, 55, .35);
         --radius: 14px;
@@ -319,6 +352,11 @@
         margin-inline: auto;
     }
 
+
+    .h3 {
+        color: #fff;
+    }
+
     /* Buttons */
     .page-dubai .btn {
         display: inline-flex;
@@ -329,33 +367,1014 @@
         border: 1px solid transparent;
         font-weight: 600;
         cursor: pointer;
-        transition: .25s;
-        text-decoration: none;
+        transition: .25s
     }
 
     .page-dubai .btn-primary {
         background: linear-gradient(90deg, #d4af37, #b9912b);
         color: #111;
-        box-shadow: 0 8px 24px rgba(212, 175, 55, .25);
+        box-shadow: 0 8px 24px rgba(212, 175, 55, .25)
     }
 
     .page-dubai .btn-primary:hover {
         transform: translateY(-1px);
-        box-shadow: 0 12px 30px rgba(212, 175, 55, .32);
+        box-shadow: 0 12px 30px rgba(212, 175, 55, .32)
     }
 
     .page-dubai .btn-ghost {
         background: transparent;
         border-color: #2a2a2d;
-        color: #eaeaea;
+        color: #eaeaea
     }
 
     .page-dubai .btn-ghost:hover {
         border-color: #3a3a3f;
-        background: #161618;
+        background: #161618
+    }
+
+    .page-dubai .btn-inline {
+        color: var(--gold);
+        padding: .25rem 0;
+        border: none
     }
 
     /* Hero */
+    .page-dubai .hero {
+        position: relative;
+        min-height: 64vh;
+        display: grid;
+        place-items: center;
+        overflow: hidden
+    }
+
+    .page-dubai .hero-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+    }
+
+    .page-dubai .hero-image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none
+    }
+
+    .page-dubai .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(1200px 600px at 10% -20%, rgba(212, 175, 55, .12), transparent 45%),
+            linear-gradient(to bottom, rgba(0, 0, 0, .45), rgba(0, 0, 0, .65) 38%, rgba(0, 0, 0, .72));
+        backdrop-filter: saturate(1.1);
+    }
+
+    .page-dubai .hero-content {
+        position: relative;
+        text-align: center;
+        padding-block: 6rem
+    }
+
+    .page-dubai .eyebrow {
+        letter-spacing: .18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 700;
+        margin-bottom: .5rem
+    }
+
+    .page-dubai .headline {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        line-height: 1.1;
+        margin: .25rem 0 .5rem
+    }
+
+    .page-dubai .subhead {
+        color: #e7e7e7;
+        opacity: .92;
+        max-width: 52ch;
+        margin-inline: auto
+    }
+
+    .page-dubai .hero-actions {
+        margin-top: 1.25rem;
+        display: flex;
+        gap: .75rem;
+        justify-content: center;
+        flex-wrap: wrap
+    }
+
+    /* Sections */
+    .page-dubai .section {
+        padding-block: 56px;
+        /* background:
+            radial-gradient(850px 420px at 5% -10%, rgba(212, 175, 55, .06), transparent 45%),
+            radial-gradient(850px 380px at 100% 120%, rgba(212, 175, 55, .06), transparent 40%) */
+    }
+
+    .page-dubai .dubai-landmarks-transpo {
+
+        background-image: linear-gradient(rgba(0, 0, 0, 0.8), transparent), url("/assets/backdrop.jpg");
+        background-color: #b9912b;
+        background-position: center;
+        /* Center the image */
+        background-repeat: no-repeat;
+        /* Do not repeat the image */
+        background-size: cover;
+
+        /* background:
+            radial-gradient(850px 420px at 5% -10%, rgba(212, 175, 55, .06), transparent 45%),
+            radial-gradient(850px 380px at 100% 120%, rgba(212, 175, 55, .06), transparent 40%) */
+    }
+
+    .page-dubai .section-title {
+        max-width: 760px;
+        margin: 0 auto 22px;
+        text-align: center
+    }
+
+    .page-dubai .section-title h2 {
+        font-size: clamp(1.8rem, 2.2vw, 2rem);
+        margin-bottom: .35rem
+    }
+
+    .page-dubai .section-title p {
+        font-size: 1.5rem;
+        color: var(--muted)
+    }
+
+    /* Property Grid */
+    .page-dubai .properties-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px
+    }
+
+    .page-dubai .property-card {
+        background: var(--card);
+        border: 1px solid rgba(255, 255, 255, .06);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column
+    }
+
+    .page-dubai .property-card .media {
+        position: relative;
+        aspect-ratio: 16/10;
+        overflow: hidden
+    }
+
+    .page-dubai .property-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform .5s
+    }
+
+    .page-dubai .property-card:hover img {
+        transform: scale(1.04)
+    }
+
+    .page-dubai .badge {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: #1a1a1c;
+        border: 1px solid rgba(212, 175, 55, .35);
+        color: var(--gold);
+        padding: .35rem .6rem;
+        border-radius: 999px;
+        font-size: .8rem;
+        font-weight: 700
+    }
+
+    .page-dubai .body {
+        padding: 14px 14px 16px
+    }
+
+    .page-dubai .title {
+        font-weight: 700;
+        margin-bottom: .25rem
+    }
+
+    .page-dubai .meta {
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        font-size: .95rem;
+        margin-bottom: .5rem
+    }
+
+    .page-dubai .center {
+        display: grid;
+        place-items: center;
+        margin-top: 12px
+    }
+
+    /* Split Sections with backdrop */
+    .page-dubai .section-split {
+        position: relative;
+        isolation: isolate
+    }
+
+    .page-dubai .section-split::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+            linear-gradient(to right, rgba(0, 0, 0, .50), rgba(0, 0, 0, .50)),
+            var(--bg-img) center/cover no-repeat;
+        opacity: .55
+    }
+
+    .page-dubai .split {
+        display: grid;
+        grid-template-columns: 1.1fr .9fr;
+        gap: 28px;
+        align-items: center
+    }
+
+    .page-dubai .split-media {
+        position: relative;
+        aspect-ratio: 16/10;
+        border-radius: var(--radius);
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, .08);
+        box-shadow: var(--shadow)
+    }
+
+    .page-dubai .split-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block
+    }
+
+    .page-dubai .split-body h2 {
+        font-size: clamp(1.4rem, 2vw, 1.8rem);
+        margin-bottom: .35rem
+    }
+
+    .page-dubai .split-body p {
+        color: #e7e7e7;
+        margin-bottom: .75rem
+    }
+
+    .page-dubai .section-split.invert .split {
+        grid-template-columns: .9fr 1.1fr
+    }
+
+    .page-dubai .section-split.invert .split .split-media {
+        order: 2
+    }
+
+    /* Landmark + Transit grids */
+    .page-dubai .landmark-section,
+    .page-dubai .transit-section {
+        position: relative;
+        padding-block: 80px;
+        overflow: hidden;
+        background: #09090f;
+    }
+
+    .page-dubai .landmark-section::before,
+    .page-dubai .landmark-section::after,
+    .page-dubai .transit-section::before,
+    .page-dubai .transit-section::after {
+        content: "";
+        position: absolute;
+        inset: -40%;
+        background: radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.15), transparent 55%),
+            radial-gradient(circle at 80% 0%, rgba(102, 160, 255, 0.15), transparent 55%);
+        animation: landmarkDrift 30s linear infinite;
+        opacity: 0.8;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .page-dubai .landmark-section::after,
+    .page-dubai .transit-section::after {
+        animation-direction: reverse;
+        animation-duration: 42s;
+    }
+
+    @keyframes landmarkDrift {
+        from {
+            transform: translate3d(-5%, -5%, 0) rotate(0deg);
+        }
+
+        to {
+            transform: translate3d(5%, 5%, 0) rotate(3deg);
+        }
+    }
+
+    .page-dubai .landmark-header {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto 32px;
+    }
+
+    .page-dubai .landmark-header h2 {
+        font-size: clamp(1.8rem, 4vw, 2.4rem);
+        margin: 6px 0;
+    }
+
+    .page-dubai .landmark-header p {
+        color: var(--muted);
+    }
+
+    .page-dubai .landmark-gallery {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .page-dubai .landmark-showcase {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+        gap: 28px;
+        border-radius: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(7, 7, 14, 0.92);
+        padding: clamp(20px, 4vw, 36px);
+        box-shadow: 0 35px 80px rgba(0, 0, 0, 0.55);
+    }
+
+    .page-dubai .landmark-showcase-media {
+        position: relative;
+        border-radius: 32px;
+        overflow: hidden;
+        min-height: 360px;
+        background-size: cover;
+        background-position: center;
+        transition: background-image .4s ease;
+        filter: brightness(1.2) contrast(1.08) saturate(1.15);
+    }
+
+    .page-dubai .landmark-showcase-media::after {
+        display: none;
+    }
+
+    .page-dubai .landmark-showcase-info {
+        border-radius: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        background:
+            radial-gradient(circle at top, rgba(212, 175, 55, 0.25), transparent 60%),
+            rgba(8, 8, 14, 0.95);
+        box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.35);
+        padding: clamp(18px, 3vw, 32px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        min-height: 320px;
+    }
+
+    .page-dubai .landmark-showcase-info h3 {
+        margin: 0;
+        font-size: clamp(1.8rem, 4vw, 2.4rem);
+    }
+
+    .page-dubai .landmark-showcase-info p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.92);
+    }
+
+    .page-dubai .landmark-label {
+        font-size: 0.78rem;
+        letter-spacing: 0.45em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.65);
+    }
+
+    .page-dubai .landmark-roster {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 16px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .page-dubai .landmark-token {
+        border-radius: 26px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(6, 6, 12, 0.85);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        color: inherit;
+        transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+    }
+
+    .page-dubai .landmark-token .token-thumb {
+        width: 56px;
+        height: 56px;
+        border-radius: 18px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    .page-dubai .landmark-token .token-thumb::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.35));
+    }
+
+    .page-dubai .landmark-token .token-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        text-align: left;
+    }
+
+    .page-dubai .landmark-token .token-number {
+        font-size: 0.7rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.55);
+    }
+
+    .page-dubai .landmark-token .token-name {
+        font-weight: 600;
+    }
+
+    .page-dubai .landmark-token .token-desc {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.65);
+    }
+
+    .page-dubai .landmark-token.active {
+        border-color: rgba(212, 175, 55, 0.6);
+        box-shadow: 0 20px 45px rgba(212, 175, 55, 0.18);
+        transform: translateY(-2px);
+    }
+
+    .page-dubai .landmark-token:focus-visible {
+        outline: 2px solid rgba(212, 175, 55, 0.8);
+        outline-offset: 2px;
+    }
+
+    .page-dubai .transit-experience {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .page-dubai .transit-stage {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        position: relative;
+    }
+
+    .page-dubai .transit-spotlight {
+        flex: 1;
+        position: relative;
+        min-height: 340px;
+        border-radius: 38px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: radial-gradient(120% 120% at 50% 40%, rgba(212, 175, 55, 0.25), rgba(5, 5, 10, 0.95));
+        overflow: hidden;
+        box-shadow: 0 45px 90px rgba(0, 0, 0, 0.55);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: clamp(20px, 4vw, 40px);
+        isolation: isolate;
+    }
+
+    .page-dubai .transit-spotlight-glow {
+        position: absolute;
+        inset: auto auto 30px 50%;
+        width: 220px;
+        height: 40px;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.45), transparent 70%);
+        filter: blur(12px);
+        opacity: 0.6;
+        pointer-events: none;
+    }
+
+    .page-dubai .transit-spotlight-glyph {
+        position: absolute;
+        top: 16%;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: transitPulse 3s ease-in-out infinite;
+        z-index: 2;
+    }
+
+    .page-dubai .transit-spotlight-glyph img {
+        width: clamp(80px, 13vw, 140px);
+        height: clamp(80px, 13vw, 140px);
+        object-fit: contain;
+        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.45));
+    }
+
+    @keyframes transitPulse {
+        0% {
+            transform: translateX(-50%) scale(0.9);
+            opacity: 0.7;
+        }
+
+        50% {
+            transform: translateX(-50%) scale(1.05);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateX(-50%) scale(0.9);
+            opacity: 0.7;
+        }
+    }
+
+    .page-dubai .transit-spotlight-info {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .page-dubai .transit-spotlight-info h3 {
+        margin: 0;
+        font-size: clamp(1.6rem, 3vw, 2.3rem);
+    }
+
+    .page-dubai .transit-spotlight-info p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    .page-dubai .transit-tag {
+        margin: 0;
+        font-size: 0.7rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.65);
+    }
+
+    .page-dubai .transit-arrow {
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: rgba(10, 10, 16, 0.85);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        font-size: 1.8rem;
+        cursor: pointer;
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .page-dubai .transit-arrow:hover {
+        transform: translateY(-2px);
+        border-color: rgba(212, 175, 55, 0.7);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .page-dubai .transit-ghost {
+        position: absolute;
+        top: 18%;
+        z-index: 1;
+    }
+
+    .page-dubai .transit-ghost img {
+        width: clamp(60px, 9vw, 100px);
+        height: clamp(60px, 9vw, 100px);
+        object-fit: contain;
+        opacity: 0.2;
+        filter: blur(1px);
+    }
+
+    .page-dubai .transit-ghost--left {
+        left: 10%;
+    }
+
+    .page-dubai .transit-ghost--right {
+        right: 10%;
+    }
+
+    .page-dubai .transit-roster {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 14px;
+    }
+
+    .page-dubai .transit-chip {
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(6, 6, 12, 0.85);
+        padding: 10px 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        color: inherit;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .page-dubai .transit-chip .chip-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 16px;
+        background: rgba(212, 175, 55, 0.12);
+        display: grid;
+        place-items: center;
+        box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.35);
+    }
+
+    .page-dubai .transit-chip .chip-icon img {
+        width: 26px;
+        height: 26px;
+        object-fit: contain;
+    }
+
+    .page-dubai .transit-chip .chip-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.15;
+    }
+
+    .page-dubai .transit-chip .chip-name {
+        font-weight: 600;
+    }
+
+    .page-dubai .transit-chip .chip-hint {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .page-dubai .transit-chip.active {
+        border-color: rgba(212, 175, 55, 0.6);
+        box-shadow: 0 16px 30px rgba(212, 175, 55, 0.15);
+        transform: translateY(-2px);
+    }
+
+    .page-dubai .transit-chip:focus-visible {
+        outline: 2px solid rgba(212, 175, 55, 0.8);
+        outline-offset: 3px;
+    }
+
+    /* CTA */
+    .page-dubai .cta {
+        padding-block: 56px;
+        /* background:
+            radial-gradient(900px 420px at 10% 0%, rgba(212, 175, 55, .08), transparent 46%),
+            linear-gradient(180deg, #0f0f10 0%, #0e0e0f 100%) */
+    }
+
+    .page-dubai .cta-wrap {
+        text-align: center;
+        max-width: 760px
+    }
+
+    .page-dubai .cta .eyebrow {
+        color: var(--gold);
+        font-weight: 800;
+        letter-spacing: .18em;
+        text-transform: uppercase
+    }
+
+    .page-dubai .cta h2 {
+        font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+        margin: .25rem 0
+    }
+
+    .page-dubai .cta p {
+        color: #e7e7e7
+    }
+
+    .page-dubai .cta-actions {
+        margin-top: 1rem;
+        display: flex;
+        gap: .75rem;
+        justify-content: center;
+        flex-wrap: wrap
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+        .page-dubai .properties-grid {
+            grid-template-columns: 1fr 1fr
+        }
+
+        .page-dubai .split {
+            grid-template-columns: 1fr;
+            gap: 16px
+        }
+
+        .page-dubai .section-split.invert .split .split-media {
+            order: 0
+        }
+
+        .page-dubai .landmark-showcase {
+            grid-template-columns: 1fr;
+        }
+
+        .page-dubai .landmark-showcase-info {
+            min-height: auto;
+        }
+
+        .page-dubai .transit-stage {
+            flex-direction: column;
+        }
+
+        .page-dubai .transit-arrow {
+            width: 64px;
+            height: 64px;
+        }
+    }
+
+    @media (max-width: 640px) {
+
+        .page-dubai .properties-grid {
+            grid-template-columns: 1fr
+        }
+
+        .page-dubai .landmark-roster {
+            grid-template-columns: 1fr;
+        }
+
+        .page-dubai .transit-roster {
+            grid-template-columns: 1fr;
+        }
+
+        .page-dubai .transit-spotlight {
+            min-height: 280px;
+        }
+    }
+
+
+
+
+
+    /* ===== Hero centering & media fill ===== */
+    .hero {
+        position: relative;
+        min-height: calc(100vh - var(--navH, 80px));
+        /* full screen minus nav */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-block: clamp(40px, 6vw, 96px);
+        /* guard for very small screens */
+        background: radial-gradient(1200px 600px at 50% -20%, rgba(212, 175, 55, .09), transparent 45%),
+            linear-gradient(180deg, rgba(0, 0, 0, .45), rgba(0, 0, 0, .75));
+        overflow: clip;
+    }
+
+    .hero-video,
+    .hero-image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(1.05) contrast(1.02) brightness(.9);
+        z-index: 0;
+    }
+
+    .hero::after {
+        /* soft vignette for legibility */
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(60% 50% at 50% 50%, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.05));
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 1150px;
+        margin: 0 auto;
+        text-align: center;
+        padding-inline: 16px;
+    }
+
+    /* desktop video + mobile image switch */
+    .hero-image {
+        display: none;
+    }
+
+
+    /* tidy headings/cta spacing */
+    .hero-content h1 {
+        margin: 0 0 12px;
+        line-height: 1.05;
+    }
+
+    .hero-content p {
+        margin: 0 auto 22px;
+        max-width: 820px;
+        opacity: .92;
+    }
+
+    /* optional: fix any global container centering */
+    .container {
+        margin-inline: auto;
+        max-width: 1200px;
+        padding-inline: 16px;
+    }
+
+    /* === OLS HERO — force full-bleed, centered, covered === */
+    .page-dubai .hero {
+        position: relative;
+        height: calc(100vh - var(--navH, 80px));
+        min-height: 560px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        /* no inner padding that could shift media */
+        background: radial-gradient(1200px 600px at 50% -20%, rgba(212, 175, 55, .08), transparent 45%);
+    }
+
+    /* Kill any theme constraints and make media truly cover */
+    .page-dubai .hero-video,
+    .page-dubai .hero-image {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        min-width: 100% !important;
+        min-height: 100% !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: cover !important;
+        object-position: 50% 50% !important;
+        max-width: none !important;
+        z-index: 0 !important;
+        filter: saturate(1.05) contrast(1.02) brightness(.9);
+        pointer-events: none;
+    }
+
+    /* Keep a single soft vignette for legibility */
+    .page-dubai .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(60% 50% at 50% 35%, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.05));
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    /* Content stack above */
+    .page-dubai .hero .hero-content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 1150px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 16px;
+    }
+
+
+
+    /* Fix "View Details" pill inside property cards */
+    .page-dubai .property-card .btn-inline {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.55rem 0.95rem;
+        /* breathing room */
+        line-height: 1;
+        /* prevent vertical clipping */
+        white-space: nowrap;
+        /* keep it on one line */
+        border-radius: 999px;
+        /* perfect pill */
+        border: 1px solid rgba(212, 175, 55, .45);
+        background: transparent;
+        color: var(--gold);
+        font-weight: 700;
+        box-shadow: none;
+        transition: transform .2s, box-shadow .2s, background .2s, color .2s, border-color .2s;
+    }
+
+    .page-dubai .property-card .btn-inline:hover {
+        background: linear-gradient(90deg, #d4af37, #b9912b);
+        color: #111;
+        border-color: transparent;
+        box-shadow: 0 8px 22px rgba(212, 175, 55, .25);
+        transform: translateY(-1px);
+    }
+
+    /* Ensure the card body doesn't squash the button */
+    .page-dubai .property-card .body {
+        display: flex;
+        flex-direction: column;
+        gap: .55rem;
+        /* space between title/meta/button */
+    }
+
+    /* MOBILE ONLY — make all split sections match the Central Signature layout */
+    @media (max-width: 640px) {
+
+        /* 1) Stack consistently: image first, text second */
+        .page-dubai .section-split .split {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 12px !important;
+        }
+
+        /* Even when the section has .invert, keep the same order on mobile */
+        .page-dubai .section-split.invert .split .split-media {
+            order: 1 !important;
+        }
+
+        .page-dubai .section-split .split-media {
+            order: 1 !important;
+            width: 100% !important;
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .page-dubai .section-split .split-body {
+            order: 2 !important;
+            padding: 14px 16px 18px !important;
+            text-align: left !important;
+        }
+
+        /* 2) Tighten title + “address” line spacing to mirror Central Signature */
+        .page-dubai .section-split .split-body h2 {
+            font-size: clamp(1.25rem, 4.5vw, 1.4rem) !important;
+            line-height: 1.15 !important;
+            margin: 0 0 4px !important;
+        }
+
+        /* If your address/eyebrow line is inside the paragraph or a span,
+     normalize its look: gold, compact, below the title */
+        .page-dubai .section-split .split-body .eyebrow,
+        .page-dubai .section-split .split-body .meta,
+        .page-dubai .section-split .split-body p:first-of-type>strong,
+        .page-dubai .section-split .split-body span.address {
+            display: inline-block;
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: .02em;
+            margin-bottom: 6px;
+        }
+
+        /* 3) Keep the descriptive paragraph consistent */
+        .page-dubai .section-split .split-body p {
+            margin: 0 0 10px !important;
+            color: #e7e7e7 !important;
+        }
+
+        /* 4) Keep “View Details” button baseline aligned and full-tap friendly */
+        .page-dubai .section-split .split-body .btn,
+        .page-dubai .section-split .split-body a.btn {
+            align-self: flex-start;
+            min-height: 40px;
+            padding: .6rem 1rem;
+        }
+
+        .hero-video,
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-video {
+            display: block;
+            filter: contrast(1.05) saturate(1.05);
+        }
+    }
+
+    /* HERO container */
     .page-dubai .hero {
         position: relative;
         height: calc(100vh - var(--navH, 80px));
@@ -364,11 +1383,11 @@
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        background:
-            radial-gradient(1200px 600px at 50% -20%, rgba(212, 175, 55, .12), transparent 45%),
+        background: radial-gradient(1200px 600px at 50% -20%, rgba(212, 175, 55, .08), transparent 45%),
             linear-gradient(180deg, rgba(0, 0, 0, .45), rgba(0, 0, 0, .75));
     }
 
+    /* Video / Image fill */
     .page-dubai .hero-video,
     .page-dubai .hero-image {
         position: absolute;
@@ -384,8 +1403,10 @@
         z-index: 0;
         filter: saturate(1.05) contrast(1.02) brightness(.9);
         pointer-events: none;
+        /* let taps hit buttons */
     }
 
+    /* Soft vignette above media */
     .page-dubai .hero::after {
         content: "";
         position: absolute;
@@ -395,7 +1416,8 @@
         pointer-events: none;
     }
 
-    .page-dubai .hero-content {
+    /* Content above everything */
+    .page-dubai .hero .hero-content {
         position: relative;
         z-index: 2;
         width: 100%;
@@ -405,376 +1427,298 @@
         padding: 0 16px;
     }
 
-    .page-dubai .eyebrow {
-        letter-spacing: .18em;
-        text-transform: uppercase;
-        color: var(--gold);
-        font-weight: 700;
-        margin-bottom: .5rem;
-        font-size: .78rem;
+    /* Desktop: prefer video; hide still image */
+    .page-dubai .hero-image {
+        display: none;
     }
 
-    .page-dubai .headline {
-        font-size: clamp(2rem, 4vw, 3rem);
-        font-weight: 800;
-        line-height: 1.1;
-        margin: .25rem 0 .5rem;
+    /* Mobile: KEEP video playing inline and covering */
+    @media (max-width: 640px) {
+        .page-dubai .hero-video {
+            display: block !important;
+        }
+
+        .page-dubai .hero-image {
+            display: none !important;
+        }
+
+        /* (use image only if you later decide to swap) */
     }
 
-    .page-dubai .subhead {
-        color: #e7e7e7;
-        opacity: .92;
-        max-width: 52ch;
-        margin-inline: auto;
+
+    /* Kill any AOS/transition effects in the HERO only */
+    .page-dubai .hero [data-aos],
+    .page-dubai .hero .headline,
+    .page-dubai .hero .subhead,
+    .page-dubai .hero .eyebrow,
+    .page-dubai .hero .hero-content {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+        filter: none !important;
     }
 
-    .page-dubai .hero-actions {
-        margin-top: 1.25rem;
-        display: flex;
-        gap: .75rem;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    /* Sections */
-    .page-dubai .section {
-        padding-block: 56px;
-    }
-
-    .page-dubai .center {
-        display: grid;
-        place-items: center;
-    }
-
-    .page-dubai .section-title {
-        max-width: 760px;
-        margin: 0 auto 22px;
-        text-align: center;
-        color: white;
-    }
-
-    .page-dubai .section-title h2 {
-        font-size: clamp(1.8rem, 2.2vw, 2rem);
-        margin-bottom: .35rem;
-    }
-
-    .page-dubai .section-title p {
-        font-size: 1.1rem;
-        color: var(--muted);
-    }
-
-    /* Split Sections with backdrop */
-    .page-dubai .section-split {
+    /* === Dubai immersive hero refresh === */
+    #dubai-root {
         position: relative;
-        isolation: isolate;
+        background:
+            radial-gradient(1400px 640px at 10% -10%, rgba(212, 175, 55, 0.08), transparent 45%),
+            radial-gradient(1200px 720px at 90% 0%, rgba(96, 154, 255, 0.08), transparent 55%),
+            var(--bg);
+        overflow: hidden;
     }
 
-    .page-dubai .section-split::before {
+    #dubai-root .cursor-orb {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: clamp(140px, 12vw, 200px);
+        height: clamp(140px, 12vw, 200px);
+        pointer-events: none;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 221, 170, 0.45), rgba(255, 255, 255, 0));
+        mix-blend-mode: screen;
+        opacity: 0;
+        transition: opacity 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        box-shadow: 0 0 80px rgba(212, 175, 55, 0.25), 0 0 140px rgba(212, 175, 55, 0.15);
+    }
+
+    #dubai-root .cursor-orb.cursor-orb--glow {
+        box-shadow:
+            0 0 120px rgba(255, 214, 147, 0.45),
+            0 0 220px rgba(212, 175, 55, 0.35),
+            0 0 320px rgba(148, 199, 255, 0.2);
+    }
+
+    #dubai-root .cursor-trail {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 4;
+        mix-blend-mode: screen;
+    }
+
+    #dubai-root .cursor-spark {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 230, 190, 0.95), rgba(255, 255, 255, 0));
+        box-shadow: 0 0 20px rgba(255, 220, 170, 0.8);
+        transform: translate(-50%, -50%);
+        animation: antwerpSparkle 0.9s ease-out forwards;
+    }
+
+    @keyframes antwerpSparkle {
+        0% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(0.4);
+        }
+
+        70% {
+            opacity: 0.8;
+            transform: translate(calc(-50% + var(--sparkle-drift-x, 0px)),
+                    calc(-50% + var(--sparkle-drift-y, -20px))) scale(1);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translate(calc(-50% + var(--sparkle-drift-x, 0px)),
+                    calc(-50% + var(--sparkle-drift-y, -20px))) scale(0.1);
+        }
+    }
+
+    #dubai-root .immersive-hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 120px 0 150px;
+        overflow: hidden;
+    }
+
+    #dubai-root .hero-layers {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+    }
+
+    #dubai-root .hero-layer {
+        position: absolute;
+        inset: 0;
+    }
+
+    #dubai-root .hero-layer--glow {
+        background: radial-gradient(circle at 15% 10%, rgba(212, 175, 55, 0.35), transparent 55%),
+            radial-gradient(circle at 85% 0%, rgba(102, 160, 255, 0.28), transparent 60%);
+        filter: blur(20px);
+        animation: antwerpAurora 26s ease-in-out infinite alternate;
+    }
+
+    #dubai-root .hero-layer--grid {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        background-size: 80px 80px;
+        opacity: 0.4;
+        animation: antwerpGridPan 40s linear infinite;
+    }
+
+    #dubai-root .hero-layer--particles::before,
+    #dubai-root .hero-layer--particles::after {
         content: "";
         position: absolute;
         inset: 0;
-        z-index: -1;
-        background:
-            linear-gradient(to right, rgba(0, 0, 0, .60), rgba(0, 0, 0, .55)),
-            var(--bg-img) center/cover no-repeat;
-        opacity: .7;
+        background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+        background-size: 200px 200px;
+        animation: antwerpParticleDrift 55s linear infinite;
     }
 
-    .page-dubai .split {
-        display: grid;
-        grid-template-columns: 1.1fr .9fr;
-        gap: 28px;
-        align-items: center;
+    #dubai-root .hero-layer--particles::after {
+        animation-duration: 75s;
+        opacity: 0.5;
     }
 
-    .page-dubai .split-media {
-        position: relative;
-        aspect-ratio: 16/10;
-        border-radius: var(--radius);
-        overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, .08);
-        box-shadow: var(--shadow);
-    }
-
-    .page-dubai .split-media img {
+    #dubai-root .hero-layer--media .hero-video {
+        position: absolute;
+        inset: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        display: block;
+        filter: saturate(1.05) contrast(1.05) brightness(0.9);
     }
 
-    .page-dubai .badge {
+    #dubai-root .hero-overlay {
         position: absolute;
-        top: 12px;
-        left: 12px;
-        background: rgba(10, 10, 10, .82);
-        border: 1px solid rgba(212, 175, 55, .45);
-        color: var(--gold);
-        padding: .35rem .75rem;
-        border-radius: 999px;
-        font-size: .8rem;
-        font-weight: 700;
+        inset: 0;
+        background: radial-gradient(70% 50% at 50% 50%, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.15));
     }
 
-    .page-dubai .split-body h2 {
-        font-size: clamp(1.4rem, 2vw, 1.8rem);
-        margin-bottom: .35rem;
-    }
-
-    .page-dubai .split-body .meta-location {
-        display: block;
-        font-size: .9rem;
-        color: var(--muted);
-        margin-top: 2px;
-    }
-
-    .page-dubai .split-body p {
-        color: #e7e7e7;
-        margin-bottom: .75rem;
-    }
-
-    .page-dubai .section-split.invert .split {
-        grid-template-columns: .9fr 1.1fr;
-    }
-
-    .page-dubai .section-split.invert .split .split-media {
-        order: 2;
-    }
-
-    /* Amenities */
-    .page-dubai .dubai-amenities {
-        padding-block: 56px;
-        background:
-            radial-gradient(850px 380px at 5% -10%, rgba(212, 175, 55, .10), transparent 48%),
-            radial-gradient(900px 420px at 100% 120%, rgba(212, 175, 55, .10), transparent 40%);
-    }
-
-    .page-dubai .amenities-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 16px;
-    }
-
-    .page-dubai .amenity-item {
-        background: var(--card);
-        border: 1px solid rgba(255, 255, 255, .06);
-        border-radius: var(--radius);
-        padding: 16px 18px 18px;
-        box-shadow: 0 10px 26px rgba(0, 0, 0, .35);
-    }
-
-    .page-dubai .amenity-item h3 {
-        font-size: .95rem;
-        font-weight: 700;
-        margin-bottom: 4px;
-    }
-
-    .page-dubai .amenity-item p {
-        font-size: .9rem;
-        color: var(--muted);
-    }
-
-    /* Landmarks + Transport wrapper */
-    .page-dubai .dubai-landmarks-transpo {
-        padding-block: 56px;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.96)),
-            url("https://tgest.oneluxstay.com/wp-content/uploads/2025/07/dubai-fountain-night-gold.webp");
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-
-    .page-dubai .section-2 {
-        padding-block: 32px;
-    }
-
-    /* Gallery Grids */
-    .page-dubai .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+    #dubai-root .hero-content {
+        position: relative;
+        z-index: 2;
+        width: min(720px, 95vw);
+        margin: 0;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
         gap: 14px;
     }
 
-    .page-dubai .gallery-grid.small {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .page-dubai .gallery-card {
-        background: var(--card);
-        border: 1px solid rgba(255, 255, 255, .06);
-        border-radius: var(--radius);
-        overflow: hidden;
-    }
-
-    .page-dubai .gallery-card img {
-        width: 100%;
-        aspect-ratio: 16/11;
-        object-fit: cover;
-    }
-
-    .page-dubai .gallery-card h3 {
-        color: #fff;
-        font-size: 1rem;
-        font-weight: 700;
-        padding: .55rem .7rem .2rem;
-    }
-
-    .page-dubai .gallery-card p {
-        color: var(--muted);
-        padding: 0 .7rem .8rem;
-        font-size: .9rem;
-    }
-
-    /* CTA (scoped clone of luxe-cta.slim styles) */
-    .page-dubai .luxe-cta.slim {
-        background: center/cover fixed #0e0e0e;
-        background-image:
-            radial-gradient(1000px 400px at 70% -10%, rgba(212, 175, 55, .18), rgba(0, 0, 0, 0)),
-            url("https://assets.guesty.com/image/upload/v1760479797/production/666b3af27fc6d5653142b0af/mkrldxtkwvy8riemiryo.jpg");
-        color: #fff;
-        overflow: hidden;
-        padding: 5% 0;
-        position: relative;
-    }
-
-    .page-dubai .luxe-cta.slim::before {
-        background: linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .8));
-        content: "";
-        inset: 0;
-        position: absolute;
-        z-index: 0;
-    }
-
-    .page-dubai .cta-wrap {
-        background: rgba(255, 255, 255, .05);
-        backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, .1);
-        border-radius: 18px;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, .4);
-        margin: 0 auto;
-        max-width: 950px;
-        padding: clamp(36px, 6vw, 72px) clamp(16px, 4vw, 32px);
-        position: relative;
-        z-index: 1;
-        text-align: center;
-    }
-
-    .page-dubai .cta-kicker {
-        color: rgba(255, 255, 255, .75);
-        font: 600 11px/1.2 Inter, sans-serif;
-        letter-spacing: .18em;
-        margin-bottom: 4px;
+    #dubai-root .hero-crest {
+        letter-spacing: 0.4em;
         text-transform: uppercase;
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.7);
     }
 
-    .page-dubai .cta-section h2 {
-        font-family: Lexend, sans-serif;
-        font-size: clamp(26px, 3.6vw, 40px);
-        font-weight: 300;
-        letter-spacing: .02em;
-        margin-bottom: 10px;
+    #dubai-root .hero-divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+        margin: 10px 0;
     }
 
-    .page-dubai .cta-section p {
-        color: rgba(255, 255, 255, .88);
-        font-size: clamp(14px, 1.4vw, 17px);
-        line-height: 1.5;
-        margin: 0 auto 20px;
-        max-width: 60ch;
+    #dubai-root .subhead {
+        color: #fff4db;
     }
 
-    .page-dubai .cta-actions {
+    #dubai-root .hero-amenities {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 8px;
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
+    }
+
+    #dubai-root .hero-amenities li {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        padding: 6px 14px;
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.8);
+        background: rgba(0, 0, 0, 0.25);
+    }
+
+    #dubai-root .hero-actions {
+        margin-top: 8px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    #dubai-root .hero-actions .btn {
+        min-width: 180px;
         justify-content: center;
     }
 
-    /* Responsive */
-    @media (max-width: 900px) {
-        .page-dubai .split {
-            grid-template-columns: 1fr;
-            gap: 16px;
+    @media (max-width: 960px) {
+        #dubai-root .hero-content {
+            width: 100%;
+            align-items: center;
+            text-align: center;
         }
 
-        .page-dubai .section-split.invert .split .split-media {
-            order: 0;
-        }
-
-        .page-dubai .amenities-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .page-dubai .gallery-grid,
-        .page-dubai .gallery-grid.small {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+        #dubai-root .hero-amenities {
+            justify-content: center;
         }
     }
 
-    @media (max-width: 640px) {
-        .page-dubai .hero-image {
-            display: block;
+    @media (max-width: 620px) {
+        #dubai-root .hero-content {
+            align-items: center;
         }
 
-        .page-dubai .hero-video {
-            display: none;
-        }
-
-        .page-dubai .amenities-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .page-dubai .gallery-grid,
-        .page-dubai .gallery-grid.small {
-            grid-template-columns: 1fr;
-        }
-
-        .page-dubai .cta-wrap {
-            padding: 36px 16px;
+        #dubai-root .hero-actions {
+            flex-direction: column;
         }
     }
 
+    @keyframes antwerpAurora {
+        0% {
+            transform: translate3d(0, 0, 0);
+        }
 
-    .hero {
-        position: relative;
-        width: 100%;
-        height: 90vh;
-        /* ensures the hero has height */
-        overflow: hidden;
+        50% {
+            transform: translate3d(40px, -20px, 0);
+        }
+
+        100% {
+            transform: translate3d(-30px, 10px, 0);
+        }
     }
 
-    .hero-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        /* makes it behave like a video */
-        z-index: 1;
+    @keyframes antwerpGridPan {
+        from {
+            background-position: 0 0, 0 0;
+        }
+
+        to {
+            background-position: 120px 80px, 80px 120px;
+        }
     }
 
-    .hero-content {
-        position: relative;
-        z-index: 2;
-        /* makes text appear above image */
-    }
+    @keyframes antwerpParticleDrift {
+        from {
+            transform: translateY(0);
+        }
 
-    .hero::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(to bottom,
-                rgba(0, 0, 0, 0.55),
-                rgba(0, 0, 0, 0.85));
-        z-index: 1;
-        /* overlay between image and text */
+        to {
+            transform: translateY(-200px);
+        }
     }
 </style>
 
-<!-- Optional: embed Dubai reservations iframe in a modal or below if needed
+<!-- Optional Dubai booking iframe
 <iframe
-  src="https://reservations.oneluxstay.com/en/properties?city=Dubai&country=United+Arab+Emirates&minOccupancy=1"
-  width="100%" height="1200" style="border:none;">
-</iframe>
--->
+    src="https://reservations.oneluxstay.com/en/properties?city=Dubai&country=United+Arab+Emirates&minOccupancy=1"
+    width="100%" height="1200" style="border:none;">
+</iframe> -->

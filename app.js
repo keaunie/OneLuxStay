@@ -5,6 +5,11 @@
 window.__useOLSDatePicker = true;
 let cleanupHomeExperience = null;
 let cleanupAntwerpExperience = null;
+let cleanupDubaiExperience = null;
+let cleanupLosAngelesExperience = null;
+let cleanupHollywoodExperience = null;
+let cleanupRedondoExperience = null;
+let cleanupMiamiExperience = null;
 
 // Load page content into the #app container
 function loadPage(pageName) {
@@ -18,6 +23,26 @@ function loadPage(pageName) {
   if (cleanupAntwerpExperience) {
     cleanupAntwerpExperience();
     cleanupAntwerpExperience = null;
+  }
+  if (cleanupDubaiExperience) {
+    cleanupDubaiExperience();
+    cleanupDubaiExperience = null;
+  }
+  if (cleanupLosAngelesExperience) {
+    cleanupLosAngelesExperience();
+    cleanupLosAngelesExperience = null;
+  }
+  if (cleanupHollywoodExperience) {
+    cleanupHollywoodExperience();
+    cleanupHollywoodExperience = null;
+  }
+  if (cleanupRedondoExperience) {
+    cleanupRedondoExperience();
+    cleanupRedondoExperience = null;
+  }
+  if (cleanupMiamiExperience) {
+    cleanupMiamiExperience();
+    cleanupMiamiExperience = null;
   }
 
   fetch(`/pages/${pageName}.html`)
@@ -103,6 +128,11 @@ function loadPage(pageName) {
 
         initHomeExperience();
         initAntwerpExperience();
+        initDubaiExperience();
+        initLosAngelesExperience();
+        initHollywoodExperience();
+        initRedondoExperience();
+        initMiamiExperience();
       }, 150);
     })
     .catch((err) => {
@@ -393,57 +423,46 @@ function initHomeExperience() {
   };
 }
 
-function initAntwerpExperience() {
-  cleanupAntwerpExperience?.();
-
-  const antwerpRoot = document.getElementById("antwerp-root");
-  if (!antwerpRoot) {
-    cleanupAntwerpExperience = null;
-    return;
-  }
-
+function setupCityExperience(root) {
+  if (!root) return null;
+  const cleanupTasks = [];
   const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
   const parallaxLayers = prefersReducedMotion
     ? []
-    : Array.from(antwerpRoot.querySelectorAll("[data-parallax]"));
-  let parallaxHandler = null;
-  let parallaxTicking = false;
-
-  const runParallax = () => {
-    const scrollY =
-      window.pageYOffset || document.documentElement.scrollTop || 0;
-    parallaxLayers.forEach((layer) => {
-      const depth = parseFloat(layer.dataset.parallax || "0");
-      layer.style.transform = `translate3d(0, ${scrollY * depth * -1}px, 0)`;
-    });
-    parallaxTicking = false;
-  };
-
+    : Array.from(root.querySelectorAll("[data-parallax]"));
   if (parallaxLayers.length) {
-    parallaxHandler = () => {
+    let parallaxTicking = false;
+    const runParallax = () => {
+      const scrollY =
+        window.pageYOffset || document.documentElement.scrollTop || 0;
+      parallaxLayers.forEach((layer) => {
+        const depth = parseFloat(layer.dataset.parallax || "0");
+        layer.style.transform = `translate3d(0, ${scrollY * depth * -1}px, 0)`;
+      });
+      parallaxTicking = false;
+    };
+    const parallaxHandler = () => {
       if (parallaxTicking) return;
       parallaxTicking = true;
       requestAnimationFrame(runParallax);
     };
     window.addEventListener("scroll", parallaxHandler, { passive: true });
     runParallax();
+    cleanupTasks.push(() =>
+      window.removeEventListener("scroll", parallaxHandler)
+    );
   }
 
-  const cursorOrb = antwerpRoot.querySelector(".cursor-orb");
-  const cursorTrail = antwerpRoot.querySelector(".cursor-trail");
-  let cursorCleanup = null;
-  let landmarkCleanup = null;
-  let transitCleanup = null;
-
-  const allowCursor =
+  const cursorOrb = root.querySelector(".cursor-orb");
+  const cursorTrail = root.querySelector(".cursor-trail");
+  if (
     cursorOrb &&
     !prefersReducedMotion &&
-    !window.matchMedia("(pointer: coarse)").matches;
-
-  if (allowCursor) {
+    !window.matchMedia("(pointer: coarse)").matches
+  ) {
     let orbX = window.innerWidth / 2;
     let orbY = window.innerHeight / 2;
     let targetX = orbX;
@@ -456,8 +475,8 @@ function initAntwerpExperience() {
     let sparkleCount = 0;
     const MAX_SPARKLES = 14;
     let orbGlowTimeout = null;
-    let isGlowing = false;
     let orbFadeTimeout = null;
+    let isGlowing = false;
 
     const updateOrbSize = () => {
       orbHalfW = cursorOrb.offsetWidth / 2;
@@ -520,9 +539,7 @@ function initAntwerpExperience() {
         isGlowing = true;
         cursorOrb.classList.add("cursor-orb--glow");
       }
-      if (orbGlowTimeout) {
-        clearTimeout(orbGlowTimeout);
-      }
+      if (orbGlowTimeout) clearTimeout(orbGlowTimeout);
       orbGlowTimeout = setTimeout(() => {
         cursorOrb.classList.remove("cursor-orb--glow");
         isGlowing = false;
@@ -546,30 +563,25 @@ function initAntwerpExperience() {
     window.addEventListener("resize", updateOrbSize);
     renderOrb();
 
-      cursorCleanup = () => {
-        window.removeEventListener("pointermove", pointerHandler);
-        window.removeEventListener("pointerleave", leaveHandler);
-        window.removeEventListener("resize", updateOrbSize);
-        cancelAnimationFrame(rafId);
-        if (orbGlowTimeout) clearTimeout(orbGlowTimeout);
-        if (orbFadeTimeout) clearTimeout(orbFadeTimeout);
-        cursorOrb.classList.remove("cursor-orb--glow");
-        isGlowing = false;
-        cursorOrb.style.opacity = "0";
-        if (cursorTrail) {
-          cursorTrail.innerHTML = "";
-        }
-      };
+    cleanupTasks.push(() => {
+      window.removeEventListener("pointermove", pointerHandler);
+      window.removeEventListener("pointerleave", leaveHandler);
+      window.removeEventListener("resize", updateOrbSize);
+      cancelAnimationFrame(rafId);
+      if (orbGlowTimeout) clearTimeout(orbGlowTimeout);
+      if (orbFadeTimeout) clearTimeout(orbFadeTimeout);
+      cursorOrb.classList.remove("cursor-orb--glow");
+      cursorOrb.style.opacity = "0";
+      if (cursorTrail) cursorTrail.innerHTML = "";
+    });
   }
 
-  const landmarkTokens = Array.from(
-    antwerpRoot.querySelectorAll(".landmark-token")
-  );
+  const landmarkTokens = Array.from(root.querySelectorAll(".landmark-token"));
   if (landmarkTokens.length) {
-    const media = antwerpRoot.querySelector(".landmark-showcase-media");
-    const labelEl = antwerpRoot.querySelector("[data-landmark-label]");
-    const titleEl = antwerpRoot.querySelector("[data-landmark-title]");
-    const copyEl = antwerpRoot.querySelector("[data-landmark-copy]");
+    const media = root.querySelector(".landmark-showcase-media");
+    const labelEl = root.querySelector("[data-landmark-label]");
+    const titleEl = root.querySelector("[data-landmark-title]");
+    const copyEl = root.querySelector("[data-landmark-copy]");
 
     const activate = (token) => {
       if (!token) return;
@@ -580,7 +592,7 @@ function initAntwerpExperience() {
       });
       const photo = token.getAttribute("data-photo");
       if (media && photo) {
-        media.style.backgroundImage = `linear-gradient(135deg, rgba(0,0,0,0.25), rgba(0,0,0,0.55)), url('${photo}')`;
+        media.style.backgroundImage = `url('${photo}')`;
       }
       if (labelEl) labelEl.textContent = token.getAttribute("data-label") || "";
       if (titleEl) titleEl.textContent = token.getAttribute("data-title") || "";
@@ -598,25 +610,23 @@ function initAntwerpExperience() {
         landmarkTokens[0]
     );
 
-    landmarkCleanup = () => {
+    cleanupTasks.push(() =>
       listeners.forEach(({ token, handler }) =>
         token.removeEventListener("click", handler)
-      );
-    };
+      )
+    );
   }
 
-  const transitTokens = Array.from(
-    antwerpRoot.querySelectorAll(".transit-chip")
-  );
+  const transitTokens = Array.from(root.querySelectorAll(".transit-chip"));
   if (transitTokens.length) {
-    const glyphImg = antwerpRoot.querySelector("[data-transit-glyph]");
-    const tagEl = antwerpRoot.querySelector("[data-transit-tag]");
-    const titleEl = antwerpRoot.querySelector("[data-transit-title]");
-    const descEl = antwerpRoot.querySelector("[data-transit-desc]");
-    const ghostLeftImg = antwerpRoot.querySelector("[data-transit-ghost-left]");
-    const ghostRightImg = antwerpRoot.querySelector("[data-transit-ghost-right]");
-    const prevBtn = antwerpRoot.querySelector("[data-transit-prev]");
-    const nextBtn = antwerpRoot.querySelector("[data-transit-next]");
+    const glyphImg = root.querySelector("[data-transit-glyph]");
+    const tagEl = root.querySelector("[data-transit-tag]");
+    const titleEl = root.querySelector("[data-transit-title]");
+    const descEl = root.querySelector("[data-transit-desc]");
+    const ghostLeftImg = root.querySelector("[data-transit-ghost-left]");
+    const ghostRightImg = root.querySelector("[data-transit-ghost-right]");
+    const prevBtn = root.querySelector("[data-transit-prev]");
+    const nextBtn = root.querySelector("[data-transit-next]");
     let currentIndex = transitTokens.findIndex((btn) =>
       btn.classList.contains("active")
     );
@@ -654,10 +664,7 @@ function initAntwerpExperience() {
       if (titleEl) titleEl.textContent = token.getAttribute("data-title") || "";
       if (descEl) descEl.textContent = token.getAttribute("data-desc") || "";
       const total = transitTokens.length;
-      setGhost(
-        ghostLeftImg,
-        (index - 1 + total) % total
-      );
+      setGhost(ghostLeftImg, (index - 1 + total) % total);
       setGhost(ghostRightImg, (index + 1) % total);
     };
 
@@ -677,26 +684,56 @@ function initAntwerpExperience() {
     const nextHandler = () => step(1);
     prevBtn?.addEventListener("click", prevHandler);
     nextBtn?.addEventListener("click", nextHandler);
-
     activateTransit(currentIndex);
 
-    transitCleanup = () => {
+    cleanupTasks.push(() => {
       tokenListeners.forEach(({ token, handler }) =>
         token.removeEventListener("click", handler)
       );
       prevBtn?.removeEventListener("click", prevHandler);
       nextBtn?.removeEventListener("click", nextHandler);
-    };
+    });
   }
 
-  cleanupAntwerpExperience = () => {
-    if (parallaxLayers.length && parallaxHandler) {
-      window.removeEventListener("scroll", parallaxHandler);
-    }
-    cursorCleanup?.();
-    landmarkCleanup?.();
-    transitCleanup?.();
-  };
+  return cleanupTasks.length
+    ? () => cleanupTasks.forEach((fn) => fn())
+    : null;
+}
+
+function initAntwerpExperience() {
+  cleanupAntwerpExperience?.();
+  const root = document.getElementById("antwerp-root");
+  cleanupAntwerpExperience = setupCityExperience(root);
+}
+
+function initDubaiExperience() {
+  cleanupDubaiExperience?.();
+  const root = document.getElementById("dubai-root");
+  cleanupDubaiExperience = setupCityExperience(root);
+}
+
+function initLosAngelesExperience() {
+  cleanupLosAngelesExperience?.();
+  const root = document.getElementById("losangeles-root");
+  cleanupLosAngelesExperience = setupCityExperience(root);
+}
+
+function initHollywoodExperience() {
+  cleanupHollywoodExperience?.();
+  const root = document.getElementById("hollywood-root");
+  cleanupHollywoodExperience = setupCityExperience(root);
+}
+
+function initRedondoExperience() {
+  cleanupRedondoExperience?.();
+  const root = document.getElementById("redondo-root");
+  cleanupRedondoExperience = setupCityExperience(root);
+}
+
+function initMiamiExperience() {
+  cleanupMiamiExperience?.();
+  const root = document.getElementById("miami-root");
+  cleanupMiamiExperience = setupCityExperience(root);
 }
 
 /* =========================================

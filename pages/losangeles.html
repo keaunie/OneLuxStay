@@ -3,369 +3,372 @@
 <html lang="en">
 
 <head>
-    <title>One Lux Stay | Luxury Vacation Rentals in Los Angeles</title>
+    <title>One Lux Stay | Luxury Residences Across Los Angeles</title>
     <meta name="description"
-        content="Stay with One Lux Stay in Los Angeles. From Hollywood skyline suites to Dodgers Stadium apartments and Downtown LA stays, enjoy luxury residences near the city’s top attractions.">
+        content="Stay with One Lux Stay in Los Angeles. From Dodgers Stadium residences and Sunset Strip suites to Downtown lofts, our curated apartments keep you close to LA’s icons.">
     <meta name="keywords"
-        content="Los Angeles vacation rentals, Hollywood apartments, Dodgers Stadium rental, Downtown LA suites, HWH Suites, One Lux Stay">
+        content="Los Angeles luxury rentals, Dodgers Stadium apartment, Sunset Strip suite, Downtown LA loft, One Lux Stay">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <!-- =========================
      One Lux Stay — Los Angeles Page (SPA fragment)
      ========================= -->
-<section class="page-losangeles">
+<section id="losangeles-root" class="page-losangeles" data-component="page-losangeles">
+    <div class="cursor-orb" aria-hidden="true"></div>
+    <div class="cursor-trail" aria-hidden="true"></div>
 
     <!-- ===== Hero ===== -->
-    <section class="hero">
-        <video class="hero-video" autoplay muted playsinline webkit-playsinline loop preload="auto"
-            poster="https://images.unsplash.com/photo-1503891450247-ee5f8ec46dc3?auto=format&fit=crop&q=80&w=1800">
-            <source src="https://ik.imagekit.io/oneluxstay/herosection1.mp4?updatedAt=1762782820888" type="video/mp4">
-        </video>
-
-        <!-- Mobile fallback image (kept for future use if you ever want to swap) -->
-        <img class="hero-image"
-            src="https://images.unsplash.com/photo-1503891450247-ee5f8ec46dc3?auto=format&fit=crop&q=80&w=1800"
-            alt="One Lux Stay Los Angeles hero image showing a luxury vacation rental near Hollywood, Downtown LA, and the beaches—modern interiors, skyline ambiance, and premium short-term apartments ideal for business and leisure travel." />
+    <section class="hero immersive-hero" aria-label="Los Angeles hero">
+        <div class="hero-layers" aria-hidden="true">
+            <div class="hero-layer hero-layer--glow" data-parallax="0.08"></div>
+            <div class="hero-layer hero-layer--grid" data-parallax="0.05"></div>
+            <div class="hero-layer hero-layer--particles" data-parallax="0.12"></div>
+            <div class="hero-layer hero-layer--media" data-parallax="0.02">
+                <img class="hero-video"
+                    src="https://images.unsplash.com/photo-1503891450247-ee5f8ec46dc3?auto=format&fit=crop&q=80&w=1800"
+                    alt="Los Angeles skyline at sunset" loading="eager" />
+                <div class="hero-overlay"></div>
+            </div>
+        </div>
 
         <div class="container hero-content">
+            <span class="hero-crest">One Lux Los Angeles</span>
             <p class="eyebrow">Los Angeles, United States</p>
             <h1 class="headline">Luxury Stays Across Los Angeles</h1>
             <p class="subhead">
-                From Dodgers Stadium and Hollywood Hills to Downtown skylines, our suites place you minutes from LA’s
-                most
-                iconic neighborhoods, dining, and attractions.
+                Sunset Strip penthouses, and Downtown lofts anchored near LA’s cultural and
+                coastal icons.
             </p>
+            <div class="hero-divider" aria-hidden="true"></div>
+            <ul class="hero-amenities">
+                <li>Skyline & canyon vistas</li>
+                <li>Sunset Strip nightlife</li>
+                <li>Beach & studio access</li>
+            </ul>
         </div>
     </section>
 
-    <!-- ===== District Highlights (image left/right split with backdrop) ===== -->
-
-    <!-- Dodgers Stadium -->
+    <!-- ===== Featured Districts ===== -->
     <section class="section section-split"
         style="--bg-img: url('https://assets.guesty.com/image/upload/v1730118523/production/666b3af27fc6d5653142b0af/z04s9rfzkuu7h4mrwomu.jpg')">
         <div class="container split">
             <div class="split-media">
                 <img src="https://assets.guesty.com/image/upload/h_960/v1733508984/production/666b3af27fc6d5653142b0af/auug47edbmeqfix4m74c.jpg"
-                    alt="One Lux Stay Dodgers Stadium apartment—modern living room with bright minimalist décor, large TV, and access to pool and jacuzzi; walkable to CVS, Buffalo Wild Wings, and minutes to Downtown Los Angeles." />
-                <span class="badge badge-sale">10% – 20% off</span>
+                    alt="Dodgers Stadium residence — modern living room with warm palette" />
+                <span class="badge badge-sale">Pool &amp; Skydeck</span>
             </div>
             <div class="split-body">
-                <h2>Near Dodgers Stadium Suites<br>
-                    <span style="font-size: 15px; color: var(--muted);" muted>Near Elysian Park & Chavez Ravine</span>
-                </h2>
-                <p>
-                    Built in 2020, these bright, contemporary apartments offer access to a pool & jacuzzi, street-level
-                    shops like CVS and Buffalo Wild Wings, with Downtown LA just minutes away.
-                </p>
+                <h2>OneLuxStay Near Dodgers Stadium <br><span style="font-size: 15px; color: var(--muted);"
+                        muted>Elysian
+                        Park •
+                        Chavez Ravine</span></h2>
+                <p>Contemporary suites with pool, jacuzzi, and ground-floor retail — perfect for pre-game evenings and
+                    quick Downtown hops.</p>
                 <a class="btn btn-primary" href="/losangelesProp?id=dodgers-1" data-link>View Details</a>
             </div>
         </div>
     </section>
 
-    <!-- HWH Suites -->
     <section class="section section-split invert"
         style="--bg-img: url('https://assets.guesty.com/image/upload/v1730118539/production/666b3af27fc6d5653142b0af/cqozhwpszmrhkmkwqmuz.jpg')">
         <div class="container split">
             <div class="split-media">
                 <img src="https://assets.guesty.com/image/upload/h_960/v1730119087/production/666b3af27fc6d5653142b0af/npeczkhmy9wff4lzuyvr.jpg"
-                    alt="One Lux Stay HWH Suites—bright modern living room with large TV, minimalist furnishings, and floor-to-ceiling windows—prime Los Angeles location near nightlife, landmarks, and co-working lounge amenities." />
+                    alt="HWH Suites lounge — bright interiors with skyline views" />
                 <span class="badge badge-sale">10% – 20% off</span>
             </div>
             <div class="split-body">
-                <h2>HWH Suites<br>
-                    <span style="font-size: 15px; color: var(--muted);" muted>Central LA, Skylines & Nightlife</span>
-                </h2>
-                <p>
-                    Convenience meets luxury at HWH Suites — enjoy skyline views, a co-working lounge, and business
-                    center, all close to LA’s nightlife, dining, and major attractions.
-                </p>
+                <h2>OneLuxStay HWH Suites <br> <span style="font-size: 15px; color: var(--muted);" muted>Central LA •
+                        Skyline
+                        Views</span></h2>
+                <p>Co-working lounges, business amenities, and walkable nightlife keep creatives and execs productive by
+                    day and inspired by night.</p>
                 <a class="btn btn-primary" href="/losangelesProp?id=hwh-suites-4" data-link>View Details</a>
             </div>
         </div>
     </section>
 
-    <!-- Hollywood -->
-    <!-- <section class="section section-split"
-        style="--bg-img: url('https://images.unsplash.com/photo-1534253893894-10d024888e49?auto=format&fit=crop&q=80&w=2670')">
-        <div class="container split">
-            <div class="split-media">
-                <img src="https://assets.guesty.com/image/upload/h_960/v1729698598/production/666b3af27fc6d5653142b0af/l5brbx7tkcyh8n3pgr1j.jpg"
-                    alt="One Lux Stay Hollywood apartment—contemporary living space with balcony and city views near the Hollywood Sign, Walk of Fame, and top restaurants—ideal luxury rental for film-lovers and trendsetters." />
-                <span class="badge badge-sale">10% – 20% off</span>
-            </div>
-            <div class="split-body">
-                <h2>Near Hollywood<br>
-                    <span style="font-size: 15px; color: var(--muted);" muted>Near Hollywood Sign & Walk of Fame</span>
-                </h2>
-                <p>
-                    Experience the allure of Hollywood where luxury living meets iconic city energy — from red-carpet
-                    theaters and top restaurants to nightlife hotspots just moments away.
-                </p>
-                <a class="btn btn-primary" href="/losangelesProp?id=hollywood-5" data-link>View Details</a>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Downtown LA / Chinatown -->
-    <section class="section section-split invert"
+    <section class="section section-split"
         style="--bg-img: url('https://images.unsplash.com/photo-1601783210890-d921f8d008b3?auto=format&fit=crop&q=80&w=2671')">
         <div class="container split">
             <div class="split-media">
                 <img src="https://assets.guesty.com/image/upload/h_960/v1729697128/production/666b3af27fc6d5653142b0af/xq9gtzfa3orzzzmixho2.jpg"
-                    alt="One Lux Stay Downtown Los Angeles apartment—bright, minimalist living room with smart TV and modern finishes—walkable to LA Live, The Broad, restaurants, and transit hubs for easy city exploration." />
+                    alt="Downtown LA loft — minimalist living space" />
                 <span class="badge badge-sale">10% – 20% off</span>
             </div>
             <div class="split-body">
-                <h2>Near Downtown LA & Chinatown<br>
-                    <span style="font-size: 15px; color: var(--muted);" muted>Skyline Views & Cultural Streets</span>
-                </h2>
-                <p>
-                    Enjoy a sophisticated base in Downtown Los Angeles with easy access to LA Live, The Broad,
-                    Chinatown’s
-                    vibrant streets, dining, and efficient transit options.
-                </p>
+                <h2>OneLuxStay Chinatown Downtown L.A <br> <span style="font-size: 15px; color: var(--muted);"
+                        muted>Broad
+                        Museum •
+                        LA Live</span></h2>
+                <p>Minimalist interiors atop Metro lines with seamless access to art houses, LA Live, Michelin dining,
+                    and vibrant street markets.</p>
                 <a class="btn btn-primary" href="/losangelesProp?id=downtown-la-chinatown-2" data-link>View Details</a>
             </div>
         </div>
     </section>
 
-    <!-- ===== Nearby Landmarks & Transport (LA) ===== -->
+    <!-- ===== Landmarks & Transit ===== -->
     <section class="la-landmarks-transpo">
 
-        <!-- Landmarks & Attractions -->
-        <section class="section-2">
+        <section class="section landmark-section" aria-label="Landmarks & Attractions">
             <div class="container">
-                <header class="section-title">
-                    <h2 style="color: #fff;">Popular Attractions in Los Angeles</h2>
-                    <p>Our apartments are ideally situated near LA’s most iconic cultural, coastal, and entertainment
-                        hotspots.</p>
-                </header>
-
-                <div class="gallery-grid">
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/LA-County-Museum-of-Art.webp"
-                            alt="LACMA (Los Angeles County Museum of Art) near One Lux Stay apartments—iconic Urban Light installation, world-class collections, and central Miracle Mile location perfect for culture-seeking visitors.">
-                        <h3>LA County Museum of Art</h3>
-                        <p>The largest art museum in the western United States with extensive collections across
-                            multiple
-                            genres.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Hollywood-Walk-of-Fame.webp"
-                            alt="Hollywood Walk of Fame—legendary sidewalk stars on Hollywood Boulevard—minutes from One Lux Stay Hollywood rentals for easy access to theaters, dining, and nightlife.">
-                        <h3>Hollywood Walk of Fame</h3>
-                        <p>A world-famous sidewalk honoring celebrities with over 2,600 brass stars embedded along
-                            Hollywood Boulevard.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/the-getty-center-los-angeles.webp"
-                            alt="The Getty Center—acclaimed hilltop art museum with gardens and panoramic LA views—convenient day trip from One Lux Stay properties across Los Angeles.">
-                        <h3>The Getty Center</h3>
-                        <p>A renowned art museum with impressive collections and gardens offering panoramic views of Los
-                            Angeles.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2025/03/santa-monica-pier.webp"
-                            alt="Santa Monica Pier—historic oceanfront amusement park, Pacific Park ferris wheel, and family-friendly attractions—easy coastal escape from One Lux Stay Los Angeles rentals.">
-                        <h3>Santa Monica Pier</h3>
-                        <p>A historic pier featuring an amusement park, aquarium, and family-friendly attractions along
-                            the
-                            beach.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2025/03/The-Broad-Museum.webp"
-                            alt="The Broad Museum—free contemporary art museum in Downtown LA featuring Kusama, Koons, and Warhol—walkable from many One Lux Stay DTLA apartments.">
-                        <h3>The Broad Museum</h3>
-                        <p>A contemporary art museum with a vast collection of postwar and contemporary art.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/universal-studios-hollywood.webp"
-                            alt="Universal Studios Hollywood—movie-themed park and Studio Tour—top family attraction within easy reach of One Lux Stay Hollywood accommodations.">
-                        <h3>Universal Studios Hollywood</h3>
-                        <p>A thrilling movie-themed amusement park with rides, shows, and the famous Studio Tour.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Griffith-Observatory.webp"
-                            alt="Griffith Observatory—iconic hilltop landmark with skyline views and public telescopes—close to hiking trails and Hollywood, convenient from One Lux Stay properties.">
-                        <h3>Griffith Observatory</h3>
-                        <p>An iconic observatory with stunning views of Los Angeles and a public telescope for
-                            stargazing.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2025/03/nhmla.webp"
-                            alt="Natural History Museum of Los Angeles County (NHMLA)—dinosaurs, gems, and immersive science exhibits—great family outing near Exposition Park, accessible from One Lux Stay.">
-                        <h3>NHMLA</h3>
-                        <p>A fascinating museum with exhibits on dinosaurs, mammals, and the natural world.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Exposition-Park.webp"
-                            alt="Exposition Park—green gardens, museums, LA Memorial Coliseum, and community spaces—central cultural hub near USC and a short ride from One Lux Stay DTLA rentals.">
-                        <h3>Exposition Park</h3>
-                        <p>A cultural hub featuring museums, lush gardens, the LA Memorial Coliseum, and vibrant public
-                            spaces.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/rodeo-drive.webp"
-                            alt="Rodeo Drive in Beverly Hills—luxury designer boutiques and flagship stores—premier shopping destination within easy reach of One Lux Stay Los Angeles apartments.">
-                        <h3>Rodeo Drive Beverly Hills</h3>
-                        <p>A world-renowned shopping street in Beverly Hills known for luxury boutiques and designer
-                            stores.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/La-Brea-Tar-Pits-and-Museum.webp"
-                            alt="La Brea Tar Pits & Museum—active Ice Age fossil site with life-size displays and ongoing excavations—near LACMA and minutes from One Lux Stay accommodations.">
-                        <h3>La Brea Tar Pits and Museum</h3>
-                        <p>An active paleontological site with fossils from the Ice Age and fascinating excavation
-                            exhibits.
-                        </p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Venice-Beach-CA.webp"
-                            alt="Venice Beach—iconic boardwalk, Muscle Beach gym, skate park, and vibrant street art—coastal day trip easily accessible from One Lux Stay Los Angeles properties.">
-                        <h3>Venice Beach</h3>
-                        <p>A lively beach known for its iconic boardwalk, Muscle Beach gym, vibrant street art, and
-                            lively
-                            atmosphere.</p>
-                    </article>
+                <div class="landmark-header">
+                    <p class="eyebrow">Landmarks &amp; Attractions</p>
+                    <h2>Explore Los Angeles icons curated for on-demand itineraries.</h2>
+                    <p>From observatories and studio tours to Pacific sunsets, these highlights are within minutes of
+                        every residence.</p>
+                </div>
+                <div class="landmark-gallery">
+                    <div class="landmark-showcase animate-on-scroll">
+                        <div class="landmark-showcase-media"
+                            style="background-image: linear-gradient(135deg, rgba(0,0,0,0.25), rgba(0,0,0,0.55)), url('https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Hollywood-Walk-of-Fame.webp');">
+                        </div>
+                        <div class="landmark-showcase-info" aria-live="polite">
+                            <span class="landmark-label" data-landmark-label>01 • Walk of Fame</span>
+                            <h3 data-landmark-title>Hollywood Boulevard</h3>
+                            <p data-landmark-copy>Sidewalk stars, premieres, and theater marquees create the classic LA
+                                arrival moment.</p>
+                        </div>
+                    </div>
+                    <div class="landmark-roster animate-on-scroll" role="tablist"
+                        aria-label="Select a Los Angeles landmark">
+                        <button class="landmark-token active" type="button" aria-selected="true"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Hollywood-Walk-of-Fame.webp"
+                            data-title="Hollywood Boulevard" data-label="01 • Walk of Fame"
+                            data-copy="Boulevard legends lined with theaters, speakeasies, and curated nightlife.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Hollywood-Walk-of-Fame.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">01</span>
+                                <span class="token-name">Hollywood Blvd</span>
+                                <span class="token-desc">Walk of Fame</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Griffith-Observatory.webp"
+                            data-title="Griffith Observatory" data-label="02 • Skyline Watch"
+                            data-copy="Hilltop observatory sunsets, hiking trails, and telescope nights overlooking the city.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Griffith-Observatory.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">02</span>
+                                <span class="token-name">Griffith Observatory</span>
+                                <span class="token-desc">Skyline watch</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/universal-studios-hollywood.webp"
+                            data-title="Universal Studios" data-label="03 • Studio Magic"
+                            data-copy="Studio Tour trams, themed lands, and behind-the-scenes photo ops for families and film lovers.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2024/12/universal-studios-hollywood.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">03</span>
+                                <span class="token-name">Universal Studios</span>
+                                <span class="token-desc">Studio magic</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2025/03/santa-monica-pier.webp"
+                            data-title="Santa Monica Pier" data-label="04 • Coastal Icon"
+                            data-copy="Ferris-wheel lights, beachside dining, and sunset strolls along the Pacific.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2025/03/santa-monica-pier.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">04</span>
+                                <span class="token-name">Santa Monica</span>
+                                <span class="token-desc">Coastal icon</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/LA-County-Museum-of-Art.webp"
+                            data-title="LACMA" data-label="05 • Art District"
+                            data-copy="Urban Light installations and rotating exhibits minutes from Miracle Mile residences.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2024/12/LA-County-Museum-of-Art.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">05</span>
+                                <span class="token-name">LACMA</span>
+                                <span class="token-desc">Art district</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2025/03/The-Broad-Museum.webp"
+                            data-title="The Broad" data-label="06 • Contemporary Icon"
+                            data-copy="Yayoi Kusama rooms and contemporary masters curated in Downtown’s cultural hub.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2025/03/The-Broad-Museum.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">06</span>
+                                <span class="token-name">The Broad</span>
+                                <span class="token-desc">Contemporary icon</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Venice-Beach-CA.webp"
+                            data-title="Venice Beach" data-label="07 • Boardwalk Beat"
+                            data-copy="Murals, skate parks, and Muscle Beach energy for a sunlit escape.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Venice-Beach-CA.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">07</span>
+                                <span class="token-name">Venice Beach</span>
+                                <span class="token-desc">Boardwalk beat</span>
+                            </span>
+                        </button>
+                        <button class="landmark-token" type="button" aria-selected="false"
+                            data-photo="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/rodeo-drive.webp"
+                            data-title="Rodeo Drive" data-label="08 • Luxury Row"
+                            data-copy="Private shopping appointments along the world-famous Beverly Hills corridor.">
+                            <span class="token-thumb"
+                                style="background-image:url('https://tgest.oneluxstay.com/wp-content/uploads/2024/12/rodeo-drive.webp');"></span>
+                            <span class="token-meta">
+                                <span class="token-number">08</span>
+                                <span class="token-name">Rodeo Drive</span>
+                                <span class="token-desc">Luxury row</span>
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Transportation Options -->
-        <section class="section-2">
+        <section class="section transit-section" aria-label="Transportation">
             <div class="container">
-                <header class="section-title">
-                    <h2 style="color: #fff;">Los Angeles Transportation Options</h2>
-                    <p>Our LA residences are close to major transport hubs, making it easy to explore the city and
-                        surrounding regions.</p>
-                </header>
-
-                <div class="gallery-grid small">
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2025/03/Metro-Rail-System.webp"
-                            alt="Los Angeles Metro Rail—expansive multi-line rail network connecting Downtown, Santa Monica, Hollywood, and more—easy access from many One Lux Stay apartments.">
-                        <h3>Metro Rail System</h3>
-                        <p>A convenient and affordable way to travel across LA with six rail lines connecting key
-                            destinations.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Metro-Bus-System.webp"
-                            alt="LA Metro Bus System—comprehensive network with hundreds of routes across Los Angeles County—budget-friendly transport option near One Lux Stay properties.">
-                        <h3>Metro Bus System</h3>
-                        <p>A comprehensive bus network with over 200 routes serving the entire LA County.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/FlyAway-Bus.webp"
-                            alt="FlyAway Bus—direct, non-stop service between LAX and key LA districts such as Union Station, Van Nuys, and Westwood—convenient airport link for One Lux Stay guests.">
-                        <h3>FlyAway Bus</h3>
-                        <p>Direct, non-stop bus service between LAX and popular destinations in LA.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Amtrak-Pacific-Surfliner.webp"
-                            alt="Amtrak Pacific Surfliner—scenic coastal train service linking Los Angeles with Santa Barbara, San Diego, and beyond—great day-trip option from One Lux Stay.">
-                        <h3>Amtrak Pacific Surfliner</h3>
-                        <p>Scenic train service connecting Los Angeles with coastal cities in California.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Dodger-Stadium-Express.webp"
-                            alt="Dodger Stadium Express—game-day bus service for ticket holders—quick and convenient transport to baseball games near One Lux Stay rentals.">
-                        <h3>Dodger Stadium Express</h3>
-                        <p>Free bus service to Dodger Stadium for ticket holders.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2025/03/Uber-Lyft-e1741228602971.webp"
-                            alt="Uber and Lyft in Los Angeles—on-demand rideshare coverage across the metro area—fast point-to-point travel from One Lux Stay apartments to attractions.">
-                        <h3>Uber & Lyft</h3>
-                        <p>On-demand rideshare services available throughout LA.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Lime-Scooters-la.webp"
-                            alt="Bird and Lime electric scooters—quick micro-mobility option for short LA trips around neighborhoods like Santa Monica, Westwood, and DTLA—handy for One Lux Stay guests.">
-                        <h3>Bird & Lime Scooters</h3>
-                        <p>Electric scooters for short trips around LA neighborhoods.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/big-blue-bus.webp"
-                            alt="Big Blue Bus—Santa Monica and West LA public transit system—reliable routes to beaches, shopping, and campuses near One Lux Stay coastal stays.">
-                        <h3>Big Blue Bus</h3>
-                        <p>A public bus service primarily operating in Santa Monica and West LA.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/SuperShuttle.webp"
-                            alt="LAX airport shuttles—shared and private services to and from Los Angeles International Airport—simple airport transfer solution for One Lux Stay travelers.">
-                        <h3>LAX Airport Shuttles</h3>
-                        <p>Shared or private shuttle services to and from Los Angeles International Airport.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/LA-Yellow-Cab.webp"
-                            alt="LA Yellow Cab—traditional taxi service available throughout Los Angeles—reliable alternative to rideshare for guests staying with One Lux Stay.">
-                        <h3>LA Yellow Cab</h3>
-                        <p>Traditional taxi service operating throughout Los Angeles.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Metrolink.webp"
-                            alt="Metrolink commuter rail—regional trains connecting LA to Orange, Ventura, Riverside, and San Bernardino counties—useful for day trips from One Lux Stay bases.">
-                        <h3>Metrolink</h3>
-                        <p>A commuter train service connecting LA with neighboring counties.</p>
-                    </article>
-
-                    <article class="gallery-card">
-                        <img src="https://tgest.oneluxstay.com/wp-content/uploads/2024/12/Beverly-Hills-Trolley-Tour.webp"
-                            alt="Beverly Hills Trolley Tour—guided ride through celebrity neighborhoods and landmarks—fun sightseeing experience easily reached from One Lux Stay Los Angeles apartments.">
-                        <h3>Beverly Hills Trolley Tour</h3>
-                        <p>A charming trolley tour showcasing Beverly Hills landmarks.</p>
-                    </article>
+                <div class="landmark-header">
+                    <p class="eyebrow">Transportation</p>
+                    <h2>Concierge movement between studios, beaches, and canyon hideaways.</h2>
+                    <p>From black-car service to Metro links, our team choreographs every transfer so days unfold
+                        effortlessly.</p>
+                </div>
+                <div class="transit-experience">
+                    <div class="transit-stage animate-on-scroll">
+                        <button class="transit-arrow" type="button" data-transit-prev
+                            aria-label="Previous transport mode">
+                            <span>&lsaquo;</span>
+                        </button>
+                        <div class="transit-spotlight">
+                            <div class="transit-ghost transit-ghost--left" aria-hidden="true">
+                                <img data-transit-ghost-left src="https://img.icons8.com/color/96/convertible-car.png"
+                                    alt="" />
+                            </div>
+                            <div class="transit-ghost transit-ghost--right" aria-hidden="true">
+                                <img data-transit-ghost-right src="https://img.icons8.com/color/96/helicopter.png"
+                                    alt="" />
+                            </div>
+                            <div class="transit-spotlight-glow"></div>
+                            <div class="transit-spotlight-glyph">
+                                <img data-transit-glyph src="https://img.icons8.com/color/96/taxi.png"
+                                    alt="Chauffeured & Ride-hail icon" />
+                            </div>
+                            <div class="transit-spotlight-info">
+                                <p class="transit-tag" data-transit-tag>Concierge Fleet</p>
+                                <h3 data-transit-title>Chauffeured &amp; Ride-hail</h3>
+                                <p data-transit-desc>Black-car sedans, Sprinters, and discreet ride-hail for premieres,
+                                    dinners, and studio runs.</p>
+                            </div>
+                        </div>
+                        <button class="transit-arrow" type="button" data-transit-next aria-label="Next transport mode">
+                            <span>&rsaquo;</span>
+                        </button>
+                    </div>
+                    <div class="transit-roster animate-on-scroll" role="tablist"
+                        aria-label="Select Los Angeles transportation option">
+                        <button class="transit-chip active" type="button" aria-selected="true" data-transit-index="0"
+                            data-image="https://img.icons8.com/color/96/taxi.png" data-tag="Concierge Fleet"
+                            data-title="Chauffeured &amp; Ride-hail" data-alt="Chauffeured & Ride-hail icon"
+                            data-desc="On-call sedans and vetted drivers for premieres, fittings, and late-night returns."
+                            data-hint="On-demand drivers">
+                            <span class="chip-icon"><img src="https://img.icons8.com/color/96/taxi.png" alt="" /></span>
+                            <span class="chip-text">
+                                <span class="chip-name">Chauffeured &amp; Ride-hail</span>
+                                <span class="chip-hint">On-demand drivers</span>
+                            </span>
+                        </button>
+                        <button class="transit-chip" type="button" aria-selected="false" data-transit-index="1"
+                            data-image="https://img.icons8.com/color/96/subway.png" data-tag="City Spine"
+                            data-title="LA Metro Rail" data-alt="LA Metro icon"
+                            data-desc="Red &amp; B Lines connect DTLA, Universal City, and beach transfers in minutes."
+                            data-hint="Subway connections">
+                            <span class="chip-icon"><img src="https://img.icons8.com/color/96/subway.png"
+                                    alt="" /></span>
+                            <span class="chip-text">
+                                <span class="chip-name">LA Metro Rail</span>
+                                <span class="chip-hint">Subway connections</span>
+                            </span>
+                        </button>
+                        <button class="transit-chip" type="button" aria-selected="false" data-transit-index="2"
+                            data-image="https://img.icons8.com/color/96/convertible-car.png" data-tag="Scenic Routes"
+                            data-title="Pacific Coast Drives" data-alt="Convertible icon"
+                            data-desc="Convertible rentals mapped along Mulholland, Malibu, or Palm Springs escapes."
+                            data-hint="Coastal cruising">
+                            <span class="chip-icon"><img src="https://img.icons8.com/color/96/convertible-car.png"
+                                    alt="" /></span>
+                            <span class="chip-text">
+                                <span class="chip-name">Pacific Coast Drives</span>
+                                <span class="chip-hint">Coastal cruising</span>
+                            </span>
+                        </button>
+                        <button class="transit-chip" type="button" aria-selected="false" data-transit-index="3"
+                            data-image="https://img.icons8.com/color/96/bus.png" data-tag="Regional Express"
+                            data-title="FlyAway &amp; Metrolink" data-alt="Bus icon"
+                            data-desc="Express coaches and commuter rail to LAX, Orange County, or the desert without traffic."
+                            data-hint="Airport &amp; commuter">
+                            <span class="chip-icon"><img src="https://img.icons8.com/color/96/bus.png" alt="" /></span>
+                            <span class="chip-text">
+                                <span class="chip-name">FlyAway &amp; Metrolink</span>
+                                <span class="chip-hint">Airport &amp; commuter</span>
+                            </span>
+                        </button>
+                        <button class="transit-chip" type="button" aria-selected="false" data-transit-index="4"
+                            data-image="https://img.icons8.com/color/96/scooter.png" data-tag="Boardwalk Loops"
+                            data-title="Bikes &amp; Scooters" data-alt="Scooter icon"
+                            data-desc="Cruise the Strand, Melrose, or Arts District on curated bike and e-scooter routes."
+                            data-hint="Self-guided rides">
+                            <span class="chip-icon"><img src="https://img.icons8.com/color/96/scooter.png"
+                                    alt="" /></span>
+                            <span class="chip-text">
+                                <span class="chip-name">Bikes &amp; Scooters</span>
+                                <span class="chip-hint">Self-guided rides</span>
+                            </span>
+                        </button>
+                        <button class="transit-chip" type="button" aria-selected="false" data-transit-index="5"
+                            data-image="https://img.icons8.com/color/96/helicopter.png" data-tag="Sky Transfers"
+                            data-title="Helicopter &amp; Private Air" data-alt="Helicopter icon"
+                            data-desc="VNY terminals, Malibu heli-lifts, or Palm Springs hops arranged by our concierge."
+                            data-hint="Jet-set ready">
+                            <span class="chip-icon"><img src="https://img.icons8.com/color/96/helicopter.png"
+                                    alt="" /></span>
+                            <span class="chip-text">
+                                <span class="chip-name">Helicopter &amp; Private Air</span>
+                                <span class="chip-hint">Jet-set ready</span>
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
     </section>
 
     <!-- ===== CTA ===== -->
-    <section class="cta-section luxe-cta slim" aria-labelledby="cta-title">
+    <section class="cta-section luxe-cta slim">
         <div class="container cta-wrap">
             <p class="cta-kicker">One&nbsp;Lux&nbsp;Stay</p>
-            <h2 id="cta-title" class="cta-title">Ready for Your Next Luxury Escape?</h2>
-            <p class="cta-subtitle">
-                Handpicked suites in Antwerp, Dubai, Los Angeles, and Miami — curated for comfort and style.
-            </p>
-
+            <h2>Ready for Your Next Los Angeles Escape?</h2>
+            <p>Handpicked suites in Los Angeles, plus Antwerp, Dubai, Hollywood, and Miami — curated for comfort and
+                style.</p>
             <div class="cta-actions">
-                <a class="btn btn-primary" href="/properties-list" data-link>
-                    Start Exploring
-                </a>
-                <a class="btn btn-ghost" href="/contactus" data-link>
-                    Talk to a Concierge
-                </a>
+                <a class="btn btn-primary" href="/properties-list" data-link>Start Exploring</a>
+                <a class="btn btn-ghost" href="/contactus" data-link>Talk to a Concierge</a>
             </div>
         </div>
     </section>
-
 </section>
 
 <!-- =========================
-     Scoped Styles — Los Angeles (mirrors Antwerp)
+     Scoped Styles (Los Angeles layout mirrors Antwerp)
      ========================= -->
 <style>
     .page-losangeles {
@@ -386,6 +389,11 @@
         margin-inline: auto;
     }
 
+
+    .h3 {
+        color: #fff;
+    }
+
     /* Buttons */
     .page-losangeles .btn {
         display: inline-flex;
@@ -396,51 +404,857 @@
         border: 1px solid transparent;
         font-weight: 600;
         cursor: pointer;
-        transition: .25s;
+        transition: .25s
     }
 
     .page-losangeles .btn-primary {
         background: linear-gradient(90deg, #d4af37, #b9912b);
         color: #111;
-        box-shadow: 0 8px 24px rgba(212, 175, 55, .25);
+        box-shadow: 0 8px 24px rgba(212, 175, 55, .25)
     }
 
     .page-losangeles .btn-primary:hover {
         transform: translateY(-1px);
-        box-shadow: 0 12px 30px rgba(212, 175, 55, .32);
+        box-shadow: 0 12px 30px rgba(212, 175, 55, .32)
     }
 
     .page-losangeles .btn-ghost {
         background: transparent;
         border-color: #2a2a2d;
-        color: #eaeaea;
+        color: #eaeaea
     }
 
     .page-losangeles .btn-ghost:hover {
         border-color: #3a3a3f;
-        background: #161618;
+        background: #161618
     }
 
     .page-losangeles .btn-inline {
         color: var(--gold);
         padding: .25rem 0;
-        border: none;
+        border: none
     }
 
     /* Hero */
     .page-losangeles .hero {
         position: relative;
-        height: calc(100vh - var(--navH, 80px));
-        min-height: 560px;
+        min-height: 64vh;
+        display: grid;
+        place-items: center;
+        overflow: hidden
+    }
+
+    .page-losangeles .hero-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+    }
+
+    .page-losangeles .hero-image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none
+    }
+
+    .page-losangeles .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(1200px 600px at 10% -20%, rgba(212, 175, 55, .12), transparent 45%),
+            linear-gradient(to bottom, rgba(0, 0, 0, .45), rgba(0, 0, 0, .65) 38%, rgba(0, 0, 0, .72));
+        backdrop-filter: saturate(1.1);
+    }
+
+    .page-losangeles .hero-content {
+        position: relative;
+        text-align: center;
+        padding-block: 6rem
+    }
+
+    .page-losangeles .eyebrow {
+        letter-spacing: .18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 700;
+        margin-bottom: .5rem
+    }
+
+    .page-losangeles .headline {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        line-height: 1.1;
+        margin: .25rem 0 .5rem
+    }
+
+    .page-losangeles .subhead {
+        color: #e7e7e7;
+        opacity: .92;
+        max-width: 52ch;
+        margin-inline: auto
+    }
+
+    .page-losangeles .hero-actions {
+        margin-top: 1.25rem;
+        display: flex;
+        gap: .75rem;
+        justify-content: center;
+        flex-wrap: wrap
+    }
+
+    /* Sections */
+    .page-losangeles .section {
+        padding-block: 56px;
+        /* background:
+            radial-gradient(850px 420px at 5% -10%, rgba(212, 175, 55, .06), transparent 45%),
+            radial-gradient(850px 380px at 100% 120%, rgba(212, 175, 55, .06), transparent 40%) */
+    }
+
+    .page-losangeles .la-landmarks-transpo {
+
+        background-image: linear-gradient(rgba(0, 0, 0, 0.8), transparent), url("/assets/backdrop.jpg");
+        background-color: #b9912b;
+        background-position: center;
+        /* Center the image */
+        background-repeat: no-repeat;
+        /* Do not repeat the image */
+        background-size: cover;
+
+        /* background:
+            radial-gradient(850px 420px at 5% -10%, rgba(212, 175, 55, .06), transparent 45%),
+            radial-gradient(850px 380px at 100% 120%, rgba(212, 175, 55, .06), transparent 40%) */
+    }
+
+    .page-losangeles .section-title {
+        max-width: 760px;
+        margin: 0 auto 22px;
+        text-align: center
+    }
+
+    .page-losangeles .section-title h2 {
+        font-size: clamp(1.8rem, 2.2vw, 2rem);
+        margin-bottom: .35rem
+    }
+
+    .page-losangeles .section-title p {
+        font-size: 1.5rem;
+        color: var(--muted)
+    }
+
+    /* Property Grid */
+    .page-losangeles .properties-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px
+    }
+
+    .page-losangeles .property-card {
+        background: var(--card);
+        border: 1px solid rgba(255, 255, 255, .06);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column
+    }
+
+    .page-losangeles .property-card .media {
+        position: relative;
+        aspect-ratio: 16/10;
+        overflow: hidden
+    }
+
+    .page-losangeles .property-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform .5s
+    }
+
+    .page-losangeles .property-card:hover img {
+        transform: scale(1.04)
+    }
+
+    .page-losangeles .badge {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: #1a1a1c;
+        border: 1px solid rgba(212, 175, 55, .35);
+        color: var(--gold);
+        padding: .35rem .6rem;
+        border-radius: 999px;
+        font-size: .8rem;
+        font-weight: 700
+    }
+
+    .page-losangeles .body {
+        padding: 14px 14px 16px
+    }
+
+    .page-losangeles .title {
+        font-weight: 700;
+        margin-bottom: .25rem
+    }
+
+    .page-losangeles .meta {
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        font-size: .95rem;
+        margin-bottom: .5rem
+    }
+
+    .page-losangeles .center {
+        display: grid;
+        place-items: center;
+        margin-top: 12px
+    }
+
+    /* Split Sections with backdrop */
+    .page-losangeles .section-split {
+        position: relative;
+        isolation: isolate
+    }
+
+    .page-losangeles .section-split::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+            linear-gradient(to right, rgba(0, 0, 0, .50), rgba(0, 0, 0, .50)),
+            var(--bg-img) center/cover no-repeat;
+        opacity: .55
+    }
+
+    .page-losangeles .split {
+        display: grid;
+        grid-template-columns: 1.1fr .9fr;
+        gap: 28px;
+        align-items: center
+    }
+
+    .page-losangeles .split-media {
+        position: relative;
+        aspect-ratio: 16/10;
+        border-radius: var(--radius);
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, .08);
+        box-shadow: var(--shadow)
+    }
+
+    .page-losangeles .split-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block
+    }
+
+    .page-losangeles .split-body h2 {
+        font-size: clamp(1.4rem, 2vw, 1.8rem);
+        margin-bottom: .35rem
+    }
+
+    .page-losangeles .split-body p {
+        color: #e7e7e7;
+        margin-bottom: .75rem
+    }
+
+    .page-losangeles .section-split.invert .split {
+        grid-template-columns: .9fr 1.1fr
+    }
+
+    .page-losangeles .section-split.invert .split .split-media {
+        order: 2
+    }
+
+    /* Landmark + Transit grids */
+    .page-losangeles .landmark-section,
+    .page-losangeles .transit-section {
+        position: relative;
+        padding-block: 80px;
+        overflow: hidden;
+        background: #09090f;
+    }
+
+    .page-losangeles .landmark-section::before,
+    .page-losangeles .landmark-section::after,
+    .page-losangeles .transit-section::before,
+    .page-losangeles .transit-section::after {
+        content: "";
+        position: absolute;
+        inset: -40%;
+        background: radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.15), transparent 55%),
+            radial-gradient(circle at 80% 0%, rgba(102, 160, 255, 0.15), transparent 55%);
+        animation: landmarkDrift 30s linear infinite;
+        opacity: 0.8;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .page-losangeles .landmark-section::after,
+    .page-losangeles .transit-section::after {
+        animation-direction: reverse;
+        animation-duration: 42s;
+    }
+
+    @keyframes landmarkDrift {
+        from {
+            transform: translate3d(-5%, -5%, 0) rotate(0deg);
+        }
+
+        to {
+            transform: translate3d(5%, 5%, 0) rotate(3deg);
+        }
+    }
+
+    .page-losangeles .landmark-header {
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto 32px;
+    }
+
+    .page-losangeles .landmark-header h2 {
+        font-size: clamp(1.8rem, 4vw, 2.4rem);
+        margin: 6px 0;
+    }
+
+    .page-losangeles .landmark-header p {
+        color: var(--muted);
+    }
+
+    .page-losangeles .landmark-gallery {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .page-losangeles .landmark-showcase {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+        gap: 28px;
+        border-radius: 40px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(7, 7, 14, 0.92);
+        padding: clamp(20px, 4vw, 36px);
+        box-shadow: 0 35px 80px rgba(0, 0, 0, 0.55);
+    }
+
+    .page-losangeles .landmark-showcase-media {
+        position: relative;
+        border-radius: 32px;
+        overflow: hidden;
+        min-height: 360px;
+        background-size: cover;
+        background-position: center;
+        transition: background-image .4s ease;
+        filter: brightness(1.2) contrast(1.08) saturate(1.15);
+    }
+
+    .page-losangeles .landmark-showcase-media::after {
+        display: none;
+    }
+
+    .page-losangeles .landmark-showcase-info {
+        border-radius: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        background:
+            radial-gradient(circle at top, rgba(212, 175, 55, 0.25), transparent 60%),
+            rgba(8, 8, 14, 0.95);
+        box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.35);
+        padding: clamp(18px, 3vw, 32px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        min-height: 320px;
+    }
+
+    .page-losangeles .landmark-showcase-info h3 {
+        margin: 0;
+        font-size: clamp(1.8rem, 4vw, 2.4rem);
+    }
+
+    .page-losangeles .landmark-showcase-info p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.92);
+    }
+
+    .page-losangeles .landmark-label {
+        font-size: 0.78rem;
+        letter-spacing: 0.45em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.65);
+    }
+
+    .page-losangeles .landmark-roster {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 16px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .page-losangeles .landmark-token {
+        border-radius: 26px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(6, 6, 12, 0.85);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        color: inherit;
+        transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+    }
+
+    .page-losangeles .landmark-token .token-thumb {
+        width: 56px;
+        height: 56px;
+        border-radius: 18px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    .page-losangeles .landmark-token .token-thumb::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.35));
+    }
+
+    .page-losangeles .landmark-token .token-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        text-align: left;
+    }
+
+    .page-losangeles .landmark-token .token-number {
+        font-size: 0.7rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.55);
+    }
+
+    .page-losangeles .landmark-token .token-name {
+        font-weight: 600;
+    }
+
+    .page-losangeles .landmark-token .token-desc {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.65);
+    }
+
+    .page-losangeles .landmark-token.active {
+        border-color: rgba(212, 175, 55, 0.6);
+        box-shadow: 0 20px 45px rgba(212, 175, 55, 0.18);
+        transform: translateY(-2px);
+    }
+
+    .page-losangeles .landmark-token:focus-visible {
+        outline: 2px solid rgba(212, 175, 55, 0.8);
+        outline-offset: 2px;
+    }
+
+    .page-losangeles .transit-experience {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .page-losangeles .transit-stage {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        position: relative;
+    }
+
+    .page-losangeles .transit-spotlight {
+        flex: 1;
+        position: relative;
+        min-height: 340px;
+        border-radius: 38px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: radial-gradient(120% 120% at 50% 40%, rgba(212, 175, 55, 0.25), rgba(5, 5, 10, 0.95));
+        overflow: hidden;
+        box-shadow: 0 45px 90px rgba(0, 0, 0, 0.55);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: clamp(20px, 4vw, 40px);
+        isolation: isolate;
+    }
+
+    .page-losangeles .transit-spotlight-glow {
+        position: absolute;
+        inset: auto auto 30px 50%;
+        width: 220px;
+        height: 40px;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.45), transparent 70%);
+        filter: blur(12px);
+        opacity: 0.6;
+        pointer-events: none;
+    }
+
+    .page-losangeles .transit-spotlight-glyph {
+        position: absolute;
+        top: 16%;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: transitPulse 3s ease-in-out infinite;
+        z-index: 2;
+    }
+
+    .page-losangeles .transit-spotlight-glyph img {
+        width: clamp(80px, 13vw, 140px);
+        height: clamp(80px, 13vw, 140px);
+        object-fit: contain;
+        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.45));
+    }
+
+    @keyframes transitPulse {
+        0% {
+            transform: translateX(-50%) scale(0.9);
+            opacity: 0.7;
+        }
+
+        50% {
+            transform: translateX(-50%) scale(1.05);
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateX(-50%) scale(0.9);
+            opacity: 0.7;
+        }
+    }
+
+    .page-losangeles .transit-spotlight-info {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .page-losangeles .transit-spotlight-info h3 {
+        margin: 0;
+        font-size: clamp(1.6rem, 3vw, 2.3rem);
+    }
+
+    .page-losangeles .transit-spotlight-info p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    .page-losangeles .transit-tag {
+        margin: 0;
+        font-size: 0.7rem;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.65);
+    }
+
+    .page-losangeles .transit-arrow {
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: rgba(10, 10, 16, 0.85);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        font-size: 1.8rem;
+        cursor: pointer;
+        transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .page-losangeles .transit-arrow:hover {
+        transform: translateY(-2px);
+        border-color: rgba(212, 175, 55, 0.7);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .page-losangeles .transit-ghost {
+        position: absolute;
+        top: 18%;
+        z-index: 1;
+    }
+
+    .page-losangeles .transit-ghost img {
+        width: clamp(60px, 9vw, 100px);
+        height: clamp(60px, 9vw, 100px);
+        object-fit: contain;
+        opacity: 0.2;
+        filter: blur(1px);
+    }
+
+    .page-losangeles .transit-ghost--left {
+        left: 10%;
+    }
+
+    .page-losangeles .transit-ghost--right {
+        right: 10%;
+    }
+
+    .page-losangeles .transit-roster {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 14px;
+    }
+
+    .page-losangeles .transit-chip {
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(6, 6, 12, 0.85);
+        padding: 10px 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        color: inherit;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .page-losangeles .transit-chip .chip-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 16px;
+        background: rgba(212, 175, 55, 0.12);
+        display: grid;
+        place-items: center;
+        box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.35);
+    }
+
+    .page-losangeles .transit-chip .chip-icon img {
+        width: 26px;
+        height: 26px;
+        object-fit: contain;
+    }
+
+    .page-losangeles .transit-chip .chip-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.15;
+    }
+
+    .page-losangeles .transit-chip .chip-name {
+        font-weight: 600;
+    }
+
+    .page-losangeles .transit-chip .chip-hint {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .page-losangeles .transit-chip.active {
+        border-color: rgba(212, 175, 55, 0.6);
+        box-shadow: 0 16px 30px rgba(212, 175, 55, 0.15);
+        transform: translateY(-2px);
+    }
+
+    .page-losangeles .transit-chip:focus-visible {
+        outline: 2px solid rgba(212, 175, 55, 0.8);
+        outline-offset: 3px;
+    }
+
+    /* CTA */
+    .page-losangeles .cta {
+        padding-block: 56px;
+        /* background:
+            radial-gradient(900px 420px at 10% 0%, rgba(212, 175, 55, .08), transparent 46%),
+            linear-gradient(180deg, #0f0f10 0%, #0e0e0f 100%) */
+    }
+
+    .page-losangeles .cta-wrap {
+        text-align: center;
+        max-width: 760px
+    }
+
+    .page-losangeles .cta .eyebrow {
+        color: var(--gold);
+        font-weight: 800;
+        letter-spacing: .18em;
+        text-transform: uppercase
+    }
+
+    .page-losangeles .cta h2 {
+        font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+        margin: .25rem 0
+    }
+
+    .page-losangeles .cta p {
+        color: #e7e7e7
+    }
+
+    .page-losangeles .cta-actions {
+        margin-top: 1rem;
+        display: flex;
+        gap: .75rem;
+        justify-content: center;
+        flex-wrap: wrap
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+        .page-losangeles .properties-grid {
+            grid-template-columns: 1fr 1fr
+        }
+
+        .page-losangeles .split {
+            grid-template-columns: 1fr;
+            gap: 16px
+        }
+
+        .page-losangeles .section-split.invert .split .split-media {
+            order: 0
+        }
+
+        .page-losangeles .landmark-showcase {
+            grid-template-columns: 1fr;
+        }
+
+        .page-losangeles .landmark-showcase-info {
+            min-height: auto;
+        }
+
+        .page-losangeles .transit-stage {
+            flex-direction: column;
+        }
+
+        .page-losangeles .transit-arrow {
+            width: 64px;
+            height: 64px;
+        }
+    }
+
+    @media (max-width: 640px) {
+
+        .page-losangeles .properties-grid {
+            grid-template-columns: 1fr
+        }
+
+        .page-losangeles .landmark-roster {
+            grid-template-columns: 1fr;
+        }
+
+        .page-losangeles .transit-roster {
+            grid-template-columns: 1fr;
+        }
+
+        .page-losangeles .transit-spotlight {
+            min-height: 280px;
+        }
+    }
+
+
+
+
+
+    /* ===== Hero centering & media fill ===== */
+    .hero {
+        position: relative;
+        min-height: calc(100vh - var(--navH, 80px));
+        /* full screen minus nav */
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
-        padding: 0;
-        background: radial-gradient(1200px 600px at 50% -20%, rgba(212, 175, 55, .08), transparent 45%),
+        padding-block: clamp(40px, 6vw, 96px);
+        /* guard for very small screens */
+        background: radial-gradient(1200px 600px at 50% -20%, rgba(212, 175, 55, .09), transparent 45%),
             linear-gradient(180deg, rgba(0, 0, 0, .45), rgba(0, 0, 0, .75));
+        overflow: clip;
     }
 
+    .hero-video,
+    .hero-image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(1.05) contrast(1.02) brightness(.9);
+        z-index: 0;
+    }
+
+    .hero::after {
+        /* soft vignette for legibility */
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(60% 50% at 50% 50%, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.05));
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 1150px;
+        margin: 0 auto;
+        text-align: center;
+        padding-inline: 16px;
+    }
+
+    /* desktop video + mobile image switch */
+    .hero-image {
+        display: none;
+    }
+
+
+    /* tidy headings/cta spacing */
+    .hero-content h1 {
+        margin: 0 0 12px;
+        line-height: 1.05;
+    }
+
+    .hero-content p {
+        margin: 0 auto 22px;
+        max-width: 820px;
+        opacity: .92;
+    }
+
+    /* optional: fix any global container centering */
+    .container {
+        margin-inline: auto;
+        max-width: 1200px;
+        padding-inline: 16px;
+    }
+
+    /* === OLS HERO — force full-bleed, centered, covered === */
+    .page-losangeles .hero {
+        position: relative;
+        height: calc(100vh - var(--navH, 80px));
+        min-height: 560px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        /* no inner padding that could shift media */
+        background: radial-gradient(1200px 600px at 50% -20%, rgba(212, 175, 55, .08), transparent 45%);
+    }
+
+    /* Kill any theme constraints and make media truly cover */
     .page-losangeles .hero-video,
     .page-losangeles .hero-image {
         position: absolute !important;
@@ -459,15 +1273,17 @@
         pointer-events: none;
     }
 
+    /* Keep a single soft vignette for legibility */
     .page-losangeles .hero::after {
         content: "";
         position: absolute;
         inset: 0;
-        background: radial-gradient(60% 50% at 50% 35%, rgba(0, 0, 0, .65), rgba(0, 0, 0, .05));
+        background: radial-gradient(60% 50% at 50% 35%, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.05));
         z-index: 1;
         pointer-events: none;
     }
 
+    /* Content stack above */
     .page-losangeles .hero .hero-content {
         position: relative;
         z-index: 2;
@@ -478,244 +1294,196 @@
         padding: 0 16px;
     }
 
-    .page-losangeles .eyebrow {
-        letter-spacing: .18em;
-        text-transform: uppercase;
-        color: var(--gold);
-        font-weight: 700;
-        margin-bottom: .5rem;
-    }
 
-    .page-losangeles .headline {
-        font-size: clamp(2rem, 4vw, 3rem);
-        font-weight: 800;
-        line-height: 1.1;
-        margin: .25rem 0 .5rem;
-    }
 
-    .page-losangeles .subhead {
-        color: #e7e7e7;
-        opacity: .92;
-        max-width: 52ch;
-        margin-inline: auto;
-    }
-
-    /* Sections */
-    .page-losangeles .section {
-        padding-block: 56px;
-    }
-
-    .page-losangeles .la-landmarks-transpo {
-        padding-block: 56px;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.94)), url("https://images.pexels.com/photos/3652252/pexels-photo-3652252.jpeg");
-        background-color: #0b0b0c;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    .page-losangeles .section-title {
-        max-width: 760px;
-        margin: 0 auto 22px;
-        text-align: center;
-    }
-
-    .page-losangeles .section-title h2 {
-        font-size: clamp(1.8rem, 2.2vw, 2rem);
-        margin-bottom: .35rem;
-    }
-
-    .page-losangeles .section-title p {
-        font-size: 1.2rem;
-        color: var(--muted);
-    }
-
-    /* Split Sections with backdrop */
-    .page-losangeles .section-split {
-        position: relative;
-        isolation: isolate;
-    }
-
-    .page-losangeles .section-split::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        background:
-            linear-gradient(to right, rgba(0, 0, 0, .50), rgba(0, 0, 0, .50)),
-            var(--bg-img) center/cover no-repeat;
-        opacity: .55;
-    }
-
-    .page-losangeles .split {
-        display: grid;
-        grid-template-columns: 1.1fr .9fr;
-        gap: 28px;
+    /* Fix "View Details" pill inside property cards */
+    .page-losangeles .property-card .btn-inline {
+        display: inline-flex;
         align-items: center;
-    }
-
-    .page-losangeles .split-media {
-        position: relative;
-        aspect-ratio: 16/10;
-        border-radius: var(--radius);
-        overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, .08);
-        box-shadow: var(--shadow);
-    }
-
-    .page-losangeles .split-media img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-
-    .page-losangeles .badge-sale {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        background: #1a1a1c;
-        border: 1px solid rgba(212, 175, 55, .35);
-        color: var(--gold);
-        padding: .35rem .6rem;
-        border-radius: 999px;
-        font-size: .8rem;
-        font-weight: 700;
-    }
-
-    .page-losangeles .split-body h2 {
-        font-size: clamp(1.4rem, 2vw, 1.8rem);
-        margin-bottom: .35rem;
-    }
-
-    .page-losangeles .split-body p {
-        color: #e7e7e7;
-        margin-bottom: .75rem;
-    }
-
-    .page-losangeles .section-split.invert .split {
-        grid-template-columns: .9fr 1.1fr;
-    }
-
-    .page-losangeles .section-split.invert .split .split-media {
-        order: 2;
-    }
-
-    /* Gallery Grids */
-    .page-losangeles .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 14px;
-    }
-
-    .page-losangeles .gallery-grid.small {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .page-losangeles .gallery-card {
-        background: var(--card);
-        border: 1px solid rgba(255, 255, 255, .06);
-        border-radius: var(--radius);
-        overflow: hidden;
-    }
-
-    .page-losangeles .gallery-card img {
-        width: 100%;
-        aspect-ratio: 16/11;
-        object-fit: cover;
-    }
-
-    .page-losangeles .gallery-card h3 {
-        color: #fff;
-        font-size: 1rem;
-        font-weight: 700;
-        padding: .55rem .7rem .2rem;
-    }
-
-    .page-losangeles .gallery-card p {
-        color: var(--muted);
-        padding: 0 .7rem .8rem;
-    }
-
-    /* CTA */
-    .page-losangeles .cta-section.luxe-cta.slim {
-        padding-block: 56px;
-        background:
-            radial-gradient(900px 420px at 10% 0%, rgba(212, 175, 55, .08), transparent 46%),
-            linear-gradient(180deg, #0f0f10 0%, #0e0e0f 100%);
-    }
-
-    .page-losangeles .cta-wrap {
-        text-align: center;
-        max-width: 760px;
-    }
-
-    .page-losangeles .cta-kicker {
-        color: var(--gold);
-        font-weight: 800;
-        letter-spacing: .18em;
-        text-transform: uppercase;
-        margin-bottom: .35rem;
-    }
-
-    .page-losangeles .cta-title {
-        font-size: clamp(1.6rem, 2.4vw, 2.2rem);
-        margin: .25rem 0;
-    }
-
-    .page-losangeles .cta-subtitle {
-        color: #e7e7e7;
-    }
-
-    .page-losangeles .cta-actions {
-        margin-top: 1rem;
-        display: flex;
-        gap: .75rem;
         justify-content: center;
-        flex-wrap: wrap;
+        padding: 0.55rem 0.95rem;
+        /* breathing room */
+        line-height: 1;
+        /* prevent vertical clipping */
+        white-space: nowrap;
+        /* keep it on one line */
+        border-radius: 999px;
+        /* perfect pill */
+        border: 1px solid rgba(212, 175, 55, .45);
+        background: transparent;
+        color: var(--gold);
+        font-weight: 700;
+        box-shadow: none;
+        transition: transform .2s, box-shadow .2s, background .2s, color .2s, border-color .2s;
     }
 
-    /* Responsive */
-    @media (max-width: 900px) {
-        .page-losangeles .split {
-            grid-template-columns: 1fr;
-            gap: 16px;
-        }
-
-        .page-losangeles .section-split.invert .split .split-media {
-            order: 0;
-        }
-
-        .page-losangeles .gallery-grid,
-        .page-losangeles .gallery-grid.small {
-            grid-template-columns: 1fr 1fr;
-        }
+    .page-losangeles .property-card .btn-inline:hover {
+        background: linear-gradient(90deg, #d4af37, #b9912b);
+        color: #111;
+        border-color: transparent;
+        box-shadow: 0 8px 22px rgba(212, 175, 55, .25);
+        transform: translateY(-1px);
     }
 
+    /* Ensure the card body doesn't squash the button */
+    .page-losangeles .property-card .body {
+        display: flex;
+        flex-direction: column;
+        gap: .55rem;
+        /* space between title/meta/button */
+    }
+
+    /* MOBILE ONLY — make all split sections match the Central Signature layout */
     @media (max-width: 640px) {
 
-        .page-losangeles .gallery-grid,
-        .page-losangeles .gallery-grid.small {
-            grid-template-columns: 1fr;
-        }
-
-        .page-losangeles .split {
+        /* 1) Stack consistently: image first, text second */
+        .page-losangeles .section-split .split {
             display: flex !important;
             flex-direction: column !important;
             align-items: stretch !important;
             gap: 12px !important;
         }
 
+        /* Even when the section has .invert, keep the same order on mobile */
         .page-losangeles .section-split.invert .split .split-media {
             order: 1 !important;
         }
 
-        .page-losangeles .split-media {
+        .page-losangeles .section-split .split-media {
+            order: 1 !important;
             width: 100% !important;
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+
+        .page-losangeles .section-split .split-body {
+            order: 2 !important;
+            padding: 14px 16px 18px !important;
+            text-align: left !important;
+        }
+
+        /* 2) Tighten title + “address” line spacing to mirror Central Signature */
+        .page-losangeles .section-split .split-body h2 {
+            font-size: clamp(1.25rem, 4.5vw, 1.4rem) !important;
+            line-height: 1.15 !important;
+            margin: 0 0 4px !important;
+        }
+
+        /* If your address/eyebrow line is inside the paragraph or a span,
+     normalize its look: gold, compact, below the title */
+        .page-losangeles .section-split .split-body .eyebrow,
+        .page-losangeles .section-split .split-body .meta,
+        .page-losangeles .section-split .split-body p:first-of-type>strong,
+        .page-losangeles .section-split .split-body span.address {
+            display: inline-block;
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: .02em;
+            margin-bottom: 6px;
+        }
+
+        /* 3) Keep the descriptive paragraph consistent */
+        .page-losangeles .section-split .split-body p {
+            margin: 0 0 10px !important;
+            color: #e7e7e7 !important;
+        }
+
+        /* 4) Keep “View Details” button baseline aligned and full-tap friendly */
+        .page-losangeles .section-split .split-body .btn,
+        .page-losangeles .section-split .split-body a.btn {
+            align-self: flex-start;
+            min-height: 40px;
+            padding: .6rem 1rem;
+        }
+
+        .hero-video,
+        .hero-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-video {
+            display: block;
+            filter: contrast(1.05) saturate(1.05);
         }
     }
 
-    /* Ensure LA hero text isn't hidden by global AOS / theme animations */
+    /* HERO container */
+    .page-losangeles .hero {
+        position: relative;
+        height: calc(100vh - var(--navH, 80px));
+        min-height: 560px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: radial-gradient(1200px 600px at 50% -20%, rgba(212, 175, 55, .08), transparent 45%),
+            linear-gradient(180deg, rgba(0, 0, 0, .45), rgba(0, 0, 0, .75));
+    }
+
+    /* Video / Image fill */
+    .page-losangeles .hero-video,
+    .page-losangeles .hero-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: cover;
+        object-position: 50% 50%;
+        z-index: 0;
+        filter: saturate(1.05) contrast(1.02) brightness(.9);
+        pointer-events: none;
+        /* let taps hit buttons */
+    }
+
+    /* Soft vignette above media */
+    .page-losangeles .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(60% 50% at 50% 35%, rgba(0, 0, 0, .65), rgba(0, 0, 0, .05));
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    /* Content above everything */
+    .page-losangeles .hero .hero-content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 1150px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 16px;
+    }
+
+    /* Desktop: prefer video; hide still image */
+    .page-losangeles .hero-image {
+        display: none;
+    }
+
+    /* Mobile: KEEP video playing inline and covering */
+    @media (max-width: 640px) {
+        .page-losangeles .hero-video {
+            display: block !important;
+        }
+
+        .page-losangeles .hero-image {
+            display: none !important;
+        }
+
+        /* (use image only if you later decide to swap) */
+    }
+
+
+    /* Kill any AOS/transition effects in the HERO only */
     .page-losangeles .hero [data-aos],
     .page-losangeles .hero .headline,
     .page-losangeles .hero .subhead,
@@ -726,6 +1494,262 @@
         transition: none !important;
         animation: none !important;
         filter: none !important;
-        display: block;
+    }
+
+    /* === Antwerp immersive hero refresh === */
+    #losangeles-root {
+        position: relative;
+        background:
+            radial-gradient(1400px 640px at 10% -10%, rgba(212, 175, 55, 0.08), transparent 45%),
+            radial-gradient(1200px 720px at 90% 0%, rgba(96, 154, 255, 0.08), transparent 55%),
+            var(--bg);
+        overflow: hidden;
+    }
+
+    #losangeles-root .cursor-orb {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: clamp(140px, 12vw, 200px);
+        height: clamp(140px, 12vw, 200px);
+        pointer-events: none;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 221, 170, 0.45), rgba(255, 255, 255, 0));
+        mix-blend-mode: screen;
+        opacity: 0;
+        transition: opacity 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        box-shadow: 0 0 80px rgba(212, 175, 55, 0.25), 0 0 140px rgba(212, 175, 55, 0.15);
+    }
+
+    #losangeles-root .cursor-orb.cursor-orb--glow {
+        box-shadow:
+            0 0 120px rgba(255, 214, 147, 0.45),
+            0 0 220px rgba(212, 175, 55, 0.35),
+            0 0 320px rgba(148, 199, 255, 0.2);
+    }
+
+    #losangeles-root .cursor-trail {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 4;
+        mix-blend-mode: screen;
+    }
+
+    #losangeles-root .cursor-spark {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 230, 190, 0.95), rgba(255, 255, 255, 0));
+        box-shadow: 0 0 20px rgba(255, 220, 170, 0.8);
+        transform: translate(-50%, -50%);
+        animation: antwerpSparkle 0.9s ease-out forwards;
+    }
+
+    @keyframes antwerpSparkle {
+        0% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(0.4);
+        }
+
+        70% {
+            opacity: 0.8;
+            transform: translate(calc(-50% + var(--sparkle-drift-x, 0px)),
+                    calc(-50% + var(--sparkle-drift-y, -20px))) scale(1);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translate(calc(-50% + var(--sparkle-drift-x, 0px)),
+                    calc(-50% + var(--sparkle-drift-y, -20px))) scale(0.1);
+        }
+    }
+
+    #losangeles-root .immersive-hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 120px 0 150px;
+        overflow: hidden;
+    }
+
+    #losangeles-root .hero-layers {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+    }
+
+    #losangeles-root .hero-layer {
+        position: absolute;
+        inset: 0;
+    }
+
+    #losangeles-root .hero-layer--glow {
+        background: radial-gradient(circle at 15% 10%, rgba(212, 175, 55, 0.35), transparent 55%),
+            radial-gradient(circle at 85% 0%, rgba(102, 160, 255, 0.28), transparent 60%);
+        filter: blur(20px);
+        animation: antwerpAurora 26s ease-in-out infinite alternate;
+    }
+
+    #losangeles-root .hero-layer--grid {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        background-size: 80px 80px;
+        opacity: 0.4;
+        animation: antwerpGridPan 40s linear infinite;
+    }
+
+    #losangeles-root .hero-layer--particles::before,
+    #losangeles-root .hero-layer--particles::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+        background-size: 200px 200px;
+        animation: antwerpParticleDrift 55s linear infinite;
+    }
+
+    #losangeles-root .hero-layer--particles::after {
+        animation-duration: 75s;
+        opacity: 0.5;
+    }
+
+    #losangeles-root .hero-layer--media .hero-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(1.05) contrast(1.05) brightness(0.9);
+    }
+
+    #losangeles-root .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(70% 50% at 50% 50%, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.15));
+    }
+
+    #losangeles-root .hero-content {
+        position: relative;
+        z-index: 2;
+        width: min(720px, 95vw);
+        margin: 0;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    #losangeles-root .hero-crest {
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    #losangeles-root .hero-divider {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+        margin: 10px 0;
+    }
+
+    #losangeles-root .subhead {
+        color: #fff4db;
+    }
+
+    #losangeles-root .hero-amenities {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 8px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    #losangeles-root .hero-amenities li {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        padding: 6px 14px;
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.8);
+        background: rgba(0, 0, 0, 0.25);
+    }
+
+    #losangeles-root .hero-actions {
+        margin-top: 8px;
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    #losangeles-root .hero-actions .btn {
+        min-width: 180px;
+        justify-content: center;
+    }
+
+    @media (max-width: 960px) {
+        #losangeles-root .hero-content {
+            width: 100%;
+            align-items: center;
+            text-align: center;
+        }
+
+        #losangeles-root .hero-amenities {
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 620px) {
+        #losangeles-root .hero-content {
+            align-items: center;
+        }
+
+        #losangeles-root .hero-actions {
+            flex-direction: column;
+        }
+    }
+
+    @keyframes antwerpAurora {
+        0% {
+            transform: translate3d(0, 0, 0);
+        }
+
+        50% {
+            transform: translate3d(40px, -20px, 0);
+        }
+
+        100% {
+            transform: translate3d(-30px, 10px, 0);
+        }
+    }
+
+    @keyframes antwerpGridPan {
+        from {
+            background-position: 0 0, 0 0;
+        }
+
+        to {
+            background-position: 120px 80px, 80px 120px;
+        }
+    }
+
+    @keyframes antwerpParticleDrift {
+        from {
+            transform: translateY(0);
+        }
+
+        to {
+            transform: translateY(-200px);
+        }
     }
 </style>
