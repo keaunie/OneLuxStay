@@ -3,10 +3,14 @@ const { getBookingToken } = require("../lib/bookingToken");
 const CALENDAR_URL = "https://booking.guesty.com/api";
 
 function normalizeCalendarEntry(entry) {
-  const calendar =
+  let calendar =
     (entry &&
       (entry.calendar || entry.days || entry.calendarDays || entry.data)) ||
     [];
+
+  if (!Array.isArray(calendar) && calendar && typeof calendar === "object") {
+    calendar = Object.values(calendar);
+  }
 
   if (!Array.isArray(calendar)) {
     return {
