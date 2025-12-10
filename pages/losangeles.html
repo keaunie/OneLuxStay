@@ -300,12 +300,11 @@
                             </span>
                         </button>
                         <button class="transit-chip" type="button" aria-selected="false" data-transit-index="2"
-                            data-image="https://img.icons8.com/color/96/convertible-car.png" data-tag="Scenic Routes"
+                            data-image="https://img.icons8.com/color/96/car.png" data-tag="Scenic Routes"
                             data-title="Pacific Coast Drives" data-alt="Convertible icon"
                             data-desc="Convertible rentals mapped along Mulholland, Malibu, or Palm Springs escapes."
                             data-hint="Coastal cruising">
-                            <span class="chip-icon"><img src="https://img.icons8.com/color/96/convertible-car.png"
-                                    alt="" /></span>
+                            <span class="chip-icon"><img src="https://img.icons8.com/color/96/car.png" alt="" /></span>
                             <span class="chip-text">
                                 <span class="chip-name">Pacific Coast Drives</span>
                                 <span class="chip-hint">Coastal cruising</span>
@@ -1697,6 +1696,24 @@
         justify-content: center;
     }
 
+    #losangeles-root .selector {
+        display: flex;
+        gap: 16px;
+        align-items: flex-end;
+        flex-wrap: wrap;
+    }
+
+    #losangeles-root .selector-dates {
+        display: flex;
+        gap: 16px;
+        flex: 2 1 320px;
+        flex-wrap: wrap;
+    }
+
+    #losangeles-root .selector-dates label {
+        flex: 1 1 180px;
+    }
+
     @media (max-width: 960px) {
         #losangeles-root .hero-content {
             width: 100%;
@@ -1716,6 +1733,16 @@
 
         #losangeles-root .hero-actions {
             flex-direction: column;
+        }
+
+        #losangeles-root .selector {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        #losangeles-root .selector-dates {
+            flex-direction: column;
+            width: 100%;
         }
     }
 

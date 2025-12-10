@@ -274,25 +274,23 @@ function initPropertyDetailPageLosAngeles() {
           property.price?.currency || "USD"
         )}</div>
 
-      <!-- ============ Selector (Booking.com-style dates) ============ -->
-      <div class="selector">
-        <label>Dates
-          <button type="button" id="dateRangeBtn" style="height:38px;padding:0 12px;border:1px solid #ccc;border-radius:6px;cursor:pointer;background:#fff">
-            <span id="dateRangeText">Select dates</span>
-          </button>
-        </label>
-
-        <!-- Hidden native date inputs (kept for your logic) -->
-        <input type="date" id="checkin"
-               value="${fmtDate(today)}"
-               min="${fmtDate(today)}"
-               style="position:absolute;opacity:0;width:0;height:0;pointer-events:none">
-        <input type="date" id="checkout"
-               value="${fmtDate(tomorrow)}"
-               min="${fmtDate(tomorrow)}"
-               style="position:absolute;opacity:0;width:0;height:0;pointer-events:none">
-
-        <label>Guests
+      <!-- ============ Selector (visible dual date fields) ============ -->
+      <div class="selector search-box">
+        <div class="selector-dates">
+          <label for="checkin">Check-in
+            <input type="date"
+                   id="checkin"
+                   value="${fmtDate(today)}"
+                   min="${fmtDate(today)}">
+          </label>
+          <label for="checkout">Check-out
+            <input type="date"
+                   id="checkout"
+                   value="${fmtDate(tomorrow)}"
+                   min="${fmtDate(tomorrow)}">
+          </label>
+        </div>
+        <label class="guest-label">Guests
           <select id="guests">${Array.from(
           { length: 6 },
           (_, i) => `<option value="${i + 1}">${i + 1}</option>`
@@ -394,55 +392,38 @@ function initPropertyDetailPageLosAngeles() {
 
     initRoomModal(property);
 
-    // ===== Date range button behavior (single control, native pickers) =====
-    (function initDateRangeSelectorWithinContainer() {
-      const btn = container.querySelector("#dateRangeBtn");
-      const txt = container.querySelector("#dateRangeText");
+    // ===== Enforce checkout minimum and sync values =====
+    (function initVisibleDateSelectors() {
       const ci = container.querySelector("#checkin");
       const co = container.querySelector("#checkout");
+      if (!ci || !co) return;
 
       const pad = (n) => String(n).padStart(2, "0");
       const fmt = (d) =>
         `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
-      const pretty = (val) => {
-        if (!val) return "—";
-        const d = new Date(val);
-        return d.toLocaleDateString(undefined, {
-          weekday: "short",
-          month: "short",
-          day: "numeric",
-        });
-      };
 
-      function updateText() {
-        txt.textContent = `${pretty(ci.value)} — ${pretty(co.value)}`;
+      function syncCheckoutMin() {
+        const start = new Date(ci.value || Date.now());
+        start.setDate(start.getDate() + 1);
+        const min = fmt(start);
+        co.min = min;
+        if (!co.value || co.value < min) {
+          co.value = min;
+        }
       }
 
-      btn.addEventListener("click", () => {
-        ci.showPicker && ci.showPicker();
-      });
-
       ci.addEventListener("change", () => {
-        const d = new Date(ci.value);
-        d.setDate(d.getDate() + 1);
-        const next = fmt(d);
-        co.min = next;
-        if (!co.value || co.value < next) co.value = next;
-        co.showPicker && co.showPicker();
-        updateText();
+        syncCheckoutMin();
+        co.showPicker?.();
       });
 
       co.addEventListener("change", () => {
-        const base = new Date(ci.value);
-        const minOut = new Date(base);
-        minOut.setDate(minOut.getDate() + 1);
-        const minStr = fmt(minOut);
-        if (co.value < minStr) co.value = minStr;
-        updateText();
+        if (co.value < co.min) {
+          co.value = co.min;
+        }
       });
 
-      // initial text
-      updateText();
+      syncCheckoutMin();
     })();
 
     // Carousel thumbs

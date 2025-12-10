@@ -41,13 +41,13 @@ body {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   backdrop-filter: var(--blur);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   transition: var(--transition);
 }
 
 .property-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
 }
 
 .property-card img {
@@ -92,7 +92,7 @@ body {
   padding: 6px 12px;
   border-radius: 8px;
   font-size: 0.85rem;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 
 /* =========================================
@@ -145,7 +145,7 @@ body {
 .panel__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.4) 30%, rgba(0,0,0,0.8) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 30%, rgba(0, 0, 0, 0.8) 100%);
   z-index: 0;
 }
 
@@ -160,13 +160,13 @@ body {
   border: 1px solid var(--glass-border);
   backdrop-filter: var(--blur);
   color: var(--text-light);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   transition: var(--transition);
 }
 
 .panel__glass:hover {
   transform: translateY(-4px);
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .panel__glass h3 {
@@ -209,11 +209,16 @@ body {
 
 
 .selector-dates {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  display: flex;
   gap: 1rem;
   flex: 2;
-  min-width: 280px;
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.selector-dates label {
+  flex: 1 1 160px;
 }
 
 .selector label {
@@ -256,7 +261,7 @@ body {
 
   .selector-dates {
     width: 100%;
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
   .selector .guest-label {
@@ -312,7 +317,7 @@ body {
 .event-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(4px);
 }
 
@@ -325,7 +330,7 @@ body {
   border: 1px solid var(--glass-border);
   backdrop-filter: var(--blur);
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 .event-content h2 {
@@ -423,13 +428,11 @@ body {
 .event-radial {
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    circle at center,
-    rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0.75) 35%,
-    rgba(0, 0, 0, 0.5) 65%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  background: radial-gradient(circle at center,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.75) 35%,
+      rgba(0, 0, 0, 0.5) 65%,
+      rgba(0, 0, 0, 0) 100%);
   z-index: 1;
 }
 
@@ -438,9 +441,9 @@ body {
   position: absolute;
   inset: 0;
   background: linear-gradient(130deg,
-    rgba(255, 0, 150, 0.25),
-    rgba(0, 200, 255, 0.25),
-    rgba(255, 255, 0, 0.2));
+      rgba(255, 0, 150, 0.25),
+      rgba(0, 200, 255, 0.25),
+      rgba(255, 255, 0, 0.2));
   background-size: 300% 300%;
   animation: auroraShift 20s ease-in-out infinite alternate;
   mix-blend-mode: overlay;
@@ -448,9 +451,17 @@ body {
 }
 
 @keyframes auroraShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Floating sparkles */
@@ -473,30 +484,88 @@ body {
 }
 
 .event-particles span:nth-child(odd) {
-  width: 4px; height: 4px;
+  width: 4px;
+  height: 4px;
   animation-duration: 14s;
   opacity: 0.6;
 }
 
 @keyframes floatParticle {
-  0% { transform: translateY(100vh); opacity: 0; }
-  10% { opacity: 1; }
-  100% { transform: translateY(-10vh) translateX(calc(30vw * var(--rand, 1))); opacity: 0; }
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-10vh) translateX(calc(30vw * var(--rand, 1)));
+    opacity: 0;
+  }
 }
 
 /* Random sparkles */
-.event-particles span:nth-child(1) { left: 10%; animation-delay: 0s; }
-.event-particles span:nth-child(2) { left: 20%; animation-delay: 2s; }
-.event-particles span:nth-child(3) { left: 40%; animation-delay: 4s; }
-.event-particles span:nth-child(4) { left: 60%; animation-delay: 6s; }
-.event-particles span:nth-child(5) { left: 80%; animation-delay: 8s; }
-.event-particles span:nth-child(6) { left: 90%; animation-delay: 10s; }
-.event-particles span:nth-child(7) { left: 15%; animation-delay: 3s; }
-.event-particles span:nth-child(8) { left: 35%; animation-delay: 5s; }
-.event-particles span:nth-child(9) { left: 55%; animation-delay: 7s; }
-.event-particles span:nth-child(10) { left: 75%; animation-delay: 9s; }
-.event-particles span:nth-child(11) { left: 50%; animation-delay: 1s; }
-.event-particles span:nth-child(12) { left: 25%; animation-delay: 11s; }
+.event-particles span:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.event-particles span:nth-child(2) {
+  left: 20%;
+  animation-delay: 2s;
+}
+
+.event-particles span:nth-child(3) {
+  left: 40%;
+  animation-delay: 4s;
+}
+
+.event-particles span:nth-child(4) {
+  left: 60%;
+  animation-delay: 6s;
+}
+
+.event-particles span:nth-child(5) {
+  left: 80%;
+  animation-delay: 8s;
+}
+
+.event-particles span:nth-child(6) {
+  left: 90%;
+  animation-delay: 10s;
+}
+
+.event-particles span:nth-child(7) {
+  left: 15%;
+  animation-delay: 3s;
+}
+
+.event-particles span:nth-child(8) {
+  left: 35%;
+  animation-delay: 5s;
+}
+
+.event-particles span:nth-child(9) {
+  left: 55%;
+  animation-delay: 7s;
+}
+
+.event-particles span:nth-child(10) {
+  left: 75%;
+  animation-delay: 9s;
+}
+
+.event-particles span:nth-child(11) {
+  left: 50%;
+  animation-delay: 1s;
+}
+
+.event-particles span:nth-child(12) {
+  left: 25%;
+  animation-delay: 11s;
+}
 
 /* Text Overlay */
 .event-text {
@@ -568,6 +637,7 @@ body {
   letter-spacing: 0.5px;
   font-weight: 100;
 }
+
 .selector.search-box {
   display: flex;
   grid-template-columns: none;

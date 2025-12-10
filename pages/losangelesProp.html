@@ -181,6 +181,41 @@
       box-shadow: 0 0 0 3px var(--ring);
     }
 
+    .selector.search-box {
+      align-items: flex-end;
+    }
+
+    .selector-dates {
+      display: flex;
+      gap: 12px;
+      flex: 2 1 320px;
+      flex-wrap: wrap;
+    }
+
+    .selector-dates label {
+      flex: 1 1 180px;
+    }
+
+    .selector .guest-label {
+      flex: 0 0 180px;
+    }
+
+    @media (max-width: 640px) {
+      .selector.search-box {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .selector-dates {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .selector .guest-label {
+        flex: 1 1 auto;
+      }
+    }
+
     /* Rooms */
     .rooms {
       display: flex;
