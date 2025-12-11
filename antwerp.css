@@ -589,6 +589,36 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.room-nightly {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.room-nightly ul {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.room-nightly li {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 4px 10px;
+  background: rgba(0, 0, 0, 0.35);
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+.room-nightly-total {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
 .event-text .subtitle {
   font-size: 1.2rem;
   text-transform: uppercase;

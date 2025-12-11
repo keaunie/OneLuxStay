@@ -114,6 +114,32 @@ async function fetchGuestyPricing(guestyId, startDate, endDate) {
   }
 }
 
+async function fetchGuestyReservationQuote(listingId, checkIn, checkOut, guests) {
+  if (!listingId || !checkIn || !checkOut) return null;
+  try {
+    const res = await fetch("/.netlify/functions/get-reservation-pricing", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        listingId,
+        checkIn,
+        checkOut,
+        guestsCount: Number(guests) || 1,
+      }),
+    });
+    if (!res.ok) {
+      console.warn("Reservation pricing HTTP error", res.status, await res.text());
+      return null;
+    }
+    return res.json();
+  } catch (err) {
+    console.warn("Failed to fetch reservation quote", err);
+    return null;
+  }
+}
+
 /* =========================
    LISTINGS PAGE (MULTI JSON)
    ========================= */
@@ -570,12 +596,13 @@ function initPropertyDetailPageAntwerp() {
             >
               ${room.type} (${room.guests} guests)
             </button>
-            <div class="room-price">
-              Starts at: ${fmtMoney(
-                room.price_per_night,
-                property.price?.currency
-              )}
-            </div>
+        <div class="room-price">
+          Starts at: ${fmtMoney(
+            room.price_per_night,
+            property.price?.currency
+          )}
+        </div>
+        <div class="room-nightly" data-nightly-breakdown></div>
           </div>
           <div class="bedrooms">
             ${(room.bedrooms || [])
@@ -655,31 +682,40 @@ function initPropertyDetailPageAntwerp() {
       let globalMin = null;
       let globalCurrency = property.price?.currency || "EUR";
 
-      const roomEls = Array.from(container.querySelectorAll(".room"));
+    const roomEls = Array.from(container.querySelectorAll(".room"));
+    const guestsSelect = container.querySelector("#guests");
+    const selectedGuests = Number(guestsSelect?.value || 1);
       if (!roomEls.length) return;
 
       // Group all room-price elements by Guesty listing id
       const byListing = new Map();
 
       for (const roomEl of roomEls) {
-        const bookBtn = roomEl.querySelector(".book-btn[data-guesty-id]");
-        const priceEl = roomEl.querySelector(".room-price");
+      const bookBtn = roomEl.querySelector(".book-btn[data-guesty-id]");
+      const priceEl = roomEl.querySelector(".room-price");
+      const nightlyEl = roomEl.querySelector("[data-nightly-breakdown]");
         const guestyId = bookBtn?.dataset.guestyId;
 
         if (!guestyId || !priceEl) continue;
 
         priceEl.textContent = "Loading live price…";
 
-        if (!byListing.has(guestyId)) {
-          byListing.set(guestyId, []);
-        }
-        byListing.get(guestyId).push(priceEl);
+      if (!byListing.has(guestyId)) {
+        byListing.set(guestyId, []);
       }
+      byListing.get(guestyId).push({ priceEl, nightlyEl });
+    }
 
       // Call Netlify func once per Guesty listing id
-      for (const [guestyId, priceEls] of byListing.entries()) {
+      for (const [guestyId, slots] of byListing.entries()) {
         try {
           const res = await fetchGuestyPricing(guestyId, checkin, checkout);
+          const reservationQuote = await fetchGuestyReservationQuote(
+            guestyId,
+            checkin,
+            checkout,
+            selectedGuests
+          );
 
           if (!res) {
             priceEls.forEach((el) => {
@@ -698,26 +734,37 @@ function initPropertyDetailPageAntwerp() {
               ? totalPrice / nights
               : null;
 
-          if (totalPrice != null) {
+          const quoteTotals = reservationQuote?.totals;
+          const nightlyBreakdown = reservationQuote?.nightlyBreakdown || [];
+
+          const displayTotal =
+            quoteTotals?.total != null ? quoteTotals.total : totalPrice;
+          const displayCurrency =
+            quoteTotals?.currency || currency || reservationQuote?.currency;
+
+          if (displayTotal != null) {
             const nightsLabel =
               nights && nights > 0
                 ? ` for ${nights} night${nights > 1 ? "s" : ""}`
                 : "";
-            priceEls.forEach((el) => {
+            slots.forEach(({ priceEl: el }) => {
+              if (!el) return;
               el.textContent = `${fmtMoney(
-                totalPrice,
-                currency
+                displayTotal,
+                displayCurrency
               )} total${nightsLabel}`;
             });
           } else if (effectiveAvg != null) {
-            priceEls.forEach((el) => {
+            slots.forEach(({ priceEl: el }) => {
+              if (!el) return;
               el.textContent = `Starts at: ${fmtMoney(
                 effectiveAvg,
                 currency
               )} per night`;
             });
           } else {
-            priceEls.forEach((el) => {
+            slots.forEach(({ priceEl: el }) => {
+              if (!el) return;
               el.textContent = "Price on request";
             });
           }
@@ -737,10 +784,36 @@ function initPropertyDetailPageAntwerp() {
           }
         } catch (err) {
           console.warn("Guesty price error for listing", guestyId, err);
-          priceEls.forEach((el) => {
+          slots.forEach(({ priceEl: el }) => {
+            if (!el) return;
             el.textContent = "Price on request";
           });
         }
+
+        slots.forEach(({ nightlyEl }) => {
+          if (!nightlyEl) return;
+          if (!nightlyBreakdown.length) {
+            nightlyEl.textContent = "";
+            return;
+          }
+          const items = nightlyBreakdown
+            .map(
+              (night) =>
+                `<li>${new Date(night.date).toLocaleDateString(undefined, {
+                  month: "short",
+                  day: "numeric",
+                })}: ${fmtMoney(night.basePrice, displayCurrency)}</li>`
+            )
+            .join("");
+          const subtotalText =
+            quoteTotals?.subtotal != null
+              ? `<div class="room-nightly-total">Subtotal: ${fmtMoney(
+                  quoteTotals.subtotal,
+                  displayCurrency
+                )}</div>`
+              : "";
+          nightlyEl.innerHTML = `<strong>Nightly</strong><ul>${items}</ul>${subtotalText}`;
+        });
       }
     }
 
