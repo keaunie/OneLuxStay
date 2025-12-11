@@ -708,6 +708,9 @@ function initPropertyDetailPageAntwerp() {
 
       // Call Netlify func once per Guesty listing id
       for (const [guestyId, slots] of byListing.entries()) {
+        let nightlyBreakdown = [];
+        let quoteTotals = null;
+        let displayCurrency = null;
         try {
           const res = await fetchGuestyPricing(guestyId, checkin, checkout);
           const reservationQuote = await fetchGuestyReservationQuote(
@@ -718,15 +721,15 @@ function initPropertyDetailPageAntwerp() {
           );
 
           if (!res) {
-            priceEls.forEach((el) => {
-              el.textContent = "Price on request";
+            slots.forEach(({ priceEl: el, nightlyEl }) => {
+              if (el) el.textContent = "Price on request";
+              if (nightlyEl) nightlyEl.textContent = "";
             });
             continue;
           }
 
           const { avgPerNight, currency, totalPrice, nights } = res;
           globalCurrency = currency || globalCurrency;
-
           const effectiveAvg =
             typeof avgPerNight === "number" && !Number.isNaN(avgPerNight)
               ? avgPerNight
@@ -734,13 +737,13 @@ function initPropertyDetailPageAntwerp() {
               ? totalPrice / nights
               : null;
 
-          const quoteTotals = reservationQuote?.totals;
-          const nightlyBreakdown = reservationQuote?.nightlyBreakdown || [];
+          quoteTotals = reservationQuote?.totals || null;
+          nightlyBreakdown = reservationQuote?.nightlyBreakdown || [];
+          displayCurrency =
+            quoteTotals?.currency || currency || reservationQuote?.currency;
 
           const displayTotal =
             quoteTotals?.total != null ? quoteTotals.total : totalPrice;
-          const displayCurrency =
-            quoteTotals?.currency || currency || reservationQuote?.currency;
 
           if (displayTotal != null) {
             const nightsLabel =
@@ -759,7 +762,7 @@ function initPropertyDetailPageAntwerp() {
               if (!el) return;
               el.textContent = `Starts at: ${fmtMoney(
                 effectiveAvg,
-                currency
+                displayCurrency
               )} per night`;
             });
           } else {
@@ -784,10 +787,11 @@ function initPropertyDetailPageAntwerp() {
           }
         } catch (err) {
           console.warn("Guesty price error for listing", guestyId, err);
-          slots.forEach(({ priceEl: el }) => {
-            if (!el) return;
-            el.textContent = "Price on request";
+          slots.forEach(({ priceEl: el, nightlyEl }) => {
+            if (el) el.textContent = "Price on request";
+            if (nightlyEl) nightlyEl.textContent = "";
           });
+          continue;
         }
 
         slots.forEach(({ nightlyEl }) => {
