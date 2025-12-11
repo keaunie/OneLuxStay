@@ -114,28 +114,29 @@ async function fetchGuestyPricing(guestyId, startDate, endDate) {
   }
 }
 
-async function fetchGuestyReservationQuote(listingId, checkIn, checkOut, guests) {
+async function fetchGuestyNightlyQuote(listingId, checkIn, checkOut, guests) {
   if (!listingId || !checkIn || !checkOut) return null;
   try {
-    const res = await fetch("/.netlify/functions/get-reservation-pricing", {
+    const res = await fetch("/.netlify/functions/get-nightly-quote", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify({
         listingId,
-        checkIn,
-        checkOut,
+        checkInDateLocalized: checkIn,
+        checkOutDateLocalized: checkOut,
+        numberOfAdults: Number(guests) || 1,
         guestsCount: Number(guests) || 1,
       }),
     });
     if (!res.ok) {
-      console.warn("Reservation pricing HTTP error", res.status, await res.text());
+      console.warn("Nightly quote HTTP error", res.status, await res.text());
       return null;
     }
     return res.json();
   } catch (err) {
-    console.warn("Failed to fetch reservation quote", err);
+    console.warn("Failed to fetch nightly quote", err);
     return null;
   }
 }
@@ -709,11 +710,11 @@ function initPropertyDetailPageAntwerp() {
       // Call Netlify func once per Guesty listing id
       for (const [guestyId, slots] of byListing.entries()) {
         let nightlyBreakdown = [];
-        let quoteTotals = null;
-        let displayCurrency = null;
+        let nightlyCurrency = null;
+        let nightlySubtotal = null;
         try {
           const res = await fetchGuestyPricing(guestyId, checkin, checkout);
-          const reservationQuote = await fetchGuestyReservationQuote(
+          const nightlyQuote = await fetchGuestyNightlyQuote(
             guestyId,
             checkin,
             checkout,
@@ -737,23 +738,31 @@ function initPropertyDetailPageAntwerp() {
               ? totalPrice / nights
               : null;
 
-          quoteTotals = reservationQuote?.totals || null;
-          nightlyBreakdown = reservationQuote?.nightlyBreakdown || [];
-          displayCurrency =
-            quoteTotals?.currency || currency || reservationQuote?.currency;
+          nightlyBreakdown = nightlyQuote?.nightly || [];
+          nightlyCurrency =
+            nightlyBreakdown[0]?.currency || nightlyQuote?.currency || currency;
+          nightlySubtotal = nightlyBreakdown.reduce(
+            (sum, night) => sum + (Number(night.price) || Number(night.basePrice) || 0),
+            0
+          );
 
-          const displayTotal =
-            quoteTotals?.total != null ? quoteTotals.total : totalPrice;
+          const derivedTotal =
+            nightlyBreakdown.length > 0 ? nightlySubtotal : totalPrice;
+          const displayCurrency = nightlyBreakdown.length
+            ? nightlyCurrency
+            : currency;
 
-          if (displayTotal != null) {
+          if (derivedTotal != null) {
             const nightsLabel =
-              nights && nights > 0
-                ? ` for ${nights} night${nights > 1 ? "s" : ""}`
+              (nightlyBreakdown.length || nights) > 0
+                ? ` for ${nightlyBreakdown.length || nights} night${
+                    (nightlyBreakdown.length || nights) > 1 ? "s" : ""
+                  }`
                 : "";
             slots.forEach(({ priceEl: el }) => {
               if (!el) return;
               el.textContent = `${fmtMoney(
-                displayTotal,
+                derivedTotal,
                 displayCurrency
               )} total${nightsLabel}`;
             });
@@ -806,14 +815,17 @@ function initPropertyDetailPageAntwerp() {
                 `<li>${new Date(night.date).toLocaleDateString(undefined, {
                   month: "short",
                   day: "numeric",
-                })}: ${fmtMoney(night.basePrice, displayCurrency)}</li>`
+                })}: ${fmtMoney(
+                  Number(night.price) || Number(night.basePrice) || 0,
+                  nightlyCurrency
+                )}</li>`
             )
             .join("");
           const subtotalText =
-            quoteTotals?.subtotal != null
+            nightlySubtotal != null
               ? `<div class="room-nightly-total">Subtotal: ${fmtMoney(
-                  quoteTotals.subtotal,
-                  displayCurrency
+                  nightlySubtotal,
+                  nightlyCurrency
                 )}</div>`
               : "";
           nightlyEl.innerHTML = `<strong>Nightly</strong><ul>${items}</ul>${subtotalText}`;
@@ -823,8 +835,10 @@ function initPropertyDetailPageAntwerp() {
 
     const ciInput = container.querySelector("#checkin");
     const coInput = container.querySelector("#checkout");
+    const guestsInput = container.querySelector("#guests");
     ciInput?.addEventListener("change", refreshRoomPrices);
     coInput?.addEventListener("change", refreshRoomPrices);
+    guestsInput?.addEventListener("change", refreshRoomPrices);
 
     window.initOLSDatePicker?.();
     refreshRoomPrices();
