@@ -95,6 +95,11 @@ body {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 }
 
+.room-actions{
+    align-self: flex-end;
+}
+
+
 /* =========================================
    ANTWERP STORY — SCROLLY SECTIONS
 ========================================= */
@@ -617,6 +622,85 @@ body {
   margin-top: 6px;
   font-size: 0.95rem;
   color: #fff;
+}
+
+#antwerp-root .rooms {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+}
+
+#antwerp-root .room {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 15, 15, 0.8);
+  min-height: 160px;
+}
+
+#antwerp-root .room-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+}
+
+#antwerp-root .room-price {
+  white-space: nowrap;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+#antwerp-root .bedrooms {
+  margin: 0;
+  color: var(--muted);
+}
+
+#antwerp-root .room-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+#antwerp-root .room-actions .view-unit-btn {
+  order: 1;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#antwerp-root .room-actions .book-btn {
+  order: 2;
+  flex: 0 0 auto;
+  min-width: 120px;
+  justify-content: center;
+}
+
+#antwerp-root .card .cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+#antwerp-root .card .price {
+  font-weight: 600;
+  color: var(--gold);
+}
+
+#antwerp-root .card .btn--price {
+  min-width: 130px;
+  justify-content: center;
 }
 
 .event-text .subtitle {

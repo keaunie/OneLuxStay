@@ -115,6 +115,18 @@ function initListingsPageLosAngeles() {
     }
 
     for (const p of items) {
+      const basePrice =
+        p.price_from ??
+        p.__raw?.price?.from ??
+        (typeof p.__raw?.price === "number" ? p.__raw.price : null);
+      const displayCurrency =
+        p.currency || p.__raw?.price?.currency || "USD";
+      const priceMarkup =
+        basePrice != null
+          ? `<div class="price">Starts at ${currencySymbol(
+              displayCurrency
+            )}${Number(basePrice).toLocaleString()} / night</div>`
+          : `<div class="price ghost">Starts at —</div>`;
       const card = document.createElement("article");
       card.className = "card";
       card.innerHTML = `
@@ -159,12 +171,7 @@ function initListingsPageLosAngeles() {
           .join("")}</div>
 
           <div class="cta">
-            ${p.price_from
-          ? `<div class="price">From ${currencySymbol(
-            p.currency
-          )}${p.price_from.toLocaleString()} / night</div>`
-          : `<div class="price ghost">Price available on request</div>`
-        }
+            ${priceMarkup}
             <!-- UPDATED: route to SPA detail page for Los Angeles -->
             <a class="btn btn--gold btn--price" href="/losangelesProp?id=${encodeURIComponent(
           p.id
@@ -256,6 +263,8 @@ function initPropertyDetailPageLosAngeles() {
             }" data-index="${i}">`
         )
         .join("")}
+      </div>
+
         </div>
         <div class="carousel-thumbs">
           ${(property.images || [])
@@ -300,38 +309,62 @@ function initPropertyDetailPageLosAngeles() {
 
       <div class="rooms">
         ${(property.rooms || [])
-        .map(
-          (room, idx) => `
+          .map((room, idx) => {
+            const tourJson =
+              room.virtualTourJson ||
+              room.virtual_tour_json ||
+              room.virtualTourUrl ||
+              (property.virtualTours && property.virtualTours[idx]?.tourJson) ||
+              property.virtualTourJson ||
+              "";
+
+            const hasTour = !!tourJson;
+
+            return `
         <div class="room" data-room-index="${idx}">
-        <div class="room-header">
-          <button 
-            type="button" 
-            class="room-type room-trigger"
-            data-room-index="${idx}"
-          >
-            ${room.type} (${room.guests} guests)
-          </button>
-          <div class="room-price">
-            Starts at: ${fmtMoney(
-            room.price_per_night,
-            property.price?.currency || "USD"
-          )}
+          <div class="room-header">
+            <button 
+              type="button" 
+              class="room-type room-trigger"
+              data-room-index="${idx}">
+              ${room.type} (${room.guests} guests)
+            </button>
           </div>
-        </div>
-        <div class="bedrooms">
-          ${(room.bedrooms || [])
+          <div class="bedrooms">
+            ${(room.bedrooms || [])
               .map((b) => `Bedroom ${b.bedroom}: ${b.beds}`)
               .join(", ")}
-        </div>
-        <a class="book-btn" href="#"
-           data-room-guests="${room.guests}"
-           data-room-id="${property.id}" 
-           data-guesty-id="${room.guestyid}">
-          Book Now
-        </a>
-        </div>`
-        )
-        .join("")}
+          </div>
+
+          <div class="room-price" style="align-self: flex-end;"
+             data-base-price="${room.price_per_night ?? ""}"
+             data-currency="${property.price?.currency || "USD"}"
+             style="align-self: start;">
+            Starts at: ${fmtMoney(room.price_per_night, property.price?.currency || "USD")}
+          </div>
+          <div class="room-nightly" style="align-self: flex-end;" data-nightly-breakdown></div>
+
+          <div class="room-actions" style="align-self: flex-end;">
+            ${
+              hasTour
+                ? `<a
+                   class="view-unit-btn"
+                   href="/360?tour=${encodeURIComponent(tourJson)}"
+                   data-link>
+                   View Unit (Virtual Tour)
+                 </a>`
+                : ""
+            }
+            <a class="book-btn" href="#"
+               data-room-guests="${room.guests}"
+               data-room-id="${property.id}" 
+               data-guesty-id="${room.guestyid || ""}">
+              Book Now
+            </a>
+          </div>
+        </div>`;
+          })
+          .join("")}
       </div>
 
       <!-- Room detail modal -->

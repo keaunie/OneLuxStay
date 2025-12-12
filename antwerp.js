@@ -63,7 +63,8 @@ async function fetchGuestyPricing(guestyId, startDate, endDate) {
     if (!data) return null;
 
     const days = Array.isArray(data.days) ? data.days : [];
-    const totals = data.totals && typeof data.totals === "object" ? data.totals : null;
+    const totals =
+      data.totals && typeof data.totals === "object" ? data.totals : null;
     const currency =
       days[0]?.currency || totals?.currency || data.currency || "EUR";
 
@@ -77,10 +78,7 @@ async function fetchGuestyPricing(guestyId, startDate, endDate) {
     })();
     const nights = nightsFromDays || nightsFromRange;
 
-    const nightlySum = days.reduce(
-      (acc, d) => acc + (Number(d.price) || 0),
-      0
-    );
+    const nightlySum = days.reduce((acc, d) => acc + (Number(d.price) || 0), 0);
     const totalFromTotals = totals
       ? (Number(totals.subTotal) || 0) + (Number(totals.taxes) || 0)
       : 0;
@@ -279,6 +277,17 @@ function initListingsPage() {
     }
 
     for (const p of items) {
+      const basePrice =
+        p.price_from ??
+        p.__raw?.price?.from ??
+        (typeof p.__raw?.price === "number" ? p.__raw.price : null);
+      const displayCurrency = p.currency || p.__raw?.price?.currency || "EUR";
+      const priceMarkup =
+        basePrice != null
+          ? `<div class="price">Starts at ${currencySymbol(
+              displayCurrency
+            )}${Number(basePrice).toLocaleString()} / night</div>`
+          : `<div class="price ghost">Starts at —</div>`;
       const card = document.createElement("article");
       card.className = "card";
       card.innerHTML = `
@@ -324,13 +333,7 @@ function initListingsPage() {
             .join("")}</div>
 
           <div class="cta">
-            ${
-              p.price_from
-                ? `<div class="price">From ${currencySymbol(
-                    p.currency
-                  )}${p.price_from.toLocaleString()} / night</div>`
-                : `<div class="price ghost">Price available on request</div>`
-            }
+            ${priceMarkup}
             <a class="btn btn--gold btn--price" href="/antwerpProp?id=${encodeURIComponent(
               p.id
             )}" data-link>
@@ -597,28 +600,23 @@ function initPropertyDetailPageAntwerp() {
             >
               ${room.type} (${room.guests} guests)
             </button>
-        <div class="room-price">
-          Starts at: ${fmtMoney(
-            room.price_per_night,
-            property.price?.currency
-          )}
-        </div>
-        <div class="room-nightly" data-nightly-breakdown></div>
           </div>
           <div class="bedrooms">
             ${(room.bedrooms || [])
               .map((b) => `Bedroom ${b.bedroom}: ${b.beds}`)
-              .join(", ")}
+              .join(" | ")}
           </div>
 
-          <div class="room-actions">
-            <a class="book-btn" href="#"
-               data-room-guests="${room.guests}"
-               data-room-id="${property.id}" 
-               data-guesty-id="${room.guestyid}">
-              Book Now
-            </a>
+          <div class="room-price" style="align-self: flex-end;"
+             data-base-price="${room.price_per_night ?? ""}"
+             data-currency="${
+               property.price?.currency || "EUR"
+             }" style="align-self: start;">
+          Starts at: ${fmtMoney(room.price_per_night, property.price?.currency)}
+        </div>
+        <div class="room-nightly" style="align-self: flex-end;" data-nightly-breakdown></div>
 
+          <div class="room-actions" style="align-self: flex-end;">
             ${
               hasTour
                 ? `<a
@@ -630,6 +628,12 @@ function initPropertyDetailPageAntwerp() {
                  </a>`
                 : ""
             }
+            <a class="book-btn" href="#"
+               data-room-guests="${room.guests}"
+               data-room-id="${property.id}" 
+               data-guesty-id="${room.guestyid}">
+              Book Now
+            </a>
           </div>
         </div>`;
           })
@@ -683,29 +687,40 @@ function initPropertyDetailPageAntwerp() {
       let globalMin = null;
       let globalCurrency = property.price?.currency || "EUR";
 
-    const roomEls = Array.from(container.querySelectorAll(".room"));
-    const guestsSelect = container.querySelector("#guests");
-    const selectedGuests = Number(guestsSelect?.value || 1);
+      const roomEls = Array.from(container.querySelectorAll(".room"));
+      const guestsSelect = container.querySelector("#guests");
+      const selectedGuests = Number(guestsSelect?.value || 1);
       if (!roomEls.length) return;
 
       // Group all room-price elements by Guesty listing id
       const byListing = new Map();
 
+      const applyBasePrice = (el) => {
+        if (!el) return;
+        const base = Number(el.dataset.basePrice);
+        const currency = el.dataset.currency || globalCurrency;
+        if (Number.isFinite(base) && base > 0) {
+          el.textContent = `Starts at: ${fmtMoney(base, currency)}`;
+        } else {
+          el.textContent = "Price on request";
+        }
+      };
+
       for (const roomEl of roomEls) {
-      const bookBtn = roomEl.querySelector(".book-btn[data-guesty-id]");
-      const priceEl = roomEl.querySelector(".room-price");
-      const nightlyEl = roomEl.querySelector("[data-nightly-breakdown]");
+        const bookBtn = roomEl.querySelector(".book-btn[data-guesty-id]");
+        const priceEl = roomEl.querySelector(".room-price");
+        const nightlyEl = roomEl.querySelector("[data-nightly-breakdown]");
         const guestyId = bookBtn?.dataset.guestyId;
 
         if (!guestyId || !priceEl) continue;
 
-        priceEl.textContent = "Loading live price…";
+        applyBasePrice(priceEl);
 
-      if (!byListing.has(guestyId)) {
-        byListing.set(guestyId, []);
+        if (!byListing.has(guestyId)) {
+          byListing.set(guestyId, []);
+        }
+        byListing.get(guestyId).push({ priceEl, nightlyEl });
       }
-      byListing.get(guestyId).push({ priceEl, nightlyEl });
-    }
 
       // Call Netlify func once per Guesty listing id
       for (const [guestyId, slots] of byListing.entries()) {
@@ -723,7 +738,7 @@ function initPropertyDetailPageAntwerp() {
 
           if (!res) {
             slots.forEach(({ priceEl: el, nightlyEl }) => {
-              if (el) el.textContent = "Price on request";
+              applyBasePrice(el);
               if (nightlyEl) nightlyEl.textContent = "";
             });
             continue;
@@ -742,7 +757,8 @@ function initPropertyDetailPageAntwerp() {
           nightlyCurrency =
             nightlyBreakdown[0]?.currency || nightlyQuote?.currency || currency;
           nightlySubtotal = nightlyBreakdown.reduce(
-            (sum, night) => sum + (Number(night.price) || Number(night.basePrice) || 0),
+            (sum, night) =>
+              sum + (Number(night.price) || Number(night.basePrice) || 0),
             0
           );
 
@@ -797,7 +813,7 @@ function initPropertyDetailPageAntwerp() {
         } catch (err) {
           console.warn("Guesty price error for listing", guestyId, err);
           slots.forEach(({ priceEl: el, nightlyEl }) => {
-            if (el) el.textContent = "Price on request";
+            applyBasePrice(el);
             if (nightlyEl) nightlyEl.textContent = "";
           });
           continue;

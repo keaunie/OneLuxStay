@@ -80,13 +80,13 @@ function initListingsPageMiami() {
     return String(str).replace(
       /[&<>"']/g,
       (s) =>
-      ({
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#39;",
-      }[s])
+        ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;",
+        }[s])
     );
   }
   function fmtScore(x) {
@@ -102,8 +102,9 @@ function initListingsPageMiami() {
   function update() {
     const items = derive();
     if (els.meta) {
-      els.meta.textContent = `${items.length} ${items.length === 1 ? "property" : "properties"
-        } found`;
+      els.meta.textContent = `${items.length} ${
+        items.length === 1 ? "property" : "properties"
+      } found`;
     }
     if (!els.results) return;
 
@@ -115,60 +116,67 @@ function initListingsPageMiami() {
     }
 
     for (const p of items) {
+      const basePrice =
+        p.price_from ??
+        p.__raw?.price?.from ??
+        (typeof p.__raw?.price === "number" ? p.__raw.price : null);
+      const displayCurrency = p.currency || p.__raw?.price?.currency || "USD";
+      const priceMarkup =
+        basePrice != null
+          ? `<div class="price">Starts at ${currencySymbol(
+              displayCurrency
+            )}${Number(basePrice).toLocaleString()} / night</div>`
+          : `<div class="price ghost">Starts at —</div>`;
       const card = document.createElement("article");
       card.className = "card";
       card.innerHTML = `
         <div class="media">
-          <img src="${(p.images && p.images[0]) ||
-        "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200&auto=format&fit=crop"
-        }"
+          <img src="${
+            (p.images && p.images[0]) ||
+            "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200&auto=format&fit=crop"
+          }"
                alt="${escapeHtml(p.name)} in ${escapeHtml(
-          p.district || "Miami"
-        )}" loading="lazy" />
+        p.district || "Miami"
+      )}" loading="lazy" />
         </div>
         <div class="body">
           <h3 class="title">${escapeHtml(p.name)}</h3>
-          <div class="loc">${escapeHtml(
-          p.district || "Miami"
-        )} • ${escapeHtml(cap(p.area || ""))}${p.distance_km ? ` • ${p.distance_km} km from center` : ""
-        }</div>
+          <div class="loc">${escapeHtml(p.district || "Miami")} • ${escapeHtml(
+        cap(p.area || "")
+      )}${p.distance_km ? ` • ${p.distance_km} km from center` : ""}</div>
 
           <div class="badges">
             <span class="badge score" title="Guest score">${fmtScore(
-          p.rating
-        )}</span>
+              p.rating
+            )}</span>
             <span class="badge" title="Reviews">${fmtReviews(
-          p.reviews
-        )} reviews</span>
-            ${p.stars
-          ? `<span class="badge" title="Star rating">${"★".repeat(
-            p.stars
-          )}${"☆".repeat(Math.max(0, 5 - p.stars))}</span>`
-          : ""
-        }
+              p.reviews
+            )} reviews</span>
+            ${
+              p.stars
+                ? `<span class="badge" title="Star rating">${"★".repeat(
+                    p.stars
+                  )}${"☆".repeat(Math.max(0, 5 - p.stars))}</span>`
+                : ""
+            }
           </div>
 
           <p class="desc">${escapeHtml(
-          p.description ||
-          "A refined stay with privacy, comfort and thoughtful design."
-        )}</p>
+            p.description ||
+              "A refined stay with privacy, comfort and thoughtful design."
+          )}</p>
 
           <div class="amen">${(p.amenities || [])
-          .slice(0, 6)
-          .map((a) => `<span class="it">${escapeHtml(a)}</span>`)
-          .join("")}</div>
+            .slice(0, 6)
+            .map((a) => `<span class="it">${escapeHtml(a)}</span>`)
+            .join("")}</div>
 
           <div class="cta">
-            ${p.price_from
-          ? `<div class="price">From ${currencySymbol(
-            p.currency
-          )}${p.price_from.toLocaleString()} / night</div>`
-          : `<div class="price ghost">Price available on request</div>`
-        }
+            ${priceMarkup}
             <!-- Route to SPA detail page for Miami -->
             <a class="btn btn--gold btn--price" href="/miamiProp?id=${encodeURIComponent(
-          p.id
-        )}" data-link>
+              p.id
+            )}" data-link>
               Show prices
             </a>
           </div>
@@ -232,46 +240,53 @@ function initPropertyDetailPageMiami() {
     container.innerHTML = `
       <a class="btn" href="/miami" style="color: black;" data-link>&larr; Back to listings</a>
       <h1 style="margin:12px 0 6px">${property.title}</h1>
-      ${property.badge
-        ? `<div class="badge" style="margin-bottom:8px">${property.badge}</div>`
-        : ""
+      ${
+        property.badge
+          ? `<div class="badge" style="margin-bottom:8px">${property.badge}</div>`
+          : ""
       }
-      <div class="location">${property.location?.area || ""} • ${property.address || ""
-      }</div>
+      <div class="location">${property.location?.area || ""} • ${
+      property.address || ""
+    }</div>
       <div class="rating" style="margin:8px 0 14px">
         Rating: <span>${property.rating ?? ""}</span>
-        ${property.reviews
-        ? `(${property.reviews.toLocaleString()} reviews)`
-        : ""
-      }
+        ${
+          property.reviews
+            ? `(${property.reviews.toLocaleString()} reviews)`
+            : ""
+        }
       </div>
 
       <div class="carousel-container">
         <div class="carousel-main">
           ${(property.images || [])
-        .map(
-          (img, i) =>
-            `<img src="${img}" alt="${property.title} image ${i + 1
-            }" data-index="${i}">`
-        )
-        .join("")}
+            .map(
+              (img, i) =>
+                `<img src="${img}" alt="${property.title} image ${
+                  i + 1
+                }" data-index="${i}">`
+            )
+            .join("")}
+      </div>
+
         </div>
         <div class="carousel-thumbs">
           ${(property.images || [])
-        .map(
-          (img, i) =>
-            `<img src="${img}" alt="Thumb ${i + 1}" data-index="${i}" class="${i === 0 ? "active" : ""
-            }">`
-        )
-        .join("")}
+            .map(
+              (img, i) =>
+                `<img src="${img}" alt="Thumb ${
+                  i + 1
+                }" data-index="${i}" class="${i === 0 ? "active" : ""}">`
+            )
+            .join("")}
         </div>
       </div>
 
       <div class="summary">${property.summary || ""}</div>
       <div class="price">From ${fmtMoney(
-          property.price?.from,
-          property.price?.currency || "USD"
-        )}</div>
+        property.price?.from,
+        property.price?.currency || "USD"
+      )}</div>
 
       <!-- ============ Selector (Booking.com-style dates) ============ -->
       <div class="selector">
@@ -293,16 +308,26 @@ function initPropertyDetailPageMiami() {
 
         <label>Guests
           <select id="guests">${Array.from(
-          { length: 6 },
-          (_, i) => `<option value="${i + 1}">${i + 1}</option>`
-        ).join("")}</select>
+            { length: 6 },
+            (_, i) => `<option value="${i + 1}">${i + 1}</option>`
+          ).join("")}</select>
         </label>
       </div>
 
-      <div class="rooms">
+            <div class="rooms">
         ${(property.rooms || [])
-        .map(
-          (room, idx) => `
+          .map((room, idx) => {
+            const tourJson =
+              room.virtualTourJson ||
+              room.virtual_tour_json ||
+              room.virtualTourUrl ||
+              (property.virtualTours && property.virtualTours[idx]?.tourJson) ||
+              property.virtualTourJson ||
+              "";
+
+            const hasTour = !!tourJson;
+
+            return `
         <div class="room" data-room-index="${idx}">
           <div class="room-header">
             <button 
@@ -312,27 +337,45 @@ function initPropertyDetailPageMiami() {
             >
               ${room.type} (${room.guests} guests)
             </button>
-            <div class="room-price">
-             Starts at: ${fmtMoney(
-            room.price_per_night,
-            property.price?.currency || "USD"
-          )}
-            </div>
           </div>
           <div class="bedrooms">
             ${(room.bedrooms || [])
               .map((b) => `Bedroom ${b.bedroom}: ${b.beds}`)
               .join(", ")}
           </div>
-          <a class="book-btn" href="#"
-             data-room-guests="${room.guests}"
-             data-room-id="${property.id}" 
-             data-guesty-id="${room.guestyid}">
-            Book Now
-          </a>
-        </div>`
-        )
-        .join("")}
+
+          <div class="room-price" style="align-self: flex-end;"
+             data-base-price="${room.price_per_night ?? ""}"
+             data-currency="${property.price?.currency || "USD"}"
+             style="align-self: start;">
+            Starts at: ${fmtMoney(
+              room.price_per_night,
+              property.price?.currency || "USD"
+            )}
+          </div>
+          <div class="room-nightly" style="align-self: flex-end;" data-nightly-breakdown></div>
+
+          <div class="room-actions" style="align-self: flex-end;">
+            ${
+              hasTour
+                ? `<a
+                   class="view-unit-btn"
+                   href="/360?tour=${encodeURIComponent(tourJson)}"
+                   data-link>
+                   View Unit (Virtual Tour)
+                 </a>`
+                : ""
+            }
+            <a class="book-btn" href="#"
+               data-room-guests="${room.guests}"
+               data-room-id="${property.id}" 
+               data-guesty-id="${room.guestyid || ""}">
+              Book Now
+            </a>
+          </div>
+        </div>`;
+          })
+          .join("")}
       </div>
 
       <!-- Room detail modal -->
@@ -367,26 +410,24 @@ function initPropertyDetailPageMiami() {
       </div>
 
       <div class="similar-properties">
-        <h2>Similar Properties</h2>
         <div class="similar-list">
           ${all
-        .filter((x) => x.id !== property.id)
-        .map(
-          (sp) => `
+            .filter((x) => x.id !== property.id)
+            .map(
+              (sp) => `
             <div class="similar-card">
-              <img src="${(sp.images && sp.images[0]) || ""}" alt="${sp.title
-            }">
+              <img src="${(sp.images && sp.images[0]) || ""}" alt="${sp.title}">
               <h3>${sp.title}</h3>
               <div class="price">${fmtMoney(
-              sp.price?.from,
-              sp.price?.currency || "USD"
-            )}</div>
+                sp.price?.from,
+                sp.price?.currency || "USD"
+              )}</div>
               <a class="book-btn" href="/miamiProp?id=${encodeURIComponent(
-              sp.id
-            )}" data-link>View</a>
+                sp.id
+              )}" data-link>View</a>
             </div>`
-        )
-        .join("")}
+            )
+            .join("")}
         </div>
       </div>
     `;
@@ -472,8 +513,8 @@ function initPropertyDetailPageMiami() {
           `?minOccupancy=${encodeURIComponent(roomGuests)}` +
           (checkin && checkout
             ? `&checkIn=${encodeURIComponent(
-              checkin
-            )}&checkOut=${encodeURIComponent(checkout)}`
+                checkin
+              )}&checkOut=${encodeURIComponent(checkout)}`
             : "");
 
         // window.open(url, "_blank", "noopener");
@@ -515,9 +556,9 @@ function initPropertyDetailPageMiami() {
       // Price
       priceEl.textContent = room.price_per_night
         ? `From ${fmtMoney(
-          room.price_per_night,
-          property.price?.currency || "USD"
-        )} per night`
+            room.price_per_night,
+            property.price?.currency || "USD"
+          )} per night`
         : "";
 
       // Use the room.images first, fall back to property.images
@@ -525,8 +566,8 @@ function initPropertyDetailPageMiami() {
         (Array.isArray(room.images) && room.images.length
           ? room.images
           : Array.isArray(property.images)
-            ? property.images
-            : []) || [];
+          ? property.images
+          : []) || [];
 
       if (imgs.length) {
         mainImg.src = imgs[0];

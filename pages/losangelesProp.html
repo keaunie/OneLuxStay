@@ -225,35 +225,102 @@
 
     .room {
       background: var(--card);
-      padding: 16px;
+      padding: 18px;
       border-radius: 18px;
       display: flex;
       flex-direction: column;
+      gap: 10px;
       border: 1px solid rgba(255, 255, 255, .06);
       box-shadow: var(--shadow);
+      min-height: 170px;
     }
 
     .room-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 10px;
+      gap: 12px;
+      margin-bottom: 0;
     }
 
     .room-type {
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
+      background: none;
+      border: none;
+      padding: 0;
+      color: #fff;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .room-type:focus-visible {
+      outline: none;
+      text-decoration: underline;
     }
 
     .room-price {
       font-weight: 700;
       color: var(--gold);
+      text-align: right;
     }
 
     .bedrooms {
       font-size: .92rem;
       color: var(--muted);
-      margin-bottom: 10px;
+      margin: 0;
+    }
+
+    .room-nightly {
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    .room-nightly ul {
+      list-style: none;
+      padding: 0;
+      margin: 6px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .room-nightly li {
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 4px 10px;
+      background: rgba(0, 0, 0, 0.35);
+      font-size: 0.85rem;
+      color: #fff;
+    }
+
+    .room-nightly-total {
+      margin-top: 6px;
+      font-size: 0.95rem;
+      color: #fff;
+    }
+
+    .room-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .room-actions .view-unit-btn {
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, .25);
+      background: transparent;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .room-actions .book-btn {
+      min-width: 130px;
+      justify-content: center;
     }
 
     /* CTA */
