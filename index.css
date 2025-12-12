@@ -2840,7 +2840,7 @@ a {
   }
 
   #nav.scrolled .logo img {
-    width: clamp(20px, 7vw, 200px)
+    width: clamp(36px, 10vw, 220px)
   }
 }
 
@@ -2854,6 +2854,60 @@ a {
   --stroke: rgba(255, 255, 255, .15);
   --card-bg: rgba(10, 10, 10, .45);
   --radius: 16px
+}
+
+/* ===== Global scroll reveal (all cities) ===== */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0) scale(0.98);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll,
+  .animate-on-scroll.visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ===== City hero zoom-in on load ===== */
+#antwerp-root .hero,
+#dubai-root .hero,
+#losangeles-root .hero,
+#hollywood-root .hero,
+#redondo-root .hero,
+#miami-root .hero {
+  animation: cityHeroZoomIn 0.9s ease-out both;
+}
+
+@keyframes cityHeroZoomIn {
+  from {
+    opacity: 0;
+    transform: scale(1.08) translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #antwerp-root .hero,
+  #dubai-root .hero,
+  #losangeles-root .hero,
+  #hollywood-root .hero,
+  #redondo-root .hero,
+  #miami-root .hero {
+    animation: none !important;
+  }
 }
 
 .ols-about .container,

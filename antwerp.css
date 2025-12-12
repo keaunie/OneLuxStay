@@ -751,8 +751,3 @@ body {
   letter-spacing: 0.5px;
   font-weight: 100;
 }
-
-.selector.search-box {
-  display: flex;
-  grid-template-columns: none;
-}

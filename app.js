@@ -456,6 +456,49 @@ function setupCityExperience(root) {
     );
   }
 
+  // Scroll reveal for split sections/cards
+  (function initReveals() {
+    const targets = Array.from(
+      root.querySelectorAll(
+        ".section-split .split-media, .section-split .split-body, .section, .property-card, .landmark-showcase, .transit-stage, .transit-roster"
+      )
+    );
+
+    if (!targets.length) return;
+
+    // assign directional presets for the split blocks
+    targets.forEach((el) => {
+      if (el.classList.contains("split-media")) el.classList.add("fade-left");
+      if (el.classList.contains("split-body")) el.classList.add("fade-right");
+      el.classList.add("will-animate");
+    });
+
+    if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+      targets.forEach((el) => el.classList.add("is-visible"));
+      return;
+    }
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.16, rootMargin: "0px 0px -10% 0px" }
+    );
+
+    targets.forEach((el, idx) => {
+      if (idx % 3 === 1) el.classList.add("animate-delay-1");
+      if (idx % 3 === 2) el.classList.add("animate-delay-2");
+      io.observe(el);
+    });
+
+    cleanupTasks.push(() => io.disconnect());
+  })();
+
   const cursorOrb = root.querySelector(".cursor-orb");
   const cursorTrail = root.querySelector(".cursor-trail");
   if (
@@ -610,6 +653,56 @@ function setupCityExperience(root) {
         landmarkTokens[0]
     );
 
+    // Swipe support for landmark carousel (mobile)
+    const showcase = root.querySelector(".landmark-showcase");
+    if (showcase) {
+      let startX = 0;
+      let deltaX = 0;
+      const threshold = 30;
+
+      const step = (delta) => {
+        const total = landmarkTokens.length;
+        const currentIdx = landmarkTokens.findIndex((btn) =>
+          btn.classList.contains("active")
+        );
+        const nextIdx =
+          ((currentIdx < 0 ? 0 : currentIdx) + delta + total) % total;
+        activate(landmarkTokens[nextIdx]);
+      };
+
+      const onTouchStart = (e) => {
+        const touch = e.touches?.[0];
+        if (!touch) return;
+        startX = touch.clientX;
+        deltaX = 0;
+      };
+
+      const onTouchMove = (e) => {
+        const touch = e.touches?.[0];
+        if (!touch) return;
+        deltaX = touch.clientX - startX;
+      };
+
+      const onTouchEnd = () => {
+        if (Math.abs(deltaX) > threshold) {
+          if (deltaX < 0) step(1);
+          else step(-1);
+        }
+        startX = 0;
+        deltaX = 0;
+      };
+
+      showcase.addEventListener("touchstart", onTouchStart, { passive: true });
+      showcase.addEventListener("touchmove", onTouchMove, { passive: true });
+      showcase.addEventListener("touchend", onTouchEnd);
+
+      cleanupTasks.push(() => {
+        showcase.removeEventListener("touchstart", onTouchStart);
+        showcase.removeEventListener("touchmove", onTouchMove);
+        showcase.removeEventListener("touchend", onTouchEnd);
+      });
+    }
+
     cleanupTasks.push(() =>
       listeners.forEach(({ token, handler }) =>
         token.removeEventListener("click", handler)
@@ -627,6 +720,7 @@ function setupCityExperience(root) {
     const ghostRightImg = root.querySelector("[data-transit-ghost-right]");
     const prevBtn = root.querySelector("[data-transit-prev]");
     const nextBtn = root.querySelector("[data-transit-next]");
+    const swipeArea = root.querySelector(".transit-spotlight");
     let currentIndex = transitTokens.findIndex((btn) =>
       btn.classList.contains("active")
     );
@@ -684,6 +778,46 @@ function setupCityExperience(root) {
     const nextHandler = () => step(1);
     prevBtn?.addEventListener("click", prevHandler);
     nextBtn?.addEventListener("click", nextHandler);
+
+    // Basic swipe support for spotlight (mobile)
+    if (swipeArea) {
+      let startX = 0;
+      let deltaX = 0;
+      const threshold = 30;
+
+      const onTouchStart = (e) => {
+        const touch = e.touches?.[0];
+        if (!touch) return;
+        startX = touch.clientX;
+        deltaX = 0;
+      };
+
+      const onTouchMove = (e) => {
+        const touch = e.touches?.[0];
+        if (!touch) return;
+        deltaX = touch.clientX - startX;
+      };
+
+      const onTouchEnd = () => {
+        if (Math.abs(deltaX) > threshold) {
+          if (deltaX < 0) nextHandler();
+          else prevHandler();
+        }
+        startX = 0;
+        deltaX = 0;
+      };
+
+      swipeArea.addEventListener("touchstart", onTouchStart, { passive: true });
+      swipeArea.addEventListener("touchmove", onTouchMove, { passive: true });
+      swipeArea.addEventListener("touchend", onTouchEnd);
+
+      cleanupTasks.push(() => {
+        swipeArea.removeEventListener("touchstart", onTouchStart);
+        swipeArea.removeEventListener("touchmove", onTouchMove);
+        swipeArea.removeEventListener("touchend", onTouchEnd);
+      });
+    }
+
     activateTransit(currentIndex);
 
     cleanupTasks.push(() => {

@@ -44,10 +44,6 @@
                 <li>Fashion Quarter ateliers</li>
                 <li>Historic Cathedral Square</li>
             </ul>
-            <div class="hero-actions">
-                <a class="btn btn-primary" href="/properties-antwerp" data-link>Browse Antwerp Suites</a>
-                <a class="btn btn-ghost" href="/properties-list" data-link>Explore All Cities</a>
-            </div>
         </div>
     </section>
 
@@ -59,12 +55,12 @@
     <section class="section section-split animate-on-scroll"
         style="--bg-img: url('https://assets.guesty.com/image/upload/v1740605739/production/666b3af27fc6d5653142b0af/gvqbbvx6v5lvdmiacztd.jpg')">
         <div class="container split">
-            <div class="split-media animate-on-scroll">
+            <div class="split-media">
                 <img src="https://assets.guesty.com/image/upload/v1728288330/production/666b3af27fc6d5653142b0af/roqvk0ey4otg4y7xm1t1.jpg"
                     alt="Diamond District residence — refined living room with TV wall and warm tones" />
                 <span class="badge badge-sale">10% – 20% off</span>
             </div>
-            <div class="split-body animate-on-scroll">
+            <div class="split-body">
                 <h2>Diamond District <span style="font-size: 15px; color: var(--muted);" muted>Jacob Jordaensstraat,
                         Antwerpen</span></h2>
                 <p>Minutes from Central Station and Meir, stay amidst Antwerp’s gem-cutting heritage, designer
@@ -77,12 +73,12 @@
     <section class="section section-split invert animate-on-scroll"
         style="--bg-img: url('https://assets.guesty.com/image/upload/v1740605767/production/666b3af27fc6d5653142b0af/b0rtxaqhboqgp7by1qbs.jpg')">
         <div class="container split">
-            <div class="split-media animate-on-scroll">
+            <div class="split-media">
                 <img src="https://assets.guesty.com/image/upload/v1745510790/production/666b3af27fc6d5653142b0af/dp2eipfy51rfoie4fnoq.jpg"
                     alt="Fashion District apartment — bright, modern interior near MoMu & designer studios" />
                 <span class="badge badge-sale">10% – 20% off</span>
             </div>
-            <div class="split-body animate-on-scroll">
+            <div class="split-body">
                 <h2>Fashion District <span style="font-size: 15px; color: var(--muted);" muted>Lange Leemstraat,
                         Antwerpen</span></h2>
                 <p>Wake up among ateliers and galleries — steps to MoMu, Meir, and Antwerp’s best cafés and restaurants.
@@ -95,12 +91,12 @@
     <section class="section section-split animate-on-scroll"
         style="--bg-img: url('https://assets.guesty.com/image/upload/v1747520361/production/666b3af27fc6d5653142b0af/flqtkx8vegyi9pa7w0om.jpg')">
         <div class="container split">
-            <div class="split-media animate-on-scroll">
+            <div class="split-media">
                 <img src="https://assets.guesty.com/image/upload/h_960/v1747520368/production/666b3af27fc6d5653142b0af/xmefmeaoi3nla534otbt.jpg"
                     alt="Central Signature living — sleek finishes, abundant light near Antwerp Central" />
                 <span class="badge badge-sale">10% – 20% off</span>
             </div>
-            <div class="split-body animate-on-scroll">
+            <div class="split-body">
                 <h2>Central Signature <span style="font-size: 15px; color: var(--muted);" muted>Lange Leemstraat,
                         Antwerpen</span></h2>
                 <p>Refined living close to cultural landmarks, boutiques, and the iconic Antwerp-Central.</p>
@@ -112,12 +108,12 @@
     <section class="section section-split invert animate-on-scroll"
         style="--bg-img: url('https://assets.guesty.com/image/upload/v1740605749/production/666b3af27fc6d5653142b0af/flahfxc5016aisjp5pj9.jpg')">
         <div class="container split">
-            <div class="split-media animate-on-scroll">
+            <div class="split-media">
                 <img src="https://assets.guesty.com/image/upload/v1740605609/production/666b3af27fc6d5653142b0af/mprj2u4s6ldpoauxfsbb.jpg"
                     alt="City Centre apartment — bright contemporary lounge near Old Town & Cathedral" />
                 <span class="badge badge-sale">10% – 20% off</span>
             </div>
-            <div class="split-body animate-on-scroll">
+            <div class="split-body">
                 <h2>City Centre <span style="font-size: 15px; color: var(--muted);" muted>Kribbestraat, Antwerpen</span>
                 </h2>
 
@@ -1160,11 +1156,19 @@
 
         .page-antwerp .transit-stage {
             flex-direction: column;
+            align-items: stretch;
+            gap: 20px;
         }
 
+        .page-antwerp .transit-spotlight {
+            width: 100%;
+        }
+    }
+
+    /* Hide transit arrows on smaller screens; rely on swipe */
+    @media (max-width: 900px) {
         .page-antwerp .transit-arrow {
-            width: 64px;
-            height: 64px;
+            display: none;
         }
     }
 
@@ -1502,6 +1506,15 @@
         }
 
         /* (use image only if you later decide to swap) */
+
+        /* Ensure a visible backdrop on mobile even if media fails */
+        #antwerp-root .immersive-hero {
+            background:
+                radial-gradient(1200px 600px at 50% -20%, rgba(212, 175, 55, .08), transparent 45%),
+                linear-gradient(180deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .85)),
+                url("https://images.pexels.com/photos/220760/pexels-photo-220760.jpeg") center/cover no-repeat,
+                #0b0b0d;
+        }
     }
 
 
@@ -1785,23 +1798,6 @@
     .page-antwerp .animate-on-scroll.visible {
         opacity: 1;
         transform: translate3d(0, 0, 0);
-    }
-
-    /* Directional swipes for split sections */
-    .page-antwerp .section-split:not(.invert) .split-media.animate-on-scroll {
-        transform: translate3d(-32px, 0, 0);
-    }
-
-    .page-antwerp .section-split:not(.invert) .split-body.animate-on-scroll {
-        transform: translate3d(32px, 0, 0);
-    }
-
-    .page-antwerp .section-split.invert .split-media.animate-on-scroll {
-        transform: translate3d(32px, 0, 0);
-    }
-
-    .page-antwerp .section-split.invert .split-body.animate-on-scroll {
-        transform: translate3d(-32px, 0, 0);
     }
 </style>
 

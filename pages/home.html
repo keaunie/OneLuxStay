@@ -503,6 +503,17 @@
     text-align: center;
   }
 
+  /* Mobile fallback backdrop for hero */
+  @media (max-width: 640px) {
+    .immersive-hero {
+      background:
+        radial-gradient(1200px 600px at 50% -20%, rgba(212, 175, 55, .08), transparent 45%),
+        linear-gradient(180deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .85)),
+        url("https://images.pexels.com/photos/1688186/pexels-photo-1688186.jpeg") center/cover no-repeat,
+        #0b0b0d;
+    }
+  }
+
   .cursor-orb {
     position: fixed;
     top: 0;
@@ -1403,6 +1414,9 @@
     .destination-card {
       flex-direction: column;
       text-align: center;
+      transform: scale(0.8);
+      max-width: 320px;
+      margin: 0 auto 8px;
     }
 
     .destination-body {

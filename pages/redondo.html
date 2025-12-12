@@ -1040,6 +1040,23 @@
         outline-offset: 3px;
     }
 
+    /* Mobile: hide transit arrows, rely on swipe */
+    @media (max-width: 900px) {
+        .page-redondo .transit-stage {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 20px;
+        }
+
+        .page-redondo .transit-arrow {
+            display: none;
+        }
+
+        .page-redondo .transit-spotlight {
+            width: 100%;
+        }
+    }
+
     /* CTA */
     .page-redondo .cta {
         padding-block: 56px;

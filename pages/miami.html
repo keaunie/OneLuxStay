@@ -1042,6 +1042,23 @@
         outline-offset: 3px;
     }
 
+    /* Mobile: hide transit arrows, rely on swipe */
+    @media (max-width: 900px) {
+        .page-miami .transit-stage {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 20px;
+        }
+
+        .page-miami .transit-arrow {
+            display: none;
+        }
+
+        .page-miami .transit-spotlight {
+            width: 100%;
+        }
+    }
+
     /* CTA */
     .page-miami .cta {
         padding-block: 56px;

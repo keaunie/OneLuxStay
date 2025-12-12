@@ -1020,6 +1020,23 @@
         outline-offset: 3px;
     }
 
+    /* Mobile: hide transit arrows, rely on swipe */
+    @media (max-width: 900px) {
+        .page-hollywood .transit-stage {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 20px;
+        }
+
+        .page-hollywood .transit-arrow {
+            display: none;
+        }
+
+        .page-hollywood .transit-spotlight {
+            width: 100%;
+        }
+    }
+
     /* CTA */
     .page-hollywood .cta {
         padding-block: 56px;
