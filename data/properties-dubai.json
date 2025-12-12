@@ -13,7 +13,7 @@
             "rating": 9.7,
             "reviews": 103,
             "url": "dubaiProp",
-            "summary": "With a prestigious spot alongside Dubai Opera, Grande Signature Residences only a 4-minute walk to The Dubai Mall, 3-minute walk to the Burj Khalifa and a 2-minute stroll to Dubai Opera. What's more, you can reach DIFC and all the major highways of Dubai within just 5 minutes.",
+            "summary": "Experience luxury at Grande Signature Residences, located in the heart of Downtown Dubai, just steps from Dubai Opera, The Dubai Mall, and Burj Khalifa. This 2-bedroom apartment offers breathtaking Burj Khalifa and fountain views, a fully equipped kitchen, spacious living area, balcony, high-speed Wi-Fi, and family-friendly amenities. Guests enjoy 24/7 access to building facilities including an infinity pool, fitness center, yoga room, kids’ play area, and BBQ lounge, along with valet parking. Perfectly situated on the lakefront promenade, it provides both convenience and a front-row seat to Dubai’s iconic attractions and vibrant lifestyle.",
             "price": {
                 "from": 899,
                 "currency": "AED"
@@ -116,5 +116,4 @@
             ]
         }
     ]
-    
 }
