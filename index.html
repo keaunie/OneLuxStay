@@ -28,6 +28,8 @@
   </noscript>
   <link rel="preload" as="style" href="home.css" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" as="style" href="footer.css" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="footer.css">
   <noscript>
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="footer.css">
@@ -331,15 +333,41 @@
           if (!img.width) img.width = 400;
           if (!img.height) img.height = 300;
         });
+        // Set lazy/async on non-LCP images that lack explicit hints
+        document
+          .querySelectorAll("img:not([fetchpriority='high']):not([loading='eager'])")
+          .forEach((img) => {
+            if (!img.loading) img.loading = "lazy";
+            if (!img.decoding) img.decoding = "async";
+          });
+      };
+      const schedule = () => {
+        if ("requestIdleCallback" in window) {
+          requestIdleCallback(tune, { timeout: 500 });
+        } else {
+          setTimeout(tune, 300);
+        }
+      };
+      if (document.readyState === "complete") schedule();
+      else window.addEventListener("load", schedule, { once: true });
+    })();
+  </script>
+  <script>
+    // Defer Elfsight until idle
+    (function () {
+      const loadElfsight = () => {
+        const s = document.createElement("script");
+        s.src = "https://static.elfsight.com/platform/platform.js";
+        s.async = true;
+        document.head.appendChild(s);
       };
       if ("requestIdleCallback" in window) {
-        requestIdleCallback(tune, { timeout: 500 });
+        requestIdleCallback(loadElfsight, { timeout: 1500 });
       } else {
-        setTimeout(tune, 300);
+        window.addEventListener("load", () => setTimeout(loadElfsight, 800), { once: true });
       }
     })();
   </script>
-  <script src="https://static.elfsight.com/platform/platform.js" async></script>
   <script src="https://cdn.jsdelivr.net/npm/marzipano@0.10.2/dist/marzipano.min.js" async></script>
   <script src="https://cdn.jsdelivr.net/npm/page/page.min.js" defer></script>
   <script src="app.js" defer></script>
@@ -735,14 +763,22 @@
   </footer>
 
   <script>
-    window.$crisp = [];
-    window.CRISP_WEBSITE_ID = "39968375-c1d2-43a6-9edf-115d16f1c979";
+    // Defer Crisp chat until idle/load to avoid blocking critical path
     (function () {
-      const d = document;
-      const s = d.createElement("script");
-      s.src = "https://client.crisp.chat/l.js";
-      s.async = 1;
-      d.getElementsByTagName("head")[0].appendChild(s);
+      const loadCrisp = () => {
+        window.$crisp = window.$crisp || [];
+        window.CRISP_WEBSITE_ID = "39968375-c1d2-43a6-9edf-115d16f1c979";
+        const d = document;
+        const s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
+        s.async = 1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+      };
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadCrisp, { timeout: 2000 });
+      } else {
+        window.addEventListener("load", () => setTimeout(loadCrisp, 1200), { once: true });
+      }
     })();
   </script>
   <!-- Google tag (gtag.js) -->

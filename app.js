@@ -282,6 +282,7 @@ function initHomeExperience() {
   const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   ).matches;
+  const isMobileViewport = window.matchMedia("(max-width: 768px)").matches;
 
   let scrollObserver = null;
   const scrollTargets = homeRoot.querySelectorAll(".animate-on-scroll");
@@ -302,7 +303,7 @@ function initHomeExperience() {
     scrollTargets.forEach((el) => el.classList.add("visible"));
   }
 
-  const parallaxLayers = prefersReducedMotion
+  const parallaxLayers = prefersReducedMotion || isMobileViewport
     ? []
     : homeRoot.querySelectorAll("[data-parallax]");
   let parallaxHandler = null;
@@ -332,6 +333,7 @@ function initHomeExperience() {
   if (
     cursorOrb &&
     !prefersReducedMotion &&
+    !isMobileViewport &&
     !window.matchMedia("(pointer: coarse)").matches
   ) {
     let orbX = window.innerWidth / 2;
