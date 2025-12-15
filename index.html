@@ -10,9 +10,18 @@
   <link rel="icon" type="image/x-icon"
     href="https://res.cloudinary.com/dajua7tff/image/upload/v1760120416/ols-logo_bllupd.ico">
   <link rel="stylesheet" href="index.css?v=20251018">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
+  <link rel="preload" as="style"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+  </noscript>
   <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  </noscript>
   <link rel="stylesheet" href="footer.css">
   <link rel="preload" as="image"
     href="/image/dubai-luxury-apartments-aerial-cityscape-waterfront-urban-design.webp" imagesizes="100vw"
@@ -22,8 +31,27 @@
   <!-- HEAD -->
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link rel="preload" as="style" href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  </noscript>
   <link rel="stylesheet" href="home.css">
+  <style>
+    /* Reserve space for dropdown and nav images to reduce CLS */
+    .image-wrapper img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      display: block;
+      object-fit: cover;
+    }
+
+    nav img {
+      width: 120px;
+      height: auto;
+    }
+  </style>
 </head>
 
 <body>
@@ -56,7 +84,7 @@
     </button>
 
     <a href="/" class="logo">
-      <img src="image/ols-logo.svg" alt="One Lux Stay logo" />
+      <img src="image/ols-logo.svg" alt="One Lux Stay logo" width="120" height="34" />
     </a>
 
     <a href="/contactus" data-link>
@@ -285,6 +313,24 @@
   </div>
 
   <div id="app"></div>
+  <script>
+    // Normalize media hints to reduce layout shift and early bandwidth
+    (function () {
+      const tune = () => {
+        document.querySelectorAll(".image-wrapper img").forEach((img) => {
+          if (!img.loading) img.loading = "lazy";
+          if (!img.decoding) img.decoding = "async";
+          if (!img.width) img.width = 400;
+          if (!img.height) img.height = 300;
+        });
+      };
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(tune, { timeout: 500 });
+      } else {
+        setTimeout(tune, 300);
+      }
+    })();
+  </script>
   <script src="https://static.elfsight.com/platform/platform.js" async></script>
   <script src="https://cdn.jsdelivr.net/npm/marzipano@0.10.2/dist/marzipano.min.js" async></script>
   <script src="https://cdn.jsdelivr.net/npm/page/page.min.js" defer></script>

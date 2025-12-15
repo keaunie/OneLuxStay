@@ -279,9 +279,13 @@ function initHomeExperience() {
   const homeRoot = document.getElementById("home-root");
   if (!homeRoot) return;
 
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
   let scrollObserver = null;
   const scrollTargets = homeRoot.querySelectorAll(".animate-on-scroll");
-  if ("IntersectionObserver" in window) {
+  if (!prefersReducedMotion && "IntersectionObserver" in window) {
     scrollObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -298,16 +302,26 @@ function initHomeExperience() {
     scrollTargets.forEach((el) => el.classList.add("visible"));
   }
 
-  const parallaxLayers = homeRoot.querySelectorAll("[data-parallax]");
-  const parallaxHandler = () => {
-    const scrollY =
-      window.pageYOffset || document.documentElement.scrollTop || 0;
-    parallaxLayers.forEach((layer) => {
-      const depth = parseFloat(layer.dataset.parallax || "0");
-      layer.style.transform = `translate3d(0, ${scrollY * depth * -1}px, 0)`;
-    });
-  };
+  const parallaxLayers = prefersReducedMotion
+    ? []
+    : homeRoot.querySelectorAll("[data-parallax]");
+  let parallaxHandler = null;
   if (parallaxLayers.length) {
+    let parallaxTicking = false;
+    const runParallax = () => {
+      const scrollY =
+        window.pageYOffset || document.documentElement.scrollTop || 0;
+      parallaxLayers.forEach((layer) => {
+        const depth = parseFloat(layer.dataset.parallax || "0");
+        layer.style.transform = `translate3d(0, ${scrollY * depth * -1}px, 0)`;
+      });
+      parallaxTicking = false;
+    };
+    parallaxHandler = () => {
+      if (parallaxTicking) return;
+      parallaxTicking = true;
+      requestAnimationFrame(runParallax);
+    };
     window.addEventListener("scroll", parallaxHandler, { passive: true });
     parallaxHandler();
   }
@@ -315,7 +329,11 @@ function initHomeExperience() {
   const cursorOrb = homeRoot.querySelector(".cursor-orb");
   const cursorTrail = homeRoot.querySelector(".cursor-trail");
   let cursorCleanup = null;
-  if (cursorOrb && !window.matchMedia("(pointer: coarse)").matches) {
+  if (
+    cursorOrb &&
+    !prefersReducedMotion &&
+    !window.matchMedia("(pointer: coarse)").matches
+  ) {
     let orbX = window.innerWidth / 2;
     let orbY = window.innerHeight / 2;
     let targetX = orbX;
@@ -326,6 +344,8 @@ function initHomeExperience() {
     let orbVisible = false;
     let lastSparkleTime = 0;
     let orbFadeTimeout = null;
+    const MAX_SPARKLES = 12;
+    let sparkleCount = 0;
 
     const updateOrbSize = () => {
       orbHalfW = cursorOrb.offsetWidth / 2;
@@ -344,6 +364,13 @@ function initHomeExperience() {
 
     const spawnSparkle = (x, y) => {
       if (!cursorTrail) return;
+      if (sparkleCount >= MAX_SPARKLES) {
+        const oldest = cursorTrail.firstElementChild;
+        if (oldest) {
+          oldest.remove();
+          sparkleCount = Math.max(0, sparkleCount - 1);
+        }
+      }
       const sparkle = document.createElement("span");
       sparkle.className = "cursor-spark";
       const size = 6 + Math.random() * 12;
@@ -369,7 +396,11 @@ function initHomeExperience() {
         `${-20 - Math.random() * 60}px`
       );
       cursorTrail.appendChild(sparkle);
-      sparkle.addEventListener("animationend", () => sparkle.remove());
+      sparkleCount += 1;
+      sparkle.addEventListener("animationend", () => {
+        sparkle.remove();
+        sparkleCount = Math.max(0, sparkleCount - 1);
+      });
     };
 
     const pointerHandler = (e) => {
@@ -383,7 +414,7 @@ function initHomeExperience() {
         orbVisible = false;
       }, 300);
       const now = performance.now();
-      if (now - lastSparkleTime > 45) {
+      if (now - lastSparkleTime > 75) {
         spawnSparkle(e.clientX, e.clientY);
         lastSparkleTime = now;
       }
@@ -393,9 +424,17 @@ function initHomeExperience() {
       orbVisible = false;
     };
 
+    const handleVisibility = () => {
+      if (document.visibilityState !== "visible") {
+        orbVisible = false;
+        cursorOrb.style.opacity = "0";
+      }
+    };
+
     window.addEventListener("pointermove", pointerHandler, { passive: true });
     window.addEventListener("pointerleave", leaveHandler, { passive: true });
     window.addEventListener("resize", updateOrbSize);
+    document.addEventListener("visibilitychange", handleVisibility);
     updateOrbSize();
     renderOrb();
 
@@ -403,6 +442,7 @@ function initHomeExperience() {
       window.removeEventListener("pointermove", pointerHandler);
       window.removeEventListener("pointerleave", leaveHandler);
       window.removeEventListener("resize", updateOrbSize);
+      document.removeEventListener("visibilitychange", handleVisibility);
       cancelAnimationFrame(rafId);
       if (orbFadeTimeout) {
         clearTimeout(orbFadeTimeout);
