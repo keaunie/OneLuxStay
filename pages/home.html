@@ -13,11 +13,13 @@
       <div class="hero-layer hero-layer--glow" data-parallax="0.08"></div>
       <div class="hero-layer hero-layer--grid" data-parallax="0.04"></div>
       <div class="hero-layer hero-layer--particles" data-parallax="0.12"></div>
-      <div class="hero-layer hero-layer--video" data-parallax="0.02">
-        <video class="hero-video" autoplay muted loop playsinline
-          poster="https://images.pexels.com/photos/1688186/pexels-photo-1688186.jpeg">
-          <source src="https://www.pexels.com/download/video/4196555/" type="video/mp4" />
-        </video>
+      <div class="hero-layer hero-layer--visual" data-parallax="0.02">
+        <picture>
+          <source srcset="/image/dubai-luxury-apartments-aerial-cityscape-waterfront-urban-design.webp" type="image/webp">
+          <img class="hero-visual" src="/image/dubai-luxury-apartments-aerial-cityscape-waterfront-urban-design.webp"
+            alt="Luxury waterfront skyline at sunset" loading="eager" fetchpriority="high" decoding="async" width="1600"
+            height="900" />
+        </picture>
       </div>
     </div>
 
@@ -31,36 +33,36 @@
         <a href="/antwerp" data-link aria-label="Explore Antwerp stays">
           <img
             src="https://assets.guesty.com/image/upload/v1762983593/production/666b3af27fc6d5653142b0af/rhipugh4blshkdlknw0y.jpg"
-            alt="" aria-hidden="true" loading="lazy" />
+            alt="" aria-hidden="true" loading="lazy" decoding="async" width="38" height="38" />
           <span>Antwerpen</span>
         </a>
         <a href="/dubai" data-link aria-label="Explore Dubai stays">
           <img
             src="https://assets.guesty.com/image/upload/v1762983594/production/666b3af27fc6d5653142b0af/og8pc3hk7dkvvowp3yxe.jpg"
-            alt="" aria-hidden="true" loading="lazy" />
+            alt="" aria-hidden="true" loading="lazy" decoding="async" width="38" height="38" />
           <span>Dubai</span>
         </a>
         <a href="/losangeles" data-link aria-label="Explore Los Angeles stays">
           <img
             src="https://assets.guesty.com/image/upload/v1762983593/production/666b3af27fc6d5653142b0af/qswo8beahox41r5gaebf.jpg"
-            alt="" aria-hidden="true" loading="lazy" />
+            alt="" aria-hidden="true" loading="lazy" decoding="async" width="38" height="38" />
           <span>Los Angeles</span>
         </a>
         <a href="/hollywood" data-link aria-label="Explore Hollywood stays">
           <img src="https://images.unsplash.com/photo-1534253893894-10d024888e49?auto=format&fit=crop&q=80&w=600" alt=""
-            aria-hidden="true" loading="lazy" />
+            aria-hidden="true" loading="lazy" decoding="async" width="38" height="38" />
           <span>Hollywood</span>
         </a>
         <a href="/redondo" data-link aria-label="Explore Redondo Beach stays">
           <img
             src="https://assets.guesty.com/image/upload/v1762983593/production/666b3af27fc6d5653142b0af/nvwxruidl4cl3yopufrw.jpg"
-            alt="" aria-hidden="true" loading="lazy" />
+            alt="" aria-hidden="true" loading="lazy" decoding="async" width="38" height="38" />
           <span>Redondo Beach</span>
         </a>
         <a href="/miami" data-link aria-label="Explore Miami stays">
           <img
             src="https://assets.guesty.com/image/upload/v1762983593/production/666b3af27fc6d5653142b0af/jk89sv4gqd8hmnaiccpr.jpg"
-            alt="" aria-hidden="true" loading="lazy" />
+            alt="" aria-hidden="true" loading="lazy" decoding="async" width="38" height="38" />
           <span>Miami Beach</span>
         </a>
       </div>
@@ -485,16 +487,17 @@
     opacity: 0.5;
   }
 
-  .hero-layer--video {
+  .hero-layer--visual {
     mix-blend-mode: screen;
-    opacity: 0.35;
+    opacity: 0.55;
   }
 
-  .hero-video {
+  .hero-visual {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: saturate(1.15) contrast(1.05);
+    filter: saturate(1.12) contrast(1.04);
   }
 
   .hero-content {
@@ -509,7 +512,7 @@
       background:
         radial-gradient(1200px 600px at 50% -20%, rgba(212, 175, 55, .08), transparent 45%),
         linear-gradient(180deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .85)),
-        url("https://images.pexels.com/photos/1688186/pexels-photo-1688186.jpeg") center/cover no-repeat,
+        url("/image/dubai-luxury-apartments-aerial-cityscape-waterfront-urban-design.webp") center/cover no-repeat,
         #0b0b0d;
     }
   }
