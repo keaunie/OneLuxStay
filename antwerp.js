@@ -554,23 +554,32 @@ function initPropertyDetailPageAntwerp() {
     };
 
     container.innerHTML = `
-      <a class="btn btn-back" href="/antwerp" data-link>&larr; Back to listings</a>
-      <h1 style="margin:12px 0 6px">${property.title}</h1>
-      ${
-        property.badge
-          ? `<div class="badge" style="margin-bottom:8px">${property.badge}</div>`
-          : ""
-      }
-      <div class="location">${property.location?.area || ""} - ${
-      property.address || ""
-    }</div>
-      <div class="rating" style="margin:8px 0 14px">
-        Rating: <span>${property.rating ?? ""}</span>
-        ${
-          property.reviews
-            ? `(${property.reviews.toLocaleString()} reviews)`
-            : ""
-        }
+      <div class="property-header">
+        <div class="property-meta">
+          <a class="btn btn-back" href="/antwerp" data-link>&larr; Back to listings</a>
+          <h1 style="margin:12px 0 6px">${property.title}</h1>
+          ${
+            property.badge
+              ? `<div class="badge" style="margin-bottom:8px">${property.badge}</div>`
+              : ""
+          }
+          <div class="location">${property.location?.area || ""} - ${
+          property.address || ""
+        }</div>
+          <div class="rating" style="margin:8px 0 14px">
+            Rating: <span>${property.rating ?? ""}</span>
+            ${
+              property.reviews
+                ? `(${property.reviews.toLocaleString()} reviews)`
+                : ""
+            }
+          </div>
+        </div>
+        <div class="contact-card contact-card--top">
+          <h3>For Reservation Contact</h3>
+          <p class="contact-label">Antwerp reservations</p>
+          <a class="contact-phone" href="tel:+3238080719">+32-38080719</a>
+        </div>
       </div>
 
       <div class="carousel-container">

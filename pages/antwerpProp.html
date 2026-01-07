@@ -214,6 +214,64 @@
       min-height: 0;
     }
 
+    .contact-card {
+      border-radius: 16px;
+      border: 1px solid rgba(57, 62, 70, .2);
+      background: #f4ead7;
+      padding: 16px;
+      box-shadow: 0 12px 30px rgba(57, 62, 70, .12);
+      color: #222831;
+    }
+
+    .property-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 320px);
+      gap: 18px;
+      align-items: start;
+      margin-bottom: 18px;
+    }
+
+    .property-meta {
+      min-width: 0;
+    }
+
+    .contact-card--top {
+      width: 100%;
+      margin: 0;
+    }
+
+    .contact-card h3 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
+
+    .contact-label {
+      margin: 0 0 8px;
+      font-size: 0.85rem;
+      color: #948979;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+    }
+
+    .contact-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1px solid rgba(57, 62, 70, .25);
+      background: #dfd0b8;
+      color: #222831;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .contact-phone:hover {
+      background: #393e46;
+      color: #dfd0b8;
+    }
+
     .review-score {
       display: flex;
       align-items: center;
@@ -731,6 +789,15 @@
 
       .carousel-thumbs img {
         height: 56px;
+      }
+
+      .property-header {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card--top {
+        max-width: 100%;
+        margin: 0 0 16px 0;
       }
     }
 
