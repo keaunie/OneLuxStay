@@ -350,27 +350,28 @@
   }
 
   :root {
-    --ink: #040407;
-    --midnight: #05060b;
-    --charcoal: #10121a;
-    --card: rgba(10, 11, 20, 0.8);
-    --frost: rgba(255, 255, 255, 0.12);
-    --gold: #d9b866;
-    --rose: #f8e2c6;
-    --muted: #bfbecb;
-    --radius: 22px;
-    --shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
-    --glass: rgba(7, 7, 16, 0.5);
-  }
+      --ink: #222831;
+      --midnight: #222831;
+      --charcoal: #393e46;
+      --card: #948979;
+      --frost: rgba(57, 62, 70, 0.12);
+      --gold: #393e46;
+      --rose: #dfd0b8;
+      --muted: #948979;
+      --bg: #dfd0b8;
+      --radius: 22px;
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+      --glass: rgba(57, 62, 70, 0.08);
+    }
 
-  .luxe-home {
-    color: #fff;
-    background: radial-gradient(1800px 800px at 10% 0%, rgba(217, 184, 102, 0.07), transparent 60%),
-      radial-gradient(1500px 900px at 90% 10%, rgba(90, 146, 255, 0.08), transparent 65%),
-      var(--ink);
-    overflow: hidden;
-    position: relative;
-  }
+    .luxe-home {
+      color: var(--ink);
+      background: radial-gradient(1800px 800px at 10% 0%, rgba(34, 40, 49, 0.08), transparent 60%),
+        radial-gradient(1500px 900px at 90% 10%, rgba(34, 40, 49, 0.06), transparent 65%),
+        var(--bg);
+      overflow: hidden;
+      position: relative;
+    }
 
   .luxe-home::before {
     content: "";
@@ -411,16 +412,16 @@
     letter-spacing: 0.24em;
     font-size: 0.8rem;
     text-transform: uppercase;
-    color: var(--gold);
+      color: var(--ink);
     margin-bottom: 10px;
     display: block;
   }
 
   .section-title h2 {
-    font-size: clamp(1.8rem, 4vw, 3rem);
-    color: #fff;
-    font-weight: 600;
-  }
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      color: var(--ink);
+      font-weight: 600;
+    }
 
   .animate-on-scroll {
     opacity: 0;
@@ -511,7 +512,7 @@
   @media (max-width: 640px) {
     .immersive-hero {
       background:
-        radial-gradient(1200px 600px at 50% -20%, rgba(212, 175, 55, .08), transparent 45%),
+        radial-gradient(1200px 600px at 50% -20%, rgba(57, 62, 70, .08), transparent 45%),
         linear-gradient(180deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .85)),
         url("/image/dubai-luxury-apartments-aerial-cityscape-waterfront-urban-design.webp") center/cover no-repeat,
         #0b0b0d;
@@ -673,7 +674,7 @@
     border: none;
     border-radius: 18px;
     background: linear-gradient(120deg, #f4e3a5, var(--gold));
-    color: #050505;
+    color: #dfd0b8;
     font-weight: 700;
     font-size: 1rem;
     letter-spacing: 0.08em;
@@ -747,8 +748,8 @@
   .feature-card {
     padding: 28px;
     border-radius: var(--radius);
-    background: rgba(7, 7, 12, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(57, 62, 70, 0.9);
+    border: 1px solid rgba(57, 62, 70, 0.25);
     box-shadow: var(--shadow);
     position: relative;
     overflow: hidden;
@@ -761,7 +762,7 @@
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    background: radial-gradient(circle at top left, rgba(217, 184, 102, 0.15), transparent 60%);
+    background: radial-gradient(circle at top left, rgba(223, 208, 184, 0.2), transparent 60%);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -777,10 +778,11 @@
 
   .feature-card h3 {
     margin: 18px 0 12px;
+    color: #dfd0b8;
   }
 
   .feature-card p {
-    color: #f2f2f7;
+    color: #dfd0b8;
     line-height: 1.6;
   }
 
@@ -790,8 +792,10 @@
     border-radius: 16px;
     display: grid;
     place-items: center;
-    background: rgba(217, 184, 102, 0.13);
-    border: 1px solid rgba(217, 184, 102, 0.3);
+    background: #dfd0b8;
+    border: 1px solid #393e46;
+    color: #222831;
+    box-shadow: 0 10px 20px rgba(34, 40, 49, 0.25);
   }
 
   /* IMMERSIVE PANELS */
@@ -848,10 +852,10 @@
   .collection-gallery {
     padding: 110px 0;
     background:
-      radial-gradient(circle at 15% 20%, rgba(255, 199, 235, 0.35), transparent 55%),
-      radial-gradient(circle at 80% 15%, rgba(177, 234, 255, 0.4), transparent 55%),
-      radial-gradient(circle at 60% 80%, rgba(255, 226, 161, 0.35), transparent 60%),
-      #0f1017;
+      radial-gradient(circle at 12% 18%, rgba(34, 40, 49, 0.08), transparent 55%),
+      radial-gradient(circle at 85% 20%, rgba(34, 40, 49, 0.06), transparent 55%),
+      radial-gradient(circle at 60% 85%, rgba(34, 40, 49, 0.05), transparent 60%),
+      var(--bg);
     position: relative;
     overflow: hidden;
   }
@@ -862,21 +866,21 @@
     height: 420px;
     border-radius: 50%;
     filter: blur(40px);
-    opacity: 0.35;
-    mix-blend-mode: screen;
+    opacity: 0.28;
+    mix-blend-mode: normal;
     pointer-events: none;
   }
 
   .parallax-sheen--left {
     top: 5%;
     left: -120px;
-    background: radial-gradient(circle, rgba(255, 212, 138, 0.4), transparent 70%);
+    background: radial-gradient(circle, rgba(223, 208, 184, 0.4), transparent 70%);
   }
 
   .parallax-sheen--right {
     bottom: -10%;
     right: -80px;
-    background: radial-gradient(circle, rgba(142, 199, 255, 0.5), transparent 65%);
+    background: radial-gradient(circle, rgba(34, 40, 49, 0.25), transparent 65%);
   }
 
   .destinations-stack {
@@ -1150,9 +1154,17 @@
   /* TESTIMONIALS */
   .testimonial-marble {
     padding: 100px 0;
-    background: linear-gradient(180deg, rgba(10, 10, 14, 0.9), rgba(8, 8, 12, 0.9)),
-      url('/assets/reviewsbackdrop.jpg') center/cover;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(34, 40, 49, 0.08), transparent 55%),
+      radial-gradient(circle at 80% 15%, rgba(34, 40, 49, 0.06), transparent 55%),
+      radial-gradient(circle at 60% 80%, rgba(34, 40, 49, 0.05), transparent 60%),
+      var(--bg);
     background-attachment: scroll;
+  }
+
+  .testimonial-marble .section-title .kicker,
+  .testimonial-marble .section-title h2 {
+    color: var(--ink);
   }
 
   .testimonials-grid {
@@ -1192,14 +1204,14 @@
   }
 
   .testimonial .location {
-    color: #d4af37;
+    color: #dfd0b8;
     font-weight: 600;
   }
 
   /* CTA */
   .skyline-cta {
     padding: 120px 0;
-    background: radial-gradient(circle at 50% 0%, rgba(217, 184, 102, 0.25), transparent 60%),
+    background: radial-gradient(circle at 50% 0%, rgba(223, 208, 184, 0.28), transparent 60%),
       var(--midnight);
   }
 
@@ -1207,13 +1219,13 @@
     text-align: center;
     padding: 40px;
     border-radius: 32px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(5, 5, 9, 0.8);
+    border: 1px solid rgba(57, 62, 70, 0.25);
+    background: rgba(34, 40, 49, 0.92);
     box-shadow: var(--shadow);
   }
 
   .cta-kicker {
-    color: var(--gold);
+    color: #dfd0b8;
     letter-spacing: 0.24em;
     text-transform: uppercase;
   }
@@ -1221,10 +1233,11 @@
   .cta-title {
     font-size: clamp(1.8rem, 4vw, 3rem);
     margin: 16px 0;
+    color: #dfd0b8;
   }
 
   .cta-subtitle {
-    color: var(--muted);
+    color: #dfd0b8;
     margin-bottom: 28px;
   }
 
@@ -1255,7 +1268,8 @@
 
   .btn-ghost {
     background: transparent;
-    color: #fff;
+    color: #dfd0b8;
+    border-color: rgba(223, 208, 184, 0.4);
   }
 
   /* Motion */
@@ -1440,3 +1454,5 @@
 </style>
 
 <!-- ===================== END HOME (SPA PARTIAL) ===================== -->
+
+

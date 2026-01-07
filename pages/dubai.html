@@ -335,12 +335,12 @@
      ========================= -->
 <style>
     .page-dubai {
-        --gold: #d4af37;
-        --ink: #0b0b0b;
-        --bg: #0f0f10;
+        --gold: #393e46;
+        --ink: #222831;
+        --bg: #dfd0b8;
         --card: #151517;
         --muted: #bdbdbd;
-        --ring: rgba(212, 175, 55, .35);
+        --ring: rgba(57, 62, 70, .35);
         --radius: 14px;
         --shadow: 0 12px 30px rgba(0, 0, 0, .38);
         color: #fff;
@@ -371,14 +371,14 @@
     }
 
     .page-dubai .btn-primary {
-        background: linear-gradient(90deg, #d4af37, #b9912b);
+        background: linear-gradient(90deg, #393e46, #b9912b);
         color: #111;
-        box-shadow: 0 8px 24px rgba(212, 175, 55, .25)
+        box-shadow: 0 8px 24px rgba(57, 62, 70, .25)
     }
 
     .page-dubai .btn-primary:hover {
         transform: translateY(-1px);
-        box-shadow: 0 12px 30px rgba(212, 175, 55, .32)
+        box-shadow: 0 12px 30px rgba(57, 62, 70, .32)
     }
 
     .page-dubai .btn-ghost {
@@ -393,7 +393,7 @@
     }
 
     .page-dubai .btn-inline {
-        color: var(--gold);
+        color: #393e46;
         padding: .25rem 0;
         border: none
     }
@@ -428,7 +428,7 @@
         position: absolute;
         inset: 0;
         background:
-            radial-gradient(1200px 600px at 10% -20%, rgba(212, 175, 55, .12), transparent 45%),
+            radial-gradient(1200px 600px at 10% -20%, rgba(57, 62, 70, .12), transparent 45%),
             linear-gradient(to bottom, rgba(0, 0, 0, .45), rgba(0, 0, 0, .65) 38%, rgba(0, 0, 0, .72));
         backdrop-filter: saturate(1.1);
     }
@@ -442,9 +442,14 @@
     .page-dubai .eyebrow {
         letter-spacing: .18em;
         text-transform: uppercase;
-        color: var(--gold);
+        color: #393e46;
         font-weight: 700;
         margin-bottom: .5rem
+    }
+
+    .page-dubai .hero .eyebrow {
+        color: #dfd0b8;
+        text-shadow: 0 2px 8px rgba(34, 40, 49, 0.45);
     }
 
     .page-dubai .headline {
@@ -473,23 +478,23 @@
     .page-dubai .section {
         padding-block: 56px;
         /* background:
-            radial-gradient(850px 420px at 5% -10%, rgba(212, 175, 55, .06), transparent 45%),
-            radial-gradient(850px 380px at 100% 120%, rgba(212, 175, 55, .06), transparent 40%) */
+            radial-gradient(850px 420px at 5% -10%, rgba(57, 62, 70, .06), transparent 45%),
+            radial-gradient(850px 380px at 100% 120%, rgba(57, 62, 70, .06), transparent 40%) */
     }
 
     .page-dubai .dubai-landmarks-transpo {
-
-        background-image: linear-gradient(rgba(0, 0, 0, 0.8), transparent), url("/assets/backdrop.jpg");
-        background-color: #b9912b;
+        background:
+            radial-gradient(900px 520px at 10% -10%, rgba(57, 62, 70, 0.25), transparent 60%),
+            radial-gradient(900px 520px at 90% 10%, rgba(57, 62, 70, 0.2), transparent 60%),
+            linear-gradient(180deg, rgba(34, 40, 49, 0.78), rgba(34, 40, 49, 0.88)),
+            var(--bg);
         background-position: center;
-        /* Center the image */
         background-repeat: no-repeat;
-        /* Do not repeat the image */
         background-size: cover;
 
         /* background:
-            radial-gradient(850px 420px at 5% -10%, rgba(212, 175, 55, .06), transparent 45%),
-            radial-gradient(850px 380px at 100% 120%, rgba(212, 175, 55, .06), transparent 40%) */
+            radial-gradient(850px 420px at 5% -10%, rgba(57, 62, 70, .06), transparent 45%),
+            radial-gradient(850px 380px at 100% 120%, rgba(57, 62, 70, .06), transparent 40%) */
     }
 
     .page-dubai .section-title {
@@ -500,12 +505,14 @@
 
     .page-dubai .section-title h2 {
         font-size: clamp(1.8rem, 2.2vw, 2rem);
-        margin-bottom: .35rem
+        margin-bottom: .35rem;
+        color: var(--ink)
     }
 
     .page-dubai .section-title p {
         font-size: 1.5rem;
-        color: var(--muted)
+        color: #222831;
+        font-weight: 600
     }
 
     /* Property Grid */
@@ -547,7 +554,7 @@
         top: 12px;
         left: 12px;
         background: #1a1a1c;
-        border: 1px solid rgba(212, 175, 55, .35);
+        border: 1px solid rgba(57, 62, 70, .35);
         color: var(--gold);
         padding: .35rem .6rem;
         border-radius: 999px;
@@ -567,7 +574,8 @@
     .page-dubai .meta {
         display: flex;
         justify-content: space-between;
-        color: var(--muted);
+        color: #393e46;
+        font-weight: 500;
         font-size: .95rem;
         margin-bottom: .5rem
     }
@@ -642,7 +650,8 @@
         position: relative;
         padding-block: 80px;
         overflow: hidden;
-        background: #09090f;
+        background: var(--bg);
+        color: var(--ink);
     }
 
     .page-dubai .landmark-section::before,
@@ -652,10 +661,10 @@
         content: "";
         position: absolute;
         inset: -40%;
-        background: radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.15), transparent 55%),
-            radial-gradient(circle at 80% 0%, rgba(102, 160, 255, 0.15), transparent 55%);
+        background: radial-gradient(circle at 30% 20%, rgba(57, 62, 70, 0.18), transparent 55%),
+            radial-gradient(circle at 80% 0%, rgba(148, 137, 121, 0.18), transparent 55%);
         animation: landmarkDrift 30s linear infinite;
-        opacity: 0.8;
+        opacity: 0.7;
         pointer-events: none;
         z-index: 0;
     }
@@ -685,10 +694,12 @@
     .page-dubai .landmark-header h2 {
         font-size: clamp(1.8rem, 4vw, 2.4rem);
         margin: 6px 0;
+        color: var(--ink);
     }
 
     .page-dubai .landmark-header p {
-        color: var(--muted);
+        color: #222831;
+        font-weight: 600;
     }
 
     .page-dubai .landmark-gallery {
@@ -704,10 +715,10 @@
         grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
         gap: 28px;
         border-radius: 40px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        background: rgba(7, 7, 14, 0.92);
+        border: 1px solid rgba(57, 62, 70, 0.25);
+        background: rgba(223, 208, 184, 0.92);
         padding: clamp(20px, 4vw, 36px);
-        box-shadow: 0 35px 80px rgba(0, 0, 0, 0.55);
+        box-shadow: 0 25px 70px rgba(34, 40, 49, 0.25);
     }
 
     .page-dubai .landmark-showcase-media {
@@ -727,11 +738,11 @@
 
     .page-dubai .landmark-showcase-info {
         border-radius: 28px;
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(57, 62, 70, 0.25);
         background:
-            radial-gradient(circle at top, rgba(212, 175, 55, 0.25), transparent 60%),
-            rgba(8, 8, 14, 0.95);
-        box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.35);
+            radial-gradient(circle at top, rgba(57, 62, 70, 0.18), transparent 60%),
+            rgba(223, 208, 184, 0.96);
+        box-shadow: inset 0 0 24px rgba(57, 62, 70, 0.18);
         padding: clamp(18px, 3vw, 32px);
         display: flex;
         flex-direction: column;
@@ -743,18 +754,19 @@
     .page-dubai .landmark-showcase-info h3 {
         margin: 0;
         font-size: clamp(1.8rem, 4vw, 2.4rem);
+        color: #222831;
     }
 
     .page-dubai .landmark-showcase-info p {
         margin: 0;
-        color: rgba(255, 255, 255, 0.92);
+        color: #393e46;
     }
 
     .page-dubai .landmark-label {
         font-size: 0.78rem;
         letter-spacing: 0.45em;
         text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.65);
+        color: #393e46;
     }
 
     .page-dubai .landmark-roster {
@@ -768,9 +780,9 @@
 
     .page-dubai .landmark-token {
         border-radius: 26px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        background: rgba(6, 6, 12, 0.85);
-        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+        border: 1px solid rgba(57, 62, 70, 0.2);
+        background: rgba(223, 208, 184, 0.9);
+        box-shadow: 0 18px 40px rgba(57, 62, 70, 0.18);
         padding: 12px 16px;
         display: flex;
         align-items: center;
@@ -809,7 +821,7 @@
         font-size: 0.7rem;
         letter-spacing: 0.4em;
         text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.55);
+        color: #393e46;
     }
 
     .page-dubai .landmark-token .token-name {
@@ -818,17 +830,17 @@
 
     .page-dubai .landmark-token .token-desc {
         font-size: 0.85rem;
-        color: rgba(255, 255, 255, 0.65);
+        color: #948979;
     }
 
     .page-dubai .landmark-token.active {
-        border-color: rgba(212, 175, 55, 0.6);
-        box-shadow: 0 20px 45px rgba(212, 175, 55, 0.18);
+        border-color: rgba(57, 62, 70, 0.65);
+        box-shadow: 0 20px 45px rgba(57, 62, 70, 0.24);
         transform: translateY(-2px);
     }
 
     .page-dubai .landmark-token:focus-visible {
-        outline: 2px solid rgba(212, 175, 55, 0.8);
+        outline: 2px solid rgba(57, 62, 70, 0.8);
         outline-offset: 2px;
     }
 
@@ -852,10 +864,10 @@
         position: relative;
         min-height: 340px;
         border-radius: 38px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        background: radial-gradient(120% 120% at 50% 40%, rgba(212, 175, 55, 0.25), rgba(5, 5, 10, 0.95));
+        border: 1px solid rgba(57, 62, 70, 0.25);
+        background: radial-gradient(120% 120% at 50% 40%, rgba(57, 62, 70, 0.18), rgba(223, 208, 184, 0.96));
         overflow: hidden;
-        box-shadow: 0 45px 90px rgba(0, 0, 0, 0.55);
+        box-shadow: 0 35px 80px rgba(34, 40, 49, 0.25);
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -925,7 +937,7 @@
 
     .page-dubai .transit-spotlight-info p {
         margin: 0;
-        color: rgba(255, 255, 255, 0.85);
+        color: #393e46;
     }
 
     .page-dubai .transit-tag {
@@ -933,16 +945,16 @@
         font-size: 0.7rem;
         letter-spacing: 0.4em;
         text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.65);
+        color: #393e46;
     }
 
     .page-dubai .transit-arrow {
         width: 54px;
         height: 54px;
         border-radius: 50%;
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        background: rgba(10, 10, 16, 0.85);
-        color: #fff;
+        border: 1px solid rgba(57, 62, 70, 0.35);
+        background: rgba(223, 208, 184, 0.95);
+        color: #222831;
         display: grid;
         place-items: center;
         font-size: 1.8rem;
@@ -952,8 +964,8 @@
 
     .page-dubai .transit-arrow:hover {
         transform: translateY(-2px);
-        border-color: rgba(212, 175, 55, 0.7);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+        border-color: rgba(57, 62, 70, 0.7);
+        box-shadow: 0 12px 24px rgba(57, 62, 70, 0.25);
     }
 
     .page-dubai .transit-ghost {
@@ -986,8 +998,8 @@
 
     .page-dubai .transit-chip {
         border-radius: 24px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        background: rgba(6, 6, 12, 0.85);
+        border: 1px solid rgba(57, 62, 70, 0.2);
+        background: rgba(223, 208, 184, 0.9);
         padding: 10px 14px;
         display: flex;
         align-items: center;
@@ -1001,10 +1013,10 @@
         width: 44px;
         height: 44px;
         border-radius: 16px;
-        background: rgba(212, 175, 55, 0.12);
+        background: rgba(57, 62, 70, 0.12);
         display: grid;
         place-items: center;
-        box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.35);
+        box-shadow: inset 0 0 0 1px rgba(57, 62, 70, 0.25);
     }
 
     .page-dubai .transit-chip .chip-icon img {
@@ -1025,17 +1037,17 @@
 
     .page-dubai .transit-chip .chip-hint {
         font-size: 0.78rem;
-        color: rgba(255, 255, 255, 0.6);
+        color: #948979;
     }
 
     .page-dubai .transit-chip.active {
-        border-color: rgba(212, 175, 55, 0.6);
-        box-shadow: 0 16px 30px rgba(212, 175, 55, 0.15);
+        border-color: rgba(57, 62, 70, 0.6);
+        box-shadow: 0 16px 30px rgba(57, 62, 70, 0.2);
         transform: translateY(-2px);
     }
 
     .page-dubai .transit-chip:focus-visible {
-        outline: 2px solid rgba(212, 175, 55, 0.8);
+        outline: 2px solid rgba(57, 62, 70, 0.8);
         outline-offset: 3px;
     }
 
@@ -1060,8 +1072,8 @@
     .page-dubai .cta {
         padding-block: 56px;
         /* background:
-            radial-gradient(900px 420px at 10% 0%, rgba(212, 175, 55, .08), transparent 46%),
-            linear-gradient(180deg, #0f0f10 0%, #0e0e0f 100%) */
+            radial-gradient(900px 420px at 10% 0%, rgba(57, 62, 70, .08), transparent 46%),
+            linear-gradient(180deg, #dfd0b8 0%, #0e0e0f 100%) */
     }
 
     .page-dubai .cta-wrap {
@@ -1159,7 +1171,7 @@
         justify-content: center;
         padding-block: clamp(40px, 6vw, 96px);
         /* guard for very small screens */
-        background: radial-gradient(1200px 600px at 50% -20%, rgba(212, 175, 55, .09), transparent 45%),
+        background: radial-gradient(1200px 600px at 50% -20%, rgba(57, 62, 70, .09), transparent 45%),
             linear-gradient(180deg, rgba(0, 0, 0, .45), rgba(0, 0, 0, .75));
         overflow: clip;
     }
@@ -1231,7 +1243,7 @@
         justify-content: center;
         padding: 0;
         /* no inner padding that could shift media */
-        background: radial-gradient(1200px 600px at 50% -20%, rgba(212, 175, 55, .08), transparent 45%);
+        background: radial-gradient(1200px 600px at 50% -20%, rgba(57, 62, 70, .08), transparent 45%);
     }
 
     /* Kill any theme constraints and make media truly cover */
@@ -1289,7 +1301,7 @@
         /* keep it on one line */
         border-radius: 999px;
         /* perfect pill */
-        border: 1px solid rgba(212, 175, 55, .45);
+        border: 1px solid rgba(57, 62, 70, .45);
         background: transparent;
         color: var(--gold);
         font-weight: 700;
@@ -1298,10 +1310,10 @@
     }
 
     .page-dubai .property-card .btn-inline:hover {
-        background: linear-gradient(90deg, #d4af37, #b9912b);
+        background: linear-gradient(90deg, #393e46, #b9912b);
         color: #111;
         border-color: transparent;
-        box-shadow: 0 8px 22px rgba(212, 175, 55, .25);
+        box-shadow: 0 8px 22px rgba(57, 62, 70, .25);
         transform: translateY(-1px);
     }
 
@@ -1400,7 +1412,7 @@
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        background: radial-gradient(1200px 600px at 50% -20%, rgba(212, 175, 55, .08), transparent 45%),
+        background: radial-gradient(1200px 600px at 50% -20%, rgba(57, 62, 70, .08), transparent 45%),
             linear-gradient(180deg, rgba(0, 0, 0, .45), rgba(0, 0, 0, .75));
     }
 
@@ -1480,7 +1492,7 @@
     #dubai-root {
         position: relative;
         background:
-            radial-gradient(1400px 640px at 10% -10%, rgba(212, 175, 55, 0.08), transparent 45%),
+            radial-gradient(1400px 640px at 10% -10%, rgba(57, 62, 70, 0.08), transparent 45%),
             radial-gradient(1200px 720px at 90% 0%, rgba(96, 154, 255, 0.08), transparent 55%),
             var(--bg);
         overflow: hidden;
@@ -1500,13 +1512,13 @@
         transition: opacity 0.4s ease, box-shadow 0.4s ease, transform 0.2s ease;
         transform: translate(-50%, -50%);
         z-index: 5;
-        box-shadow: 0 0 80px rgba(212, 175, 55, 0.25), 0 0 140px rgba(212, 175, 55, 0.15);
+        box-shadow: 0 0 80px rgba(57, 62, 70, 0.25), 0 0 140px rgba(57, 62, 70, 0.15);
     }
 
     #dubai-root .cursor-orb.cursor-orb--glow {
         box-shadow:
             0 0 120px rgba(255, 214, 147, 0.45),
-            0 0 220px rgba(212, 175, 55, 0.35),
+            0 0 220px rgba(57, 62, 70, 0.35),
             0 0 320px rgba(148, 199, 255, 0.2);
     }
 
@@ -1572,7 +1584,7 @@
     }
 
     #dubai-root .hero-layer--glow {
-        background: radial-gradient(circle at 15% 10%, rgba(212, 175, 55, 0.35), transparent 55%),
+        background: radial-gradient(circle at 15% 10%, rgba(57, 62, 70, 0.35), transparent 55%),
             radial-gradient(circle at 85% 0%, rgba(102, 160, 255, 0.28), transparent 60%);
         filter: blur(20px);
         animation: antwerpAurora 26s ease-in-out infinite alternate;
@@ -1739,3 +1751,5 @@
     src="https://reservations.oneluxstay.com/en/properties?city=Dubai&country=United+Arab+Emirates&minOccupancy=1"
     width="100%" height="1200" style="border:none;">
 </iframe> -->
+
+

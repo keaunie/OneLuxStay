@@ -5,7 +5,7 @@
    GLOBAL SETTINGS
 ========================================= */
 :root {
-  --gold: #d4af37;
+  --gold: #393e46;
   --bg-dark: #0f0f0f;
   --bg-light: #ffffff;
   --glass-bg: rgba(255, 255, 255, 0.15);
@@ -751,3 +751,4 @@ body {
   letter-spacing: 0.5px;
   font-weight: 100;
 }
+

@@ -1,21 +1,21 @@
 /* ---------- Tokens ---------- */
 :root {
-  --gold: #d4af37;
-  --ink: #0b0b0b;
-  --bg: #0f0f10;
-  --card: #151517;
-  --muted: #bdbdbd;
-  --ring: rgba(212, 175, 55, .35);
+  --gold: #393e46;
+  --ink: #222831;
+  --bg: #dfd0b8;
+  --card: #948979;
+  --muted: #948979;
+  --ring: rgba(34, 40, 49, .25);
   --radius: 14px;
   --shadow: 0 12px 30px rgba(0, 0, 0, .38);
   --container: min(1200px, calc(100vw - 32px));
 }
 
 .ols-home {
-  color: #fff;
+  color: var(--ink);
   background:
-    radial-gradient(1200px 600px at 5% -10%, rgba(212, 175, 55, .08), transparent 45%),
-    radial-gradient(900px 500px at 100% 10%, rgba(212, 175, 55, .06), transparent 55%),
+    radial-gradient(1200px 600px at 5% -10%, rgba(34, 40, 49, .08), transparent 45%),
+    radial-gradient(900px 500px at 100% 10%, rgba(34, 40, 49, .06), transparent 55%),
     var(--bg);
 }
 
@@ -33,9 +33,9 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #fff;
+  color: var(--ink);
   padding: 0 1.5rem;
-  background: radial-gradient(1000px 600px at 50% 10%, rgba(212, 175, 55, .08), transparent 55%), #0f0f10;
+  background: radial-gradient(1000px 600px at 50% 10%, rgba(34, 40, 49, .08), transparent 55%), var(--bg);
 }
 
 .hero-media {
@@ -65,8 +65,8 @@
   z-index: 1;
   pointer-events: none;
   background:
-    radial-gradient(900px 420px at 50% 75%, rgba(212, 175, 55, .18), transparent 50%),
-    linear-gradient(180deg, rgba(15, 15, 16, .72) 0%, rgba(15, 15, 16, .28) 45%, rgba(15, 15, 16, .12) 70%, rgba(15, 15, 16, 0) 100%);
+    radial-gradient(900px 420px at 50% 75%, rgba(34, 40, 49, .14), transparent 50%),
+    linear-gradient(180deg, rgba(223, 208, 184, .65) 0%, rgba(223, 208, 184, .25) 45%, rgba(223, 208, 184, .1) 70%, rgba(223, 208, 184, 0) 100%);
 }
 
 .hero-content {
@@ -130,7 +130,7 @@
   max-width: 900px;
   padding: 12px;
   background: rgba(21, 21, 23, .85);
-  border: 1px solid rgba(212, 175, 55, .25);
+  border: 1px solid rgba(57, 62, 70, .25);
   border-radius: 18px;
   backdrop-filter: blur(8px);
   box-shadow: 0 10px 28px rgba(0, 0, 0, .45);
@@ -141,7 +141,7 @@
   position: absolute;
   inset: -14px;
   border-radius: 28px;
-  background: radial-gradient(60% 50% at 50% 80%, rgba(212, 175, 55, .22), transparent 70%);
+  background: radial-gradient(60% 50% at 50% 80%, rgba(57, 62, 70, .22), transparent 70%);
   filter: blur(16px);
   z-index: -1;
 }
@@ -174,7 +174,7 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  background: linear-gradient(180deg, #f4e3a5, #d4af37);
+  background: linear-gradient(180deg, #f4e3a5, #393e46);
   color: #111;
   font-weight: 700;
   transition: transform .25s, box-shadow .25s;
@@ -182,7 +182,7 @@
 
 #search-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(212, 175, 55, .4);
+  box-shadow: 0 8px 18px rgba(57, 62, 70, .4);
 }
 
 /* Mobile layout */
@@ -291,8 +291,8 @@
   display: grid;
   place-items: center;
   margin-bottom: 8px;
-  background: rgba(212, 175, 55, .1);
-  border: 1px solid rgba(212, 175, 55, .25);
+  background: rgba(57, 62, 70, .1);
+  border: 1px solid rgba(57, 62, 70, .25);
 }
 
 .feature-icon svg {
@@ -382,7 +382,7 @@
   transform: rotate(var(--ribbon-rotate));
   transform-origin: top right;
   z-index: 3;
-  background: linear-gradient(180deg, #f8e9b7, #d4af37);
+  background: linear-gradient(180deg, #f8e9b7, #393e46);
   color: #111;
   font-weight: 800;
   letter-spacing: .08em;
@@ -476,7 +476,7 @@
 .testimonial:hover {
   transform: translateY(-3px);
   box-shadow: 0 18px 36px rgba(0, 0, 0, .45);
-  border-color: rgba(212, 175, 55, .25);
+  border-color: rgba(57, 62, 70, .25);
 }
 
 .testimonial blockquote {
@@ -554,8 +554,8 @@
 .testimonials.luxe-bg::before {
   background:
     url("https://ik.imagekit.io/oneluxstay/reviews%20backdrop.jpg?updatedAt=1762974688698"),
-    radial-gradient(900px 380px at 8% 0%, rgba(212, 175, 55, .10), transparent 60%),
-    radial-gradient(900px 380px at 92% 0%, rgba(212, 175, 55, .08), transparent 60%);
+    radial-gradient(900px 380px at 8% 0%, rgba(57, 62, 70, .10), transparent 60%),
+    radial-gradient(900px 380px at 92% 0%, rgba(57, 62, 70, .08), transparent 60%);
   background-size: cover, auto, auto;
   background-position: center, center, center;
   background-repeat: no-repeat, no-repeat, no-repeat;
@@ -587,7 +587,7 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, .55), transparent);
+  background: linear-gradient(90deg, transparent, rgba(57, 62, 70, .55), transparent);
   filter: blur(.2px);
 }
 
@@ -612,8 +612,8 @@
 
 .cta-wrap {
   text-align: center;
-  background: linear-gradient(180deg, rgba(212, 175, 55, .12), rgba(212, 175, 55, .06));
-  border: 1px solid rgba(212, 175, 55, .25);
+  background: linear-gradient(180deg, rgba(57, 62, 70, .12), rgba(57, 62, 70, .06));
+  border: 1px solid rgba(57, 62, 70, .25);
   border-radius: 22px;
   padding: 28px;
   box-shadow: var(--shadow);
@@ -862,8 +862,8 @@
 }
 
 .ols-dp-day.in-range {
-  background: linear-gradient(180deg, rgba(212, 175, 55, .18), rgba(212, 175, 55, .10));
-  border-color: rgba(212, 175, 55, .25);
+  background: linear-gradient(180deg, rgba(57, 62, 70, .18), rgba(57, 62, 70, .10));
+  border-color: rgba(57, 62, 70, .25);
 }
 
 .ols-dp-day.start,
@@ -906,3 +906,5 @@
 
 
 }
+
+

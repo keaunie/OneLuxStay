@@ -180,7 +180,7 @@ body {
 }
 
 .search-box button {
-  background: #d4af37;
+  background: #393e46;
   color: #fff;
   border: none;
   padding: .75rem;
@@ -270,7 +270,7 @@ body {
 
 .price-badge,
 .view-all-btn button:hover {
-  background: #d4af37;
+  background: #393e46;
   color: #fff
 }
 
@@ -328,8 +328,8 @@ body {
 
 .view-all-btn button {
   background: #fff;
-  color: #d4af37;
-  border: 2px solid #d4af37;
+  color: #393e46;
+  border: 2px solid #393e46;
   padding: .75rem 2rem;
   border-radius: 999px;
   font-weight: 500;
@@ -514,7 +514,7 @@ body {
   color: #fff;
   background: #0e0e0e;
   background-image:
-    radial-gradient(1000px 400px at 70% -10%, rgba(212, 175, 55, .18), rgba(0, 0, 0, 0)),
+    radial-gradient(1000px 400px at 70% -10%, rgba(57, 62, 70, .18), rgba(0, 0, 0, 0)),
     url("https://assets.guesty.com/image/upload/v1760479797/production/666b3af27fc6d5653142b0af/mkrldxtkwvy8riemiryo.jpg");
   background-size: cover;
   background-position: center;
@@ -587,18 +587,18 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(180deg, #d4af37, #b9942d);
+  background: linear-gradient(180deg, #393e46, #b9942d);
   color: #fff;
   /* White text */
-  border-color: #d4af37;
-  box-shadow: 0 6px 16px rgba(212, 175, 55, .4), inset 0 1px 0 rgba(255, 255, 255, .3);
+  border-color: #393e46;
+  box-shadow: 0 6px 16px rgba(57, 62, 70, .4), inset 0 1px 0 rgba(255, 255, 255, .3);
 }
 
 .btn-primary:hover,
 .btn-ghost:hover {
   background: linear-gradient(180deg, #e2c458, #c9a63c);
   transform: translateY(-1px);
-  box-shadow: 0 10px 22px rgba(212, 175, 55, .45);
+  box-shadow: 0 10px 22px rgba(57, 62, 70, .45);
 }
 
 .btn-ghost {
@@ -638,7 +638,7 @@ body {
 
 
 :root {
-  --gold: #d4af37;
+  --gold: #393e46;
   --muted: #6b7280;
   --bg: #ffffff;
   --soft-bg: #f9fafb;
@@ -936,7 +936,7 @@ a.link-gold {
 }
 
 .booking-bar button {
-  background: #d4af37;
+  background: #393e46;
   color: #fff;
   border: none;
   cursor: pointer
@@ -1032,7 +1032,7 @@ body {
 }
 
 a {
-  color: #d4af37;
+  color: #393e46;
   font-size: 1rem;
   gap: 20px;
   font-weight: 600;
@@ -1116,7 +1116,7 @@ a {
 .nav-curtain a:focus,
 .nav-curtain a:hover,
 .termsandcond {
-  color: #d4af37
+  color: #393e46
 }
 
 .ash2 {
@@ -1279,7 +1279,7 @@ a {
 
 .contact-title {
   max-width: 100%;
-  color: #d4af37
+  color: #393e46
 }
 
 .contact-card {
@@ -1525,7 +1525,7 @@ a {
 }
 
 .links-footer1 a {
-  color: #d4af37;
+  color: #393e46;
   font-weight: 600;
   font-size: .9rem;
   display: block
@@ -1537,7 +1537,7 @@ a {
 }
 
 .links-footer-center a {
-  color: #d4af37;
+  color: #393e46;
   font-weight: 600;
   font-size: .95rem;
   text-decoration: none
@@ -1588,7 +1588,7 @@ a {
 .tach1,
 .tach2,
 .tach3 {
-  color: #d4af37;
+  color: #393e46;
   margin-bottom: 20px
 }
 
@@ -1624,7 +1624,7 @@ a {
 }
 
 .notep {
-  color: #d4af37;
+  color: #393e46;
   padding-bottom: 10px;
   word-spacing: 2px
 }
@@ -1835,7 +1835,7 @@ a {
 .menu-toggle {
   background: 0 0;
   border: none;
-  color: #d4af37;
+  color: #393e46;
   font-size: 1.8rem;
   cursor: pointer;
   z-index: 10000
@@ -1849,7 +1849,7 @@ a {
 
 .contactus-navbar {
   font-size: 1rem;
-  color: #d4af37
+  color: #393e46
 }
 
 .notification {
@@ -1869,7 +1869,7 @@ a {
 .chat-bubble {
   bottom: 170px;
   right: 30px;
-  background-color: #d4af37;
+  background-color: #393e46;
   color: #fff;
   padding: 10px 15px;
   border-radius: 20px;
@@ -2988,7 +2988,7 @@ a {
 #menuToggle {
   background: none;
   border: none;
-  color: var(--gold, #d4af37);
+  color: var(--gold, #393e46);
   font-size: 1.6rem;
   cursor: pointer;
   z-index: 10000;
@@ -3024,15 +3024,15 @@ a {
 /* Contact Us Button */
 .contactus-navbar {
   font-size: 1rem;
-  color: var(--gold, #d4af37);
-  border: 2px solid var(--gold, #d4af37);
+  color: var(--gold, #393e46);
+  border: 2px solid var(--gold, #393e46);
   border-radius: 999px;
   padding: 8px 20px;
   transition: all 0.3s ease;
 }
 
 .contactus-navbar:hover {
-  background: var(--gold, #d4af37);
+  background: var(--gold, #393e46);
   color: #000;
 }
 
@@ -3064,7 +3064,7 @@ a {
 
 /* ===== One Lux Stay — About page luxury skin ===== */
 .ols-about {
-  --gold: var(--gold, #d4af37);
+  --gold: var(--gold, #393e46);
   --gold-2: #b9942d;
   --ink: #111213;
   --ink-2: #2b2f33;
@@ -3097,7 +3097,7 @@ a {
 .ols-about .overlay-gradient {
   position: absolute;
   inset: 0;
-  background: radial-gradient(1200px 360px at 70% -10%, rgba(212, 175, 55, .16), transparent 60%),
+  background: radial-gradient(1200px 360px at 70% -10%, rgba(57, 62, 70, .16), transparent 60%),
     linear-gradient(180deg, rgba(0, 0, 0, .65), rgba(0, 0, 0, .75));
   z-index: 0;
 }
@@ -3108,7 +3108,7 @@ a {
   position: absolute;
   inset: 22px;
   border-radius: 18px;
-  border: 1px solid rgba(212, 175, 55, .28);
+  border: 1px solid rgba(57, 62, 70, .28);
   pointer-events: none;
   z-index: 1;
 }
@@ -3202,7 +3202,7 @@ a {
   width: 48px;
   height: 2px;
   margin-top: 8px;
-  background: linear-gradient(90deg, var(--gold), rgba(212, 175, 55, 0));
+  background: linear-gradient(90deg, var(--gold), rgba(57, 62, 70, 0));
 }
 
 /* Body text */
@@ -3299,9 +3299,9 @@ a {
   margin-top: 18px;
   padding: clamp(18px, 3.2vw, 26px);
   background:
-    radial-gradient(800px 220px at 90% -15%, rgba(212, 175, 55, .18), transparent 60%),
+    radial-gradient(800px 220px at 90% -15%, rgba(57, 62, 70, .18), transparent 60%),
     linear-gradient(180deg, rgba(255, 255, 255, .85), rgba(255, 255, 255, .70));
-  border: 1px solid rgba(212, 175, 55, .25);
+  border: 1px solid rgba(57, 62, 70, .25);
 }
 
 @media (max-width: 680px) {
@@ -3330,12 +3330,12 @@ a {
   color: gold;
   text-decoration: none;
   background: linear-gradient(180deg, var(--gold), var(--gold-2));
-  box-shadow: 0 8px 18px rgba(212, 175, 55, .35), inset 0 1px 0 rgba(255, 255, 255, .35);
+  box-shadow: 0 8px 18px rgba(57, 62, 70, .35), inset 0 1px 0 rgba(255, 255, 255, .35);
 }
 
 .ols-about .btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 12px 26px rgba(212, 175, 55, .42);
+  box-shadow: 0 12px 26px rgba(57, 62, 70, .42);
 }
 
 /* Footer */
@@ -3548,5 +3548,7 @@ a {
     font-size: 1.1rem;
   }
 }
+
+
 
 

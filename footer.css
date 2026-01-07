@@ -1,12 +1,12 @@
 /* style.css */
 
 :root {
-  --bg: #042524;
-  --panel: #0a3a38;
-  --muted: #bfcfc8;
-  --accent: #e9dd57;
-  --accent-2: #d4d24e;
-  --text: #f4f7f6;
+  --bg: #dfd0b8;
+  --panel: rgba(57, 62, 70, 0.12);
+  --muted: #948979;
+  --accent: #393e46;
+  --accent-2: #222831;
+  --text: #222831;
   --radius: 28px;
   --gap: 32px;
   --transition: 250ms cubic-bezier(.2, .9, .3, 1);

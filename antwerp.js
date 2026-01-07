@@ -155,7 +155,7 @@ function initListingsPage() {
     clear: document.getElementById("clear"),
   };
 
-  // 👉 filters.cities for location chips
+  // filters.cities for location chips
   const state = {
     all: [],
     filters: {
@@ -180,7 +180,7 @@ function initListingsPage() {
     );
   }
   function fmtScore(x) {
-    return typeof x === "number" && x > 0 ? x.toFixed(1) : "—";
+    return typeof x === "number" && x > 0 ? x.toFixed(1) : "-";
   }
   function fmtReviews(x) {
     return typeof x === "number" ? x.toLocaleString() : "0";
@@ -189,7 +189,7 @@ function initListingsPage() {
     return s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
   }
 
-  // 👉 build location chips from state.all
+  // build location chips from state.all
   function buildCityChips() {
     if (!els.chips) return;
 
@@ -287,7 +287,7 @@ function initListingsPage() {
           ? `<div class="price">Starts at ${currencySymbol(
               displayCurrency
             )}${Number(basePrice).toLocaleString()} / night</div>`
-          : `<div class="price ghost">Starts at —</div>`;
+          : `<div class="price ghost">Starts at -</div>`;
       const card = document.createElement("article");
       card.className = "card";
       card.innerHTML = `
@@ -303,8 +303,8 @@ function initListingsPage() {
         <div class="body">
           <h3 class="title">${escapeHtml(p.name)}</h3>
           <div class="loc">${escapeHtml(p.district || "Antwerp")}${
-        p.area ? ` • ${escapeHtml(cap(p.area || ""))}` : ""
-      }${p.distance_km ? ` • ${p.distance_km} km from center` : ""}</div>
+        p.area ? ` - ${escapeHtml(cap(p.area || ""))}` : ""
+      }${p.distance_km ? ` - ${p.distance_km} km from center` : ""}</div>
 
           <div class="badges">
             <span class="badge score" title="Guest score">${fmtScore(
@@ -315,9 +315,9 @@ function initListingsPage() {
             )} reviews</span>
             ${
               p.stars
-                ? `<span class="badge" title="Star rating">${"★".repeat(
+                ? `<span class="badge" title="Star rating">${"*".repeat(
                     p.stars
-                  )}${"☆".repeat(Math.max(0, 5 - p.stars))}</span>`
+                  )}${".".repeat(Math.max(0, 5 - p.stars))}</span>`
                 : ""
             }
           </div>
@@ -370,11 +370,11 @@ function initListingsPage() {
           if (chip.classList.contains("active")) {
             chip.classList.remove("active");
             chip.setAttribute("aria-pressed", "false");
-            state.filters.cities.delete(key);
+  // filters.cities for location chips
           } else {
             chip.classList.add("active");
             chip.setAttribute("aria-pressed", "true");
-            state.filters.cities.add(key);
+  // filters.cities for location chips
           }
         } else if (areaSlug) {
           const key = areaSlug.toLowerCase();
@@ -397,7 +397,7 @@ function initListingsPage() {
       state.filters.q = "";
       state.filters.sort = "top";
       state.filters.areas.clear();
-      state.filters.cities.clear();
+  // filters.cities for location chips
       if (els.q) els.q.value = "";
       if (els.sort) els.sort.value = "top";
       if (els.chips)
@@ -426,7 +426,7 @@ function initListingsPage() {
             mapped.length,
             "properties from",
             u,
-            "→ cities:",
+            "cities:",
             Array.from(new Set(mapped.map((p) => p.city))).join(", ")
           );
           return mapped;
@@ -503,18 +503,65 @@ function initPropertyDetailPageAntwerp() {
     const today = new Date();
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
+    const images = property.images || [];
+    const heroImage = images[0] || "";
+    const sideImageA = images[1] || heroImage;
+    const sideImageB = images[2] || heroImage;
+    const amenities = Array.from(
+      new Set([
+        ...(property.amenities || []),
+        ...((property.rooms || []).flatMap((room) => room.amenities || [])),
+      ])
+    );
+    const topAmenities = amenities.slice(0, 10);
+    const popularAmenities = amenities.slice(0, 6);
+    const essentialAmenities = amenities.slice(0, 6).join(", ");
+    const extraAmenities = amenities.slice(6, 12).join(", ");
 
-    document.title = `${property.title} — One Lux Stay`;
+
+    document.title = `${property.title} - One Lux Stay`;
+
+    const amenityIcon = (label) => {
+      const name = String(label || "").toLowerCase();
+      if (/(apartment|suite|residence|loft)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 7l6-5 6 5v7H9v-4H7v4H2z"/></svg>';
+      }
+      if (/(bath|shower)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 9h10v3a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V9z"/><path d="M5 9V6a2 2 0 0 1 2-2h1"/></svg>';
+      }
+      if (/(balcony|terrace)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6h10M4 6v6M8 6v6M12 6v6M3 12h10"/></svg>';
+      }
+      if (/(wifi|wi-fi)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 7a6 6 0 0 1 10 0"/><path d="M5 9a4 4 0 0 1 6 0"/><path d="M7 11a2 2 0 0 1 2 0"/><circle cx="8" cy="13" r="1"/></svg>';
+      }
+      if (/(pet)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="5" cy="6" r="1"/><circle cx="8" cy="5" r="1"/><circle cx="11" cy="6" r="1"/><path d="M6 10c1-1 3-1 4 0 1 1 1 3-2 3s-3-2-2-3z"/></svg>';
+      }
+      if (/(family|kids)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="5" cy="6" r="2"/><circle cx="11" cy="6" r="2"/><path d="M2 14c0-2 2-4 4-4s4 2 4 4"/><path d="M8 14c0-2 2-4 4-4s4 2 4 4"/></svg>';
+      }
+      if (/(kitchen)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8z"/><path d="M5 8V6h6v2"/><path d="M4 5h8"/></svg>';
+      }
+      if (/(non-smoking|smoke)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M4 4l8 8"/></svg>';
+      }
+      if (/(washing|laundry)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="4" width="10" height="10" rx="2"/><circle cx="8" cy="9" r="3"/><path d="M5 6h2"/></svg>';
+      }
+      return '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/></svg>';
+    };
 
     container.innerHTML = `
-      <a class="btn" href="/antwerp" style="color: black;" data-link>&larr; Back to listings</a>
+      <a class="btn btn-back" href="/antwerp" data-link>&larr; Back to listings</a>
       <h1 style="margin:12px 0 6px">${property.title}</h1>
       ${
         property.badge
           ? `<div class="badge" style="margin-bottom:8px">${property.badge}</div>`
           : ""
       }
-      <div class="location">${property.location?.area || ""} • ${
+      <div class="location">${property.location?.area || ""} - ${
       property.address || ""
     }</div>
       <div class="rating" style="margin:8px 0 14px">
@@ -527,25 +574,64 @@ function initPropertyDetailPageAntwerp() {
       </div>
 
       <div class="carousel-container">
-        <div class="carousel-main">
-          ${(property.images || [])
-            .map(
-              (img, i) =>
-                `<img src="${img}" alt="${property.title} image ${
-                  i + 1
-                }" data-index="${i}">`
-            )
-            .join("")}
-        </div>
-        <div class="carousel-thumbs">
-          ${(property.images || [])
-            .map(
-              (img, i) =>
-                `<img src="${img}" alt="Thumb ${
-                  i + 1
-                }" data-index="${i}" class="${i === 0 ? "active" : ""}">`
-            )
-            .join("")}
+        <div class="gallery-layout">
+          <div class="gallery-block">
+            <div class="carousel-main gallery-grid">
+              ${
+                heroImage
+                  ? `<img class="gallery-main" src="${heroImage}" alt="${property.title} image 1" data-index="0">`
+                  : ""
+              }
+              <div class="gallery-side">
+                ${
+                  sideImageA
+                    ? `<img class="gallery-side-img" src="${sideImageA}" alt="${property.title} image 2" data-index="1">`
+                    : ""
+                }
+                ${
+                  sideImageB
+                    ? `<img class="gallery-side-img" src="${sideImageB}" alt="${property.title} image 3" data-index="2">`
+                    : ""
+                }
+              </div>
+            </div>
+            <div class="carousel-thumbs">
+              ${images
+                .map(
+                  (img, i) =>
+                    `<img src="${img}" alt="Thumb ${
+                      i + 1
+                    }" data-index="${i}" class="${i === 0 ? "active" : ""}">`
+                )
+                .join("")}
+            </div>
+          </div>
+          <aside class="gallery-sidebar">
+            <div class="review-card">
+              <div class="review-score">
+                <span class="review-score-label">Good</span>
+                <span class="review-score-value">${property.rating ?? "9.7"}</span>
+              </div>
+              <p class="review-count">${
+                property.reviews
+                  ? `${property.reviews.toLocaleString()} reviews`
+                  : "125 reviews"
+              }</p>
+              <div class="review-snippet">
+                <p class="review-title">Guests who stayed here loved</p>
+                <p class="review-quote">"Property was cozy and spotless. Hosts were responsive and helpful."</p>
+                <p class="review-author">Fatima - United States</p>
+              </div>
+            </div>
+            <div class="map-card" aria-label="Location map">
+              <iframe
+                title="Lange Leemstraat 5, Antwerpen map"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Lange+Leemstraat+5,+2018+Antwerpen,+Belgium&output=embed"
+              ></iframe>
+            </div>
+          </aside>
         </div>
       </div>
 
@@ -577,6 +663,51 @@ function initPropertyDetailPageAntwerp() {
         </label>
       </div>
 
+      <section class="property-details">
+        <div class="property-main">
+          <div class="amenities-section">
+            <h3>Amenities</h3>
+            <div class="amenities-grid">
+              ${topAmenities
+                .map(
+                  (amenity) =>
+                    `<div class="amenity-card"><span class="amenity-icon" aria-hidden="true">${amenityIcon(
+                      amenity
+                    )}</span>${amenity}</div>`
+                )
+                .join("")}
+            </div>
+          </div>
+          <div class="about-property">
+            <h3>About this property</h3>
+            <p><strong>Comfortable Accommodations:</strong> ${
+              property.summary || ""
+            }</p>
+            ${
+              essentialAmenities
+                ? `<p><strong>Essential Facilities:</strong> ${essentialAmenities}.</p>`
+                : ""
+            }
+            ${
+              extraAmenities
+                ? `<p><strong>Additional Amenities:</strong> ${extraAmenities}.</p>`
+                : ""
+            }
+            <p><strong>Convenient Location:</strong> Located near ${
+              property.location?.area || "the city center"
+            }, ${property.address || "Antwerp"}, with easy access to local landmarks and transit.</p>
+          </div>
+          <div class="popular-facilities">
+            <h4>Most popular facilities</h4>
+            <div class="facility-list">
+              ${popularAmenities
+                .map((amenity) => `<span class="facility-item">${amenity}</span>`)
+                .join("")}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div class="rooms">
         ${(property.rooms || [])
           .map((room, idx) => {
@@ -591,49 +722,69 @@ function initPropertyDetailPageAntwerp() {
             const hasTour = !!tourJson;
 
             return `
-        <div class="room" data-room-index="${idx}">
-          <div class="room-header">
+        <div class="room booking-row" data-room-index="${idx}">
+          <div class="room-col room-col-type">
             <button 
               type="button" 
               class="room-type room-trigger"
               data-room-index="${idx}"
             >
-              ${room.type} (${room.guests} guests)
+              ${room.type}
             </button>
+            <div class="room-guests">${room.guests} guests</div>
+            <div class="bedrooms">
+              ${(room.bedrooms || [])
+                .map((b) => `<div class="bedroom-line">Bedroom ${b.bedroom}: ${b.beds}</div>`)
+                .join("")}
+            </div>
+            ${(() => {
+              const amenities = room.amenities || property.amenities || [];
+              if (!amenities.length) return "";
+              const chips = amenities.slice(0, 6);
+              const rest = amenities.slice(6);
+              return `
+                <div class="amenity-chips">
+                  ${chips.map((a) => `<span class="amenity-chip">${a}</span>`).join("")}
+                </div>
+                ${
+                  rest.length
+                    ? `<ul class="amenity-list">
+                        ${rest.map((a) => `<li class="amenity-item">${a}</li>`).join("")}
+                      </ul>`
+                    : ""
+                }
+              `;
+            })()}
           </div>
-          <div class="bedrooms">
-            ${(room.bedrooms || [])
-              .map((b) => `Bedroom ${b.bedroom}: ${b.beds}`)
-              .join(" | ")}
+          <div class="room-col room-col-price">
+            <div class="room-price-label">Price per night</div>
+            <div class="room-price"
+              data-base-price="${room.price_per_night ?? ""}"
+              data-currency="${property.price?.currency || "EUR"}">
+              ${fmtMoney(room.price_per_night, property.price?.currency)}
+            </div>
+            <div class="room-nightly" data-nightly-breakdown></div>
           </div>
-
-          <div class="room-price" style="align-self: flex-end;"
-             data-base-price="${room.price_per_night ?? ""}"
-             data-currency="${
-               property.price?.currency || "EUR"
-             }" style="align-self: start;">
-          Starts at: ${fmtMoney(room.price_per_night, property.price?.currency)}
-        </div>
-        <div class="room-nightly" style="align-self: flex-end;" data-nightly-breakdown></div>
-
-          <div class="room-actions" style="align-self: flex-end;">
-            ${
-              hasTour
-                ? `<a
-                   class="view-unit-btn"
-                   href="/360?tour=${encodeURIComponent(tourJson)}"
-                   data-link
-                 >
-                   View Unit (Virtual Tour)
-                 </a>`
-                : ""
-            }
-            <a class="book-btn" href="#"
-               data-room-guests="${room.guests}"
-               data-room-id="${property.id}" 
-               data-guesty-id="${room.guestyid}">
-              Book Now
-            </a>
+          <div class="room-col room-col-action">
+            <div class="room-actions">
+              ${
+                hasTour
+                  ? `<a
+                     class="view-unit-btn"
+                     href="/360?tour=${encodeURIComponent(tourJson)}"
+                     data-link
+                   >
+                     View Unit
+                   </a>`
+                  : ""
+              }
+              <a class="book-btn" href="#"
+                 data-room-guests="${room.guests}"
+                 data-room-id="${property.id}" 
+                 data-guesty-id="${room.guestyid}">
+                Book Now
+              </a>
+            </div>
           </div>
         </div>`;
           })
@@ -861,10 +1012,30 @@ function initPropertyDetailPageAntwerp() {
 
     const mainImgs = container.querySelectorAll(".carousel-main img");
     const thumbs = container.querySelectorAll(".carousel-thumbs img");
+    const galleryMain = container.querySelector(".gallery-main");
+    const gallerySide = container.querySelectorAll(".gallery-side-img");
     thumbs.forEach((t) =>
       t.addEventListener("click", (e) => {
         const i = Number(e.currentTarget.dataset.index);
-        mainImgs[i]?.scrollIntoView({ behavior: "smooth", inline: "center" });
+        if (galleryMain && images.length) {
+          const mainSrc = images[i] || images[0] || "";
+          const sideA = images[i + 1] || images[0] || "";
+          const sideB = images[i + 2] || images[1] || images[0] || "";
+          if (mainSrc) {
+            galleryMain.src = mainSrc;
+            galleryMain.dataset.index = String(i);
+          }
+          if (gallerySide[0] && sideA) {
+            gallerySide[0].src = sideA;
+            gallerySide[0].dataset.index = String((i + 1) % images.length);
+          }
+          if (gallerySide[1] && sideB) {
+            gallerySide[1].src = sideB;
+            gallerySide[1].dataset.index = String((i + 2) % images.length);
+          }
+        } else {
+          mainImgs[i]?.scrollIntoView({ behavior: "smooth", inline: "center" });
+        }
         thumbs.forEach((x) => x.classList.remove("active"));
         e.currentTarget.classList.add("active");
       })
@@ -939,7 +1110,7 @@ function initPropertyDetailPageAntwerp() {
 
       if (imgs.length) {
         mainImg.src = imgs[0];
-        mainImg.alt = `${room.type} — ${property.title}`;
+        mainImg.alt = `${room.type}  ${property.title}`;
         thumbsEl.innerHTML = imgs
           .map(
             (src, i) =>
@@ -1003,7 +1174,7 @@ function initPropertyDetailPageAntwerp() {
     return;
   }
 
-  container.innerHTML = '<p style="padding:16px">Loading…</p>';
+  container.innerHTML = '<p style="padding:16px">Loading</p>';
 
   Promise.all(
     propsUrls.map((u) =>
@@ -1075,9 +1246,9 @@ function initPropertyDetailPageAntwerp() {
       case "AED":
         return "AED ";
       case "EUR":
-        return "€";
+        return "EUR ";
       case "GBP":
-        return "£";
+        return "GBP ";
       default:
         return code ? code.toUpperCase() + " " : "";
     }
@@ -1095,7 +1266,7 @@ function initPropertyDetailPageAntwerp() {
     const district =
       city.toLowerCase() === "antwerp"
         ? neighborhood || "Antwerp City Centre"
-        : city || "—";
+        : city || "-";
 
     return {
       id: it.id || title.toLowerCase().replace(/\s+/g, "-"),
@@ -1124,3 +1295,5 @@ function initPropertyDetailPageAntwerp() {
 })();
 
 window.initPropertyDetailPageAntwerp = initPropertyDetailPageAntwerp;
+
+

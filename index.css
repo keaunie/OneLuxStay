@@ -190,7 +190,7 @@ body {
 }
 
 .search-box button {
-  background: #d4af37;
+  background: #393e46;
   border: none;
   border-radius: .5rem;
   color: #fff;
@@ -312,7 +312,7 @@ body {
 }
 
 .price-badge {
-  background: #d4af37;
+  background: #393e46;
   border-radius: 999px;
   bottom: 1rem;
   color: #fff;
@@ -338,9 +338,9 @@ body {
 
 .view-all-btn button {
   background: #fff;
-  border: 2px solid #d4af37;
+  border: 2px solid #393e46;
   border-radius: 999px;
-  color: #d4af37;
+  color: #393e46;
   cursor: pointer;
   font-weight: 500;
   padding: .75rem 2rem;
@@ -348,7 +348,7 @@ body {
 }
 
 .view-all-btn button:hover {
-  background: #d4af37;
+  background: #393e46;
   color: #fff
 }
 
@@ -484,7 +484,7 @@ body {
 
 .luxe-cta.slim {
   background: center/cover fixed #0e0e0e;
-  background-image: radial-gradient(1000px 400px at 70% -10%, rgba(212, 175, 55, .18), rgba(0, 0, 0, 0)), url("https://assets.guesty.com/image/upload/v1760479797/production/666b3af27fc6d5653142b0af/mkrldxtkwvy8riemiryo.jpg");
+  background-image: radial-gradient(1000px 400px at 70% -10%, rgba(57, 62, 70, .18), rgba(0, 0, 0, 0)), url("https://assets.guesty.com/image/upload/v1760479797/production/666b3af27fc6d5653142b0af/mkrldxtkwvy8riemiryo.jpg");
   color: #fff;
   overflow: hidden;
   padding: 5% 0;
@@ -579,10 +579,10 @@ body {
 }
 
 :root {
-  --gold: #d4af37;
-  --muted: #333333;
-  --bg: #ffffff;
-  --soft-bg: #f9fafb;
+  --gold: #393e46;
+  --muted: #948979;
+  --bg: #dfd0b8;
+  --soft-bg: #dfd0b8;
   --max-w: 1150px;
   --radius: 14px;
   --container-pad: 28px;
@@ -599,6 +599,11 @@ body,
 html {
   height: 100%;
   margin: 0
+}
+
+body {
+  background: var(--bg);
+  color: #222831;
 }
 
 .container {
@@ -694,7 +699,7 @@ a.link-gold {
 }
 
 .booking-bar button {
-  background: #d4af37;
+  background: #393e46;
   border: none;
   color: #fff;
   cursor: pointer
@@ -738,16 +743,16 @@ a.link-gold {
 }
 
 .btn-primary {
-  background: linear-gradient(180deg, #d4af37, #b9942d);
-  border-color: #d4af37;
-  box-shadow: 0 6px 16px rgba(212, 175, 55, .4), inset 0 1px 0 rgba(255, 255, 255, .3);
+  background: linear-gradient(180deg, #393e46, #b9942d);
+  border-color: #393e46;
+  box-shadow: 0 6px 16px rgba(57, 62, 70, .4), inset 0 1px 0 rgba(255, 255, 255, .3);
   color: #fff
 }
 
 .btn-ghost:hover,
 .btn-primary:hover {
   background: linear-gradient(180deg, #e2c458, #c9a63c);
-  box-shadow: 0 10px 22px rgba(212, 175, 55, .45);
+  box-shadow: 0 10px 22px rgba(57, 62, 70, .45);
   transform: translateY(-1px)
 }
 
@@ -1005,7 +1010,7 @@ body {
 }
 
 a {
-  color: #d4af37;
+  color: #393e46;
   font-size: 1rem;
   gap: 20px;
   transform: uppercase
@@ -1084,7 +1089,7 @@ a {
 .nav-curtain a:focus,
 .nav-curtain a:hover,
 .termsandcond {
-  color: #d4af37
+  color: #393e46
 }
 
 .ash2 {
@@ -1250,7 +1255,7 @@ a {
 }
 
 .contact-title {
-  color: #d4af37
+  color: #393e46
 }
 
 .contact-card {
@@ -1474,7 +1479,7 @@ a {
 }
 
 .links-footer1 a {
-  color: #d4af37;
+  color: #393e46;
   font-weight: 600;
   font-size: .9rem;
   display: block
@@ -1485,7 +1490,7 @@ a {
 }
 
 .links-footer-center a {
-  color: #d4af37;
+  color: #393e46;
   font-weight: 600;
   font-size: .95rem;
   text-decoration: none
@@ -1536,7 +1541,7 @@ a {
 .tach1,
 .tach2,
 .tach3 {
-  color: #d4af37;
+  color: #393e46;
   margin-bottom: 20px
 }
 
@@ -1561,7 +1566,7 @@ a {
 }
 
 .notep {
-  color: #d4af37;
+  color: #393e46;
   padding-bottom: 10px;
   word-spacing: 2px
 }
@@ -1755,7 +1760,7 @@ a {
 .menu-toggle {
   background: 0 0;
   border: none;
-  color: #d4af37;
+  color: #393e46;
   font-size: 1.8rem;
   cursor: pointer;
   z-index: 10000
@@ -1785,7 +1790,7 @@ a {
 .chat-bubble {
   bottom: 170px;
   right: 30px;
-  background-color: #d4af37;
+  background-color: #393e46;
   color: #fff;
   padding: 10px 15px;
   border-radius: 20px;
@@ -2769,9 +2774,22 @@ a {
   backdrop-filter: blur(12px)
 }
 
+#nav.scrolled .contactus-navbar {
+  color: #dfd0b8;
+  border-color: #dfd0b8;
+  background: rgba(57, 62, 70, 0.72);
+  box-shadow: 0 8px 18px rgba(57, 62, 70, 0.35);
+}
+
+#nav.scrolled .contactus-navbar:hover {
+  background: #222831;
+  color: #dfd0b8;
+  border-color: #222831;
+}
+
 #menuToggle {
   border: none;
-  color: var(--gold, #d4af37);
+  color: var(--gold, #393e46);
   font-size: 1.6rem;
   z-index: 10000
 }
@@ -2799,16 +2817,20 @@ a {
 
 .contactus-navbar {
   font-size: 1rem;
-  color: var(--gold, #d4af37);
-  border: 2px solid var(--gold, #d4af37);
+  color: #222831;
+  border: 2px solid #222831;
   border-radius: 999px;
   padding: 8px 20px;
-  transition: .3s
+  background: rgba(34, 40, 49, 0.12);
+  box-shadow: 0 6px 16px rgba(34, 40, 49, 0.2);
+  transition: background .3s, color .3s, border-color .3s, box-shadow .3s
 }
 
 .contactus-navbar:hover {
-  background: var(--gold, #d4af37);
-  color: #000
+  background: #393e46;
+  color: #dfd0b8;
+  border-color: #393e46;
+  box-shadow: 0 10px 22px rgba(57, 62, 70, 0.28)
 }
 
 @media (max-width:768px) {
@@ -2845,7 +2867,7 @@ a {
 }
 
 .ols-about {
-  --gold: var(--gold, #d4af37);
+  --gold: var(--gold, #393e46);
   --gold-2: #b9942d;
   --ink: #111213;
   --ink-2: #2b2f33;
@@ -2929,7 +2951,7 @@ a {
 
 .ols-about .overlay-gradient {
   inset: 0;
-  background: radial-gradient(1200px 360px at 70% -10%, rgba(212, 175, 55, .16), transparent 60%), linear-gradient(180deg, rgba(0, 0, 0, .65), rgba(0, 0, 0, .75));
+  background: radial-gradient(1200px 360px at 70% -10%, rgba(57, 62, 70, .16), transparent 60%), linear-gradient(180deg, rgba(0, 0, 0, .65), rgba(0, 0, 0, .75));
   z-index: 0
 }
 
@@ -2938,7 +2960,7 @@ a {
   position: absolute;
   inset: 22px;
   border-radius: 18px;
-  border: 1px solid rgba(212, 175, 55, .28);
+  border: 1px solid rgba(57, 62, 70, .28);
   pointer-events: none;
   z-index: 1
 }
@@ -3007,7 +3029,7 @@ a {
   width: 48px;
   height: 2px;
   margin-top: 8px;
-  background: linear-gradient(90deg, var(--gold), rgba(212, 175, 55, 0))
+  background: linear-gradient(90deg, var(--gold), rgba(57, 62, 70, 0))
 }
 
 .ols-about p {
@@ -3090,8 +3112,8 @@ a {
   align-items: center;
   margin-top: 18px;
   padding: clamp(18px, 3.2vw, 26px);
-  background: radial-gradient(800px 220px at 90% -15%, rgba(212, 175, 55, .18), transparent 60%), linear-gradient(180deg, rgba(255, 255, 255, .85), rgba(255, 255, 255, .7));
-  border: 1px solid rgba(212, 175, 55, .25)
+  background: radial-gradient(800px 220px at 90% -15%, rgba(57, 62, 70, .18), transparent 60%), linear-gradient(180deg, rgba(255, 255, 255, .85), rgba(255, 255, 255, .7));
+  border: 1px solid rgba(57, 62, 70, .25)
 }
 
 @media (max-width:680px) {
@@ -3127,12 +3149,12 @@ a {
   font: 700 14px/1 Inter, system-ui;
   color: gold;
   background: linear-gradient(180deg, var(--gold), var(--gold-2));
-  box-shadow: 0 8px 18px rgba(212, 175, 55, .35), inset 0 1px 0 rgba(255, 255, 255, .35)
+  box-shadow: 0 8px 18px rgba(57, 62, 70, .35), inset 0 1px 0 rgba(255, 255, 255, .35)
 }
 
 .ols-about .btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 12px 26px rgba(212, 175, 55, .42)
+  box-shadow: 0 12px 26px rgba(57, 62, 70, .42)
 }
 
 @media (prefers-reduced-motion:no-preference) {
@@ -3337,3 +3359,5 @@ a {
 .gallery-section h2{
   color: white;
 }
+
+

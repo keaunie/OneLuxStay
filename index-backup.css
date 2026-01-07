@@ -84,7 +84,7 @@ a {
 }
 
 .search-box button {
-  background: #d4af37;
+  background: #393e46;
   color: white;
   border: none;
   padding: 0.75rem;
@@ -180,7 +180,7 @@ section {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
-  background: #d4af37;
+  background: #393e46;
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 999px;
@@ -205,8 +205,8 @@ section {
 
 .view-all-btn button {
   background: white;
-  color: #d4af37;
-  border: 2px solid #d4af37;
+  color: #393e46;
+  border: 2px solid #393e46;
   padding: 0.75rem 2rem;
   border-radius: 999px;
   font-weight: 500;
@@ -215,7 +215,7 @@ section {
 }
 
 .view-all-btn button:hover {
-  background: #d4af37;
+  background: #393e46;
   color: white;
 }
 
@@ -304,7 +304,7 @@ section {
 
 /* CTA Section */
 .cta-section {
-  background-color: #d4af37;
+  background-color: #393e46;
   color: white;
   padding: 4rem 2rem;
   text-align: center;
@@ -327,7 +327,7 @@ section {
 
 .cta-section button {
   background-color: white;
-  color: #d4af37;
+  color: #393e46;
   padding: 0.75rem 2rem;
   font-weight: bold;
   font-size: 1rem;
@@ -436,7 +436,7 @@ section {
 }
 
 .booking-bar button {
-  background: #d4af37;
+  background: #393e46;
   color: white;
   border: none;
   cursor: pointer;
@@ -560,7 +560,7 @@ body {
 }
 
 a {
-  color: #d4af37;
+  color: #393e46;
   font-size: 1rem;
   gap: 20px;
   font-weight: 600;
@@ -644,7 +644,7 @@ a {
 .ash,
 .ash2,
 .termsandcond {
-  color: #d4af37
+  color: #393e46
 }
 
 .ash2 {
@@ -1026,7 +1026,7 @@ a {
 }
 
 .links-footer1 a {
-  color: #d4af37;
+  color: #393e46;
   font-weight: 600;
   font-size: 0.9rem;
   text-decoration: none;
@@ -1040,7 +1040,7 @@ a {
 }
 
 .links-footer-center a {
-  color: #d4af37;
+  color: #393e46;
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
@@ -1097,7 +1097,7 @@ a {
 .tach1,
 .tach2,
 .tach3 {
-  color: #d4af37;
+  color: #393e46;
   margin-bottom: 20px
 }
 
@@ -1123,7 +1123,7 @@ a {
 }
 
 .notep {
-  color: #d4af37;
+  color: #393e46;
   padding-bottom: 10px;
   word-spacing: 2px
 }
@@ -1376,7 +1376,7 @@ a {
 
 .nav-curtain a:hover,
 .nav-curtain a:focus {
-  color: #d4af37;
+  color: #393e46;
   /* gold color */
 }
 
@@ -1385,7 +1385,7 @@ a {
 .menu-toggle {
   background: none;
   border: none;
-  color: #d4af37;
+  color: #393e46;
   font-size: 1.8rem;
   cursor: pointer;
   z-index: 10000;
@@ -1395,7 +1395,7 @@ a {
 
 .contactus-navbar {
   padding-right: 2%;
-  color: #d4af37;
+  color: #393e46;
 }
 
 
