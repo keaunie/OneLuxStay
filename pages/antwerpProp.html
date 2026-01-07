@@ -733,6 +733,14 @@
 
     /* Responsive */
     @media(max-width:768px) {
+      body {
+        padding: 72px 0 32px;
+      }
+
+      .container {
+        padding: 16px;
+      }
+
       .gallery-layout {
         grid-template-columns: 1fr;
       }
@@ -743,7 +751,8 @@
       }
 
       .gallery-main {
-        height: 260px;
+        height: auto;
+        aspect-ratio: 4 / 3;
       }
 
       .gallery-side {
@@ -752,7 +761,8 @@
       }
 
       .gallery-side-img {
-        height: 140px;
+        height: auto;
+        aspect-ratio: 4 / 3;
       }
 
       .map-card {
@@ -761,10 +771,12 @@
 
       .gallery-sidebar {
         height: auto;
+        gap: 12px;
       }
 
       .room.booking-row {
         grid-template-columns: 1fr;
+        padding: 14px;
       }
 
       .room-col-price,
@@ -788,7 +800,11 @@
       }
 
       .carousel-thumbs img {
-        height: 56px;
+        height: 62px;
+      }
+
+      .carousel-thumbs {
+        flex-wrap: wrap;
       }
 
       .property-header {
@@ -798,6 +814,86 @@
       .contact-card--top {
         max-width: 100%;
         margin: 0 0 16px 0;
+      }
+    }
+
+    @media(max-width:520px) {
+      body {
+        padding: 56px 0 24px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .badge {
+        font-size: 0.8rem;
+      }
+
+      .location,
+      .rating {
+        font-size: 0.95rem;
+      }
+
+      .selector {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .selector-dates {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .selector label,
+      .selector input,
+      .selector select {
+        width: 100%;
+      }
+
+      .gallery-main {
+        height: auto;
+        aspect-ratio: 4 / 3;
+      }
+
+      .gallery-side-img {
+        height: auto;
+        aspect-ratio: 4 / 3;
+      }
+
+      .carousel-thumbs img {
+        height: 50px;
+      }
+
+      .amenities-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .amenity-card {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+      }
+
+      .amenity-card {
+        grid-template-columns: 20px 1fr;
+      }
+
+      .amenity-icon {
+        width: 18px;
+        height: 18px;
+      }
+
+      .gallery-side {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .room-actions {
+        flex-direction: column;
+      }
+
+      .book-btn,
+      .view-unit-btn {
+        width: 100%;
       }
     }
 

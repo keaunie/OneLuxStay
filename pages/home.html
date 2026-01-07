@@ -513,9 +513,38 @@
     .immersive-hero {
       background:
         radial-gradient(1200px 600px at 50% -20%, rgba(57, 62, 70, .08), transparent 45%),
-        linear-gradient(180deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .85)),
+        linear-gradient(180deg, rgba(0, 0, 0, .78), rgba(0, 0, 0, .92)),
         url("/image/dubai-luxury-apartments-aerial-cityscape-waterfront-urban-design.webp") center/cover no-repeat,
         #0b0b0d;
+    }
+
+    .hero-layer--visual {
+      opacity: 0.25;
+      mix-blend-mode: normal;
+    }
+
+    .hero-content {
+      padding: 16px;
+      background: rgba(0, 0, 0, 0.28);
+      border-radius: 16px;
+      backdrop-filter: blur(6px);
+    }
+
+    .hero-kicker,
+    .hero-title,
+    .hero-sub {
+      color: #ffffff;
+      text-shadow: 0 12px 26px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-kicker {
+      color: #ffffff;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .hero-sub {
+      opacity: 0.9;
     }
   }
 
@@ -602,6 +631,15 @@
     color: var(--muted);
     margin-bottom: 40px;
     text-wrap: balance;
+  }
+
+  @media (max-width: 640px) {
+    .hero-kicker,
+    .hero-title,
+    .hero-sub {
+      color: #ffffff !important;
+      text-shadow: 0 12px 26px rgba(0, 0, 0, 0.7) !important;
+    }
   }
 
   .hero-destinations {
