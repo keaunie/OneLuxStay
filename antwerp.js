@@ -556,7 +556,7 @@ function initPropertyDetailPageAntwerp() {
     container.innerHTML = `
       <div class="property-header">
         <div class="property-meta">
-          <a class="btn btn-back" href="/antwerp" data-link>&larr; Back to listings</a>
+          < class="btn btn-back" href="/antwerp" data-link>&larr; Back to listings</a>
           <h1 style="margin:12px 0 6px">${property.title}</h1>
           ${
             property.badge
@@ -670,6 +670,9 @@ function initPropertyDetailPageAntwerp() {
             (_, i) => `<option value="${i + 1}">${i + 1}</option>`
           ).join("")}</select>
         </label>
+        <div class="selector-action">
+          <button type="button" class="availability-btn">Check Availability</button>
+        </div>
       </div>
 
       <section class="property-details">

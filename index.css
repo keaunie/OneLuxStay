@@ -1760,7 +1760,7 @@ a {
 .menu-toggle {
   background: 0 0;
   border: none;
-  color: #393e46;
+  color: #dfd0b8;
   font-size: 1.8rem;
   cursor: pointer;
   z-index: 10000
@@ -2789,7 +2789,7 @@ a {
 
 #menuToggle {
   border: none;
-  color: var(--gold, #393e46);
+  color: #dfd0b8;
   font-size: 1.6rem;
   z-index: 10000
 }
@@ -2808,7 +2808,7 @@ a {
 }
 
 #nav.scrolled .logo img {
-  width: clamp(50px, 2vw, 300px)
+  width: clamp(60px, 3vw, 140px)
 }
 
 #nav.scrolled .logo {
