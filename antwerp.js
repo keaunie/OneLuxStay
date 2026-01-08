@@ -882,15 +882,6 @@ function initPropertyDetailPageAntwerp() {
               ).join("")}
             </div>
           </div>
-          <div class="room-col room-col-price">
-            <div class="room-price-label">Price per night</div>
-            <div class="room-price"
-              data-base-price="${room.price_per_night ?? ""}"
-              data-currency="${property.price?.currency || "EUR"}">
-              ${fmtMoney(room.price_per_night, property.price?.currency)}
-            </div>
-            <div class="room-nightly" data-nightly-breakdown></div>
-          </div>
           <div class="room-col room-col-action">
             <div class="room-actions">
               ${
