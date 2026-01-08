@@ -34,6 +34,7 @@
                                              "type":  "One Lux Stay Near Antwerp Central Grande Deluxe 3 bedroom suite",
                                              "guests":  6,
                                              "guestyid":  "6811675405d52b0010c3fae5",
+                                             "virtualTourJson": "/data/tours/antwerp/antwerp-central-5-3br.json",
                                              "bedrooms":  [
                                                               {
                                                                   "bedroom":  1,

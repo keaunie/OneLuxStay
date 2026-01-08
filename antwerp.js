@@ -658,12 +658,12 @@ function initPropertyDetailPageAntwerp() {
       property.address || ""
     }</div>
           <div class="rating" style="margin:8px 0 14px">
-            Rating: <span>${property.rating ?? ""}</span>
-            ${
+            Rating: <span data-header-rating>${property.rating ?? ""}</span>
+            <span data-header-count>${
               property.reviews
                 ? `(${property.reviews.toLocaleString()} reviews)`
                 : ""
-            }
+            }</span>
           </div>
         </div>
         <div class="contact-card contact-card--top">
@@ -891,7 +891,7 @@ function initPropertyDetailPageAntwerp() {
                      href="/360?tour=${encodeURIComponent(tourJson)}"
                      data-link
                    >
-                     View Unit
+                     Virtual Tour
                    </a>`
                   : ""
               }
@@ -1544,12 +1544,20 @@ function initPropertyDetailPageAntwerp() {
       }
     }
 
+    const formatRatingValue = (value) => {
+      if (!value) return null;
+      const str = String(value);
+      return str.includes("/") ? str : `${str}/5`;
+    };
+
     async function loadGoogleReviews(placeId) {
       const reviewsSection = container.querySelector(
         "#section-reviews"
       );
       if (!reviewsSection) return;
 
+      const headerRatingEl = container.querySelector("[data-header-rating]");
+      const headerCountEl = container.querySelector("[data-header-count]");
       const ratingEl = reviewsSection.querySelector("[data-reviews-rating]");
       const countEl = reviewsSection.querySelector("[data-reviews-count]");
       const listEl = reviewsSection.querySelector("[data-google-reviews-list]");
@@ -1570,24 +1578,35 @@ function initPropertyDetailPageAntwerp() {
         if (!res.ok) return;
         const data = await res.json();
 
-        if (data.rating && ratingEl) {
-          ratingEl.textContent = data.rating;
+        const displayRating = formatRatingValue(data.rating);
+        const totalReviews = Number(data.total || 0);
+
+        if (displayRating && ratingEl) {
+          ratingEl.textContent = displayRating;
         }
-        if (data.total && countEl) {
-          countEl.textContent = `${Number(data.total).toLocaleString()} reviews`;
+        if (totalReviews && countEl) {
+          countEl.textContent = `${totalReviews.toLocaleString()} reviews`;
         }
-        if (data.rating && cardRatingEl) {
-          cardRatingEl.textContent = data.rating;
+        if (displayRating && cardRatingEl) {
+          cardRatingEl.textContent = displayRating;
         }
-        if (data.total && cardCountEl) {
-          cardCountEl.textContent = `${Number(data.total).toLocaleString()} reviews`;
+        if (totalReviews && cardCountEl) {
+          cardCountEl.textContent = `${totalReviews.toLocaleString()} reviews`;
+        }
+        if (displayRating && headerRatingEl) {
+          headerRatingEl.textContent = displayRating;
+        }
+        if (headerCountEl) {
+          headerCountEl.textContent = totalReviews
+            ? `(${totalReviews.toLocaleString()} reviews)`
+            : "";
         }
         if (cardLabelEl) {
           cardLabelEl.textContent = "Excellent";
         }
 
         if (Array.isArray(data.reviews) && data.reviews.length) {
-          const rating = data.rating || null;
+          const rating = displayRating ? data.rating : null;
           reviewsForModal = { reviews: data.reviews, rating };
           renderReviewsList(data.reviews, listEl, 5);
           if (reviewsMoreBtn) {
@@ -1607,6 +1626,8 @@ function initPropertyDetailPageAntwerp() {
       const reviewsSection = container.querySelector("#section-reviews");
       if (!reviewsSection) return;
 
+      const headerRatingEl = container.querySelector("[data-header-rating]");
+      const headerCountEl = container.querySelector("[data-header-count]");
       const ratingEl = reviewsSection.querySelector("[data-reviews-rating]");
       const countEl = reviewsSection.querySelector("[data-reviews-count]");
       const labelEl = reviewsSection.querySelector(".review-score-label");
@@ -1623,36 +1644,51 @@ function initPropertyDetailPageAntwerp() {
         if (!res.ok) return;
         const data = await res.json();
 
+        const numericRatings = Array.isArray(data.reviews)
+          ? data.reviews
+              .map((review) => Number(review.rating))
+              .filter((value) => Number.isFinite(value))
+          : [];
+        const avg =
+          numericRatings.length > 0
+            ? (
+                numericRatings.reduce((sum, value) => sum + value, 0) /
+                numericRatings.length
+              ).toFixed(1)
+            : data.rating || null;
+        const displayRating = formatRatingValue(avg || data.rating || "5");
+        const totalReviews = Number(
+          data.total || (data.reviews ? data.reviews.length : 0)
+        );
+
         if (ratingEl) {
-          ratingEl.textContent = data.rating ? data.rating : "5/5";
+          ratingEl.textContent = displayRating || "5/5";
         }
         if (labelEl) {
           labelEl.textContent = "Excellent";
         }
-        if (data.total && countEl) {
-          countEl.textContent = `${Number(data.total).toLocaleString()} reviews`;
+        if (countEl && totalReviews) {
+          countEl.textContent = `${totalReviews.toLocaleString()} reviews`;
         }
         if (cardRatingEl) {
-          cardRatingEl.textContent = data.rating ? data.rating : "5/5";
+          cardRatingEl.textContent = displayRating || "5/5";
         }
         if (cardLabelEl) {
           cardLabelEl.textContent = "Excellent";
         }
-        if (data.total && cardCountEl) {
-          cardCountEl.textContent = `${Number(data.total).toLocaleString()} reviews`;
+        if (cardCountEl && totalReviews) {
+          cardCountEl.textContent = `${totalReviews.toLocaleString()} reviews`;
+        }
+        if (headerRatingEl) {
+          headerRatingEl.textContent = displayRating || "5/5";
+        }
+        if (headerCountEl) {
+          headerCountEl.textContent = totalReviews
+            ? `(${totalReviews.toLocaleString()} reviews)`
+            : "";
         }
 
         if (Array.isArray(data.reviews) && data.reviews.length) {
-          const numericRatings = data.reviews
-            .map((review) => Number(review.rating))
-            .filter((value) => Number.isFinite(value));
-          const avg =
-            numericRatings.length > 0
-              ? (
-                  numericRatings.reduce((sum, value) => sum + value, 0) /
-                  numericRatings.length
-                ).toFixed(1)
-              : data.rating || null;
           reviewsForModal = { reviews: data.reviews, rating: avg };
           renderReviewsList(data.reviews, listEl, 5);
           if (reviewsMoreBtn) {
