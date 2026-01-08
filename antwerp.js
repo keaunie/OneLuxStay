@@ -546,6 +546,57 @@ function initPropertyDetailPageAntwerp() {
       if (/(non-smoking|smoke)/i.test(name)) {
         return '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/><path d="M4 4l8 8"/></svg>';
       }
+      if (/(bed linens|linens)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="5" width="12" height="7" rx="2"/><path d="M4 6h4"/></svg>';
+      }
+      if (/(essentials|clothing storage|hangers)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4a2 2 0 1 1 4 0v1l3 2H3l3-2V4z"/><path d="M3 7h10l-1 6H4z"/></svg>';
+      }
+      if (/(hair dryer|hairdryer)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h6a3 3 0 1 0 0-6H6"/><path d="M8 8v4M6 12h4"/></svg>';
+      }
+      if (/(heating)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 2v12M11 2v12"/><path d="M3 6h10M3 10h10"/></svg>';
+      }
+      if (/(internet|wireless internet|wifi|wi-fi)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 7a6 6 0 0 1 10 0"/><path d="M5 9a4 4 0 0 1 6 0"/><path d="M7 11a2 2 0 0 1 2 0"/><circle cx="8" cy="13" r="1"/></svg>';
+      }
+      if (/(iron)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 10h10l-1-4H4z"/><path d="M5 6h4"/></svg>';
+      }
+      if (/(tv|television)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="2" y="4" width="12" height="7" rx="1"/><path d="M6 13h4"/></svg>';
+      }
+      if (/(washer|washing machine|laundry)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="4" width="10" height="10" rx="2"/><circle cx="8" cy="9" r="3"/><path d="M5 6h2"/></svg>';
+      }
+      if (/(body soap|shampoo|conditioner|shower gel|cleaning products)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="5" y="3" width="6" height="10" rx="2"/><path d="M6 3V2h4v1"/></svg>';
+      }
+      if (/(hot water)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3c0 2 2 2 2 4s-2 2-2 4"/><path d="M9 3c0 2 2 2 2 4s-2 2-2 4"/></svg>';
+      }
+      if (/(carbon monoxide detector|smoke detector)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5"/><path d="M8 3v2M8 11v2M3 8h2M11 8h2"/></svg>';
+      }
+      if (/(fire extinguisher)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="6" y="5" width="4" height="8" rx="1"/><path d="M6 4h4M8 2v2"/></svg>';
+      }
+      if (/(coffee|coffee maker|kettle)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 5h6v4a3 3 0 0 1-3 3H4z"/><path d="M10 6h2a1 1 0 0 1 0 2h-2"/></svg>';
+      }
+      if (/(cookware|dishes|silverware|dining table|oven|refrigerator|freezer)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="3" width="4" height="10"/><path d="M9 3h4v10H9z"/><path d="M9 6h4"/></svg>';
+      }
+      if (/(laptop-friendly workspace|workspace)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="4" width="10" height="6" rx="1"/><path d="M2 12h12"/></svg>';
+      }
+      if (/(parking|paid parking)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="2" width="10" height="12" rx="2"/><path d="M6 5h3a2 2 0 0 1 0 4H6z"/></svg>';
+      }
+      if (/(long-term stays allowed|luggage dropoff allowed)/i.test(name)) {
+        return '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="4" y="4" width="8" height="9" rx="1"/><path d="M6 4V3a2 2 0 0 1 4 0v1"/></svg>';
+      }
       if (/(washing|laundry)/i.test(name)) {
         return '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="4" width="10" height="10" rx="2"/><circle cx="8" cy="9" r="3"/><path d="M5 6h2"/></svg>';
       }
@@ -556,11 +607,41 @@ function initPropertyDetailPageAntwerp() {
       (property.id || "").includes("fashion") ||
       /fashion/i.test(property.title || "") ||
       /fashion/i.test(property.location?.neighborhood || "");
+    const isCentralSignature = (property.id || "") === "antwerp-central-5";
+    const isDiamondDistrict = (property.id || "") === "antwerp-diamond-30";
+    const isCityCentre = (property.id || "") === "antwerp-centre-20";
+    const googleReviewsPlaceId =
+      (property.id || "") === "antwerp-central-5"
+        ? "ChIJ-9DmtqL3w0cRSCwudECBvqI"
+        : "";
+    const localReviewsUrl =
+      (property.id || "") === "antwerp-central-5"
+        ? "/data/central-signature-reviews.json"
+        : (property.id || "") === "antwerp-centre-20"
+        ? "/data/central-signature-reviews.json"
+        : (property.id || "") === "antwerp-fashion-12"
+        ? "/data/fashion-district-reviews.json"
+        : (property.id || "") === "antwerp-diamond-30"
+        ? "/data/diamond-district-reviews.json"
+        : "";
+    let reviewsForModal = null;
     const mapTitle = isFashionDistrict
       ? "One Lux Stay Antwerp Fashion District map"
+      : isCentralSignature
+      ? "One Lux Stay Antwerp Central Signature Suites map"
+      : isDiamondDistrict
+      ? "One Lux Stay Antwerp Diamond District map"
+      : isCityCentre
+      ? "One Lux Stay Antwerp City Centre map"
       : "Lange Leemstraat 5, Antwerpen map";
     const mapSrc = isFashionDistrict
-      ? "https://www.google.com/maps?q=One+Lux+Stay+Antwerp+Fashion+District&output=embed&z=15"
+      ? "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9995.936956171985!2d4.411811999999995!3d51.21936600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3f7c4e1dd0591%3A0x75085891d1b3c81f!2sOne%20Lux%20Stay%20Antwerp%20Fashion%20District!5e0!3m2!1sen!2sus!4v1767846435294!5m2!1sen!2sus"
+      : isCentralSignature
+      ? "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2499.4424782937153!2d4.406373412603858!3d51.210924032200126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3f7a2b6e6d0fb%3A0xa2be8140742e2c48!2sOne%20Lux%20Stay%20Antwerp%20Central%20Signature%20Suites!5e0!3m2!1sen!2sus!4v1767846775149!5m2!1sen!2sus"
+      : isDiamondDistrict
+      ? "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2499.5609147435594!2d4.408742258172995!3d51.20874195985823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3f7f18b4a4a51%3A0xa469078beac70fc6!2sOne%20Lux%20Stay%20Antwerp%20Diamond%20District!5e0!3m2!1sen!2sus!4v1767847026429!5m2!1sen!2sus"
+      : isCityCentre
+      ? "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9995.93421243635!2d4.401490722569857!3d51.21937863595092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3f70494fe2e23%3A0x4734b835381669a9!2sOne%20Lux%20Stay%20Antwerp%20City%20Centre!5e0!3m2!1sen!2sus!4v1767847190626!5m2!1sen!2sus"
       : "https://www.google.com/maps?q=Lange+Leemstraat+5,+2018+Antwerpen,+Belgium&output=embed";
 
     container.innerHTML = `
@@ -592,7 +673,7 @@ function initPropertyDetailPageAntwerp() {
             <a class="contact-phone" href="tel:+32483338745">+32 483 338 745</a>
             <a class="contact-phone" href="tel:+32493813441">+32 493 813 441</a>
             <a class="contact-phone" href="https://wa.me/32493813441?text=Hello%2C%20I%20have%20questions%20about%20the%20unit%20on%20OneLuxStay%20Antwerp%20near%20Central" target="_blank" rel="noopener">
-              <span aria-hidden="true">💬</span> WhatsApp: +32 493 813 441
+              <span aria-hidden="true">💬</span> WhatsApp
             </a>
           </div>
         </div>
@@ -603,6 +684,7 @@ function initPropertyDetailPageAntwerp() {
         <a class="property-tab" href="#section-facilities">Facilities</a>
         <a class="property-tab" href="#section-rooms">Rooms</a>
         <a class="property-tab" href="#section-reviews">Guest reviews</a>
+        <a class="property-tab" href="#section-house-rules">House rules</a>
       </nav>
 
       <div class="carousel-container">
@@ -639,19 +721,19 @@ function initPropertyDetailPageAntwerp() {
             </div>
           </div>
           <aside class="gallery-sidebar">
-            <div class="review-card">
+            <div class="review-card" data-review-card>
               <div class="review-score">
-                <span class="review-score-label">Good</span>
-                <span class="review-score-value">${
+                <span class="review-score-label" data-review-card-label>Good</span>
+                <span class="review-score-value" data-review-card-rating>${
                   property.rating ?? "9.7"
                 }</span>
               </div>
-              <p class="review-count">${
+              <p class="review-count" data-review-card-count>${
                 property.reviews
                   ? `${property.reviews.toLocaleString()} reviews`
                   : "125 reviews"
               }</p>
-              <div class="review-snippet">
+              <div class="review-snippet" data-review-card-snippet>
                 <p class="review-title">Guests who stayed here loved</p>
                 <p class="review-quote">"Property was cozy and spotless. Hosts were responsive and helpful."</p>
                 <p class="review-author">Fatima - United States</p>
@@ -670,11 +752,14 @@ function initPropertyDetailPageAntwerp() {
       </div>
 
       <section id="section-overview" class="property-section">
-        <div class="summary">${property.summary || ""}</div>
-        <div class="price">From ${fmtMoney(
-          property.price?.from,
-          property.price?.currency
-        )}</div>
+        <div class="price-card">
+          <span class="price-label">From</span>
+          <span class="price-value">${fmtMoney(
+            property.price?.from,
+            property.price?.currency
+          )}</span>
+          <span class="price-note">per night</span>
+        </div>
 
         <div class="selector search-box" data-ols-date-range>
           <div class="selector-dates">
@@ -774,7 +859,6 @@ function initPropertyDetailPageAntwerp() {
             >
               ${room.type}
             </button>
-            <div class="room-guests">${room.guests} guests</div>
             <div class="bedrooms">
               ${(room.bedrooms || [])
                 .map(
@@ -783,28 +867,20 @@ function initPropertyDetailPageAntwerp() {
                 )
                 .join("")}
             </div>
-            ${(() => {
-              const amenities = room.amenities || property.amenities || [];
-              if (!amenities.length) return "";
-              const chips = amenities.slice(0, 6);
-              const rest = amenities.slice(6);
-              return `
-                <div class="amenity-chips">
-                  ${chips
-                    .map((a) => `<span class="amenity-chip">${a}</span>`)
-                    .join("")}
-                </div>
-                ${
-                  rest.length
-                    ? `<ul class="amenity-list">
-                        ${rest
-                          .map((a) => `<li class="amenity-item">${a}</li>`)
-                          .join("")}
-                      </ul>`
-                    : ""
-                }
-              `;
-            })()}
+          </div>
+          <div class="room-col room-col-guests">
+            <div class="room-price-label">Guests</div>
+            <div class="guest-icons" aria-label="${room.guests} guests">
+              ${Array.from(
+                { length: Math.min(room.guests || 1, 6) },
+                () =>
+                  `<span class="guest-icon" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" role="img" aria-hidden="true">
+                      <path d="M8 9a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm0 2c-2.5 0-5 1.2-5 3v1h10v-1c0-1.8-2.5-3-5-3z"/>
+                    </svg>
+                  </span>`
+              ).join("")}
+            </div>
           </div>
           <div class="room-col room-col-price">
             <div class="room-price-label">Price per night</div>
@@ -845,16 +921,75 @@ function initPropertyDetailPageAntwerp() {
         <h3>Guest reviews</h3>
         <div class="reviews-summary">
           <span class="review-score-label">Good</span>
-          <span class="review-score-value">${property.rating ?? "9.7"}</span>
-          <span class="review-count">${
+          <span class="review-score-value" data-reviews-rating>${property.rating ?? "9.7"}</span>
+          <span class="review-count" data-reviews-count>${
             property.reviews
               ? `${property.reviews.toLocaleString()} reviews`
               : "125 reviews"
           }</span>
         </div>
-        <p class="review-quote">"Property was cozy and spotless. Hosts were responsive and helpful."</p>
-        <p class="review-author">Fatima - United States</p>
+        <div class="reviews-list" data-google-reviews-list>
+          <div class="review-item">
+            <p class="review-quote">"Property was cozy and spotless. Hosts were responsive and helpful."</p>
+            <p class="review-author">Fatima - United States</p>
+          </div>
+        </div>
+        <button class="reviews-more" type="button" data-reviews-more>Read more</button>
       </section>
+
+      <section id="section-house-rules" class="house-rules">
+        <div class="house-rules-header">
+          <h3>House rules</h3>
+          <p>Special requests are welcome — add them during your booking.</p>
+        </div>
+        <div class="house-rules-card">
+          <div class="house-rule">
+            <div class="rule-label">Check-in</div>
+            <div class="rule-detail">
+              <div class="rule-time">From 3:00 PM</div>
+              <div class="rule-note">Government-issued ID required at check-in.</div>
+            </div>
+          </div>
+          <div class="house-rule">
+            <div class="rule-label">Check-out</div>
+            <div class="rule-detail">
+              <div class="rule-time">Until 11:00 PM</div>
+            </div>
+          </div>
+          <div class="house-rule">
+            <div class="rule-label">Age restriction</div>
+            <div class="rule-detail">
+              <div class="rule-time">Minimum age for check-in is 18</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="reviews-modal" id="reviewsModal" aria-hidden="true">
+        <div class="reviews-modal-backdrop"></div>
+        <div class="reviews-modal-dialog" role="dialog" aria-modal="true">
+          <button class="reviews-modal-close" type="button">&times;</button>
+          <div class="reviews-modal-content">
+            <div class="reviews-modal-header">
+              <h3>All reviews</h3>
+              <span class="reviews-modal-rating" data-reviews-modal-rating></span>
+            </div>
+            <div class="reviews-modal-list" id="reviewsModalList"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-modal" id="reviewModal" aria-hidden="true">
+        <div class="review-modal-backdrop"></div>
+        <div class="review-modal-dialog" role="dialog" aria-modal="true">
+          <button class="review-modal-close" type="button">&times;</button>
+          <div class="review-modal-content">
+            <h3 id="reviewModalTitle">Guest review</h3>
+            <p id="reviewModalMeta"></p>
+            <p id="reviewModalText"></p>
+          </div>
+        </div>
+      </div>
 
       <div class="room-modal" id="roomModal" aria-hidden="true">
         <div class="room-modal-backdrop"></div>
@@ -872,7 +1007,6 @@ function initPropertyDetailPageAntwerp() {
             <div class="room-modal-info">
               <h2 id="roomModalTitle"></h2>
               <div class="room-modal-size" id="roomModalSize"></div>
-              <div class="room-modal-price" id="roomModalPrice"></div>
 
               <h3 class="room-modal-subtitle">Facilities</h3>
               <ul class="room-modal-facilities" id="roomModalFacilities"></ul>
@@ -1077,6 +1211,7 @@ function initPropertyDetailPageAntwerp() {
 
     const mainImgs = container.querySelectorAll(".carousel-main img");
     const thumbs = container.querySelectorAll(".carousel-thumbs img");
+    const thumbsContainer = container.querySelector(".carousel-thumbs");
     const galleryMain = container.querySelector(".gallery-main");
     const gallerySide = container.querySelectorAll(".gallery-side-img");
     thumbs.forEach((t) =>
@@ -1105,6 +1240,26 @@ function initPropertyDetailPageAntwerp() {
         e.currentTarget.classList.add("active");
       })
     );
+
+    if (thumbsContainer) {
+      let hoverRaf = null;
+      thumbsContainer.addEventListener("mousemove", (e) => {
+        if (thumbsContainer.scrollWidth <= thumbsContainer.clientWidth) return;
+        const rect = thumbsContainer.getBoundingClientRect();
+        const x = Math.min(Math.max(e.clientX - rect.left, 0), rect.width);
+        const ratio = rect.width ? x / rect.width : 0;
+        const maxScroll = thumbsContainer.scrollWidth - thumbsContainer.clientWidth;
+        const target = maxScroll * ratio;
+        if (hoverRaf) cancelAnimationFrame(hoverRaf);
+        hoverRaf = requestAnimationFrame(() => {
+          thumbsContainer.scrollLeft = target;
+        });
+      });
+      thumbsContainer.addEventListener("mouseleave", () => {
+        if (hoverRaf) cancelAnimationFrame(hoverRaf);
+        hoverRaf = null;
+      });
+    }
 
     container.querySelectorAll(".book-btn[data-room-id]").forEach((btn) => {
       btn.addEventListener("click", (e) => {
@@ -1137,6 +1292,390 @@ function initPropertyDetailPageAntwerp() {
     window.initScrollAnimations?.();
     if (typeof window.__nav_refreshHero === "function")
       window.__nav_refreshHero();
+
+    if (localReviewsUrl) {
+      loadLocalReviews(localReviewsUrl);
+    }
+    if (googleReviewsPlaceId) {
+      loadGoogleReviews(googleReviewsPlaceId);
+    }
+
+    const reviewsModal = document.getElementById("reviewsModal");
+    const reviewsModalBackdrop = reviewsModal?.querySelector(
+      ".reviews-modal-backdrop"
+    );
+    const reviewsModalClose = reviewsModal?.querySelector(
+      ".reviews-modal-close"
+    );
+    const reviewsModalList = reviewsModal?.querySelector("#reviewsModalList");
+    const reviewsMoreBtn = container.querySelector("[data-reviews-more]");
+
+    const reviewModal = document.getElementById("reviewModal");
+    const reviewModalBackdrop = reviewModal?.querySelector(
+      ".review-modal-backdrop"
+    );
+    const reviewModalClose = reviewModal?.querySelector(".review-modal-close");
+    const reviewModalTitle = reviewModal?.querySelector("#reviewModalTitle");
+    const reviewModalMeta = reviewModal?.querySelector("#reviewModalMeta");
+    const reviewModalText = reviewModal?.querySelector("#reviewModalText");
+
+    function openReviewModal(review) {
+      if (!reviewModal) return;
+      if (reviewModalTitle) reviewModalTitle.textContent = "Guest review";
+      if (reviewModalMeta)
+        reviewModalMeta.textContent = `${review.author_name || "Guest"}${
+          review.relative_time_description
+            ? ` • ${review.relative_time_description}`
+            : ""
+        }`;
+      if (reviewModalText) reviewModalText.textContent = review.text || "";
+      reviewModal.classList.add("open");
+      reviewModal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeReviewModal() {
+      if (!reviewModal) return;
+      reviewModal.classList.remove("open");
+      reviewModal.setAttribute("aria-hidden", "true");
+    }
+
+    function openReviewsModal(payload) {
+      if (!reviewsModal || !reviewsModalList) return;
+      const formatRating = (value) => {
+        if (!value) return null;
+        const str = String(value);
+        return str.includes("/") ? str : `${str}/5`;
+      };
+      const reviews = payload?.reviews || [];
+      const normalized = reviews
+        .map((review) => ({
+          author_name: review.author_name || "Guest",
+          relative_time_description: review.relative_time_description || "",
+          rating: review.rating || null,
+          text: review.text || "",
+        }))
+        .filter((review) => review.text);
+
+      const modalRatingEl = reviewsModal.querySelector(
+        "[data-reviews-modal-rating]"
+      );
+      if (modalRatingEl) {
+        const rating = formatRating(payload?.rating);
+        modalRatingEl.textContent = rating ? `Overall ${rating}` : "Overall 5/5";
+      }
+
+      reviewsModalList.innerHTML = normalized
+        .map(
+          (review) => `
+            <div class="review-item">
+              ${
+                review.rating
+                  ? `<span class="review-rating">${formatRating(
+                      review.rating
+                    )}</span>`
+                  : ""
+              }
+              <p class="review-quote">"${review.text}"</p>
+              <p class="review-author">${review.author_name}${
+            review.relative_time_description
+              ? ` • ${review.relative_time_description}`
+              : ""
+          }</p>
+            </div>
+          `
+        )
+        .join("");
+
+      reviewsModal.classList.add("open");
+      reviewsModal.setAttribute("aria-hidden", "false");
+    }
+
+    function closeReviewsModal() {
+      if (!reviewsModal) return;
+      reviewsModal.classList.remove("open");
+      reviewsModal.setAttribute("aria-hidden", "true");
+    }
+
+    reviewModalBackdrop?.addEventListener("click", closeReviewModal);
+    reviewModalClose?.addEventListener("click", closeReviewModal);
+    reviewsModalBackdrop?.addEventListener("click", closeReviewsModal);
+    reviewsModalClose?.addEventListener("click", closeReviewsModal);
+    if (reviewsMoreBtn && !reviewsMoreBtn.__olsBound) {
+      reviewsMoreBtn.__olsBound = true;
+      reviewsMoreBtn.addEventListener("click", () => {
+        if (reviewsForModal) openReviewsModal(reviewsForModal);
+      });
+    }
+
+    function startReviewSlideshow(reviews, listEl) {
+      if (!listEl) return;
+      if (listEl.__olsReviewTimer) {
+        clearInterval(listEl.__olsReviewTimer);
+      }
+
+      const normalized = (reviews || [])
+        .map((review) => ({
+          author_name: review.author_name || "Guest",
+          relative_time_description: review.relative_time_description || "",
+          text: review.text || "",
+        }))
+        .filter((review) => review.text);
+
+      if (!normalized.length) return;
+
+      let index = 0;
+
+      const renderReview = (idx) => {
+        const review = normalized[idx];
+        listEl.innerHTML = `
+          <div class="review-item">
+            <p class="review-quote">"${review.text}"</p>
+            <p class="review-author">${review.author_name}${
+          review.relative_time_description
+            ? ` • ${review.relative_time_description}`
+            : ""
+        }</p>
+          </div>
+        `;
+      };
+
+      renderReview(index);
+
+      listEl.__olsReviewTimer = setInterval(() => {
+        const item = listEl.querySelector(".review-item");
+        if (item) item.classList.add("is-fading");
+        setTimeout(() => {
+          index = (index + 1) % normalized.length;
+          renderReview(index);
+        }, 300);
+      }, 6000);
+    }
+
+    function renderReviewsList(reviews, listEl, limit) {
+      if (!listEl) return;
+      const normalized = (reviews || [])
+        .map((review) => ({
+          author_name: review.author_name || "Guest",
+          relative_time_description: review.relative_time_description || "",
+          text: review.text || "",
+        }))
+        .filter((review) => review.text);
+
+      const slice = normalized.slice(0, limit);
+      listEl.innerHTML = slice
+        .map(
+          (review) => `
+            <div class="review-item">
+              <p class="review-quote">"${review.text}"</p>
+              <p class="review-author">${review.author_name}${
+            review.relative_time_description
+              ? ` • ${review.relative_time_description}`
+              : ""
+          }</p>
+            </div>
+          `
+        )
+        .join("");
+    }
+
+    function startSidebarReviewSlideshow(reviews, snippetEl, cardEl) {
+      if (!snippetEl) return;
+      if (snippetEl.__olsReviewTimer) {
+        clearInterval(snippetEl.__olsReviewTimer);
+      }
+
+      const normalized = (reviews || [])
+        .map((review) => ({
+          author_name: review.author_name || "Guest",
+          relative_time_description: review.relative_time_description || "",
+          text: review.text || "",
+        }))
+        .filter((review) => review.text);
+
+      if (!normalized.length) return;
+
+      let index = 0;
+      let isPaused = false;
+
+      const renderReview = (idx) => {
+        const review = normalized[idx];
+        const needsMore = review.text.length > 220;
+        snippetEl.innerHTML = `
+          <p class="review-title">Guests who stayed here loved</p>
+          <p class="review-quote">"${review.text}"</p>
+          <p class="review-author">${review.author_name}${
+          review.relative_time_description
+            ? ` • ${review.relative_time_description}`
+            : ""
+        }</p>
+          ${
+            needsMore
+              ? `<button class="review-more" type="button" data-review-index="${idx}">Read more</button>`
+              : ""
+          }
+        `;
+      };
+
+      renderReview(index);
+
+      const tick = () => {
+        if (isPaused) return;
+        snippetEl.classList.add("is-fading");
+        setTimeout(() => {
+          if (isPaused) return;
+          index = (index + 1) % normalized.length;
+          renderReview(index);
+          snippetEl.classList.remove("is-fading");
+        }, 300);
+      };
+
+      snippetEl.__olsReviewTimer = setInterval(tick, 6000);
+
+      if (cardEl && !cardEl.__olsHoverBound) {
+        cardEl.__olsHoverBound = true;
+        cardEl.addEventListener("mouseenter", () => {
+          isPaused = true;
+        });
+        cardEl.addEventListener("mouseleave", () => {
+          isPaused = false;
+        });
+      }
+
+      if (!snippetEl.__olsMoreBound) {
+        snippetEl.__olsMoreBound = true;
+        snippetEl.addEventListener("click", (e) => {
+          const btn = e.target.closest("[data-review-index]");
+          if (!btn) return;
+          const idx = Number(btn.dataset.reviewIndex || 0);
+          const review = normalized[idx];
+          openReviewModal(review);
+        });
+      }
+    }
+
+    async function loadGoogleReviews(placeId) {
+      const reviewsSection = container.querySelector(
+        "#section-reviews"
+      );
+      if (!reviewsSection) return;
+
+      const ratingEl = reviewsSection.querySelector("[data-reviews-rating]");
+      const countEl = reviewsSection.querySelector("[data-reviews-count]");
+      const listEl = reviewsSection.querySelector("[data-google-reviews-list]");
+      const cardEl = container.querySelector("[data-review-card]");
+      const cardRatingEl = cardEl?.querySelector("[data-review-card-rating]");
+      const cardCountEl = cardEl?.querySelector("[data-review-card-count]");
+      const cardLabelEl = cardEl?.querySelector("[data-review-card-label]");
+      const cardSnippetEl = cardEl?.querySelector("[data-review-card-snippet]");
+      if (!listEl) return;
+
+      try {
+        const baseUrl =
+          window.OLS_GOOGLE_REVIEWS_ENDPOINT ||
+          "/.netlify/functions/get-google-reviews";
+        const res = await fetch(
+          `${baseUrl}?placeId=${encodeURIComponent(placeId)}`
+        );
+        if (!res.ok) return;
+        const data = await res.json();
+
+        if (data.rating && ratingEl) {
+          ratingEl.textContent = data.rating;
+        }
+        if (data.total && countEl) {
+          countEl.textContent = `${Number(data.total).toLocaleString()} reviews`;
+        }
+        if (data.rating && cardRatingEl) {
+          cardRatingEl.textContent = data.rating;
+        }
+        if (data.total && cardCountEl) {
+          cardCountEl.textContent = `${Number(data.total).toLocaleString()} reviews`;
+        }
+        if (cardLabelEl) {
+          cardLabelEl.textContent = "Excellent";
+        }
+
+        if (Array.isArray(data.reviews) && data.reviews.length) {
+          const rating = data.rating || null;
+          reviewsForModal = { reviews: data.reviews, rating };
+          renderReviewsList(data.reviews, listEl, 5);
+          if (reviewsMoreBtn) {
+            reviewsMoreBtn.style.display =
+              data.reviews.length > 5 ? "inline-flex" : "none";
+          }
+          if (cardSnippetEl) {
+            startSidebarReviewSlideshow(data.reviews, cardSnippetEl, cardEl);
+          }
+        }
+      } catch (err) {
+        // Keep fallback copy if the API call fails.
+      }
+    }
+
+    async function loadLocalReviews(url) {
+      const reviewsSection = container.querySelector("#section-reviews");
+      if (!reviewsSection) return;
+
+      const ratingEl = reviewsSection.querySelector("[data-reviews-rating]");
+      const countEl = reviewsSection.querySelector("[data-reviews-count]");
+      const labelEl = reviewsSection.querySelector(".review-score-label");
+      const listEl = reviewsSection.querySelector("[data-google-reviews-list]");
+      const cardEl = container.querySelector("[data-review-card]");
+      const cardRatingEl = cardEl?.querySelector("[data-review-card-rating]");
+      const cardCountEl = cardEl?.querySelector("[data-review-card-count]");
+      const cardLabelEl = cardEl?.querySelector("[data-review-card-label]");
+      const cardSnippetEl = cardEl?.querySelector("[data-review-card-snippet]");
+      if (!listEl) return;
+
+      try {
+        const res = await fetch(url);
+        if (!res.ok) return;
+        const data = await res.json();
+
+        if (ratingEl) {
+          ratingEl.textContent = data.rating ? data.rating : "5/5";
+        }
+        if (labelEl) {
+          labelEl.textContent = "Excellent";
+        }
+        if (data.total && countEl) {
+          countEl.textContent = `${Number(data.total).toLocaleString()} reviews`;
+        }
+        if (cardRatingEl) {
+          cardRatingEl.textContent = data.rating ? data.rating : "5/5";
+        }
+        if (cardLabelEl) {
+          cardLabelEl.textContent = "Excellent";
+        }
+        if (data.total && cardCountEl) {
+          cardCountEl.textContent = `${Number(data.total).toLocaleString()} reviews`;
+        }
+
+        if (Array.isArray(data.reviews) && data.reviews.length) {
+          const numericRatings = data.reviews
+            .map((review) => Number(review.rating))
+            .filter((value) => Number.isFinite(value));
+          const avg =
+            numericRatings.length > 0
+              ? (
+                  numericRatings.reduce((sum, value) => sum + value, 0) /
+                  numericRatings.length
+                ).toFixed(1)
+              : data.rating || null;
+          reviewsForModal = { reviews: data.reviews, rating: avg };
+          renderReviewsList(data.reviews, listEl, 5);
+          if (reviewsMoreBtn) {
+            reviewsMoreBtn.style.display =
+              data.reviews.length > 5 ? "inline-flex" : "none";
+          }
+          if (cardSnippetEl) {
+            startSidebarReviewSlideshow(data.reviews, cardSnippetEl, cardEl);
+          }
+        }
+      } catch (err) {
+        // Keep fallback copy if the local file fails.
+      }
+    }
   }
 
   function initRoomModal(property) {
@@ -1150,7 +1689,6 @@ function initPropertyDetailPageAntwerp() {
     const thumbsEl = document.getElementById("roomModalThumbs");
     const titleEl = document.getElementById("roomModalTitle");
     const sizeEl = document.getElementById("roomModalSize");
-    const priceEl = document.getElementById("roomModalPrice");
     const facilitiesEl = document.getElementById("roomModalFacilities");
     const bedsEl = document.getElementById("roomModalBeds");
 
@@ -1159,12 +1697,15 @@ function initPropertyDetailPageAntwerp() {
     function openRoom(room) {
       titleEl.textContent = `${room.type} (${room.guests} guests)`;
       sizeEl.textContent = room.size ? `Size: ${room.size}` : "";
-      priceEl.textContent = room.price_per_night
-        ? `From ${fmtMoney(
-            room.price_per_night,
-            property.price?.currency
-          )} per night`
-        : "";
+      const allAmenities = [
+        ...(property.amenities || []),
+        ...(property.facilities || []),
+        ...(room.amenities || []),
+        ...(room.facilities || []),
+      ]
+        .map((item) => String(item || "").trim())
+        .filter(Boolean)
+        .filter((item) => !/^(apartment|apartments)$/i.test(item));
 
       const imgs =
         (Array.isArray(room.images) && room.images.length
@@ -1197,9 +1738,7 @@ function initPropertyDetailPageAntwerp() {
         .map((b) => `<li>Bedroom ${b.bedroom}: ${b.beds}</li>`)
         .join("");
 
-      facilitiesEl.innerHTML = (room.amenities || [])
-        .map((a) => `<li>${a}</li>`)
-        .join("");
+      facilitiesEl.innerHTML = allAmenities.map((a) => `<li>${a}</li>`).join("");
 
       modal.classList.add("open");
       modal.setAttribute("aria-hidden", "false");

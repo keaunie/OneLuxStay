@@ -73,12 +73,12 @@
         <label class="sr-only" for="ols-destination">Destination</label>
         <select class="booking-select booking-select-destination" id="ols-destination" name="destination" required>
           <option value="" selected disabled>Destination</option>
-          <option>Antwerpen</option>
-          <option>Dubai</option>
-          <option>Los Angeles</option>
-          <option>Hollywood</option>
-          <option>Redondo Beach</option>
-          <option>Miami</option>
+          <option>Antwerpen, Belgium</option>
+          <option>Dubai, UAE</option>
+          <option>Los Angeles, USA</option>
+          <option>Hollywood, USA</option>
+          <option>Redondo Beach, USA</option>
+          <option>Miami Beach, USA</option>
         </select>
 
         <label class="sr-only" for="checkin">Check-in</label>
@@ -706,23 +706,28 @@
     font-size: 0.95rem;
   }
 
+  .hero-booking select option {
+    padding: 8px 12px;
+    line-height: 1.4;
+  }
+
   #search-btn {
     grid-column: span 4;
     height: 58px;
     border: none;
     border-radius: 18px;
-    background: linear-gradient(120deg, #f4e3a5, var(--gold));
-    color: #dfd0b8;
+    background: #e6d7c4;
+    color: #2b2520;
     font-weight: 700;
     font-size: 1rem;
     letter-spacing: 0.08em;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 10px 24px rgba(57, 62, 70, 0.18);
+    transition: box-shadow 0.2s ease;
   }
 
   #search-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 40px rgba(196, 165, 85, 0.4);
+    box-shadow: 0 14px 28px rgba(57, 62, 70, 0.22);
   }
 
   .hero-stats {
@@ -1501,5 +1506,3 @@
 </style>
 
 <!-- ===================== END HOME (SPA PARTIAL) ===================== -->
-
-

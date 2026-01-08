@@ -1,0 +1,636 @@
+{
+  "rating": 5,
+  "total": 105,
+  "reviews": [
+    {
+      "author_name": "Mo Mo",
+      "rating": 5,
+      "relative_time_description": "5 months ago on Google",
+      "text": "Our stay with SuitsRus in one of their Belgium properties was absolutely fantastic. The property itself was spotless, beautifully maintained, and incredibly comfortable. Communication was outstanding from the start. A special shoutout to Gaurav, who went above and beyond to assist us with a late checkout. Highly recommend SuitsRus for anyone looking for a reliable, clean, and stress-free stay."
+    },
+    {
+      "author_name": "Hassan Nouh",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "My family and I enjoyed our stay; the location was within walking distance of Antwerp Central and less than a 10-minute drive away. There was a JUMBO supermarket nearby. The hosts Nishita and Gaurav are very responsive and friendly. Highly recommend."
+    },
+    {
+      "author_name": "Hermanus Viezanus",
+      "rating": 5,
+      "relative_time_description": "7 months ago on Google",
+      "text": "Super apartment, close to the city. Very clean and spacious. Great service and contact with the host. I would recommend this apartment to everybody and for sure come back."
+    },
+    {
+      "author_name": "James Nicholson",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "This apartment is spectacular and great value for money. Clean, fresh, modern, well designed with top floor luxuries. The rooftop views are breathtaking from all 3 balconies. Our dogs were welcomed. Highly recommended and we will definitely return."
+    },
+    {
+      "author_name": "Anna S",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "Quiet neighborhood. Tram, supermarket, and small grocery store are around the corner. Modern building with elevator. Convenient self check-in/out. Good soundproofing. Clean, fresh looking apartment with everything a tourist may need. Comfortable shower. Beautiful terrace. Overall recommended."
+    },
+    {
+      "author_name": "Margarita K",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "The accommodation was nice. The staff, especially Gaurav, was very helpful and responsive. He helped to modify booking and provided the late checkout we needed."
+    },
+    {
+      "author_name": "Jonathan Rose",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "The apartment is beautiful and in an amazing location. It has everything we need and is spacious. The host is easy to get hold of and sort things out. We will definitely stay here again."
+    },
+    {
+      "author_name": "Lena Zehnder",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "We stayed for two weeks. The location is close to Antwerp Central station and tram stations. The hosts were friendly and helped quickly. The only improvement would be having cleaning supplies if you stay longer than one week. Overall, we really enjoyed our stay."
+    },
+    {
+      "author_name": "Judit Bayer",
+      "rating": 5,
+      "relative_time_description": "Edited 3 years ago on Google",
+      "text": "The apartment is superb, absolutely clean and designed. Big windows, street view. Gaurav and Tina were super helpful. The kitchen is spacious. The big bathroom is luxurious. The bed is comfy and the sheets are brand new. We would definitely stay again."
+    },
+    {
+      "author_name": "Hady Khawand",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "An amazing apartment, very well equipped and clean with all needed amenities. Beautiful balcony, TV with Netflix and internet. Great location. The host was very helpful. Highly recommended."
+    },
+    {
+      "author_name": "Emilia Rocha",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "Great apartment with amenities, central and close to supermarket, parking available on request. Gaurav is attentive. This is our third time staying there."
+    },
+    {
+      "author_name": "Mairead Cullen",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "We had a great stay. Great location, very convenient for tram and the city. Apartment was spacious and clean with a very attentive host."
+    },
+    {
+      "author_name": "Jayant Singh",
+      "rating": 5,
+      "relative_time_description": "3 years ago on Google",
+      "text": "Very nice apartment, clean and spacious. Good location accessible by public transport. The host helped with required facilities. Overall a wonderful stay."
+    },
+    {
+      "author_name": "Saleh Aghajani",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "Very nice and beautiful house, everything was clean and new. Located close to central station. We enjoyed our stay and the host was always on call."
+    },
+    {
+      "author_name": "Menno Bakker",
+      "rating": 5,
+      "relative_time_description": "4 months ago on Google",
+      "text": "Nice apartment, great location, very helpful host."
+    },
+    {
+      "author_name": "Annika Kamradt",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "We are very happy with our accommodation. Everything you need and a basic but good equipped kitchen. Spacious and enough room for up to 4 people."
+    },
+    {
+      "author_name": "Ritu Vaid",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "Great location. Beautiful apartment decorated in a modern way. Staff is very helpful. Highly recommend."
+    },
+    {
+      "author_name": "F W",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "We really enjoyed the apartment. It looked like the photos. The beds were very comfy. The hosts are very responsive."
+    },
+    {
+      "author_name": "Grazyna Alves Swiatkowska",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "Very spacious apartment, interesting room layout, large bathroom with bathtub and shower and a large kitchen area. Close to the center, quiet neighborhood. Very good and quick contact with the host."
+    },
+    {
+      "author_name": "Marius Steinrucke",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "Modern and spacious apartment close to the city center. Rooms are very clean. Parking is available. Hosts are always ready to help. Check-in is uncomplicated."
+    },
+    {
+      "author_name": "Michael Tarnopolski",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "The apartment was very comfortable and modern. Customer service was quick to respond. There is a washing machine and balcony. Lights have modes for Shabbat and Yom Tov and a normal key is available."
+    },
+    {
+      "author_name": "tadbrons",
+      "rating": 5,
+      "relative_time_description": "5 years ago on Tripadvisor",
+      "text": "The stay was amazing. The apartment itself is superb. Everything is clean and modern and there are three roof terraces. Communication is good and responsive."
+    },
+    {
+      "author_name": "23ruven",
+      "rating": 5,
+      "relative_time_description": "5 years ago on Tripadvisor",
+      "text": "We had a great stay. Key handover and communication were uncomplicated. The apartment was very clean, spacious and high quality furnished. The location is central but quiet."
+    },
+    {
+      "author_name": "Tarik E",
+      "rating": 5,
+      "relative_time_description": "3 years ago on Google",
+      "text": "Very nice, clean and modern apartment. Perfect location for a city trip. Excellent host. Clean, good location, affordable, great service."
+    },
+    {
+      "author_name": "Sarah B",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "We had a very pleasant stay. Quick assistance with check-in despite our late arrival."
+    },
+    {
+      "author_name": "Angel Kitty",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "All was very clean, good location nearby supermarkets and public transport. Good and fast reply from the host."
+    },
+    {
+      "author_name": "Zondag Rijkers",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "Great place to stay in Antwerp. Luxury apartment and close to all the hotspots. The host was really helpful."
+    },
+    {
+      "author_name": "WinnieDerPooh",
+      "rating": 5,
+      "relative_time_description": "5 years ago on Tripadvisor",
+      "text": "We stayed in a clean 3 bedroom apartment. The bathrooms were very nice and clean. It is located in a quiet neighborhood, but not far away from the city. Check-in and check-out were easy."
+    },
+    {
+      "author_name": "Susekalkhoven",
+      "rating": 5,
+      "relative_time_description": "5 years ago on Tripadvisor",
+      "text": "We had a great time in the apartment. We were five and there was enough space. Contact was nice and responsive. Everything was nice and beautiful and close to the city and grocery store."
+    },
+    {
+      "author_name": "Irmina Melarkode",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "We had a great weekend in Antwerp. Apartment was very comfortable, convenient check in and location walking distance to the city highlights."
+    },
+    {
+      "author_name": "irisjanssen_24",
+      "rating": 5,
+      "relative_time_description": "5 years ago on Tripadvisor",
+      "text": "We were with a group of friends and enjoyed the accommodation so much. Check-in was automatic and contact was really nice."
+    },
+    {
+      "author_name": "Finn the Human",
+      "rating": 5,
+      "relative_time_description": "3 years ago on Google",
+      "text": "Great apartment, couple minutes from tram where you can get to the center. The host helped with check-in."
+    },
+    {
+      "author_name": "899ullap",
+      "rating": 5,
+      "relative_time_description": "5 years ago on Tripadvisor",
+      "text": "Very nice place. We will definitely come back. Nice location, quiet and close to the center."
+    },
+    {
+      "author_name": "Timofey Maksimov",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "Beautiful apartment, very clean and well furnished. Communication with host was very smooth and easy."
+    },
+    {
+      "author_name": "Alejandro Miranda Ariza",
+      "rating": 5,
+      "relative_time_description": "Edited 2 years ago on Google",
+      "text": "Good apartment, clean, spacious, modern, with everything you need. Good location, quiet neighborhood and close to central area."
+    },
+    {
+      "author_name": "love2travel2x4",
+      "rating": 1,
+      "relative_time_description": "5 years ago on Tripadvisor",
+      "text": "We booked for a 3 night stay for December, I cancelled in August due to travel restrictions and they would not refund my deposit."
+    },
+    {
+      "author_name": "Ziying Zhu",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "The best experience ever. The interior design was pretty good. Thanks Gaurav for all the help."
+    },
+    {
+      "author_name": "Kang Mingxing",
+      "rating": 5,
+      "relative_time_description": "3 years ago on Google",
+      "text": "Very good location and convenient check in. The apartment is very comfortable. The host is very helpful and quick to respond."
+    },
+    {
+      "author_name": "Neslihan Tasdelen",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "The right accommodation for a great holiday. We are grateful for the help. Highly recommend."
+    },
+    {
+      "author_name": "Shel Jang",
+      "rating": 5,
+      "relative_time_description": "3 years ago on Google",
+      "text": "Apartment was nice and central, great for a trip to Antwerp. Great host."
+    },
+    {
+      "author_name": "Danny",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "Nice clean apartment, plenty of room, very relaxing and a great spot to commute."
+    },
+    {
+      "author_name": "115kirstenk",
+      "rating": 1,
+      "relative_time_description": "6 years ago on Tripadvisor",
+      "text": "We stayed in the apartment and still have not received the security deposit back. Terrible communication."
+    },
+    {
+      "author_name": "Robert",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "A very good flat in Antwerpen. You will enjoy your stay."
+    },
+    {
+      "author_name": "Susana Georgiu",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "Great place, modern, very clean and comfortable, very helpful and kind staff."
+    },
+    {
+      "author_name": "Tammy Wong",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "Clean and spacious space. My family and I had a lovely stay in Antwerp."
+    },
+    {
+      "author_name": "Mark Medlock",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "The apartment was pretty good. It was very clean and everything was fine. I will come back again."
+    },
+    {
+      "author_name": "euro invest",
+      "rating": 5,
+      "relative_time_description": "3 years ago on Google",
+      "text": "Very nice staff and very nice apartments and very clean. The service was also 5 stars."
+    },
+    {
+      "author_name": "Lina",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "Great apartment, everything you need and really spacious."
+    },
+    {
+      "author_name": "Hersh M Berger",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "We had a very pleasant stay. The rooms were nice and tidy. We will recommend this to others."
+    },
+    {
+      "author_name": "Hellen Veltmans",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "Host was very kind with helping me check in."
+    },
+    {
+      "author_name": "Kyrie CS:GO",
+      "rating": 5,
+      "relative_time_description": "3 years ago on Google",
+      "text": "This place is really comfortable and clean. I love it."
+    },
+    {
+      "author_name": "Tom Stanhope",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "We stayed here and it was excellent."
+    },
+    {
+      "author_name": "Sanne van der Wal",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "Thank you for the nice stay."
+    },
+    {
+      "author_name": "Daniel Robert Iorga",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "Amazing, thanks for all."
+    },
+    {
+      "author_name": "Mohammed Al Hawi",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "Amazing stay with professional staff."
+    },
+    {
+      "author_name": "Slava Antonov",
+      "rating": 5,
+      "relative_time_description": "8 months ago on Google",
+      "text": "Wonderful."
+    },
+    {
+      "author_name": "Sanil Acharya",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "Thanks for all the help."
+    },
+    {
+      "author_name": "Denis Kharchenko",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "Very nice. Markets and restaurants nearby."
+    },
+    {
+      "author_name": "Michal Waloszczyk",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "Super."
+    },
+    {
+      "author_name": "mohamed bouafoud",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "Its a good place."
+    },
+    {
+      "author_name": "Joerg F.",
+      "rating": 2,
+      "relative_time_description": "a day ago on Google",
+      "text": "Large apartment and clean, but furniture was very basic and some items were non-functional. Balcony door did not seal properly. No response to a party above. Not worth the price."
+    },
+    {
+      "author_name": "Traveler5319",
+      "rating": 5,
+      "relative_time_description": "a year ago on Tripadvisor",
+      "text": "Great apartment in the Jewish quarter. Big living space with lots of light and three terraces. Tram stops are nearby and a small supermarket is close. Tourist tax request came a day before arrival."
+    },
+    {
+      "author_name": "Gerda Van Aggelen",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "We stayed with four people. Everything was clean and present. Towels and made beds with shampoo for showering. Spacious bathroom with bathtub and shower. Walking distance to the city."
+    },
+    {
+      "author_name": "Maria A B",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "Great apartment for 6 people, comfortable, clean and spacious. Quiet and safe area, with nearby supermarkets. Parking option available. Host was always available and helpful."
+    },
+    {
+      "author_name": "Celine Collee",
+      "rating": 5,
+      "relative_time_description": "4 months ago on Google",
+      "text": "Great accommodation and great host. Fast responses and really there for you."
+    },
+    {
+      "author_name": "Bram Van Der Weijden",
+      "rating": 5,
+      "relative_time_description": "3 years ago on Google",
+      "text": "Perfect vacation. Great apartment in the center of Antwerp. Very friendly host and clean apartment."
+    },
+    {
+      "author_name": "Lars Vink",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "Super nice, luxurious and large apartment. Great that a crib and high chair were arranged."
+    },
+    {
+      "author_name": "Ive348",
+      "rating": 4,
+      "relative_time_description": "5 years ago on Tripadvisor",
+      "text": "Apartment is perfect and appears recently renovated. Check-in instructions were delayed and we waited in the rain. The area is quiet and tram is nearby."
+    },
+    {
+      "author_name": "Andre Spruitenburg",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "Penthouse apartment in a quiet street. Clean and cozy with great beds. Kitchen has many appliances, though a teapot and breadboard were missing. Self check-in worked well."
+    },
+    {
+      "author_name": "Maria Van den Berg",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "Spacious apartment with balcony in quiet neighborhood near city park. Supermarket close by. 15 minutes walk to shopping center or central station."
+    },
+    {
+      "author_name": "Lea Van Loock",
+      "rating": 5,
+      "relative_time_description": "a month ago on Google",
+      "text": "Very friendly people, always willing to help."
+    },
+    {
+      "author_name": "larosor",
+      "rating": 4,
+      "relative_time_description": "6 years ago on Tripadvisor",
+      "text": "Very good apartment in a recommended area, quiet and close to the center. Very clean and attentive team."
+    },
+    {
+      "author_name": "Iemme Haan",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "Spacious apartment with kitchen near the best part of Antwerp. Without reception, but great help from host."
+    },
+    {
+      "author_name": "P1071NRmarinap",
+      "rating": 5,
+      "relative_time_description": "5 years ago on Tripadvisor",
+      "text": "Large, beautiful and tidy apartment. Lots of dishes and glassware. TV works well with Netflix and YouTube. Beds are good, bathrooms spacious. Quiet and easy to reach center by tram."
+    },
+    {
+      "author_name": "elishevai2016",
+      "rating": 5,
+      "relative_time_description": "5 years ago on Tripadvisor",
+      "text": "A very pleasant stay in a spacious apartment, ideal for families. Complete kitchen and large bathroom. Located near a grocery store."
+    },
+    {
+      "author_name": "Floris Lenis",
+      "rating": 5,
+      "relative_time_description": "3 years ago on Google",
+      "text": "Nice apartments, clean and good location relative to the center. Friendly host."
+    },
+    {
+      "author_name": "EstelBBK59",
+      "rating": 1,
+      "relative_time_description": "5 years ago on Tripadvisor",
+      "text": "Reservation accepted and paid, but on arrival we were told the apartment was occupied and moved across town. Promised compensation never received."
+    },
+    {
+      "author_name": "812vv",
+      "rating": 1,
+      "relative_time_description": "2 years ago on Tripadvisor",
+      "text": "Do not book. Deposit not returned. Unreachable by phone or email."
+    },
+    {
+      "author_name": "Seaside10262905479",
+      "rating": 1,
+      "relative_time_description": "2 years ago on Tripadvisor",
+      "text": "Apartment was ok, but charged for a key issue that was not our fault. Felt like a scam."
+    },
+    {
+      "author_name": "jennsno",
+      "rating": 5,
+      "relative_time_description": "5 years ago on Tripadvisor",
+      "text": "Booked for a weekend. Beautiful, large apartment and easy check-in. Highly recommended."
+    },
+    {
+      "author_name": "812vv",
+      "rating": 1,
+      "relative_time_description": "5 years ago on Tripadvisor",
+      "text": "Malafide organization. Good stay but deposit of 250 EUR not returned after months."
+    },
+    {
+      "author_name": "Amatista",
+      "rating": 5,
+      "relative_time_description": "3 years ago on Google",
+      "text": "We stayed with family and the stay was great. Close to tram stops that connect to the center and central station."
+    },
+    {
+      "author_name": "Nita Gashi",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "Very satisfied with this apartment in the center. Very nice and clean. Everything is present."
+    },
+    {
+      "author_name": "Wam Ba",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "The apartment is very spacious and bright. Kitchen is equipped, beds are very comfortable and the attention is quick and friendly."
+    },
+    {
+      "author_name": "Laura Martin",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "Great stay, everything was perfect. Thanks for the welcome, responsiveness and kindness."
+    },
+    {
+      "author_name": "Jan-Oliver Zilker (JOZ)",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "Very well located accommodation. Self check-in worked well. Simply equipped but clean."
+    },
+    {
+      "author_name": "Felicia Beckert",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "A sweet little apartment in a great location. Parking was no problem."
+    },
+    {
+      "author_name": "Daniele R.",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "Very nice accommodation and convenient. Host was very helpful."
+    },
+    {
+      "author_name": "Report des Matts",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "We were very satisfied. Rooms were clean."
+    },
+    {
+      "author_name": "Lars Bremer",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "Nice centrally located apartment including parking."
+    },
+    {
+      "author_name": "Vanessa Firmino",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "Perfect. Loved it."
+    },
+    {
+      "author_name": "anita thsibota",
+      "rating": 5,
+      "relative_time_description": "9 months ago on Google",
+      "text": "Top, nothing to say."
+    },
+    {
+      "author_name": "Lorenzo Biondi",
+      "rating": 4,
+      "relative_time_description": "4 weeks ago on Google",
+      "text": "Rooms 4, Service 3, Location 3."
+    },
+    {
+      "author_name": "Yasmine Timimoun",
+      "rating": 5,
+      "relative_time_description": "a month ago on Google",
+      "text": "Trip type: Vacation."
+    },
+    {
+      "author_name": "Carlos Gonzalez Lopez-Camara",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "Trip type: Vacation. Travel group: Friends."
+    },
+    {
+      "author_name": "Else Kroese",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "Trip type: Vacation. Travel group: Family."
+    },
+    {
+      "author_name": "Nathaniel Blok",
+      "rating": 5,
+      "relative_time_description": "a year ago on Google",
+      "text": "Trip type: Vacation. Travel group: Friends."
+    },
+    {
+      "author_name": "Kazuko Sekiguchi",
+      "rating": 3,
+      "relative_time_description": "2 years ago on Google",
+      "text": "Trip type: Vacation. Travel group: Family."
+    },
+    {
+      "author_name": "Rutger Willem Poldermans",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": "Trip type: Couple."
+    },
+    {
+      "author_name": "Jasmina Crabbe",
+      "rating": 4,
+      "relative_time_description": "3 years ago on Google",
+      "text": "Trip type: Family."
+    },
+    {
+      "author_name": "Marc Michiels",
+      "rating": 5,
+      "relative_time_description": "Edited 3 years ago on Google",
+      "text": "Trip type: Friends."
+    },
+    {
+      "author_name": "Dmitriy Robul",
+      "rating": 5,
+      "relative_time_description": "6 months ago on Google",
+      "text": ""
+    },
+    {
+      "author_name": "Simone Perleonardi",
+      "rating": 4,
+      "relative_time_description": "2 years ago on Google",
+      "text": ""
+    },
+    {
+      "author_name": "DestrainDaOne",
+      "rating": 5,
+      "relative_time_description": "2 years ago on Google",
+      "text": ""
+    },
+    {
+      "author_name": "Rutvik Savani",
+      "rating": 5,
+      "relative_time_description": "3 years ago on Google",
+      "text": ""
+    }
+  ]
+}
