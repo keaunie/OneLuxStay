@@ -370,11 +370,11 @@ function initListingsPage() {
           if (chip.classList.contains("active")) {
             chip.classList.remove("active");
             chip.setAttribute("aria-pressed", "false");
-  // filters.cities for location chips
+            // filters.cities for location chips
           } else {
             chip.classList.add("active");
             chip.setAttribute("aria-pressed", "true");
-  // filters.cities for location chips
+            // filters.cities for location chips
           }
         } else if (areaSlug) {
           const key = areaSlug.toLowerCase();
@@ -397,7 +397,7 @@ function initListingsPage() {
       state.filters.q = "";
       state.filters.sort = "top";
       state.filters.areas.clear();
-  // filters.cities for location chips
+      // filters.cities for location chips
       if (els.q) els.q.value = "";
       if (els.sort) els.sort.value = "top";
       if (els.chips)
@@ -510,14 +510,13 @@ function initPropertyDetailPageAntwerp() {
     const amenities = Array.from(
       new Set([
         ...(property.amenities || []),
-        ...((property.rooms || []).flatMap((room) => room.amenities || [])),
+        ...(property.rooms || []).flatMap((room) => room.amenities || []),
       ])
     );
     const topAmenities = amenities.slice(0, 10);
     const popularAmenities = amenities.slice(0, 6);
     const essentialAmenities = amenities.slice(0, 6).join(", ");
     const extraAmenities = amenities.slice(6, 12).join(", ");
-
 
     document.title = `${property.title} - One Lux Stay`;
 
@@ -553,10 +552,21 @@ function initPropertyDetailPageAntwerp() {
       return '<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6"/></svg>';
     };
 
+    const isFashionDistrict =
+      (property.id || "").includes("fashion") ||
+      /fashion/i.test(property.title || "") ||
+      /fashion/i.test(property.location?.neighborhood || "");
+    const mapTitle = isFashionDistrict
+      ? "One Lux Stay Antwerp Fashion District map"
+      : "Lange Leemstraat 5, Antwerpen map";
+    const mapSrc = isFashionDistrict
+      ? "https://www.google.com/maps?q=One+Lux+Stay+Antwerp+Fashion+District&output=embed&z=15"
+      : "https://www.google.com/maps?q=Lange+Leemstraat+5,+2018+Antwerpen,+Belgium&output=embed";
+
     container.innerHTML = `
       <div class="property-header">
         <div class="property-meta">
-          < class="btn btn-back" href="/antwerp" data-link>&larr; Back to listings</a>
+          <a class="btn btn-back" href="/antwerp" data-link>&larr; Back to listings</a>
           <h1 style="margin:12px 0 6px">${property.title}</h1>
           ${
             property.badge
@@ -564,8 +574,8 @@ function initPropertyDetailPageAntwerp() {
               : ""
           }
           <div class="location">${property.location?.area || ""} - ${
-          property.address || ""
-        }</div>
+      property.address || ""
+    }</div>
           <div class="rating" style="margin:8px 0 14px">
             Rating: <span>${property.rating ?? ""}</span>
             ${
@@ -578,9 +588,22 @@ function initPropertyDetailPageAntwerp() {
         <div class="contact-card contact-card--top">
           <h3>For Reservation Contact</h3>
           <p class="contact-label">Antwerp reservations</p>
-          <a class="contact-phone" href="tel:+3238080719">+32-38080719</a>
+          <div class="contact-actions">
+            <a class="contact-phone" href="tel:+32483338745">+32 483 338 745</a>
+            <a class="contact-phone" href="tel:+32493813441">+32 493 813 441</a>
+            <a class="contact-phone" href="https://wa.me/32493813441?text=Hello%2C%20I%20have%20questions%20about%20the%20unit%20on%20OneLuxStay%20Antwerp%20near%20Central" target="_blank" rel="noopener">
+              <span aria-hidden="true">💬</span> WhatsApp: +32 493 813 441
+            </a>
+          </div>
         </div>
       </div>
+
+      <nav class="property-tabs" aria-label="Property sections">
+        <a class="property-tab" href="#section-overview">Overview</a>
+        <a class="property-tab" href="#section-facilities">Facilities</a>
+        <a class="property-tab" href="#section-rooms">Rooms</a>
+        <a class="property-tab" href="#section-reviews">Guest reviews</a>
+      </nav>
 
       <div class="carousel-container">
         <div class="gallery-layout">
@@ -619,7 +642,9 @@ function initPropertyDetailPageAntwerp() {
             <div class="review-card">
               <div class="review-score">
                 <span class="review-score-label">Good</span>
-                <span class="review-score-value">${property.rating ?? "9.7"}</span>
+                <span class="review-score-value">${
+                  property.rating ?? "9.7"
+                }</span>
               </div>
               <p class="review-count">${
                 property.reviews
@@ -634,48 +659,50 @@ function initPropertyDetailPageAntwerp() {
             </div>
             <div class="map-card" aria-label="Location map">
               <iframe
-                title="Lange Leemstraat 5, Antwerpen map"
+                title="${mapTitle}"
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps?q=Lange+Leemstraat+5,+2018+Antwerpen,+Belgium&output=embed"
+                src="${mapSrc}"
               ></iframe>
             </div>
           </aside>
         </div>
       </div>
 
-      <div class="summary">${property.summary || ""}</div>
-      <div class="price">From ${fmtMoney(
-        property.price?.from,
-        property.price?.currency
-      )}</div>
+      <section id="section-overview" class="property-section">
+        <div class="summary">${property.summary || ""}</div>
+        <div class="price">From ${fmtMoney(
+          property.price?.from,
+          property.price?.currency
+        )}</div>
 
-      <div class="selector search-box" data-ols-date-range>
-        <div class="selector-dates">
-          <label for="checkin">Check-in
-            <input type="text" id="checkin" value="${fmtDisplayDate(
-              today
-            )}" readonly inputmode="none" placeholder="Check-in" data-ols-checkin>
+        <div class="selector search-box" data-ols-date-range>
+          <div class="selector-dates">
+            <label for="checkin">Check-in
+              <input type="text" id="checkin" value="${fmtDisplayDate(
+                today
+              )}" readonly inputmode="none" placeholder="Check-in" data-ols-checkin>
+            </label>
+            <label for="checkout">Check-out
+              <input type="text" id="checkout" value="${fmtDisplayDate(
+                tomorrow
+              )}" readonly inputmode="none" placeholder="Check-out" data-ols-checkout>
+            </label>
+          </div>
+
+          <label class="guest-label">Guests
+            <select id="guests">${Array.from(
+              { length: 6 },
+              (_, i) => `<option value="${i + 1}">${i + 1}</option>`
+            ).join("")}</select>
           </label>
-          <label for="checkout">Check-out
-            <input type="text" id="checkout" value="${fmtDisplayDate(
-              tomorrow
-            )}" readonly inputmode="none" placeholder="Check-out" data-ols-checkout>
-          </label>
+          <div class="selector-action">
+            <button type="button" class="availability-btn">Check Availability</button>
+          </div>
         </div>
+      </section>
 
-        <label class="guest-label">Guests
-          <select id="guests">${Array.from(
-            { length: 6 },
-            (_, i) => `<option value="${i + 1}">${i + 1}</option>`
-          ).join("")}</select>
-        </label>
-        <div class="selector-action">
-          <button type="button" class="availability-btn">Check Availability</button>
-        </div>
-      </div>
-
-      <section class="property-details">
+      <section id="section-facilities" class="property-details">
         <div class="property-main">
           <div class="amenities-section">
             <h3>Amenities</h3>
@@ -707,20 +734,24 @@ function initPropertyDetailPageAntwerp() {
             }
             <p><strong>Convenient Location:</strong> Located near ${
               property.location?.area || "the city center"
-            }, ${property.address || "Antwerp"}, with easy access to local landmarks and transit.</p>
+            }, ${
+      property.address || "Antwerp"
+    }, with easy access to local landmarks and transit.</p>
           </div>
           <div class="popular-facilities">
             <h4>Most popular facilities</h4>
             <div class="facility-list">
               ${popularAmenities
-                .map((amenity) => `<span class="facility-item">${amenity}</span>`)
+                .map(
+                  (amenity) => `<span class="facility-item">${amenity}</span>`
+                )
                 .join("")}
             </div>
           </div>
         </div>
       </section>
 
-      <div class="rooms">
+      <section id="section-rooms" class="rooms">
         ${(property.rooms || [])
           .map((room, idx) => {
             const tourJson =
@@ -746,7 +777,10 @@ function initPropertyDetailPageAntwerp() {
             <div class="room-guests">${room.guests} guests</div>
             <div class="bedrooms">
               ${(room.bedrooms || [])
-                .map((b) => `<div class="bedroom-line">Bedroom ${b.bedroom}: ${b.beds}</div>`)
+                .map(
+                  (b) =>
+                    `<div class="bedroom-line">Bedroom ${b.bedroom}: ${b.beds}</div>`
+                )
                 .join("")}
             </div>
             ${(() => {
@@ -756,12 +790,16 @@ function initPropertyDetailPageAntwerp() {
               const rest = amenities.slice(6);
               return `
                 <div class="amenity-chips">
-                  ${chips.map((a) => `<span class="amenity-chip">${a}</span>`).join("")}
+                  ${chips
+                    .map((a) => `<span class="amenity-chip">${a}</span>`)
+                    .join("")}
                 </div>
                 ${
                   rest.length
                     ? `<ul class="amenity-list">
-                        ${rest.map((a) => `<li class="amenity-item">${a}</li>`).join("")}
+                        ${rest
+                          .map((a) => `<li class="amenity-item">${a}</li>`)
+                          .join("")}
                       </ul>`
                     : ""
                 }
@@ -801,7 +839,22 @@ function initPropertyDetailPageAntwerp() {
         </div>`;
           })
           .join("")}
-      </div>
+      </section>
+
+      <section id="section-reviews" class="reviews-section">
+        <h3>Guest reviews</h3>
+        <div class="reviews-summary">
+          <span class="review-score-label">Good</span>
+          <span class="review-score-value">${property.rating ?? "9.7"}</span>
+          <span class="review-count">${
+            property.reviews
+              ? `${property.reviews.toLocaleString()} reviews`
+              : "125 reviews"
+          }</span>
+        </div>
+        <p class="review-quote">"Property was cozy and spotless. Hosts were responsive and helpful."</p>
+        <p class="review-author">Fatima - United States</p>
+      </section>
 
       <div class="room-modal" id="roomModal" aria-hidden="true">
         <div class="room-modal-backdrop"></div>
@@ -1307,5 +1360,3 @@ function initPropertyDetailPageAntwerp() {
 })();
 
 window.initPropertyDetailPageAntwerp = initPropertyDetailPageAntwerp;
-
-

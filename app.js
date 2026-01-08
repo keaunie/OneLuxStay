@@ -1377,6 +1377,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const href = target.getAttribute("href") || "";
     const isSameOrigin = target.origin === location.origin;
 
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const section = document.querySelector(href);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      return;
+    }
+
     if (isSameOrigin && href.startsWith("/")) {
       e.preventDefault();
       page.show(href);

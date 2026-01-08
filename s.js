@@ -69,8 +69,16 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", (e) => {
     const target = e.target.closest("a");
     if (target && target.href.startsWith(location.origin)) {
+      const href = target.getAttribute("href") || "";
+      if (href.startsWith("#")) {
+        e.preventDefault();
+        const section = document.querySelector(href);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        return;
+      }
       e.preventDefault();
-      const href = target.getAttribute("href");
       page.show(href);
     }
   });
