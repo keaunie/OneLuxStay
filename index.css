@@ -2765,6 +2765,7 @@ a {
   width: 100%;
   height: 150px;
   justify-content: space-between;
+  align-items: center;
   padding: 0 1%
 }
 
@@ -2796,15 +2797,17 @@ a {
 
 .logo {
   position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   justify-content: center
 }
 
 .logo img {
   width: clamp(70px, 10vw, 150px);
   max-width: 120px;
-  transition: .3s
+  transition: .3s;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.6));
 }
 
 #nav.scrolled .logo img {
@@ -2812,17 +2815,17 @@ a {
 }
 
 #nav.scrolled .logo {
-  padding-top: .1%
+  padding-top: 0
 }
 
 .contactus-navbar {
   font-size: 1rem;
-  color: #222831;
+  color: #dfd0b8;
   border: 2px solid #222831;
   border-radius: 999px;
   padding: 8px 20px;
-  background: rgba(34, 40, 49, 0.12);
-  box-shadow: 0 6px 16px rgba(34, 40, 49, 0.2);
+  background: #222831;
+  box-shadow: 0 8px 18px rgba(34, 40, 49, 0.35);
   transition: background .3s, color .3s, border-color .3s, box-shadow .3s
 }
 

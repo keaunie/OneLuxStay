@@ -88,7 +88,7 @@
     </button>
 
     <a href="/" class="logo">
-      <img src="/image/ols-logo.svg" alt="One Lux Stay logo" width="120" height="34" />
+      <img src="/image/ols-logo.png" alt="One Lux Stay logo" width="120" height="34" />
     </a>
 
     <a href="/contactus" data-link>
@@ -421,13 +421,14 @@
         text-decoration: none;
         color: var(--ink);
         margin-bottom: 12px;
+        border-radius: 12px;
       }
 
       .ols-footer__logo img {
         max-width: 150px;
         height: auto;
         display: block;
-        filter: none;
+        filter: drop-shadow(0 8px 18px rgba(34, 40, 49, 0.35));
         transition: filter 0.35s ease, transform 0.35s ease;
       }
 
@@ -438,7 +439,7 @@
 
       .ols-footer__tagline {
         font-size: 0.9rem;
-        color: var(--muted);
+        color: #3a332a;
         line-height: 1.6;
         max-width: 320px;
       }
@@ -450,9 +451,9 @@
         margin-top: 18px;
         padding: 10px 18px;
         border-radius: 999px;
-        border: 1px solid rgba(57, 62, 70, 0.45);
-        background: radial-gradient(circle at 0% 0%, rgba(57, 62, 70, 0.12), transparent 55%);
-        color: var(--ink);
+        border: 1px solid #222831;
+        background: #222831;
+        color: #dfd0b8;
         font-size: 0.9rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
@@ -488,7 +489,7 @@
         font-size: 0.85rem;
         letter-spacing: 0.16em;
         text-transform: uppercase;
-        color: var(--muted);
+        color: #3a332a;
         margin-bottom: 12px;
       }
 
@@ -504,7 +505,7 @@
       }
 
       .ols-footer__link {
-        color: var(--ink);
+        color: #222831;
         text-decoration: none;
         position: relative;
         padding-bottom: 2px;
@@ -543,14 +544,15 @@
         width: 34px;
         height: 34px;
         border-radius: 999px;
-        border: 1px solid rgba(57, 62, 70, 0.2);
+        border: 1px solid rgba(34, 40, 49, 0.5);
         display: inline-flex;
         align-items: center;
         justify-content: center;
         text-decoration: none;
         transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
         font-size: 0.85rem;
-        color: var(--ink);
+        color: #222831;
+        background: rgba(255, 255, 255, 0.4);
       }
 
       .ols-footer__social:hover {
@@ -562,7 +564,7 @@
       .ols-footer__contact {
         margin-top: 8px;
         font-size: 0.85rem;
-        color: var(--muted);
+        color: #3a332a;
         line-height: 1.7;
       }
 
@@ -588,7 +590,7 @@
       }
 
       .ols-footer__contact a {
-        color: var(--ink);
+        color: #222831;
         text-decoration: none;
       }
 
@@ -607,7 +609,7 @@
         justify-content: space-between;
         align-items: center;
         font-size: 0.8rem;
-        color: var(--muted);
+        color: #3a332a;
       }
 
       .ols-footer__legal {
@@ -617,12 +619,23 @@
       }
 
       .ols-footer__legal a {
-        color: var(--muted);
+        color: #3a332a;
         text-decoration: none;
       }
 
       .ols-footer__legal a:hover {
-        color: var(--ink);
+        color: #222831;
+      }
+
+      .ols-footer a:focus-visible,
+      .ols-footer button:focus-visible {
+        outline: 3px solid #222831;
+        outline-offset: 3px;
+      }
+
+      .ols-footer__logo:focus-visible {
+        outline: 3px solid #222831;
+        outline-offset: 4px;
       }
 
       @media (max-width: 900px) {
@@ -656,7 +669,7 @@
         <!-- Brand -->
         <section class="ols-footer__brand">
           <a href="/" class="ols-footer__logo">
-            <img src="/image/ols-logo.svg" alt="One Lux Stay logo">
+            <img src="/image/ols-logo.png" alt="One Lux Stay logo">
             <p class="ols-footer__tagline">
               Curated, design-driven suites in Antwerp, Dubai, Miami, Los Angeles and Redondo Beach. Combining the
               privacy of a residence with the polish of a luxury hotel.
@@ -675,7 +688,7 @@
             <li><a href="/Dubai" class="ols-footer__link">Dubai - Grande Signature Residences</a></li>
             <li><a href="/redondo" class="ols-footer__link">Redondo Beach</a></li>
             <li><a href="/losangeles" class="ols-footer__link">Los Angeles</a></li>
-            <li><a href="/miami" class="ols-footer__link">Miami – Brickell Bay</a></li>
+            <li><a href="/miami" class="ols-footer__link">Miami - Brickell Bay</a></li>
           </ul>
         </nav>
 
@@ -739,7 +752,7 @@
       </div>
 
       <div class="ols-footer__bottom">
-        <small>© <span id="ols-year"></span> One Lux Stay. All rights reserved.</small>
+        <small>&copy; <span id="ols-year"></span> One Lux Stay. All rights reserved.</small>
         <div class="ols-footer__legal">
           <a href="/privacypolicy">Privacy and Policy</a>
           <a href="/termsandcond">Terms and Conditions</a>
@@ -756,6 +769,8 @@
     </script>
   </footer>
 
+  <!-- Crisp chat disabled -->
+  <!--
   <script>
     // Defer Crisp chat until idle/load to avoid blocking critical path
     (function () {
@@ -775,6 +790,7 @@
       }
     })();
   </script>
+  -->
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6J2317QXC9"></script>
   <script>
@@ -788,5 +804,8 @@
 </body>
 
 </html>
+
+
+
 
 

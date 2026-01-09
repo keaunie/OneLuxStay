@@ -931,26 +931,132 @@ function initPropertyDetailPageAntwerp() {
       <section id="section-house-rules" class="house-rules">
         <div class="house-rules-header">
           <h3>House rules</h3>
-          <p>Special requests are welcome — add them during your booking.</p>
+          <p>OneLuxStay near Antwerp Central takes special requests - add in the next step!</p>
         </div>
         <div class="house-rules-card">
           <div class="house-rule">
             <div class="rule-label">Check-in</div>
             <div class="rule-detail">
-              <div class="rule-time">From 3:00 PM</div>
-              <div class="rule-note">Government-issued ID required at check-in.</div>
+              <div class="rule-time">From 3:00 PM to 6:00 PM</div>
+              <div class="rule-note">You need to let the property know what time you'll be arriving in advance.</div>
             </div>
           </div>
           <div class="house-rule">
             <div class="rule-label">Check-out</div>
             <div class="rule-detail">
-              <div class="rule-time">Until 11:00 PM</div>
+              <div class="rule-time">Available 24 hours</div>
             </div>
           </div>
           <div class="house-rule">
-            <div class="rule-label">Age restriction</div>
+            <div class="rule-label">Cancellation / prepayment</div>
             <div class="rule-detail">
-              <div class="rule-time">Minimum age for check-in is 18</div>
+              <div class="rule-time">Cancellation and prepayment policies vary according to accommodation type.</div>
+              <div class="rule-note">Enter your stay dates and check the conditions of your selected option.</div>
+            </div>
+          </div>
+          <div class="house-rule">
+            <div class="rule-label">Damage policy</div>
+            <div class="rule-detail">
+              <div class="rule-time">If you cause damage to the property during your stay, you could be asked to pay up to 300 after check-out.</div>
+            </div>
+          </div>
+          <div class="house-rule">
+            <div class="rule-label">Children & beds</div>
+            <div class="rule-detail">
+              <div class="rule-time">Children of all ages are welcome.</div>
+              <div class="rule-note">Families are welcome, and we can help with family-friendly recommendations nearby.</div>
+              <div class="rule-time">Crib and extra bed policies</div>
+              <div class="rule-note">Cribs and extra beds aren't available at this property.</div>
+            </div>
+          </div>
+          <div class="house-rule">
+            <div class="rule-label">No age restriction</div>
+            <div class="rule-detail">
+              <div class="rule-time">There's no age requirement for check-in.</div>
+            </div>
+          </div>
+          <div class="house-rule">
+            <div class="rule-label">Smoking</div>
+            <div class="rule-detail">
+              <div class="rule-time">Smoking is not allowed.</div>
+            </div>
+          </div>
+          <div class="house-rule">
+            <div class="rule-label">Parties</div>
+            <div class="rule-detail">
+              <div class="rule-time">Parties/events are not allowed.</div>
+            </div>
+          </div>
+          <div class="house-rule">
+            <div class="rule-label">Pets</div>
+            <div class="rule-detail">
+              <div class="rule-time">Pets are allowed on request. No extra charges.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="section-legal" class="house-rules fine-print">
+        <div class="house-rules-header">
+          <h3>Important & Legal Info</h3>
+          <p>Must-know information for guests at this property</p>
+        </div>
+        <div class="house-rules-card">
+          <div class="house-rule">
+            <div class="rule-label">Parties</div>
+            <div class="rule-detail">
+              <div class="rule-time">This property does not accommodate bachelor(ette) or similar parties.</div>
+            </div>
+          </div>
+          <div class="house-rule">
+            <div class="rule-label">Damage policy</div>
+            <div class="rule-detail">
+              <div class="rule-time">If you cause damage to the property during your stay, you could be asked to pay up to 300 after check-out.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="section-faqs" class="house-rules faq-section">
+        <div class="house-rules-header">
+          <h3>FAQs</h3>
+          <p>Quick answers about OneLuxStay near Antwerp Central.</p>
+        </div>
+        <div class="house-rules-card">
+          <div class="house-rule">
+            <div class="rule-label">Guests</div>
+            <div class="rule-detail">
+              <div class="rule-time">This property can accommodate 6 guests.</div>
+            </div>
+          </div>
+          <div class="house-rule">
+            <div class="rule-label">Bedrooms</div>
+            <div class="rule-detail">
+              <div class="rule-time">3 bedrooms.</div>
+            </div>
+          </div>
+          <div class="house-rule">
+            <div class="rule-label">Balcony</div>
+            <div class="rule-detail">
+              <div class="rule-time">Yes, there are options at this property that have a balcony.</div>
+            </div>
+          </div>
+          <div class="house-rule">
+            <div class="rule-label">Pricing</div>
+            <div class="rule-detail">
+              <div class="rule-time">Prices vary by dates and policy. Enter your dates to see current rates.</div>
+            </div>
+          </div>
+          <div class="house-rule">
+            <div class="rule-label">Check-in/out</div>
+            <div class="rule-detail">
+              <div class="rule-time">Check-in from 15:00, check-out until 11:00.</div>
+            </div>
+          </div>
+          <div class="house-rule">
+            <div class="rule-label">Distance</div>
+            <div class="rule-detail">
+              <div class="rule-time">About 1.3 km from the center of Antwerp.</div>
             </div>
           </div>
         </div>
